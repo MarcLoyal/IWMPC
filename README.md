@@ -47,11 +47,18 @@ components/site/  Header, Footer, MobileActionBar, LanguageToggle, …
 lib/i18n/         Locale routing, navigation helpers, request config
 lib/site.ts       Site-wide facts and navigation (null = not yet confirmed)
 messages/         UI strings: fil.json, en.json (must have identical keys)
-content/          Content files (managed by Keystatic from P5)
+content/          status.yaml, advisories/*.mdoc, … (managed by Keystatic from P5)
 docs/             Content checklist, staff guide (P5)
 tests/            Vitest unit tests
 proxy.ts          Locale routing (Next.js 16 name for middleware)
 ```
+
+## Content
+
+- `content/status.yaml` drives the supply status banner on every page. A scheduled interruption whose `ends_at` has passed shows as "normal" automatically; an outage stays until staff clear it.
+- `content/advisories/<date>-<name>.mdoc` — one file per advisory. The front matter holds the fields, the body is the Filipino text, and `body_en` is the optional English text. Any `*_en` field left empty falls back to Filipino.
+- The current advisories and status are **samples** (`sample: true`, titles prefixed `[HALIMBAWA]` / `[SAMPLE]`).
+- While `placeholderContent` is `true` in `lib/site.ts`, every page shows a "preview" strip and search engines are told not to index the site. Switch it off at launch.
 
 ## Ground rules
 

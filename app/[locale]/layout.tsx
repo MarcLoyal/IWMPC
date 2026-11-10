@@ -8,6 +8,8 @@ import { site } from "@/lib/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { MobileActionBar } from "@/components/site/mobile-action-bar";
+import { PreviewStrip } from "@/components/site/preview-strip";
+import { SupplyStatusBanner } from "@/components/site/supply-status-banner";
 import "../globals.css";
 
 export function generateStaticParams() {
@@ -23,6 +25,10 @@ export async function generateMetadata(): Promise<Metadata> {
       template: `%s | ${site.shortName} Inicbulan, Bauan`,
     },
     description: t("description"),
+    // Keep search engines away while the site still holds sample content.
+    robots: site.placeholderContent
+      ? { index: false, follow: false }
+      : undefined,
   };
 }
 
@@ -53,8 +59,9 @@ export default async function LocaleLayout({
           >
             {t("skipToContent")}
           </a>
+          <PreviewStrip />
           <Header />
-          {/* SupplyStatusBanner mounts here in P1 */}
+          <SupplyStatusBanner />
           <main id="main" tabIndex={-1} className="flex-1 outline-none">
             {children}
           </main>

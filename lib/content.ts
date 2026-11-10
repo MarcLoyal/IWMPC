@@ -1,0 +1,137 @@
+import { promises as fs } from "node:fs";
+import path from "node:path";
+import { cacheLife } from "next/cache";
+import { parse as parseYaml } from "yaml";
+import { z } from "zod";
+import type { Locale } from "@/lib/i18n/routing";
+import type { SupplyStatus } from "@/lib/status";
+import { ADVISORY_STATUSES, ADVISORY_TYPES } from "@/lib/content-types";
+
+export type { AdvisoryStatus, AdvisoryType } from "@/lib/content-types";
+
+const CONTENT_DIR = path.join(process.cwd(), "content");
+
+const date = z
+  .string()
+  .refine((s) => !Number.isNaN(Date.parse(s)), "Invalid date")
+  .transform((s) => new Date(s));
+
+const optionalText = z
+  .string()
+  .optional()
+  .transform((s) => (s && s.trim() ? s : undefined));
+
+/* ---------- Supply status ---------- */
+
+const statusSchema = z.object({
+  level: z.enum(["normal", "scheduled", "outage"]),
+  title_fil: z.string().min(1),
+  title_en: optionalText,
+  details_fil: optionalText,
+  details_en: optionalText,
+  affected_areas: z.array(z.string()).default([]),
+  starts_at: date.optional(),
+  ends_at: date.optional(),
+  updated_at: date,
+  link: optionalText,
+});
+
+export async function getSupplyStatus(): Promise<SupplyStatus> {
+  "use cache";
+  cacheLife("max"); // content only changes with a new deployment
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "status.yaml"), "utf8");
+  return statusSchema.parse(parseYaml(raw));
+}
+
+/**
+ * The current time, refreshed about once a minute. Reading the clock through
+ * this keeps pages static while still letting time-based rules (an ended
+ * interruption, "updated 2 hours ago") catch up without a redeploy.
+ */
+export async function getNow(): Promise<Date> {
+  "use cache";
+  cacheLife("minutes");
+  return new Date();
+}
+
+/* ---------- Advisories ---------- */
+
+const advisorySchema = z.object({
+  sample: z.boolean().default(false),
+  title_fil: z.string().min(1),
+  title_en: optionalText,
+  type: z.enum(ADVISORY_TYPES),
+  status: z.enum(ADVISORY_STATUSES),
+  affected_areas: z.array(z.string()).default([]),
+  starts_at: date,
+  ends_at: date.optional(),
+  facebook_post_url: optionalText,
+  body_en: optionalText,
+});
+
+export type Advisory = z.infer<typeof advisorySchema> & {
+  slug: string;
+  /** Filipino body (Markdoc). */
+  body_fil: string;
+};
+
+function parseFrontmatter(raw: string) {
+  const match = /^---\r?\n([\s\S]*?)\r?\n---\r?\n?([\s\S]*)$/.exec(raw);
+  if (!match) throw new Error("Missing frontmatter");
+  return { data: parseYaml(match[1]), body: match[2].trim() };
+}
+
+export async function getAdvisories(): Promise<Advisory[]> {
+  "use cache";
+  cacheLife("max");
+  const dir = path.join(CONTENT_DIR, "advisories");
+  const files = (await fs.readdir(dir)).filter((f) => f.endsWith(".mdoc"));
+  const advisories = await Promise.all(
+    files.map(async (file) => {
+      const { data, body } = parseFrontmatter(
+        await fs.readFile(path.join(dir, file), "utf8"),
+      );
+      const parsed = advisorySchema.safeParse(data);
+      if (!parsed.success) {
+        throw new Error(
+          `content/advisories/${file}: ${z.prettifyError(parsed.error)}`,
+        );
+      }
+      return {
+        ...parsed.data,
+        slug: file.replace(/\.mdoc$/, ""),
+        body_fil: body,
+      };
+    }),
+  );
+  // Newest first
+  return advisories.sort(
+    (a, b) => b.starts_at.getTime() - a.starts_at.getTime(),
+  );
+}
+
+export async function getAdvisory(slug: string) {
+  return (await getAdvisories()).find((a) => a.slug === slug);
+}
+
+/** Active first (ongoing, then upcoming soonest-first); resolved are excluded. */
+export function activeAdvisories(advisories: Advisory[]) {
+  const ongoing = advisories.filter((a) => a.status === "ongoing");
+  const upcoming = advisories
+    .filter((a) => a.status === "upcoming")
+    .sort((a, b) => a.starts_at.getTime() - b.starts_at.getTime());
+  return [...ongoing, ...upcoming];
+}
+
+/* ---------- Bilingual fields ---------- */
+
+/** Reads `<field>_en` for English and falls back to `<field>_fil` when it is empty. */
+export function localized<K extends string>(
+  item: Partial<Record<`${K}_fil` | `${K}_en`, string>>,
+  field: K,
+  locale: Locale,
+): string {
+  const record = item as Record<string, string | undefined>;
+  const fil = record[`${field}_fil`] ?? "";
+  return locale === "en" ? record[`${field}_en`] || fil : fil;
+}

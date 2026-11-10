@@ -5,7 +5,9 @@
   },
   "common": {
     "skipToContent": "Skip to content",
-    "toBeConfirmed": "To be confirmed"
+    "toBeConfirmed": "To be confirmed",
+    "home": "Home",
+    "sample": "Sample only"
   },
   "nav": {
     "label": "Main menu",
@@ -52,6 +54,211 @@
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
     "heroText": "A member-owned cooperative serving Brgy. Inicbulan, Bauan, Batangas.",
-    "underConstruction": "This website is still being built. Water status, the bill calculator, and more pages are coming soon."
+    "ctaStatus": "Check Water Status",
+    "ctaPay": "How to Pay",
+    "quick": {
+      "heading": "What do you need?",
+      "status": "Water Status",
+      "statusDesc": "Is there an interruption today?",
+      "bill": "Bill Calculator",
+      "billDesc": "Estimate your bill",
+      "pay": "How to Pay",
+      "payDesc": "Where and how",
+      "report": "Report a Problem",
+      "reportDesc": "Leaks, no water, and more"
+    },
+    "advisories": {
+      "heading": "Advisories",
+      "none": "No scheduled interruptions.",
+      "viewAll": "All advisories"
+    },
+    "services": {
+      "heading": "Our Services",
+      "water": "Water",
+      "waterDesc": "Water supply, billing, new connections, and problem reports.",
+      "rice": "Rice",
+      "riceDesc": "The cooperative's rice store.",
+      "fuel": "Fuel",
+      "fuelDesc": "The cooperative's petroleum products.",
+      "loans": "Loans",
+      "loansDesc": "Loans for members.",
+      "more": "Learn more"
+    },
+    "trust": {
+      "heading": "Why IWMPC",
+      "members": "Members",
+      "years": "Years of service",
+      "households": "Households connected",
+      "cda": "CDA-registered",
+      "cub": "Member of the Cooperative Union of Batangas"
+    },
+    "join": {
+      "heading": "Become a member of the cooperative",
+      "text": "IWMPC is owned by its members. Learn about the benefits, requirements, and steps to join.",
+      "cta": "How to Join"
+    },
+    "contact": {
+      "heading": "Visit or call us",
+      "cta": "All contact details"
+    }
+  },
+  "preview": {
+    "strip": "Preview: this website still contains sample content and is not yet official."
+  },
+  "breadcrumbs": {
+    "label": "Breadcrumb"
+  },
+  "status": {
+    "label": "Water status",
+    "levels": {
+      "normal": "Normal",
+      "scheduled": "Scheduled interruption",
+      "outage": "No water"
+    },
+    "updated": "Updated {time}",
+    "details": "Details",
+    "affected": "Affected areas",
+    "when": "When",
+    "dismiss": "Dismiss notice"
+  },
+  "water": {
+    "title": "Water Services",
+    "intro": "Everything about your water: supply status, billing, connections, and reporting a problem.",
+    "statusHeading": "Current status",
+    "linksHeading": "Pages",
+    "links": {
+      "advisories": {
+        "title": "Status & Advisories",
+        "desc": "Interruptions: upcoming, ongoing, and resolved."
+      },
+      "rates": {
+        "title": "Rates & Bill Calculator",
+        "desc": "What water costs and an estimate of your bill."
+      },
+      "pay": {
+        "title": "How to Pay",
+        "desc": "Payment options, due dates, and penalties."
+      },
+      "newConnection": {
+        "title": "New Connection",
+        "desc": "Steps, requirements, and fees."
+      },
+      "report": {
+        "title": "Report a Problem",
+        "desc": "Leaks, no water, low pressure, broken meter."
+      },
+      "quality": {
+        "title": "Water Quality",
+        "desc": "Water sources and test results."
+      },
+      "serviceArea": {
+        "title": "Service Area",
+        "desc": "Puroks and sitios we serve."
+      }
+    }
+  },
+  "advisories": {
+    "title": "Water Status & Advisories",
+    "intro": "Notices about interruptions, repairs, and water quality.",
+    "listHeading": "Advisories",
+    "filters": {
+      "status": "Status",
+      "all": "All",
+      "area": "Area",
+      "allAreas": "All areas",
+      "results": "{count, plural, =0 {No advisories} one {# advisory} other {# advisories}}"
+    },
+    "statuses": {
+      "upcoming": "Upcoming",
+      "ongoing": "Ongoing",
+      "resolved": "Resolved"
+    },
+    "types": {
+      "scheduled_maintenance": "Scheduled maintenance",
+      "emergency_repair": "Emergency repair",
+      "low_pressure": "Low pressure",
+      "water_quality": "Water quality notice",
+      "other": "Other"
+    },
+    "empty": "No advisories yet.",
+    "emptyFiltered": "No advisories match your selection.",
+    "when": "When",
+    "since": "Since {date}",
+    "areas": "Affected areas",
+    "type": "Type",
+    "viewDetails": "View details",
+    "back": "All advisories",
+    "shareFacebook": "Share to Facebook",
+    "viewOnFacebook": "View the Facebook post",
+    "tips": {
+      "heading": "Reminders",
+      "store": "Store water before an interruption.",
+      "flush": "If the water is cloudy when supply returns, let the tap run for 1–2 minutes."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Here is how to reach or visit us.",
+    "officeHeading": "Office",
+    "emergency": "Emergency hotline",
+    "facebook": "Facebook page",
+    "messenger": "Messenger",
+    "mapHeading": "Map",
+    "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
+    "mapNote": "Approximate location of the barangay. The exact office location is still to be confirmed.",
+    "formHeading": "Send a message",
+    "formSoon": "A contact form will be added here soon."
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "intro": "IWMPC values your privacy. This notice explains how we use the personal information you give us through this website, in line with the Data Privacy Act of 2012 (Republic Act No. 10173).",
+    "draft": "This is a draft. The cooperative will review and approve it before the official launch.",
+    "collect": {
+      "title": "What we collect",
+      "body": "We only collect the information you choose to enter in the website's forms:",
+      "items": {
+        "identity": "Name, mobile number, and email (if given)",
+        "location": "Purok, address, or landmark",
+        "account": "Account number or member ID (if given)",
+        "message": "Your message or description of the problem",
+        "photo": "A photo you upload (if any)"
+      },
+      "analytics": "The website uses cookie-free analytics that do not identify individual visitors."
+    },
+    "purpose": {
+      "title": "What we use it for",
+      "body": "Your information is used only to respond to your report, inquiry, or application and to contact you about it. We do not sell it or use it for marketing."
+    },
+    "recipients": {
+      "title": "Who receives it",
+      "body": "Form submissions are sent by email to authorized IWMPC staff. The website itself does not store your submission in any database."
+    },
+    "retention": {
+      "title": "How long we keep it",
+      "body": "Retention period for received emails:"
+    },
+    "rights": {
+      "title": "Your rights",
+      "body": "Under the Data Privacy Act, you have the right to:",
+      "items": {
+        "informed": "Be informed about how your personal data is used",
+        "access": "Ask for a copy of your data",
+        "rectify": "Have incorrect information corrected",
+        "erase": "Have your data erased or its use stopped",
+        "complain": "File a complaint with the National Privacy Commission"
+      }
+    },
+    "dpo": {
+      "title": "Contact us",
+      "body": "For questions or requests about your data, contact our Data Protection Officer:"
+    }
+  },
+  "notFound": {
+    "title": "Page not found",
+    "text": "Sorry, the page you are looking for does not exist or has moved. Try one of these:",
+    "status": "Water Status",
+    "pay": "How to Pay",
+    "contact": "Contact",
+    "home": "Back to Home"
   }
 }

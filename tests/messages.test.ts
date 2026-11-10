@@ -11,7 +11,7 @@ function keys(tree: Tree, prefix = ""): string[] {
 }
 
 function placeholders(s: string) {
-  return [...s.matchAll(/\{(\w+)/g)].map((m) => m[1]).sort();
+  return [...s.matchAll(/\{(\w+)[,}]/g)].map((m) => m[1]).sort();
 }
 
 function get(tree: Tree, path: string): string {

@@ -5,7 +5,9 @@
   },
   "common": {
     "skipToContent": "Lumaktaw sa nilalaman",
-    "toBeConfirmed": "Kukumpirmahin pa"
+    "toBeConfirmed": "Kukumpirmahin pa",
+    "home": "Home",
+    "sample": "Halimbawa lamang"
   },
   "nav": {
     "label": "Pangunahing menu",
@@ -52,6 +54,211 @@
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
     "heroText": "Kooperatibang pag-aari ng mga miyembro, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
-    "underConstruction": "Ginagawa pa ang website na ito. Malapit nang idagdag ang status ng tubig, bill calculator, at iba pang pahina."
+    "ctaStatus": "Tingnan ang Status ng Tubig",
+    "ctaPay": "Paano Magbayad",
+    "quick": {
+      "heading": "Ano ang kailangan mo?",
+      "status": "Status ng Tubig",
+      "statusDesc": "May interruption ba ngayon?",
+      "bill": "Bill Calculator",
+      "billDesc": "Tantiyahin ang bayarin",
+      "pay": "Paano Magbayad",
+      "payDesc": "Saan at paano",
+      "report": "I-report ang Problema",
+      "reportDesc": "Tagas, walang tubig, at iba pa"
+    },
+    "advisories": {
+      "heading": "Mga Advisory",
+      "none": "Walang naka-schedule na interruption.",
+      "viewAll": "Lahat ng advisory"
+    },
+    "services": {
+      "heading": "Aming mga Serbisyo",
+      "water": "Tubig",
+      "waterDesc": "Supply ng tubig, bayarin, bagong koneksyon, at pag-report ng problema.",
+      "rice": "Bigas",
+      "riceDesc": "Tindahan ng bigas ng kooperatiba.",
+      "fuel": "Gasolina",
+      "fuelDesc": "Mga produktong petrolyo ng kooperatiba.",
+      "loans": "Pautang",
+      "loansDesc": "Mga pautang para sa mga miyembro.",
+      "more": "Alamin"
+    },
+    "trust": {
+      "heading": "Bakit IWMPC",
+      "members": "Mga miyembro",
+      "years": "Taon ng paglilingkod",
+      "households": "Mga konektadong kabahayan",
+      "cda": "Rehistrado sa CDA",
+      "cub": "Miyembro ng Cooperative Union of Batangas"
+    },
+    "join": {
+      "heading": "Maging miyembro ng kooperatiba",
+      "text": "Ang mga miyembro ang may-ari ng IWMPC. Alamin ang mga benepisyo, requirements, at hakbang sa pagsali.",
+      "cta": "Paano Sumali"
+    },
+    "contact": {
+      "heading": "Bisitahin o tawagan kami",
+      "cta": "Lahat ng contact details"
+    }
+  },
+  "preview": {
+    "strip": "Preview: may halimbawang nilalaman pa ang website na ito at hindi pa ito opisyal."
+  },
+  "breadcrumbs": {
+    "label": "Lokasyon sa website"
+  },
+  "status": {
+    "label": "Status ng tubig",
+    "levels": {
+      "normal": "Normal",
+      "scheduled": "Naka-schedule na interruption",
+      "outage": "Walang tubig"
+    },
+    "updated": "Na-update {time}",
+    "details": "Detalye",
+    "affected": "Apektadong lugar",
+    "when": "Kailan",
+    "dismiss": "Isara ang abiso"
+  },
+  "water": {
+    "title": "Serbisyo ng Tubig",
+    "intro": "Lahat ng kailangan mo tungkol sa tubig: status ng supply, bayarin, koneksyon, at pag-report ng problema.",
+    "statusHeading": "Kasalukuyang status",
+    "linksHeading": "Mga pahina",
+    "links": {
+      "advisories": {
+        "title": "Status at mga Advisory",
+        "desc": "Mga interruption: paparating, nagaganap, at tapos na."
+      },
+      "rates": {
+        "title": "Rates at Bill Calculator",
+        "desc": "Magkano ang tubig at tantiya ng inyong bill."
+      },
+      "pay": {
+        "title": "Paano Magbayad",
+        "desc": "Mga paraan ng pagbabayad, due date, at multa."
+      },
+      "newConnection": {
+        "title": "Bagong Koneksyon",
+        "desc": "Mga hakbang, requirements, at bayarin."
+      },
+      "report": {
+        "title": "I-report ang Problema",
+        "desc": "Tagas, walang tubig, mahinang pressure, sirang metro."
+      },
+      "quality": {
+        "title": "Kalidad ng Tubig",
+        "desc": "Pinagmumulan ng tubig at resulta ng mga pagsusuri."
+      },
+      "serviceArea": {
+        "title": "Sakop na Lugar",
+        "desc": "Mga purok at sitio na sineserbisyuhan."
+      }
+    }
+  },
+  "advisories": {
+    "title": "Status ng Tubig at mga Advisory",
+    "intro": "Mga abiso tungkol sa interruption, pagkukumpuni, at kalidad ng tubig.",
+    "listHeading": "Mga advisory",
+    "filters": {
+      "status": "Status",
+      "all": "Lahat",
+      "area": "Lugar",
+      "allAreas": "Lahat ng lugar",
+      "results": "{count, plural, =0 {Walang advisory} one {# advisory} other {# advisory}}"
+    },
+    "statuses": {
+      "upcoming": "Paparating",
+      "ongoing": "Nagaganap",
+      "resolved": "Tapos na"
+    },
+    "types": {
+      "scheduled_maintenance": "Naka-schedule na maintenance",
+      "emergency_repair": "Emergency na pagkukumpuni",
+      "low_pressure": "Mahinang pressure",
+      "water_quality": "Abiso sa kalidad ng tubig",
+      "other": "Iba pa"
+    },
+    "empty": "Wala pang advisory.",
+    "emptyFiltered": "Walang advisory na tumutugma sa napili.",
+    "when": "Kailan",
+    "since": "Mula {date}",
+    "areas": "Apektadong lugar",
+    "type": "Uri",
+    "viewDetails": "Tingnan ang detalye",
+    "back": "Lahat ng advisory",
+    "shareFacebook": "I-share sa Facebook",
+    "viewOnFacebook": "Tingnan ang Facebook post",
+    "tips": {
+      "heading": "Mga paalala",
+      "store": "Mag-ipon ng tubig bago ang interruption.",
+      "flush": "Hayaang tumakbo ang gripo nang 1–2 minuto pagbalik ng supply kung malabo ang tubig."
+    }
+  },
+  "contact": {
+    "title": "Contact",
+    "intro": "Narito kung paano kami makakausap o mapupuntahan.",
+    "officeHeading": "Opisina",
+    "emergency": "Emergency hotline",
+    "facebook": "Facebook page",
+    "messenger": "Messenger",
+    "mapHeading": "Mapa",
+    "mapTitle": "Mapa ng Brgy. Inicbulan, Bauan, Batangas",
+    "mapNote": "Tinatayang lokasyon ng barangay. Kukumpirmahin pa ang eksaktong lokasyon ng opisina.",
+    "formHeading": "Magpadala ng mensahe",
+    "formSoon": "Malapit nang idagdag ang contact form dito."
+  },
+  "privacy": {
+    "title": "Privacy Notice",
+    "intro": "Pinahahalagahan ng IWMPC ang inyong privacy. Ipinapaliwanag ng paunawang ito kung paano namin ginagamit ang personal na impormasyong ibinibigay ninyo sa website na ito, alinsunod sa Data Privacy Act of 2012 (Republic Act No. 10173).",
+    "draft": "Borador ito. Susuriin at aaprubahan pa ng kooperatiba bago ang opisyal na paglulunsad.",
+    "collect": {
+      "title": "Anong impormasyon ang kinokolekta",
+      "body": "Kinokolekta lamang namin ang impormasyong kusa ninyong inilalagay sa mga form ng website:",
+      "items": {
+        "identity": "Pangalan, mobile number, at email (kung ibinigay)",
+        "location": "Purok, address, o landmark",
+        "account": "Account number o member ID (kung ibinigay)",
+        "message": "Inyong mensahe o paglalarawan ng problema",
+        "photo": "Larawan na inyong in-upload (kung mayroon)"
+      },
+      "analytics": "Gumagamit ang website ng analytics na walang cookies at hindi kumikilala ng indibidwal na bisita."
+    },
+    "purpose": {
+      "title": "Para saan ito ginagamit",
+      "body": "Ginagamit ang inyong impormasyon para lamang tumugon sa inyong report, inquiry, o aplikasyon, at para makipag-ugnayan sa inyo tungkol dito. Hindi namin ito ibinebenta o ginagamit sa marketing."
+    },
+    "recipients": {
+      "title": "Sino ang tumatanggap",
+      "body": "Ipinapadala ang mga isinumite sa form sa pamamagitan ng email sa mga awtorisadong staff ng IWMPC. Hindi nag-iimbak ang website mismo ng inyong isinumite sa anumang database."
+    },
+    "retention": {
+      "title": "Gaano katagal itinatago",
+      "body": "Panahon ng pag-iingat ng mga email na natanggap:"
+    },
+    "rights": {
+      "title": "Inyong mga karapatan",
+      "body": "Sa ilalim ng Data Privacy Act, may karapatan kayong:",
+      "items": {
+        "informed": "Malaman kung paano ginagamit ang inyong personal na datos",
+        "access": "Humingi ng kopya ng inyong datos",
+        "rectify": "Ipatama ang maling impormasyon",
+        "erase": "Ipabura o ipatigil ang paggamit ng inyong datos",
+        "complain": "Magreklamo sa National Privacy Commission"
+      }
+    },
+    "dpo": {
+      "title": "Makipag-ugnayan",
+      "body": "Para sa mga tanong o kahilingan tungkol sa inyong datos, makipag-ugnayan sa aming Data Protection Officer:"
+    }
+  },
+  "notFound": {
+    "title": "Hindi makita ang pahina",
+    "text": "Pasensya na, wala o inilipat na ang pahinang hinahanap ninyo. Subukan ang mga ito:",
+    "status": "Status ng Tubig",
+    "pay": "Paano Magbayad",
+    "contact": "Contact",
+    "home": "Bumalik sa Home"
   }
 }
