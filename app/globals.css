@@ -1,0 +1,131 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+/*
+ * Design tokens (spec §5). Swap the hex values for the cooperative's logo
+ * colours once the logo arrives — keep the token names.
+ */
+:root {
+  --primary: #0b4f8a; /* Deep Water */
+  --primary-foreground: #ffffff;
+  --accent: #14b8c4; /* Aqua — decoration and text on dark only (fails AA on white) */
+  --surface: #f5fafd;
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --muted: #64748b; /* secondary text */
+  --border: #d5e1ea;
+  --success: #16a34a;
+  --warning: #f59e0b;
+  --danger: #dc2626;
+  --harvest: #c08a2b;
+  /* Darker text-safe variants (≥ 4.5:1 on white) for labels on light backgrounds */
+  --success-strong: #166534;
+  --warning-strong: #92400e;
+  --danger-strong: #b91c1c;
+  --harvest-strong: #855b12;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-accent: var(--accent);
+  --color-surface: var(--surface);
+  /* shadcn naming: `text-muted-foreground` is the spec's --muted text colour */
+  --color-muted: var(--surface);
+  --color-muted-foreground: var(--muted);
+  --color-border: var(--border);
+  --color-input: var(--border);
+  --color-ring: var(--primary);
+  --color-card: var(--background);
+  --color-card-foreground: var(--foreground);
+  --color-popover: var(--background);
+  --color-popover-foreground: var(--foreground);
+  --color-success: var(--success);
+  --color-success-strong: var(--success-strong);
+  --color-warning: var(--warning);
+  --color-warning-strong: var(--warning-strong);
+  --color-danger: var(--danger);
+  --color-danger-strong: var(--danger-strong);
+  --color-destructive: var(--danger);
+  --color-harvest: var(--harvest);
+  --color-harvest-strong: var(--harvest-strong);
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading:
+    var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+@layer base {
+  html {
+    /* 18px base: much of the audience is older and on phones */
+    font-size: 112.5%;
+    scroll-padding-top: 5rem;
+  }
+  body {
+    background: var(--background);
+    color: var(--foreground);
+    font-family: var(--font-sans);
+    line-height: 1.6;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.2;
+    color: var(--primary);
+    text-wrap: balance;
+  }
+  p {
+    max-width: 70ch;
+  }
+  * {
+    border-color: var(--border);
+  }
+  :focus-visible {
+    outline: 3px solid var(--accent);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 5px var(--foreground);
+    border-radius: 4px;
+  }
+}
+
+/* Header shrinks as the page scrolls — CSS only, no JS. */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .site-header-inner {
+      animation: header-shrink linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 120px;
+    }
+  }
+}
+@keyframes header-shrink {
+  to {
+    padding-block: 0.25rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@media print {
+  .no-print {
+    display: none !important;
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "title": "IWMPC — Inicbulan Waterworks Multi-Purpose Cooperative",
+    "description": "Opisyal na website ng Inicbulan Waterworks Multi-Purpose Cooperative sa Brgy. Inicbulan, Bauan, Batangas: status ng tubig, bayarin, membership, at iba pang serbisyo."
+  },
+  "common": {
+    "skipToContent": "Lumaktaw sa nilalaman",
+    "toBeConfirmed": "Kukumpirmahin pa"
+  },
+  "nav": {
+    "label": "Pangunahing menu",
+    "water": "Tubig",
+    "services": "Serbisyo",
+    "membership": "Membership",
+    "news": "Balita",
+    "contact": "Contact",
+    "about": "Tungkol sa IWMPC",
+    "transparency": "Transparency",
+    "faq": "Mga Tanong (FAQ)",
+    "privacy": "Privacy",
+    "report": "I-report ang Problema",
+    "openMenu": "Buksan ang menu",
+    "closeMenu": "Isara ang menu",
+    "menu": "Menu"
+  },
+  "language": {
+    "label": "Wika",
+    "fil": "Filipino",
+    "en": "English"
+  },
+  "actionBar": {
+    "label": "Mabilisang aksyon",
+    "status": "Status",
+    "bill": "Bill",
+    "pay": "Bayad",
+    "call": "Tawag"
+  },
+  "footer": {
+    "cdaReg": "CDA Reg. No.",
+    "address": "Address",
+    "hours": "Oras ng opisina",
+    "phone": "Telepono",
+    "email": "Email",
+    "contactHeading": "Makipag-ugnayan",
+    "linksHeading": "Mga link",
+    "moreHeading": "Iba pa",
+    "cubMember": "Miyembro ng Cooperative Union of Batangas",
+    "memberLogin": "Member Login (Malapit na)",
+    "rights": "© {year} {name}. Lahat ng karapatan ay nakalaan.",
+    "lastUpdated": "Huling na-update: {date}"
+  },
+  "home": {
+    "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
+    "heroText": "Kooperatibang pag-aari ng mga miyembro, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
+    "underConstruction": "Ginagawa pa ang website na ito. Malapit nang idagdag ang status ng tubig, bill calculator, at iba pang pahina."
+  }
+}
