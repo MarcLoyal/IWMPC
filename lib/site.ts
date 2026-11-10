@@ -26,6 +26,14 @@ export const site = {
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const;
 
+/** Feature flags (spec §8). They move to the Keystatic site settings in P5. */
+export const flags = {
+  show_online_payment_details: false,
+  show_financial_highlights: false,
+  show_loan_estimator: true,
+  show_water_quality: true,
+} as const;
+
 export const primaryNav = [
   { key: "water", href: "/water" },
   { key: "services", href: "/services" },

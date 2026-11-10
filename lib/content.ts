@@ -5,6 +5,7 @@ import { parse as parseYaml } from "yaml";
 import { z } from "zod";
 import type { Locale } from "@/lib/i18n/routing";
 import type { SupplyStatus } from "@/lib/status";
+import { rateClassProblems } from "@/lib/billing";
 import { ADVISORY_STATUSES, ADVISORY_TYPES } from "@/lib/content-types";
 
 export type { AdvisoryStatus, AdvisoryType } from "@/lib/content-types";
@@ -121,6 +122,98 @@ export function activeAdvisories(advisories: Advisory[]) {
     .filter((a) => a.status === "upcoming")
     .sort((a, b) => a.starts_at.getTime() - b.starts_at.getTime());
   return [...ongoing, ...upcoming];
+}
+
+/* ---------- Water rates ---------- */
+
+const amount = z.number().min(0);
+
+const ratesSchema = z.object({
+  effective_date: optionalText,
+  currency: z.literal("PHP"),
+  classes: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        label_fil: z.string().min(1),
+        label_en: optionalText,
+        minimum_charge: amount,
+        minimum_cu_m: z.number().int().min(0),
+        tiers: z.array(
+          z.object({
+            from: z.number().int().min(1),
+            to: z.number().int().nullable(),
+            rate: amount,
+          }),
+        ),
+      }),
+    )
+    .min(1),
+  other_fees: z.object({
+    late_penalty_percent: amount,
+    reconnection_fee: amount,
+  }),
+  billing: z.object({
+    reading_schedule_fil: optionalText,
+    reading_schedule_en: optionalText,
+    due_days_after_billing: z.number().int().min(0),
+  }),
+  disconnection_policy_fil: optionalText,
+  disconnection_policy_en: optionalText,
+});
+
+export type Rates = z.infer<typeof ratesSchema>;
+
+export async function getRates(): Promise<Rates> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "rates.yaml"), "utf8");
+  const rates = ratesSchema.parse(parseYaml(raw));
+  for (const cls of rates.classes) {
+    const problems = rateClassProblems(cls);
+    if (problems.length > 0) {
+      throw new Error(
+        `content/rates.yaml, class "${cls.id}": ${problems.join("; ")}`,
+      );
+    }
+  }
+  return rates;
+}
+
+/* ---------- Loans ---------- */
+
+const loansSchema = z.object({
+  products: z
+    .array(
+      z.object({
+        id: z.string().min(1),
+        name_fil: z.string().min(1),
+        name_en: optionalText,
+        purpose_fil: optionalText,
+        purpose_en: optionalText,
+        max_amount: z.number().positive().optional(),
+        max_term_months: z.number().int().positive().optional(),
+        monthly_interest_percent: z.number().min(0).optional(),
+        requirements_fil: z.array(z.string()).default([]),
+        requirements_en: z.array(z.string()).default([]),
+        eligibility_fil: optionalText,
+        eligibility_en: optionalText,
+      }),
+    )
+    .default([]),
+  steps_confirmed: z.boolean().default(false),
+  steps: z
+    .array(z.object({ title_fil: z.string().min(1), title_en: optionalText }))
+    .default([]),
+});
+
+export type Loans = z.infer<typeof loansSchema>;
+
+export async function getLoans(): Promise<Loans> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "loans.yaml"), "utf8");
+  return loansSchema.parse(parseYaml(raw));
 }
 
 /* ---------- Bilingual fields ---------- */
