@@ -4,7 +4,7 @@ import {
   CalculatorIcon,
   DropletIcon,
   DropletsIcon,
-  FuelIcon,
+  FlameIcon,
   HandCoinsIcon,
   HandshakeIcon,
   TriangleAlertIcon,
@@ -54,9 +54,9 @@ export default async function HomePage() {
       tone: "text-harvest-strong",
     },
     {
-      key: "fuel",
-      href: "/services/fuel",
-      icon: FuelIcon,
+      key: "lpg",
+      href: "/services/lpg",
+      icon: FlameIcon,
       tone: "text-harvest-strong",
     },
     {

@@ -78,8 +78,8 @@
       "waterDesc": "Water supply, billing, new connections, and problem reports.",
       "rice": "Rice",
       "riceDesc": "The cooperative's rice store.",
-      "fuel": "Fuel",
-      "fuelDesc": "The cooperative's petroleum products.",
+      "lpg": "LPG",
+      "lpgDesc": "LPG cooking gas from the cooperative.",
       "loans": "Loans",
       "loansDesc": "Loans for members.",
       "more": "Learn more"

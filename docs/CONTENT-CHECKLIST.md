@@ -14,7 +14,7 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [ ] New connection requirements, fees, processing time, application form PDF
 - [ ] List of puroks/sitios served
 - [ ] Water quality test results/certificates they're willing to publish
-- [ ] Rice and fuel products and price-update routine
+- [ ] Rice and LPG products (brands, tank sizes, prices) and price-update routine
 - [ ] Loan products: amounts, terms, interest, requirements
 - [ ] Membership requirements, share capital, fees, PMES schedule
 - [ ] Officers and committees (names, positions, photos, consent to publish)
