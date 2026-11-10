@@ -2,6 +2,9 @@ import {
   ArrowRightIcon,
   BadgeCheckIcon,
   CalculatorIcon,
+  ChevronRightIcon,
+  CircleCheckIcon,
+  PhoneIcon,
   DropletIcon,
   DropletsIcon,
   FlameIcon,
@@ -21,7 +24,7 @@ import { Button } from "@/components/ui/button";
 import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
-import { HeroStatusCard } from "@/components/site/hero-status-card";
+import { HeroTiles } from "@/components/site/hero-tiles";
 import { Placeholder } from "@/components/site/placeholder";
 
 function StatTile({ label, value }: { label: string; value: string | null }) {
@@ -71,52 +74,73 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — headline and actions on the left, today's water status on the right */}
-      <section className="relative bg-gradient-to-br from-primary to-primary-dark text-white">
-        <Container className="grid items-center gap-10 pt-12 pb-20 md:pt-16 md:pb-28 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
-          <div>
-            <p className="inline-flex items-center gap-2 rounded-full bg-white/15 px-4 py-1.5 text-sm font-semibold tracking-wide text-white uppercase">
-              <span
-                className="size-2 rounded-full bg-accent"
-                aria-hidden="true"
-              />
-              {t("badge", { year: site.founded.slice(0, 4) })}
-            </p>
-            <h1 className="mt-5 text-4xl leading-[1.08] font-extrabold tracking-tight text-white sm:text-5xl lg:text-6xl">
-              {t("heroTitle")}
-            </h1>
-            <p className="mt-5 text-xl leading-relaxed text-white/90">
-              {t("heroText")}
-            </p>
-            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <Button asChild size="lg" variant="accent">
-                <Link href="/water/advisories">
-                  <DropletIcon aria-hidden="true" />
-                  {t("ctaStatus")}
-                </Link>
-              </Button>
-              <Button
-                asChild
-                size="lg"
-                variant="ghost"
-                className="border border-white/70 text-white hover:bg-white/15"
-              >
-                <Link href="/water/pay">{t("ctaPay")}</Link>
-              </Button>
+      {/* 1. Hero — a rounded panel inset from the page edges */}
+      <section className="px-3 pt-3 md:px-5 md:pt-5">
+        <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
+          <Container className="grid items-center gap-10 py-10 md:py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
+            <div>
+              <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-foreground shadow-sm">
+                <span
+                  className="size-2.5 rounded-full bg-success"
+                  aria-hidden="true"
+                />
+                {t("badge", { year: site.founded.slice(0, 4) })}
+              </p>
+              <p className="mt-6 text-base font-medium text-white/85">
+                {t("eyebrow")}
+              </p>
+              <h1 className="mt-2 text-4xl leading-[1.1] font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                {t("heroTitle")}
+              </h1>
+              <p className="mt-5 text-lg leading-relaxed text-white/90">
+                {t("heroText")}
+              </p>
+              <ul className="mt-5 grid gap-2.5">
+                {(["cda", "owned", "cub"] as const).map((key) => (
+                  <li key={key} className="flex items-center gap-3 font-medium">
+                    <CircleCheckIcon
+                      className="size-6 shrink-0 text-accent"
+                      aria-hidden="true"
+                    />
+                    {t(`checks.${key}`)}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Button asChild size="lg" variant="accent">
+                  <Link href="/water/advisories">
+                    {t("ctaStatus")}
+                    <ChevronRightIcon aria-hidden="true" />
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="lg"
+                  variant="ghost"
+                  className="border border-white/70 text-white hover:bg-white/15"
+                >
+                  <Link href="/water/pay">{t("ctaPay")}</Link>
+                </Button>
+              </div>
+              {site.phone && (
+                <p className="mt-6 flex items-center gap-2 text-white/90">
+                  <PhoneIcon
+                    className="size-5 text-accent"
+                    aria-hidden="true"
+                  />
+                  {t("call")}:
+                  <a
+                    href={`tel:${site.phoneTel}`}
+                    className="inline-flex min-h-12 items-center font-bold text-white underline underline-offset-4"
+                  >
+                    {site.phone}
+                  </a>
+                </p>
+              )}
             </div>
-          </div>
-          <div className="text-foreground">
-            <HeroStatusCard />
-          </div>
-        </Container>
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 1440 60"
-          preserveAspectRatio="none"
-          className="absolute inset-x-0 bottom-0 h-8 w-full fill-background md:h-12"
-        >
-          <path d="M0 30c120-20 240-20 360 0s240 20 360 0 240-20 360 0 240 20 360 0v30H0z" />
-        </svg>
+            <HeroTiles />
+          </Container>
+        </div>
       </section>
 
       {/* 2. Quick actions */}

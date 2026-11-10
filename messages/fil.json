@@ -107,7 +107,14 @@
       "now": "Ngayon",
       "none": "Walang naka-schedule na interruption.",
       "all": "Lahat ng advisory"
-    }
+    },
+    "eyebrow": "Serbisyo ng tubig sa Brgy. Inicbulan",
+    "checks": {
+      "cda": "Rehistrado sa Cooperative Development Authority",
+      "owned": "Pag-aari at pinamamahalaan ng mga miyembro",
+      "cub": "Miyembro ng Cooperative Union of Batangas"
+    },
+    "call": "Tumawag sa opisina"
   },
   "preview": {
     "strip": "Preview: may halimbawang nilalaman pa ang website na ito at hindi pa ito opisyal."
@@ -515,5 +522,9 @@
     "intro": "Ang mga miyembro ang may-ari ng IWMPC. Mag-inquire kung paano sumali.",
     "formHeading": "Mag-inquire tungkol sa membership",
     "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES."
+  },
+  "infoStrip": {
+    "memberOwned": "Pag-aari ng mga miyembro mula {year}",
+    "cda": "CDA Reg. No. {number}"
   }
 }

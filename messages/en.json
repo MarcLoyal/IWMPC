@@ -107,7 +107,14 @@
       "now": "Right now",
       "none": "No scheduled interruptions.",
       "all": "All advisories"
-    }
+    },
+    "eyebrow": "Water service for Brgy. Inicbulan",
+    "checks": {
+      "cda": "Registered with the Cooperative Development Authority",
+      "owned": "Owned and run by its members",
+      "cub": "Member of the Cooperative Union of Batangas"
+    },
+    "call": "Call the office"
   },
   "preview": {
     "strip": "Preview: this website still contains sample content and is not yet official."
@@ -515,5 +522,9 @@
     "intro": "IWMPC is owned by its members. Ask how to join.",
     "formHeading": "Ask about membership",
     "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon."
+  },
+  "infoStrip": {
+    "memberOwned": "Member-owned since {year}",
+    "cda": "CDA Reg. No. {number}"
   }
 }
