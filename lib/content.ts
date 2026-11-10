@@ -235,6 +235,20 @@ export async function getAbout(): Promise<About> {
   return aboutSchema.parse(parseYaml(raw));
 }
 
+/* ---------- Service areas ---------- */
+
+const areasSchema = z.object({
+  placeholder: z.boolean().default(false),
+  areas: z.array(z.string().min(1)).default([]),
+});
+
+export async function getAreas() {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "areas.yaml"), "utf8");
+  return areasSchema.parse(parseYaml(raw));
+}
+
 /* ---------- Bilingual fields ---------- */
 
 /** Reads `<field>_en` for English and falls back to `<field>_fil` when it is empty. */

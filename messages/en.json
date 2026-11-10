@@ -206,8 +206,7 @@
     "mapHeading": "Map",
     "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
     "mapNote": "Approximate location based on the address. The exact office pin is still to be confirmed.",
-    "formHeading": "Send a message",
-    "formSoon": "A contact form will be added here soon."
+    "formHeading": "Send a message"
   },
   "privacy": {
     "title": "Privacy Notice",
@@ -339,8 +338,7 @@
     "stepsHeading": "How to apply",
     "stepsUnconfirmed": "This is a general guide. The cooperative will confirm the exact process.",
     "approval": "Approval is subject to the Credit Committee.",
-    "inquiryHeading": "Ask about a loan",
-    "inquirySoon": "An inquiry form will be added here soon."
+    "inquiryHeading": "Ask about a loan"
   },
   "estimator": {
     "heading": "Loan Estimator",
@@ -381,5 +379,134 @@
     "founded": "Established and registered",
     "cdaReg": "CDA Registration No.",
     "address": "Address"
+  },
+  "forms": {
+    "requiredMark": "required",
+    "optional": "optional",
+    "select": "Choose…",
+    "submit": "Send",
+    "sending": "Sending…",
+    "consent": "I agree that IWMPC may use this information to respond to my message, as described in the <privacy>Privacy Notice</privacy>.",
+    "honeypot": "Leave this field empty",
+    "photoHint": "One image only (JPEG, PNG, or WebP), up to 3 MB. It is reduced in size before sending.",
+    "photoRemove": "Remove photo",
+    "verification": "Verification that you are not a robot",
+    "fields": {
+      "issueType": "Type of problem",
+      "purok": "Purok",
+      "address": "Address or landmark",
+      "accountNumber": "Account number",
+      "name": "Name",
+      "mobile": "Mobile number",
+      "email": "Email",
+      "description": "Description",
+      "photo": "Photo",
+      "propertyType": "Property type",
+      "contactTime": "When can we call you",
+      "message": "Message",
+      "memberId": "Member ID",
+      "loanType": "Loan type",
+      "amount": "Amount you want to borrow (₱)",
+      "subject": "Subject"
+    },
+    "hints": {
+      "mobile": "E.g. 09171234567",
+      "address": "E.g. near the chapel, across from the store",
+      "accountNumber": "Found on your water bill"
+    },
+    "options": {
+      "issueType": {
+        "no_water": "No water",
+        "low_pressure": "Low pressure",
+        "line_leak": "Leak in the line",
+        "meter_leak": "Leak at the meter",
+        "water_quality": "Cloudy or smelly water",
+        "broken_meter": "Broken meter",
+        "other": "Other"
+      },
+      "areas": {
+        "other": "Other / not sure"
+      },
+      "propertyType": {
+        "residential": "Residential (home)",
+        "commercial": "Commercial (business)",
+        "other": "Other"
+      },
+      "contactTime": {
+        "any": "Any time during office hours",
+        "morning": "Morning",
+        "afternoon": "Afternoon"
+      },
+      "subject": {
+        "billing": "Bill and payments",
+        "interruption": "Water interruption",
+        "connection": "New connection",
+        "membership": "Membership",
+        "loans": "Loans",
+        "other": "Other"
+      }
+    },
+    "errors": {
+      "required": "This field is required.",
+      "mobile": "Enter the mobile number as 09XXXXXXXXX or +639XXXXXXXXX.",
+      "email": "The email address is not valid.",
+      "consent": "Your consent is needed before this can be sent.",
+      "tooLong": "This answer is too long.",
+      "amount": "Enter an amount greater than 0.",
+      "photoTooLarge": "The photo is too large (3 MB at most).",
+      "photoType": "Only JPEG, PNG, or WebP images are accepted.",
+      "summary": "Something in the form needs fixing. Please check the fields marked in red."
+    },
+    "failure": {
+      "title": "Not sent",
+      "validation": "An answer is missing or incorrect. Please check the form and try again.",
+      "rate": "Too many attempts. Please wait a few minutes before trying again.",
+      "spam": "We could not verify that you are not a robot. Refresh the page and try again.",
+      "config": "This form is not ready to receive messages yet.",
+      "send": "Something went wrong while sending. Please try again shortly.",
+      "photoTooLarge": "The photo is too large (3 MB at most).",
+      "photoType": "Only JPEG, PNG, or WebP images are accepted.",
+      "call": "If it is urgent, call <phone></phone>."
+    },
+    "success": {
+      "title": "We have received your message",
+      "reference": "Reference number",
+      "keep": "Keep this number for follow-up.",
+      "response": "Expected response time during office hours:",
+      "urgent": "If it is urgent, call <phone></phone>.",
+      "again": "Send another"
+    }
+  },
+  "report": {
+    "title": "Report a Problem",
+    "intro": "A leak, no water, low pressure, or a broken meter? Let us know.",
+    "emergency": "For a major leak or an emergency, call right away:",
+    "formHeading": "Report form"
+  },
+  "connection": {
+    "title": "New Water Connection",
+    "intro": "How to get water connected to your home or business.",
+    "stepsHeading": "Steps",
+    "steps": {
+      "inquire": "Inquire",
+      "requirements": "Submit the requirements",
+      "inspection": "Site inspection",
+      "fees": "Pay the fees",
+      "installation": "Installation",
+      "activation": "Service activation"
+    },
+    "requirementsHeading": "Requirements",
+    "requirementsTbd": "List of requirements:",
+    "feesHeading": "Fees and processing time",
+    "fees": "Connection fees",
+    "processing": "Typical processing time",
+    "formPdf": "Application form (PDF)",
+    "formHeading": "Ask about a new connection"
+  },
+  "membership": {
+    "title": "Membership",
+    "intro": "IWMPC is owned by its members. Ask how to join.",
+    "formHeading": "Ask about membership",
+    "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon."
   }
 }
