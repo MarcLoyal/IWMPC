@@ -14,7 +14,7 @@ export function Footer() {
     "inline-flex min-h-12 items-center underline-offset-4 hover:underline";
 
   return (
-    <footer className="border-t-4 border-accent bg-primary pb-20 text-primary-foreground md:pb-0">
+    <footer className="bg-primary-dark pb-20 text-primary-foreground md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
         <section aria-labelledby="footer-contact">
           <h2 id="footer-contact" className="text-lg text-white">

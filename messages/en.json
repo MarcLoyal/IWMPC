@@ -53,7 +53,7 @@
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
-    "heroText": "A member-owned cooperative since {year}, serving Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "IWMPC supplies water to Brgy. Inicbulan, Bauan, Batangas. Check the water status, estimate your bill, and learn how to join the cooperative.",
     "ctaStatus": "Check Water Status",
     "ctaPay": "How to Pay",
     "quick": {
@@ -100,6 +100,13 @@
     "contact": {
       "heading": "Visit or call us",
       "cta": "All contact details"
+    },
+    "badge": "Member-owned since {year}",
+    "statusCard": {
+      "title": "Water Status",
+      "now": "Right now",
+      "none": "No scheduled interruptions.",
+      "all": "All advisories"
     }
   },
   "preview": {

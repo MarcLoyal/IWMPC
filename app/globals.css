@@ -88,8 +88,8 @@
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
-    letter-spacing: -0.015em;
-    color: var(--primary);
+    letter-spacing: -0.02em;
+    color: var(--foreground);
     text-wrap: balance;
   }
   p {

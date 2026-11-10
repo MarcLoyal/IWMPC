@@ -59,7 +59,7 @@ export default async function WaterPage() {
                   aria-hidden="true"
                 />
                 <span>
-                  <span className="block font-heading text-xl font-bold text-primary">
+                  <span className="block font-heading text-xl font-bold text-foreground">
                     {t(`links.${key}.title`)}
                   </span>
                   <span className="text-muted-foreground">

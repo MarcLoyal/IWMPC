@@ -12,7 +12,7 @@ export function Header() {
   const t = useTranslations("nav");
 
   return (
-    <header className="no-print sticky top-0 z-40 border-b-4 border-accent bg-primary text-primary-foreground shadow-md">
+    <header className="no-print sticky top-0 z-40 border-b bg-background/95 text-foreground backdrop-blur">
       <div className="site-header-inner mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5">
         <Link
           href="/"
@@ -28,7 +28,7 @@ export function Header() {
           />
           <span className="flex flex-col leading-tight">
             <span className="text-xl">{site.shortName}</span>
-            <span className="hidden text-xs font-medium text-white/85 xl:block">
+            <span className="hidden text-xs font-medium text-muted-foreground xl:block">
               {site.legalName}
             </span>
           </span>
@@ -40,7 +40,7 @@ export function Header() {
               <li key={item.key}>
                 <Link
                   href={item.href}
-                  className="inline-flex min-h-12 items-center rounded-lg px-3 font-semibold hover:bg-white/15"
+                  className="inline-flex min-h-12 items-center rounded-lg px-3 font-medium text-foreground/80 hover:bg-surface hover:text-foreground"
                 >
                   {t(item.key)}
                 </Link>
@@ -53,7 +53,7 @@ export function Header() {
           <Suspense fallback={null}>
             <LanguageToggle />
           </Suspense>
-          <Button asChild variant="accent" className="hidden sm:inline-flex">
+          <Button asChild className="hidden sm:inline-flex">
             <Link href={REPORT_HREF}>
               <TriangleAlertIcon aria-hidden="true" />
               {t("report")}

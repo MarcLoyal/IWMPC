@@ -21,6 +21,7 @@ import { Button } from "@/components/ui/button";
 import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
+import { HeroStatusCard } from "@/components/site/hero-status-card";
 import { Placeholder } from "@/components/site/placeholder";
 
 function StatTile({ label, value }: { label: string; value: string | null }) {
@@ -70,40 +71,34 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 1. Hero — gradient stands in for the facility photo until one is provided */}
-      <section className="relative bg-gradient-to-br from-primary to-primary-dark text-white">
-        <Container className="pt-12 pb-20 md:pt-20 md:pb-28">
-          <h1 className="max-w-3xl text-4xl text-white md:text-5xl">
-            {t("heroTitle")}
-          </h1>
-          <p className="mt-4 text-xl text-white/90">
-            {t("heroText", { year: site.founded.slice(0, 4) })}
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="accent">
-              <Link href="/water/advisories">
-                <DropletIcon aria-hidden="true" />
-                {t("ctaStatus")}
-              </Link>
-            </Button>
-            <Button
-              asChild
-              size="lg"
-              variant="ghost"
-              className="border border-white/70 text-white hover:bg-white/15"
-            >
-              <Link href="/water/pay">{t("ctaPay")}</Link>
-            </Button>
+      {/* 1. Hero — headline and actions on the left, today's water status on the right */}
+      <section className="border-b bg-surface">
+        <Container className="grid items-center gap-10 py-12 md:py-20 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
+          <div>
+            <p className="inline-flex items-center gap-2 rounded-full bg-foreground/[0.06] px-4 py-1.5 text-sm font-semibold tracking-wide text-foreground uppercase">
+              <span
+                className="size-2 rounded-full bg-accent ring-1 ring-foreground/20"
+                aria-hidden="true"
+              />
+              {t("badge", { year: site.founded.slice(0, 4) })}
+            </p>
+            <h1 className="mt-5 text-4xl leading-[1.08] font-extrabold tracking-tight sm:text-5xl lg:text-6xl">
+              {t("heroTitle")}
+            </h1>
+            <p className="mt-5 text-xl leading-relaxed text-muted-foreground">
+              {t("heroText")}
+            </p>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <Button asChild size="lg">
+                <Link href="/water/advisories">{t("ctaStatus")}</Link>
+              </Button>
+              <Button asChild size="lg" variant="secondary">
+                <Link href="/water/pay">{t("ctaPay")}</Link>
+              </Button>
+            </div>
           </div>
+          <HeroStatusCard />
         </Container>
-        <svg
-          aria-hidden="true"
-          viewBox="0 0 1440 60"
-          preserveAspectRatio="none"
-          className="absolute inset-x-0 bottom-0 h-8 w-full fill-background md:h-12"
-        >
-          <path d="M0 30c120-20 240-20 360 0s240 20 360 0 240-20 360 0 240 20 360 0v30H0z" />
-        </svg>
       </section>
 
       {/* 2. Quick actions */}
@@ -117,10 +112,10 @@ export default async function HomePage() {
               <li key={key}>
                 <Link
                   href={href}
-                  className="flex h-full min-h-32 flex-col gap-2 rounded-xl border-2 bg-card p-4 shadow-sm hover:border-primary hover:bg-surface"
+                  className="flex h-full min-h-32 flex-col gap-2 rounded-xl border bg-card p-4 shadow-sm hover:border-primary hover:bg-surface"
                 >
                   <Icon className="size-9 text-primary" aria-hidden="true" />
-                  <span className="font-heading text-lg leading-tight font-bold text-primary">
+                  <span className="font-heading text-lg leading-tight font-bold text-foreground">
                     {t(`quick.${key}`)}
                   </span>
                   <span className="text-sm text-muted-foreground">
@@ -178,7 +173,7 @@ export default async function HomePage() {
                   className="flex h-full flex-col gap-2 rounded-xl border bg-card p-5 shadow-sm hover:border-primary"
                 >
                   <Icon className={`size-9 ${tone}`} aria-hidden="true" />
-                  <span className="font-heading text-xl font-bold text-primary">
+                  <span className="font-heading text-xl font-bold text-foreground">
                     {t(`services.${key}`)}
                   </span>
                   <span className="text-muted-foreground">
@@ -230,8 +225,11 @@ export default async function HomePage() {
       </section>
 
       {/* 6. Become a member */}
-      <section aria-labelledby="join-heading" className="bg-primary text-white">
-        <Container className="flex flex-col gap-5 py-10 md:flex-row md:items-center md:justify-between">
+      <section
+        aria-labelledby="join-heading"
+        className="bg-primary-dark text-white"
+      >
+        <Container className="flex flex-col gap-5 py-12 md:flex-row md:items-center md:justify-between">
           <div>
             <h2 id="join-heading" className="text-2xl text-white">
               {t("join.heading")}

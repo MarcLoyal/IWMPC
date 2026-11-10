@@ -14,7 +14,7 @@ export function LanguageToggle({ className }: { className?: string }) {
     <nav
       aria-label={t("label")}
       className={cn(
-        "inline-flex overflow-hidden rounded-lg border border-white/50 text-sm font-semibold",
+        "inline-flex overflow-hidden rounded-lg border border-border text-sm font-semibold",
         className,
       )}
     >
@@ -28,8 +28,8 @@ export function LanguageToggle({ className }: { className?: string }) {
           className={cn(
             "inline-flex min-h-12 min-w-12 items-center justify-center px-3 uppercase",
             locale === active
-              ? "bg-white text-primary"
-              : "text-white hover:bg-white/15",
+              ? "bg-primary-dark text-white"
+              : "text-foreground hover:bg-surface",
           )}
         >
           {locale}
