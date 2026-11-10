@@ -1,0 +1,13 @@
+# Supply status banner shown on every page. Edited by staff (Keystatic, from P5).
+# level: normal | scheduled | outage
+# SAMPLE CONTENT — replace before launch.
+level: scheduled
+title_fil: "[HALIMBAWA] May naka-schedule na interruption sa Nob. 15"
+title_en: "[SAMPLE] Scheduled interruption on Nov 15"
+details_fil: "Pagkukumpuni ng tubo, 8:00 AM hanggang 2:00 PM."
+details_en: "Pipe repair, 8:00 AM to 2:00 PM."
+affected_areas: ["Purok 1", "Purok 3"]
+starts_at: "2026-11-15T08:00:00+08:00"
+ends_at: "2026-11-15T14:00:00+08:00"
+updated_at: "2026-11-10T09:00:00+08:00"
+link: /water/advisories/2026-11-15-pipe-repair
