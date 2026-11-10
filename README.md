@@ -75,9 +75,9 @@ proxy.ts          Locale routing (Next.js 16 name for middleware)
 
 | Phase | Scope                                                                  | Status  |
 | ----- | ---------------------------------------------------------------------- | ------- |
-| P0    | Setup: tooling, tokens, fonts, base layout, CI                         | This PR |
-| P1    | Home, Water hub, Advisories, Status banner, Contact, Privacy, 404      |         |
-| P2    | Rates + bill calculator, Loans + loan estimator                        |         |
+| P0    | Setup: tooling, tokens, fonts, base layout, CI                         | Done    |
+| P1    | Home, Water hub, Advisories, Status banner, Contact, Privacy, 404      | Done    |
+| P2    | Rates + bill calculator, Loans + loan estimator                        | Done    |
 | P3    | Forms (Resend, Turnstile, webhook)                                     |         |
 | P4    | Remaining content pages, News + RSS                                    |         |
 | P5    | Keystatic CMS + staff guide                                            |         |
