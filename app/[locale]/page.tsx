@@ -70,14 +70,14 @@ export default async function HomePage() {
   return (
     <>
       {/* 1. Hero — gradient stands in for the facility photo until one is provided */}
-      <section className="relative bg-gradient-to-br from-primary to-[#083a66] text-white">
+      <section className="relative bg-gradient-to-br from-primary to-primary-dark text-white">
         <Container className="pt-12 pb-20 md:pt-20 md:pb-28">
           <h1 className="max-w-3xl text-4xl text-white md:text-5xl">
             {t("heroTitle")}
           </h1>
           <p className="mt-4 text-xl text-white/90">{t("heroText")}</p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <Button asChild size="lg" variant="inverse">
+            <Button asChild size="lg" variant="accent">
               <Link href="/water/advisories">
                 <DropletIcon aria-hidden="true" />
                 {t("ctaStatus")}
@@ -232,7 +232,7 @@ export default async function HomePage() {
             </h2>
             <p className="mt-2 text-white/90">{t("join.text")}</p>
           </div>
-          <Button asChild size="lg" variant="inverse">
+          <Button asChild size="lg" variant="accent">
             <Link href="/membership">{t("join.cta")}</Link>
           </Button>
         </Container>

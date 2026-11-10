@@ -2,7 +2,8 @@
 
 Nothing on this list may be guessed. Until an item is confirmed, the site shows a visible "Kukumpirmahin pa / To be confirmed" placeholder or hides the section.
 
-- [ ] Logo (vector/PNG) and brand colors
+- [x] Logo — JPEG received and in use (`public/logo.png`). A vector (SVG/AI) or higher-quality original would look sharper; ask if one exists
+- [x] Brand colors — taken from the logo (royal blue, yellow, red)
 - [ ] Photos: office, facility/water source, staff, events, awards
 - [ ] Exact address, office hours, phones, emergency hotline, email
 - [ ] Facebook page and Messenger links
