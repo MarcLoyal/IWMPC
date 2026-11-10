@@ -1,0 +1,35 @@
+# Mission and vision, transcribed from the sign at the cooperative's office.
+# Wording is the cooperative's own; only spelling and hyphenation were tidied
+# (e.g. "iba't ibang", "oportunidad"). Do not reword without the cooperative.
+vision_fil: >-
+  Kooperatibang matatag at maunlad na may nagkakaisang mga kaanib, na may
+  pagpapahalaga sa kalikasan, nagbibigay ng malinis na tubig, lumilikha ng
+  trabaho, produkto at oportunidad na tutugon sa mga pangangailangan ng mga
+  kasapi at ng buong komunidad.
+mission_fil:
+  - Gumawa ng mga programa para sa pag-aaral at pagsasanay para makahikayat ng mga bagong kaanib.
+  - Makapagbigay ng malinis at mataas na kalidad na serbisyo na may pangangalaga sa kalikasan.
+  - >-
+    Magbigay ng malinis na tubig sa pamamagitan ng mga makabagong makinarya at
+    teknolohiya sa pamamatnubay ng mga taong may kaalaman at malasakit para
+    matugunan ang pangangailangan ng lahat na may buhay.
+  - >-
+    Makipag-ugnayan sa iba't ibang sangay ng pamahalaan na may kinalaman sa
+    maayos na pamamalakad ng kooperatiba.
+
+# English versions are a working translation, NOT approved by the cooperative.
+# Set translation_approved to true once they have reviewed it.
+translation_approved: false
+vision_en: >-
+  A strong and progressive cooperative with united members that values the
+  environment, provides clean water, and creates jobs, products and
+  opportunities that answer the needs of its members and the whole community.
+mission_en:
+  - Create education and training programs to encourage new members to join.
+  - Provide clean, high-quality service with care for the environment.
+  - >-
+    Provide clean water through modern machinery and technology, guided by
+    knowledgeable and caring people, to meet the needs of all living things.
+  - >-
+    Coordinate with the different branches of government concerned with the
+    proper management of the cooperative.

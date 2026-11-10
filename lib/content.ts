@@ -216,6 +216,25 @@ export async function getLoans(): Promise<Loans> {
   return loansSchema.parse(parseYaml(raw));
 }
 
+/* ---------- About ---------- */
+
+const aboutSchema = z.object({
+  vision_fil: z.string().min(1),
+  vision_en: optionalText,
+  mission_fil: z.array(z.string().min(1)).min(1),
+  mission_en: z.array(z.string().min(1)).default([]),
+  translation_approved: z.boolean().default(false),
+});
+
+export type About = z.infer<typeof aboutSchema>;
+
+export async function getAbout(): Promise<About> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "about.yaml"), "utf8");
+  return aboutSchema.parse(parseYaml(raw));
+}
+
 /* ---------- Bilingual fields ---------- */
 
 /** Reads `<field>_en` for English and falls back to `<field>_fil` when it is empty. */

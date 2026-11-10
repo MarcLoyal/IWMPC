@@ -8,7 +8,8 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [ ] Exact address, office hours, phones, emergency hotline, email
 - [ ] Facebook page and Messenger links
 - [ ] CDA Registration No. — site currently shows `9520-04002341` from the project brief; **verify against the current Certificate of Registration**
-- [ ] Year founded, history milestones, mission/vision
+- [x] Mission and vision — transcribed from the office sign (`content/about.yaml`); English translation still needs the cooperative's approval
+- [ ] Year founded, history milestones, core values
 - [ ] Water rates per class, minimum charge, penalties, reconnection fee, billing/reading schedule
 - [ ] Payment channels (GCash/Maya/bank? account details they approve to publish)
 - [ ] New connection requirements, fees, processing time, application form PDF

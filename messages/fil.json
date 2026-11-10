@@ -367,5 +367,15 @@
     },
     "disclaimer": "Tantiya lamang. Hindi kasama ang service fee, insurance, at iba pang kaltas. Ang opisyal na kuwenta ay mula sa kooperatiba.",
     "methodUnconfirmed": "Kukumpirmahin pa kung ito ang paraan ng pagkuwenta ng kooperatiba, at kung magkano ang aktuwal na interes."
+  },
+  "about": {
+    "title": "Tungkol sa IWMPC",
+    "intro": "Ang Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) ay kooperatibang pag-aari ng mga miyembro sa Brgy. Inicbulan, Bauan, Batangas.",
+    "vision": "Pananaw",
+    "visionSub": "Vision",
+    "mission": "Tungkulin",
+    "missionSub": "Mission",
+    "unofficialTranslation": "Hindi opisyal na salin sa Ingles. Ang opisyal na bersyon ay nasa Filipino.",
+    "moreSoon": "Malapit nang idagdag dito ang kasaysayan, mga parangal, at iba pang impormasyon tungkol sa kooperatiba."
   }
 }
