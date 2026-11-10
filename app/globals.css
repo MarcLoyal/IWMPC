@@ -60,9 +60,9 @@
   --color-destructive: var(--danger);
   --color-harvest: var(--harvest);
   --color-harvest-strong: var(--harvest-strong);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading:
-    var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Headings use the same family, set bolder and slightly tighter. */
+  --font-heading: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -88,6 +88,7 @@
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
+    letter-spacing: -0.015em;
     color: var(--primary);
     text-wrap: balance;
   }

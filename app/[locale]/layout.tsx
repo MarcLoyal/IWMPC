@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import { getTranslations } from "next-intl/server";
 import { routing } from "@/lib/i18n/routing";
-import { fontBody, fontHeading } from "@/lib/fonts";
+import { fontSans } from "@/lib/fonts";
 import { site } from "@/lib/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
@@ -47,10 +47,7 @@ export default async function LocaleLayout({
   const t = await getTranslations("common");
 
   return (
-    <html
-      lang={locale}
-      className={`${fontBody.variable} ${fontHeading.variable}`}
-    >
+    <html lang={locale} className={fontSans.variable}>
       <body className="flex min-h-dvh flex-col antialiased">
         <NextIntlClientProvider>
           <a
