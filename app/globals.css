@@ -2,18 +2,23 @@
 @import "tw-animate-css";
 
 /*
- * Design tokens (spec §5). Swap the hex values for the cooperative's logo
- * colours once the logo arrives — keep the token names.
+ * Design tokens (spec §5), tuned to the cooperative's logo: a royal-blue "I"
+ * on a yellow disc with a red ring. The logo's colours are pure primaries
+ * (#0000FE, #FFFF01, #FE0002); the site uses calmer shades of the same hues so
+ * long passages of text stay comfortable to read and every pair passes AA.
  */
 :root {
-  --primary: #0b4f8a; /* Deep Water */
+  --primary: #12309e; /* Royal blue, from the logo's "I" */
+  --primary-dark: #0a1c66; /* Hero gradient end, text on yellow */
   --primary-foreground: #ffffff;
-  --accent: #14b8c4; /* Aqua — decoration and text on dark only (fails AA on white) */
-  --surface: #f5fafd;
+  --accent: #ffd60a; /* Logo yellow — on blue or with dark-blue text only (fails AA as text on white) */
+  --accent-foreground: #0a1c66;
+  --brand-red: #d7141a; /* Logo ring — thin decorative stripes */
+  --surface: #f4f6fc;
   --background: #ffffff;
   --foreground: #0f172a;
   --muted: #64748b; /* secondary text */
-  --border: #d5e1ea;
+  --border: #d4daea;
   --success: #16a34a;
   --warning: #f59e0b;
   --danger: #dc2626;
@@ -31,7 +36,10 @@
   --color-foreground: var(--foreground);
   --color-primary: var(--primary);
   --color-primary-foreground: var(--primary-foreground);
+  --color-primary-dark: var(--primary-dark);
   --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-brand-red: var(--brand-red);
   --color-surface: var(--surface);
   /* shadcn naming: `text-muted-foreground` is the spec's --muted text colour */
   --color-muted: var(--surface);
@@ -52,9 +60,9 @@
   --color-destructive: var(--danger);
   --color-harvest: var(--harvest);
   --color-harvest-strong: var(--harvest-strong);
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
-  --font-heading:
-    var(--font-jakarta), var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
+  /* Headings use the same family, set bolder and slightly tighter. */
+  --font-heading: var(--font-public-sans), ui-sans-serif, system-ui, sans-serif;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -80,6 +88,7 @@
     font-family: var(--font-heading);
     font-weight: 700;
     line-height: 1.2;
+    letter-spacing: -0.015em;
     color: var(--primary);
     text-wrap: balance;
   }

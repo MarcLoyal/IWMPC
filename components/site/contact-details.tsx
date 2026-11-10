@@ -51,7 +51,7 @@ export function ContactDetails({
       </Row>
       <Row icon={PhoneIcon} label={t("footer.phone")}>
         {site.phone ? (
-          <a href={`tel:${site.phone}`} className={linkClass}>
+          <a href={`tel:${site.phoneTel}`} className={linkClass}>
             {site.phone}
           </a>
         ) : (

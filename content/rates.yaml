@@ -1,0 +1,37 @@
+# Water rates. Every 0 / empty value below is a PLACEHOLDER ([[TBD]]) waiting
+# for the cooperative's official figures. While any rate is 0 the website shows
+# "rates coming soon" instead of a calculator — never fill these with guesses.
+#
+# How the numbers work: minimum_charge covers the first minimum_cu_m cubic
+# metres. Tiers price each cubic metre beyond that; the first tier must start
+# at minimum_cu_m + 1, tiers must not have gaps, and the last has `to: null`.
+effective_date: "" # e.g. "2026-01-01"
+currency: PHP
+classes:
+  - id: residential
+    label_fil: Residential
+    label_en: Residential
+    minimum_charge: 0 # [[TBD]]
+    minimum_cu_m: 10 # [[TBD]]
+    tiers:
+      - { from: 11, to: 20, rate: 0 } # [[TBD]]
+      - { from: 21, to: 30, rate: 0 } # [[TBD]]
+      - { from: 31, to: null, rate: 0 } # [[TBD]]
+  - id: commercial
+    label_fil: Commercial
+    label_en: Commercial
+    minimum_charge: 0 # [[TBD]]
+    minimum_cu_m: 10 # [[TBD]]
+    tiers:
+      - { from: 11, to: 20, rate: 0 } # [[TBD]]
+      - { from: 21, to: 30, rate: 0 } # [[TBD]]
+      - { from: 31, to: null, rate: 0 } # [[TBD]]
+other_fees:
+  late_penalty_percent: 0 # [[TBD]]
+  reconnection_fee: 0 # [[TBD]]
+billing:
+  reading_schedule_fil: "" # [[TBD]]
+  reading_schedule_en: ""
+  due_days_after_billing: 0 # [[TBD]]
+disconnection_policy_fil: "" # [[TBD]]
+disconnection_policy_en: ""

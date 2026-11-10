@@ -11,6 +11,8 @@ const buttonVariants = cva(
         default: "bg-primary text-primary-foreground hover:bg-primary/90",
         secondary:
           "border border-primary bg-background text-primary hover:bg-surface",
+        // The brand call-to-action: logo yellow with dark-blue text
+        accent: "bg-accent text-accent-foreground hover:bg-accent/90",
         // On the dark header / hero
         inverse: "bg-white text-primary hover:bg-surface",
         ghost: "text-primary hover:bg-surface",

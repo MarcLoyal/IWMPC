@@ -53,7 +53,7 @@
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
-    "heroText": "A member-owned cooperative serving Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "A member-owned cooperative since {year}, serving Brgy. Inicbulan, Bauan, Batangas.",
     "ctaStatus": "Check Water Status",
     "ctaPay": "How to Pay",
     "quick": {
@@ -78,8 +78,8 @@
       "waterDesc": "Water supply, billing, new connections, and problem reports.",
       "rice": "Rice",
       "riceDesc": "The cooperative's rice store.",
-      "fuel": "Fuel",
-      "fuelDesc": "The cooperative's petroleum products.",
+      "lpg": "LPG",
+      "lpgDesc": "LPG cooking gas from the cooperative.",
       "loans": "Loans",
       "loansDesc": "Loans for members.",
       "more": "Learn more"
@@ -205,7 +205,7 @@
     "messenger": "Messenger",
     "mapHeading": "Map",
     "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Approximate location of the barangay. The exact office location is still to be confirmed.",
+    "mapNote": "Approximate location based on the address. The exact office pin is still to be confirmed.",
     "formHeading": "Send a message",
     "formSoon": "A contact form will be added here soon."
   },
@@ -260,5 +260,126 @@
     "pay": "How to Pay",
     "contact": "Contact",
     "home": "Back to Home"
+  },
+  "rates": {
+    "title": "Rates & Bill Calculator",
+    "intro": "What water costs, and an estimate of your monthly bill.",
+    "tableHeading": "Water rates",
+    "effective": "Effective {date}",
+    "effectiveTbd": "Effective date:",
+    "comingSoon": {
+      "title": "Rates coming soon",
+      "body": "We are waiting for the cooperative's official rates. Until then the bill calculator is switched off so it cannot show a wrong amount. For current rates, check your water bill or ask at the office."
+    },
+    "table": {
+      "caption": "Rates for {className}",
+      "bracket": "Consumption",
+      "price": "Price",
+      "minimum": "First {cu_m} m³ (minimum charge)",
+      "range": "{from}–{to} m³",
+      "above": "{from} m³ and above",
+      "perCuM": "{amount} per m³"
+    },
+    "feesHeading": "Other fees and policies",
+    "fees": {
+      "latePenalty": "Late payment penalty",
+      "reconnection": "Reconnection fee",
+      "readingSchedule": "Meter reading schedule",
+      "dueDate": "Due date",
+      "dueDays": "{days, plural, one {# day} other {# days}} after billing",
+      "disconnection": "Disconnection policy"
+    },
+    "readBill": {
+      "heading": "How to read your water bill",
+      "body": "A sample water bill with each part explained will be added here.",
+      "imagePlaceholder": "Placeholder: image of a sample water bill (to be provided by the cooperative)"
+    }
+  },
+  "calculator": {
+    "heading": "Bill Calculator",
+    "consumerClass": "Consumer class",
+    "mode": "How to enter",
+    "modeReadings": "Meter readings",
+    "modeDirect": "Cubic meters used",
+    "previous": "Previous reading",
+    "current": "Current reading",
+    "used": "Cubic meters (m³) used",
+    "hintWhole": "Whole numbers only, e.g. 1234",
+    "compute": "Calculate",
+    "reset": "Reset",
+    "errors": {
+      "invalid": "Enter a whole number (no decimals).",
+      "negative": "The number cannot be negative.",
+      "rollover": "The current reading is lower than the previous one. If the meter rolled over or was replaced, please contact the office."
+    },
+    "result": {
+      "heading": "Estimated bill",
+      "consumption": "Consumption",
+      "cuM": "{value} m³",
+      "minimum": "Minimum charge (first {cu_m} m³)",
+      "tier": "{cu_m} m³ × {rate} ({range})",
+      "total": "Estimated total"
+    },
+    "disclaimer": "Estimate only. The official amount is on your water bill."
+  },
+  "loans": {
+    "title": "Member Loans",
+    "intro": "The cooperative's loans for members.",
+    "services": "Services",
+    "productsHeading": "Loan products",
+    "empty": "Loan products have not been added yet. For current details, please ask at the office.",
+    "purpose": "Purpose",
+    "maxAmount": "Maximum amount",
+    "term": "Maximum term",
+    "months": "{count, plural, one {# month} other {# months}}",
+    "interest": "Interest",
+    "perMonth": "{rate}% per month",
+    "requirements": "Requirements",
+    "eligibility": "Who can apply",
+    "stepsHeading": "How to apply",
+    "stepsUnconfirmed": "This is a general guide. The cooperative will confirm the exact process.",
+    "approval": "Approval is subject to the Credit Committee.",
+    "inquiryHeading": "Ask about a loan",
+    "inquirySoon": "An inquiry form will be added here soon."
+  },
+  "estimator": {
+    "heading": "Loan Estimator",
+    "intro": "Estimate your monthly payment using flat (simple) interest and equal monthly amortization.",
+    "product": "Loan product",
+    "custom": "Custom amount",
+    "amount": "Loan amount (₱)",
+    "rate": "Interest per month (%)",
+    "term": "Term (months)",
+    "compute": "Calculate",
+    "errors": {
+      "principal": "Enter an amount greater than 0.",
+      "rate": "Enter an interest rate of 0 or more.",
+      "term": "Enter a whole number of months, 1 or more.",
+      "maxAmount": "The maximum amount for this loan is {amount}.",
+      "maxTerm": "The maximum term for this loan is {months} months."
+    },
+    "result": {
+      "heading": "Estimate",
+      "monthly": "Monthly payment",
+      "interest": "Total interest",
+      "total": "Total to pay",
+      "principal": "Loan amount"
+    },
+    "disclaimer": "Estimate only. Service fees, insurance and other deductions are not included. The official computation comes from the cooperative.",
+    "methodUnconfirmed": "Still to be confirmed: whether this is how the cooperative computes loans, and the actual interest rates."
+  },
+  "about": {
+    "title": "About IWMPC",
+    "intro": "The Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) is a member-owned cooperative in Brgy. Inicbulan, Bauan, Batangas. It was established and registered with the Cooperative Development Authority (CDA) on July 1, 2003.",
+    "vision": "Vision",
+    "visionSub": "Pananaw",
+    "mission": "Mission",
+    "missionSub": "Tungkulin",
+    "unofficialTranslation": "Unofficial English translation. The official version is in Filipino.",
+    "moreSoon": "The cooperative's history, awards and more will be added here soon.",
+    "factsHeading": "Key details",
+    "founded": "Established and registered",
+    "cdaReg": "CDA Registration No.",
+    "address": "Address"
   }
 }

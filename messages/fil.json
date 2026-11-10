@@ -53,7 +53,7 @@
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
-    "heroText": "Kooperatibang pag-aari ng mga miyembro, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "Kooperatibang pag-aari ng mga miyembro mula pa noong {year}, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
     "ctaStatus": "Tingnan ang Status ng Tubig",
     "ctaPay": "Paano Magbayad",
     "quick": {
@@ -78,8 +78,8 @@
       "waterDesc": "Supply ng tubig, bayarin, bagong koneksyon, at pag-report ng problema.",
       "rice": "Bigas",
       "riceDesc": "Tindahan ng bigas ng kooperatiba.",
-      "fuel": "Gasolina",
-      "fuelDesc": "Mga produktong petrolyo ng kooperatiba.",
+      "lpg": "LPG",
+      "lpgDesc": "LPG (gasul) na panluto mula sa kooperatiba.",
       "loans": "Pautang",
       "loansDesc": "Mga pautang para sa mga miyembro.",
       "more": "Alamin"
@@ -205,7 +205,7 @@
     "messenger": "Messenger",
     "mapHeading": "Mapa",
     "mapTitle": "Mapa ng Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Tinatayang lokasyon ng barangay. Kukumpirmahin pa ang eksaktong lokasyon ng opisina.",
+    "mapNote": "Tinatayang lokasyon batay sa address. Kukumpirmahin pa ang eksaktong pin ng opisina.",
     "formHeading": "Magpadala ng mensahe",
     "formSoon": "Malapit nang idagdag ang contact form dito."
   },
@@ -260,5 +260,126 @@
     "pay": "Paano Magbayad",
     "contact": "Contact",
     "home": "Bumalik sa Home"
+  },
+  "rates": {
+    "title": "Rates at Bill Calculator",
+    "intro": "Magkano ang tubig, at tantiya ng inyong buwanang bill.",
+    "tableHeading": "Presyo ng tubig",
+    "effective": "Epektibo simula {date}",
+    "effectiveTbd": "Petsa ng pagkakabisa:",
+    "comingSoon": {
+      "title": "Malapit nang ilagay ang rates",
+      "body": "Hinihintay pa namin ang opisyal na rates mula sa kooperatiba. Hangga't wala pa, hindi muna gagana ang bill calculator para hindi magbigay ng maling halaga. Para sa kasalukuyang rates, tingnan ang inyong water bill o magtanong sa opisina."
+    },
+    "table": {
+      "caption": "Rates para sa {className}",
+      "bracket": "Konsumo",
+      "price": "Presyo",
+      "minimum": "Unang {cu_m} m³ (minimum charge)",
+      "range": "{from}–{to} m³",
+      "above": "{from} m³ pataas",
+      "perCuM": "{amount} bawat m³"
+    },
+    "feesHeading": "Iba pang bayarin at patakaran",
+    "fees": {
+      "latePenalty": "Multa sa late na bayad",
+      "reconnection": "Reconnection fee",
+      "readingSchedule": "Iskedyul ng pagbasa ng metro",
+      "dueDate": "Due date",
+      "dueDays": "{days, plural, one {# araw} other {# araw}} pagkatapos ng billing",
+      "disconnection": "Patakaran sa disconnection"
+    },
+    "readBill": {
+      "heading": "Paano basahin ang inyong water bill",
+      "body": "Maglalagay kami rito ng halimbawang water bill na may paliwanag sa bawat bahagi.",
+      "imagePlaceholder": "Placeholder: larawan ng halimbawang water bill (ibibigay pa ng kooperatiba)"
+    }
+  },
+  "calculator": {
+    "heading": "Bill Calculator",
+    "consumerClass": "Uri ng consumer",
+    "mode": "Paraan ng paglalagay",
+    "modeReadings": "Reading ng metro",
+    "modeDirect": "Cubic meters na nagamit",
+    "previous": "Nakaraang reading",
+    "current": "Kasalukuyang reading",
+    "used": "Cubic meters (m³) na nagamit",
+    "hintWhole": "Buong numero lamang, hal. 1234",
+    "compute": "Kuwentahin",
+    "reset": "I-reset",
+    "errors": {
+      "invalid": "Maglagay ng buong numero (walang decimal).",
+      "negative": "Hindi puwedeng negative ang numero.",
+      "rollover": "Mas mababa ang kasalukuyang reading kaysa sa nakaraan. Kung umikot o napalitan ang metro, makipag-ugnayan sa opisina."
+    },
+    "result": {
+      "heading": "Tantiya ng bill",
+      "consumption": "Konsumo",
+      "cuM": "{value} m³",
+      "minimum": "Minimum charge (unang {cu_m} m³)",
+      "tier": "{cu_m} m³ × {rate} ({range})",
+      "total": "Tinatayang kabuuan"
+    },
+    "disclaimer": "Tantiya lamang. Ang opisyal na halaga ay nasa inyong water bill."
+  },
+  "loans": {
+    "title": "Pautang para sa mga Miyembro",
+    "intro": "Mga loan ng kooperatiba para sa mga miyembro.",
+    "services": "Serbisyo",
+    "productsHeading": "Mga uri ng loan",
+    "empty": "Hindi pa nailalagay ang mga uri ng loan. Para sa kasalukuyang detalye, magtanong sa opisina.",
+    "purpose": "Layunin",
+    "maxAmount": "Pinakamalaking halaga",
+    "term": "Pinakamahabang termino",
+    "months": "{count, plural, one {# buwan} other {# buwan}}",
+    "interest": "Interes",
+    "perMonth": "{rate}% bawat buwan",
+    "requirements": "Mga requirement",
+    "eligibility": "Sino ang puwede",
+    "stepsHeading": "Paano mag-apply",
+    "stepsUnconfirmed": "Pangkalahatang gabay ito. Kukumpirmahin pa ng kooperatiba ang eksaktong proseso.",
+    "approval": "Ang pag-apruba ay nakadepende sa Credit Committee.",
+    "inquiryHeading": "Mag-inquire tungkol sa loan",
+    "inquirySoon": "Malapit nang idagdag ang inquiry form dito."
+  },
+  "estimator": {
+    "heading": "Loan Estimator",
+    "intro": "Tantiyahin ang buwanang hulog gamit ang flat (simple) na interes at pantay-pantay na buwanang bayad.",
+    "product": "Uri ng loan",
+    "custom": "Sariling halaga",
+    "amount": "Halaga ng loan (₱)",
+    "rate": "Interes bawat buwan (%)",
+    "term": "Termino (buwan)",
+    "compute": "Kuwentahin",
+    "errors": {
+      "principal": "Maglagay ng halagang higit sa 0.",
+      "rate": "Maglagay ng interes na 0 o higit pa.",
+      "term": "Maglagay ng buong bilang ng buwan, 1 o higit pa.",
+      "maxAmount": "Ang pinakamalaking halaga para sa loan na ito ay {amount}.",
+      "maxTerm": "Ang pinakamahabang termino para sa loan na ito ay {months} buwan."
+    },
+    "result": {
+      "heading": "Tantiya",
+      "monthly": "Buwanang hulog",
+      "interest": "Kabuuang interes",
+      "total": "Kabuuang babayaran",
+      "principal": "Halaga ng loan"
+    },
+    "disclaimer": "Tantiya lamang. Hindi kasama ang service fee, insurance, at iba pang kaltas. Ang opisyal na kuwenta ay mula sa kooperatiba.",
+    "methodUnconfirmed": "Kukumpirmahin pa kung ito ang paraan ng pagkuwenta ng kooperatiba, at kung magkano ang aktuwal na interes."
+  },
+  "about": {
+    "title": "Tungkol sa IWMPC",
+    "intro": "Ang Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) ay kooperatibang pag-aari ng mga miyembro sa Brgy. Inicbulan, Bauan, Batangas. Itinatag ito at nirehistro sa Cooperative Development Authority (CDA) noong Hulyo 1, 2003.",
+    "vision": "Pananaw",
+    "visionSub": "Vision",
+    "mission": "Tungkulin",
+    "missionSub": "Mission",
+    "unofficialTranslation": "Hindi opisyal na salin sa Ingles. Ang opisyal na bersyon ay nasa Filipino.",
+    "moreSoon": "Malapit nang idagdag dito ang kasaysayan, mga parangal, at iba pang impormasyon tungkol sa kooperatiba.",
+    "factsHeading": "Mga pangunahing detalye",
+    "founded": "Itinatag at nirehistro",
+    "cdaReg": "CDA Registration No.",
+    "address": "Address"
   }
 }

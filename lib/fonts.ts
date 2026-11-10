@@ -1,17 +1,11 @@
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Public_Sans } from "next/font/google";
 
-// next/font downloads these at build time and self-hosts them: no request to
-// Google from the visitor's browser and no layout shift.
-// latin-ext is needed for the peso sign (₱).
-export const fontBody = Inter({
+// One family for everything: Public Sans is a neutral, institutional typeface
+// drawn for government and public-service websites. next/font downloads it at
+// build time and self-hosts it: no request to Google from the visitor's
+// browser and no layout shift. latin-ext is needed for the peso sign (₱).
+export const fontSans = Public_Sans({
   subsets: ["latin", "latin-ext"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-export const fontHeading = Plus_Jakarta_Sans({
-  subsets: ["latin", "latin-ext"],
-  weight: ["600", "700"],
-  variable: "--font-jakarta",
+  variable: "--font-public-sans",
   display: "swap",
 });

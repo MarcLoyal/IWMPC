@@ -1,0 +1,31 @@
+# Member loans. PLACEHOLDER — the cooperative has not confirmed its loan
+# products yet, so `products` is empty and the page shows an empty state.
+#
+# Example of one product (remove the leading "# " to use):
+#   - id: regular
+#     name_fil: Regular Loan
+#     name_en: Regular Loan
+#     purpose_fil: "..."
+#     purpose_en: "..."
+#     max_amount: 50000            # pesos
+#     max_term_months: 12
+#     monthly_interest_percent: 1.5
+#     requirements_fil: ["...", "..."]
+#     requirements_en: ["...", "..."]
+#     eligibility_fil: "..."
+#     eligibility_en: "..."
+products: []
+
+# Shown under "How to apply". Generic until the cooperative confirms its process.
+steps_confirmed: false
+steps:
+  - title_fil: Magtanong sa opisina
+    title_en: Inquire at the office
+  - title_fil: Ipasa ang application form at mga requirements
+    title_en: Submit the application form and requirements
+  - title_fil: Pagsusuri ng Credit Committee
+    title_en: Review by the Credit Committee
+  - title_fil: Pag-apruba at pagpirma ng mga dokumento
+    title_en: Approval and signing of documents
+  - title_fil: Pag-release ng loan
+    title_en: Release of the loan
