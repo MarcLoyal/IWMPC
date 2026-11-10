@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { EyeIcon, InfoIcon, TargetIcon } from "lucide-react";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getAbout, localized } from "@/lib/content";
+import { site } from "@/lib/site";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
 
@@ -12,8 +13,9 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function AboutPage() {
-  const [t, locale, about] = await Promise.all([
+  const [t, format, locale, about] = await Promise.all([
     getTranslations("about"),
+    getFormatter(),
     getLocale() as Promise<Locale>,
     getAbout(),
   ]);
@@ -31,6 +33,38 @@ export default async function AboutPage() {
         crumbs={[{ label: t("title") }]}
       />
       <Container className="grid gap-10 py-8">
+        <section aria-labelledby="facts-heading">
+          <h2 id="facts-heading" className="sr-only">
+            {t("factsHeading")}
+          </h2>
+          <dl className="grid gap-4 sm:grid-cols-3">
+            <div className="rounded-xl border bg-card p-5">
+              <dt className="text-sm font-semibold text-muted-foreground">
+                {t("founded")}
+              </dt>
+              <dd className="mt-1 text-xl font-bold text-primary">
+                {format.dateTime(new Date(`${site.founded}T00:00:00+08:00`), {
+                  dateStyle: "long",
+                })}
+              </dd>
+            </div>
+            <div className="rounded-xl border bg-card p-5">
+              <dt className="text-sm font-semibold text-muted-foreground">
+                {t("cdaReg")}
+              </dt>
+              <dd className="mt-1 text-xl font-bold text-primary">
+                {site.cdaRegistrationNo}
+              </dd>
+            </div>
+            <div className="rounded-xl border bg-card p-5">
+              <dt className="text-sm font-semibold text-muted-foreground">
+                {t("address")}
+              </dt>
+              <dd className="mt-1 text-lg font-semibold">{site.address}</dd>
+            </div>
+          </dl>
+        </section>
+
         {showTranslationNote && (
           <p className="flex items-start gap-2 text-muted-foreground">
             <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />

@@ -31,7 +31,7 @@ export function Footer() {
             <dt className="font-semibold">{t("phone")}</dt>
             <dd>
               {site.phone ? (
-                <a href={`tel:${site.phone}`} className="underline">
+                <a href={`tel:${site.phoneTel}`} className="underline">
                   {site.phone}
                 </a>
               ) : (

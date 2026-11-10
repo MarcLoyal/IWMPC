@@ -15,7 +15,8 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
 import { activeAdvisories, getAdvisories } from "@/lib/content";
-import { REPORT_HREF, site } from "@/lib/site";
+import { getNow } from "@/lib/content";
+import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
@@ -75,7 +76,9 @@ export default async function HomePage() {
           <h1 className="max-w-3xl text-4xl text-white md:text-5xl">
             {t("heroTitle")}
           </h1>
-          <p className="mt-4 text-xl text-white/90">{t("heroText")}</p>
+          <p className="mt-4 text-xl text-white/90">
+            {t("heroText", { year: site.founded.slice(0, 4) })}
+          </p>
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <Button asChild size="lg" variant="accent">
               <Link href="/water/advisories">
@@ -196,7 +199,10 @@ export default async function HomePage() {
           </h2>
           <dl className="mt-4 grid gap-4 sm:grid-cols-3">
             <StatTile label={t("trust.members")} value={null} />
-            <StatTile label={t("trust.years")} value={null} />
+            <StatTile
+              label={t("trust.years")}
+              value={String(yearsOfService(await getNow()))}
+            />
             <StatTile label={t("trust.households")} value={null} />
           </dl>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2">

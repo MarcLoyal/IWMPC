@@ -42,7 +42,7 @@ export function MobileActionBar() {
         <li className="flex flex-1">
           {/* Dials directly once the cooperative confirms its number; until then, the contact page. */}
           {site.phone ? (
-            <a href={`tel:${site.phone}`} className={itemClass}>
+            <a href={`tel:${site.phoneTel}`} className={itemClass}>
               <PhoneIcon className={iconClass} aria-hidden="true" />
               {t("call")}
             </a>

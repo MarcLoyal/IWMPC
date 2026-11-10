@@ -53,7 +53,7 @@
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
-    "heroText": "A member-owned cooperative serving Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "A member-owned cooperative since {year}, serving Brgy. Inicbulan, Bauan, Batangas.",
     "ctaStatus": "Check Water Status",
     "ctaPay": "How to Pay",
     "quick": {
@@ -205,7 +205,7 @@
     "messenger": "Messenger",
     "mapHeading": "Map",
     "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Approximate location of the barangay. The exact office location is still to be confirmed.",
+    "mapNote": "Approximate location based on the address. The exact office pin is still to be confirmed.",
     "formHeading": "Send a message",
     "formSoon": "A contact form will be added here soon."
   },
@@ -370,12 +370,16 @@
   },
   "about": {
     "title": "About IWMPC",
-    "intro": "The Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) is a member-owned cooperative in Brgy. Inicbulan, Bauan, Batangas.",
+    "intro": "The Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) is a member-owned cooperative in Brgy. Inicbulan, Bauan, Batangas. It was established and registered with the Cooperative Development Authority (CDA) on July 1, 2003.",
     "vision": "Vision",
     "visionSub": "Pananaw",
     "mission": "Mission",
     "missionSub": "Tungkulin",
     "unofficialTranslation": "Unofficial English translation. The official version is in Filipino.",
-    "moreSoon": "The cooperative's history, awards and more will be added here soon."
+    "moreSoon": "The cooperative's history, awards and more will be added here soon.",
+    "factsHeading": "Key details",
+    "founded": "Established and registered",
+    "cdaReg": "CDA Registration No.",
+    "address": "Address"
   }
 }

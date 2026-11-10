@@ -53,7 +53,7 @@
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
-    "heroText": "Kooperatibang pag-aari ng mga miyembro, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "Kooperatibang pag-aari ng mga miyembro mula pa noong {year}, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
     "ctaStatus": "Tingnan ang Status ng Tubig",
     "ctaPay": "Paano Magbayad",
     "quick": {
@@ -205,7 +205,7 @@
     "messenger": "Messenger",
     "mapHeading": "Mapa",
     "mapTitle": "Mapa ng Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Tinatayang lokasyon ng barangay. Kukumpirmahin pa ang eksaktong lokasyon ng opisina.",
+    "mapNote": "Tinatayang lokasyon batay sa address. Kukumpirmahin pa ang eksaktong pin ng opisina.",
     "formHeading": "Magpadala ng mensahe",
     "formSoon": "Malapit nang idagdag ang contact form dito."
   },
@@ -370,12 +370,16 @@
   },
   "about": {
     "title": "Tungkol sa IWMPC",
-    "intro": "Ang Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) ay kooperatibang pag-aari ng mga miyembro sa Brgy. Inicbulan, Bauan, Batangas.",
+    "intro": "Ang Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) ay kooperatibang pag-aari ng mga miyembro sa Brgy. Inicbulan, Bauan, Batangas. Itinatag ito at nirehistro sa Cooperative Development Authority (CDA) noong Hulyo 1, 2003.",
     "vision": "Pananaw",
     "visionSub": "Vision",
     "mission": "Tungkulin",
     "missionSub": "Mission",
     "unofficialTranslation": "Hindi opisyal na salin sa Ingles. Ang opisyal na bersyon ay nasa Filipino.",
-    "moreSoon": "Malapit nang idagdag dito ang kasaysayan, mga parangal, at iba pang impormasyon tungkol sa kooperatiba."
+    "moreSoon": "Malapit nang idagdag dito ang kasaysayan, mga parangal, at iba pang impormasyon tungkol sa kooperatiba.",
+    "factsHeading": "Mga pangunahing detalye",
+    "founded": "Itinatag at nirehistro",
+    "cdaReg": "CDA Registration No.",
+    "address": "Address"
   }
 }

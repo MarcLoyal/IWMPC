@@ -12,19 +12,36 @@ export const site = {
   placeholderContent: true,
   shortName: "IWMPC",
   legalName: "Inicbulan Waterworks Multi-Purpose Cooperative",
-  // From the project brief; verify against the current Certificate of Registration.
+  // Matches the project brief and the cooperative's Facebook page; still worth
+  // checking against the current Certificate of Registration.
   cdaRegistrationNo: "9520-04002341",
-  address: "Waterworks Office, Brgy. Inicbulan, Bauan, Batangas",
+  // Address, phone and founding date are from the cooperative's Facebook page.
+  address: "Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201",
+  /** Established and registered with the CDA (ISO date). */
+  founded: "2003-07-01",
   officeHours: null as string | null,
-  phone: null as string | null,
+  /** As people write it locally… */
+  phone: "0910 491 8512" as string | null,
+  /** …and in international form for tel: links. */
+  phoneTel: "+639104918512" as string | null,
   emergencyHotline: null as string | null,
   email: null as string | null,
   facebookUrl: null as string | null,
   messengerUrl: null as string | null,
   /** Search text for the embedded map — no hand-picked coordinates. */
-  mapQuery: "Inicbulan, Bauan, Batangas",
+  mapQuery: "Purok Yakal, Inicbulan, Bauan, Batangas",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const;
+
+/** Whole years since the cooperative was founded, as of `now`. */
+export function yearsOfService(now: Date): number {
+  const founded = new Date(`${site.founded}T00:00:00+08:00`);
+  let years = now.getFullYear() - founded.getFullYear();
+  const anniversary = new Date(founded);
+  anniversary.setFullYear(now.getFullYear());
+  if (now < anniversary) years -= 1;
+  return years;
+}
 
 /** Feature flags (spec §8). They move to the Keystatic site settings in P5. */
 export const flags = {
