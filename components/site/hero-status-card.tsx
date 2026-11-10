@@ -56,7 +56,7 @@ export async function HeroStatusCard() {
   return (
     <section
       aria-labelledby="hero-status"
-      className="rounded-2xl border bg-card p-5 shadow-[0_10px_40px_-12px_rgb(15_23_42/0.18)] md:p-6"
+      className="rounded-2xl border bg-card p-5 shadow-[0_18px_50px_-12px_rgb(0_0_0/0.45)] md:p-6"
     >
       <div className="flex items-baseline justify-between gap-3">
         <h2 id="hero-status" className="text-lg">

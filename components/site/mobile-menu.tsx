@@ -17,7 +17,7 @@ import {
 export function MobileMenu() {
   const t = useTranslations("nav");
   const linkClass =
-    "flex min-h-14 items-center rounded-lg px-3 text-lg font-semibold text-foreground hover:bg-surface";
+    "flex min-h-14 items-center rounded-lg px-3 text-lg font-semibold text-primary hover:bg-surface";
 
   return (
     <Sheet>
@@ -25,14 +25,14 @@ export function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-foreground hover:bg-surface lg:hidden"
+          className="text-white hover:bg-white/15 lg:hidden"
         >
           <MenuIcon className="size-7" aria-hidden="true" />
           <span className="sr-only">{t("openMenu")}</span>
         </Button>
       </SheetTrigger>
       <SheetContent closeLabel={t("closeMenu")}>
-        <SheetTitle className="font-heading text-xl font-bold text-foreground">
+        <SheetTitle className="font-heading text-xl font-bold text-primary">
           {t("menu")}
         </SheetTitle>
         <SheetDescription className="sr-only">{t("label")}</SheetDescription>
