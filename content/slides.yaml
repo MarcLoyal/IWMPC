@@ -1,0 +1,15 @@
+# Photo slideshow at the top of the home page (right under the header).
+# Put image files in public/slides/ and list them here, in order.
+# Landscape images around 1600 × 960 px work best; one slide is fine too.
+# PLACEHOLDERS — replace with the cooperative's own pictures.
+slides:
+  - image: /slides/placeholder-1.jpg
+    width: 1600
+    height: 960
+    alt_fil: "Placeholder: collage ng mga larawan ng IWMPC (papalitan pa)"
+    alt_en: "Placeholder: collage of IWMPC photos (to be replaced)"
+  - image: /slides/placeholder-2.jpg
+    width: 1600
+    height: 960
+    alt_fil: "Placeholder: mga serbisyo ng IWMPC (papalitan pa)"
+    alt_en: "Placeholder: IWMPC services (to be replaced)"

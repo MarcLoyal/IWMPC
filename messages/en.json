@@ -546,5 +546,12 @@
   "infoStrip": {
     "welcome": "Welcome to the official IWMPC website!",
     "hours": "Office hours"
+  },
+  "slideshow": {
+    "label": "IWMPC photos",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "goTo": "Go to photo {number}",
+    "position": "Photo {current} of {total}"
   }
 }

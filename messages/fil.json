@@ -546,5 +546,12 @@
   "infoStrip": {
     "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",
     "hours": "Oras ng opisina"
+  },
+  "slideshow": {
+    "label": "Mga larawan ng IWMPC",
+    "previous": "Nakaraang larawan",
+    "next": "Susunod na larawan",
+    "goTo": "Pumunta sa larawan {number}",
+    "position": "Larawan {current} ng {total}"
   }
 }

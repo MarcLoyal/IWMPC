@@ -249,6 +249,29 @@ export async function getAreas() {
   return areasSchema.parse(parseYaml(raw));
 }
 
+/* ---------- Home page slideshow ---------- */
+
+const slidesSchema = z.object({
+  slides: z
+    .array(
+      z.object({
+        image: z.string().startsWith("/"),
+        width: z.number().int().positive(),
+        height: z.number().int().positive(),
+        alt_fil: z.string().min(1),
+        alt_en: optionalText,
+      }),
+    )
+    .default([]),
+});
+
+export async function getSlides() {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "slides.yaml"), "utf8");
+  return slidesSchema.parse(parseYaml(raw)).slides;
+}
+
 /* ---------- Bilingual fields ---------- */
 
 /** Reads `<field>_en` for English and falls back to `<field>_fil` when it is empty. */

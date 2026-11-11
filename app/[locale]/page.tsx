@@ -14,16 +14,23 @@ import {
   WalletIcon,
   WheatIcon,
 } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { getLocale, getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
-import { activeAdvisories, getAdvisories } from "@/lib/content";
-import { getNow } from "@/lib/content";
+import {
+  activeAdvisories,
+  getAdvisories,
+  getNow,
+  getSlides,
+  localized,
+} from "@/lib/content";
+import type { Locale } from "@/lib/i18n/routing";
 import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
+import { HeroSlideshow } from "@/components/site/hero-slideshow";
 import { HeroTiles } from "@/components/site/hero-tiles";
 import { Placeholder } from "@/components/site/placeholder";
 
@@ -40,6 +47,8 @@ function StatTile({ label, value }: { label: string; value: string | null }) {
 
 export default async function HomePage() {
   const t = await getTranslations("home");
+  const locale = (await getLocale()) as Locale;
+  const slides = await getSlides();
   const view = await getAdvisoryViewer();
   const advisories = activeAdvisories(await getAdvisories()).slice(0, 3);
 
@@ -74,6 +83,16 @@ export default async function HomePage() {
 
   return (
     <>
+      {/* 0. Photo slideshow, right under the header */}
+      <HeroSlideshow
+        slides={slides.map((slide) => ({
+          src: slide.image,
+          width: slide.width,
+          height: slide.height,
+          alt: localized(slide, "alt", locale),
+        }))}
+      />
+
       {/* 1. Hero — a rounded panel inset from the page edges */}
       <section className="px-3 pt-3 md:px-5 md:pt-5">
         <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
