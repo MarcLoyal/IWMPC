@@ -53,8 +53,11 @@ export function HeroSlideshow({ slides }: { slides: Slide[] }) {
         if (Math.abs(delta) > 50) go(delta < 0 ? 1 : -1);
       }}
     >
-      {/* Height follows the picture on phones and is capped on large screens */}
-      <div className="relative mx-auto aspect-[5/3] max-h-[min(78vh,46rem)] w-full">
+      {/* The band takes the first picture's shape on phones and is capped on large screens */}
+      <div
+        className="relative mx-auto max-h-[min(84vh,52rem)] w-full"
+        style={{ aspectRatio: `${slides[0].width} / ${slides[0].height}` }}
+      >
         {slides.map((slide, i) => {
           const active = i === index;
           return (
