@@ -5,7 +5,8 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [x] Logo — JPEG received and in use (`public/logo.png`). A vector (SVG/AI) or higher-quality original would look sharper; ask if one exists
 - [x] Brand colors — taken from the logo (royal blue, yellow, red)
 - [x] Photos received so far: award night and trophy (Matatag na Kooperatiba Award 2026), office team photo. Originals kept in `public/images/`
-- [ ] More photos: facility/water source, office exterior, events. The shared Drive folder has ~20 more, but only one file is link-shared; the rest need "Anyone with the link" access
+- [x] 20 more photos from the shared Drive folder (staff, water line work, meetings, PMES, General Assembly, community activities, events), all used in the home page collage
+- [ ] Photos still wanted: the water source/facility and the office exterior on their own, for the About and Water Quality pages
 - [ ] Consent of the people pictured to appear on the website
 - [x] Address (Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201), phone (0910 491 8512) and founding date (July 1, 2003) — from the cooperative's Facebook page
 - [ ] Office hours, emergency hotline (is it the same number?), email, exact map pin of the office

@@ -258,6 +258,7 @@ const slidesSchema = z.object({
         image: z.string().startsWith("/"),
         width: z.number().int().positive(),
         height: z.number().int().positive(),
+        background: z.string().startsWith("/").optional(),
         alt_fil: z.string().min(1),
         alt_en: optionalText,
       }),

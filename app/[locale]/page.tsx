@@ -89,6 +89,7 @@ export default async function HomePage() {
           src: slide.image,
           width: slide.width,
           height: slide.height,
+          background: slide.background,
           alt: localized(slide, "alt", locale),
         }))}
       />

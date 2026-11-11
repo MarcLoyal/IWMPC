@@ -1,10 +1,15 @@
 # Photo slideshow at the top of the home page (right under the header).
 # Put image files in public/slides/ and list them here, in order.
+# When you replace a picture, give the new file a new name: browsers and the
+# image cache keep serving the old picture under an old name.
 # Landscape images around 1600 × 960 px work best. With one slide the arrows
 # and dots hide themselves.
+# `background` (optional) is the picture shown behind and around a slide.
+# Without it, a blurred copy of the slide itself is used.
 slides:
-  - image: /slides/iwmpc-collage.jpg
+  - image: /slides/iwmpc-collage-v2.jpg
     width: 1600
-    height: 960
-    alt_fil: "Collage ng IWMPC: ang logo ng kooperatiba, ang pagtanggap ng Matatag na Kooperatiba Award 2026 sa entablado, ang tropeo (2nd Place, Outstanding Cooperative, Small Category), at ang mga kawani sa opisina."
-    alt_en: "IWMPC collage: the cooperative's logo, receiving the Matatag na Kooperatiba Award 2026 on stage, the trophy (2nd Place, Outstanding Cooperative, Small Category), and the staff at the office."
+    height: 994
+    background: /slides/background-assembly.jpg
+    alt_fil: "Collage ng IWMPC. Sa itaas: ang logo ng kooperatiba, ang pagtanggap ng Matatag na Kooperatiba Award 2026 sa entablado, at ang tropeo (2nd Place, Outstanding Cooperative, Small Category). Sa ibaba: dalawampu't isang larawan ng mga kawani at opisina, pagkukumpuni ng linya ng tubig, mga pulong at seminar ng mga miyembro, General Assembly, mga gawain para sa komunidad, at mga pagdiriwang."
+    alt_en: "IWMPC collage. Top: the cooperative's logo, receiving the Matatag na Kooperatiba Award 2026 on stage, and the trophy (2nd Place, Outstanding Cooperative, Small Category). Below: twenty-one photos of the staff and office, water line work, member meetings and seminars, the General Assembly, community activities, and celebrations."

@@ -6,11 +6,19 @@ import { ChevronLeftIcon, ChevronRightIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 
-export type Slide = { src: string; width: number; height: number; alt: string };
+export type Slide = {
+  src: string;
+  width: number;
+  height: number;
+  alt: string;
+  /** Picture shown behind the slide; defaults to a blurred copy of the slide. */
+  background?: string;
+};
 
 /**
  * Photo slideshow under the header. Each picture is shown whole, centred on a
- * blurred, enlarged copy of itself so any shape of image fills the band.
+ * background picture (or a blurred copy of itself) so any shape of image fills
+ * the band.
  * Slides change only when the visitor asks (arrows, dots, swipe, arrow keys):
  * there is no autoplay.
  */
@@ -64,15 +72,23 @@ export function HeroSlideshow({ slides }: { slides: Slide[] }) {
                 active ? "opacity-100" : "pointer-events-none opacity-0",
               )}
             >
-              {/* Blurred backdrop: decorative copy of the same picture */}
+              {/* Backdrop (decorative): a chosen photo under a blue wash, or a blurred copy of the slide */}
               <Image
-                src={slide.src}
+                src={slide.background ?? slide.src}
                 alt=""
                 fill
                 sizes="100vw"
                 priority={i === 0}
-                className="scale-110 object-cover blur-2xl brightness-75"
+                className={cn(
+                  "object-cover",
+                  slide.background
+                    ? "scale-105 blur-[2px]"
+                    : "scale-110 blur-2xl brightness-75",
+                )}
               />
+              {slide.background && (
+                <div className="absolute inset-0 bg-primary-dark/70" />
+              )}
               <Image
                 src={slide.src}
                 alt={slide.alt}
@@ -80,7 +96,7 @@ export function HeroSlideshow({ slides }: { slides: Slide[] }) {
                 height={slide.height}
                 sizes="(min-width: 1280px) 1200px, 100vw"
                 priority={i === 0}
-                className="relative mx-auto h-full w-auto max-w-full object-contain md:py-4"
+                className="relative mx-auto h-full w-auto max-w-full object-contain md:py-4 md:drop-shadow-2xl"
               />
             </div>
           );
