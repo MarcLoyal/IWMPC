@@ -1,15 +1,10 @@
 # Photo slideshow at the top of the home page (right under the header).
 # Put image files in public/slides/ and list them here, in order.
-# Landscape images around 1600 × 960 px work best; one slide is fine too.
-# PLACEHOLDERS — replace with the cooperative's own pictures.
+# Landscape images around 1600 × 960 px work best. With one slide the arrows
+# and dots hide themselves.
 slides:
-  - image: /slides/placeholder-1.jpg
+  - image: /slides/iwmpc-collage.jpg
     width: 1600
     height: 960
-    alt_fil: "Placeholder: collage ng mga larawan ng IWMPC (papalitan pa)"
-    alt_en: "Placeholder: collage of IWMPC photos (to be replaced)"
-  - image: /slides/placeholder-2.jpg
-    width: 1600
-    height: 960
-    alt_fil: "Placeholder: mga serbisyo ng IWMPC (papalitan pa)"
-    alt_en: "Placeholder: IWMPC services (to be replaced)"
+    alt_fil: "Collage ng IWMPC: ang logo ng kooperatiba, ang pagtanggap ng Matatag na Kooperatiba Award 2026 sa entablado, ang tropeo (2nd Place, Outstanding Cooperative, Small Category), at ang mga kawani sa opisina."
+    alt_en: "IWMPC collage: the cooperative's logo, receiving the Matatag na Kooperatiba Award 2026 on stage, the trophy (2nd Place, Outstanding Cooperative, Small Category), and the staff at the office."
