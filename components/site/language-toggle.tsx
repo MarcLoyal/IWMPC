@@ -5,7 +5,14 @@ import { Link, usePathname } from "@/lib/i18n/navigation";
 import { locales } from "@/lib/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export function LanguageToggle({ className }: { className?: string }) {
+export function LanguageToggle({
+  className,
+  compact = false,
+}: {
+  className?: string;
+  /** Smaller buttons for the top strip. */
+  compact?: boolean;
+}) {
   const t = useTranslations("language");
   const active = useLocale();
   const pathname = usePathname();
@@ -26,7 +33,8 @@ export function LanguageToggle({ className }: { className?: string }) {
           lang={locale}
           aria-current={locale === active ? "true" : undefined}
           className={cn(
-            "inline-flex min-h-12 min-w-12 items-center justify-center px-3 uppercase",
+            "inline-flex items-center justify-center px-3 uppercase",
+            compact ? "min-h-8 min-w-10 text-xs" : "min-h-12 min-w-12",
             locale === active
               ? "bg-primary text-white"
               : "text-primary hover:bg-surface",

@@ -23,7 +23,27 @@
     "report": "I-report ang Problema",
     "openMenu": "Buksan ang menu",
     "closeMenu": "Isara ang menu",
-    "menu": "Menu"
+    "menu": "Menu",
+    "aboutShort": "Tungkol",
+    "callUs": "Tawag sa Amin",
+    "sub": {
+      "advisories": "Status at mga Advisory",
+      "rates": "Rates at Bill Calculator",
+      "pay": "Paano Magbayad",
+      "newConnection": "Bagong Koneksyon",
+      "report": "I-report ang Problema",
+      "quality": "Kalidad ng Tubig",
+      "serviceArea": "Sakop na Lugar",
+      "rice": "Bigas",
+      "lpg": "LPG",
+      "loans": "Pautang",
+      "about": "Pananaw at Tungkulin",
+      "officers": "Mga Opisyal",
+      "transparency": "Transparency",
+      "faq": "Mga Tanong (FAQ)",
+      "privacy": "Privacy Notice"
+    },
+    "submenu": "Submenu ng {name}"
   },
   "language": {
     "label": "Wika",
@@ -524,7 +544,7 @@
     "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES."
   },
   "infoStrip": {
-    "memberOwned": "Pag-aari ng mga miyembro mula {year}",
-    "cda": "CDA Reg. No. {number}"
+    "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",
+    "hours": "Oras ng opisina"
   }
 }

@@ -57,13 +57,15 @@ export function Footer() {
             {t("linksHeading")}
           </h2>
           <ul className="mt-2">
-            {primaryNav.map((item) => (
-              <li key={item.key}>
-                <Link href={item.href} className={linkClass}>
-                  {tn(item.key)}
-                </Link>
-              </li>
-            ))}
+            {primaryNav
+              .filter((item) => item.key !== "aboutShort")
+              .map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={linkClass}>
+                    {tn(item.key)}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </nav>
 

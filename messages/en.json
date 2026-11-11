@@ -23,7 +23,27 @@
     "report": "Report a Problem",
     "openMenu": "Open menu",
     "closeMenu": "Close menu",
-    "menu": "Menu"
+    "menu": "Menu",
+    "aboutShort": "About",
+    "callUs": "Call Us",
+    "sub": {
+      "advisories": "Status & Advisories",
+      "rates": "Rates & Bill Calculator",
+      "pay": "How to Pay",
+      "newConnection": "New Connection",
+      "report": "Report a Problem",
+      "quality": "Water Quality",
+      "serviceArea": "Service Area",
+      "rice": "Rice",
+      "lpg": "LPG",
+      "loans": "Loans",
+      "about": "Vision & Mission",
+      "officers": "Officers",
+      "transparency": "Transparency",
+      "faq": "FAQ",
+      "privacy": "Privacy Notice"
+    },
+    "submenu": "{name} submenu"
   },
   "language": {
     "label": "Language",
@@ -524,7 +544,7 @@
     "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon."
   },
   "infoStrip": {
-    "memberOwned": "Member-owned since {year}",
-    "cda": "CDA Reg. No. {number}"
+    "welcome": "Welcome to the official IWMPC website!",
+    "hours": "Office hours"
   }
 }

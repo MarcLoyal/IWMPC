@@ -51,13 +51,54 @@ export const flags = {
   show_water_quality: true,
 } as const;
 
-export const primaryNav = [
-  { key: "water", href: "/water" },
-  { key: "services", href: "/services" },
+export const REPORT_HREF = "/water/report";
+
+export type NavChild = { key: string; href: string };
+export type NavItem = { key: string; href: string; children?: NavChild[] };
+
+/**
+ * Main navigation. Items with `children` open a dropdown on hover or keyboard
+ * focus on desktop and are listed indented in the mobile menu.
+ * Labels: `nav.<key>` for items, `nav.sub.<key>` for children.
+ */
+export const primaryNav: NavItem[] = [
+  {
+    key: "water",
+    href: "/water",
+    children: [
+      { key: "advisories", href: "/water/advisories" },
+      { key: "rates", href: "/water/rates" },
+      { key: "pay", href: "/water/pay" },
+      { key: "newConnection", href: "/water/new-connection" },
+      { key: "report", href: REPORT_HREF },
+      { key: "quality", href: "/water/quality" },
+      { key: "serviceArea", href: "/water/service-area" },
+    ],
+  },
+  {
+    key: "services",
+    href: "/services",
+    children: [
+      { key: "rice", href: "/services/rice" },
+      { key: "lpg", href: "/services/lpg" },
+      { key: "loans", href: "/services/loans" },
+    ],
+  },
   { key: "membership", href: "/membership" },
   { key: "news", href: "/news" },
+  {
+    key: "aboutShort",
+    href: "/about",
+    children: [
+      { key: "about", href: "/about" },
+      { key: "officers", href: "/about/officers" },
+      { key: "transparency", href: "/about/transparency" },
+      { key: "faq", href: "/faq" },
+      { key: "privacy", href: "/privacy" },
+    ],
+  },
   { key: "contact", href: "/contact" },
-] as const;
+];
 
 export const secondaryNav = [
   { key: "about", href: "/about" },
@@ -65,5 +106,3 @@ export const secondaryNav = [
   { key: "faq", href: "/faq" },
   { key: "privacy", href: "/privacy" },
 ] as const;
-
-export const REPORT_HREF = "/water/report";
