@@ -547,11 +547,16 @@
     "welcome": "Welcome to the official IWMPC website!",
     "hours": "Office hours"
   },
-  "slideshow": {
+  "collage": {
     "label": "IWMPC photos",
+    "band": "We are IWMPC",
+    "bandName": "Inicbulan Waterworks Multi-Purpose Cooperative",
+    "bandSince": "Since {year}",
+    "enlarge": "Enlarge photo",
+    "close": "Close",
     "previous": "Previous photo",
     "next": "Next photo",
-    "goTo": "Go to photo {number}",
-    "position": "Photo {current} of {total}"
+    "position": "Photo {current} of {total}",
+    "hint": "Tap a photo to enlarge it."
   }
 }

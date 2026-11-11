@@ -14,23 +14,16 @@ import {
   WalletIcon,
   WheatIcon,
 } from "lucide-react";
-import { getLocale, getTranslations } from "next-intl/server";
+import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
-import {
-  activeAdvisories,
-  getAdvisories,
-  getNow,
-  getSlides,
-  localized,
-} from "@/lib/content";
-import type { Locale } from "@/lib/i18n/routing";
+import { activeAdvisories, getAdvisories, getNow } from "@/lib/content";
 import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
-import { HeroSlideshow } from "@/components/site/hero-slideshow";
+import { PhotoCollage } from "@/components/site/photo-collage";
 import { HeroTiles } from "@/components/site/hero-tiles";
 import { Placeholder } from "@/components/site/placeholder";
 
@@ -47,8 +40,6 @@ function StatTile({ label, value }: { label: string; value: string | null }) {
 
 export default async function HomePage() {
   const t = await getTranslations("home");
-  const locale = (await getLocale()) as Locale;
-  const slides = await getSlides();
   const view = await getAdvisoryViewer();
   const advisories = activeAdvisories(await getAdvisories()).slice(0, 3);
 
@@ -83,16 +74,8 @@ export default async function HomePage() {
 
   return (
     <>
-      {/* 0. Photo slideshow, right under the header */}
-      <HeroSlideshow
-        slides={slides.map((slide) => ({
-          src: slide.image,
-          width: slide.width,
-          height: slide.height,
-          background: slide.background,
-          alt: localized(slide, "alt", locale),
-        }))}
-      />
+      {/* 0. Photo collage, right under the header */}
+      <PhotoCollage />
 
       {/* 1. Hero — a rounded panel inset from the page edges */}
       <section className="px-3 pt-3 md:px-5 md:pt-5">

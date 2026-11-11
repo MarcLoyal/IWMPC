@@ -249,28 +249,31 @@ export async function getAreas() {
   return areasSchema.parse(parseYaml(raw));
 }
 
-/* ---------- Home page slideshow ---------- */
+/* ---------- Home page photo collage ---------- */
 
-const slidesSchema = z.object({
-  slides: z
-    .array(
-      z.object({
-        image: z.string().startsWith("/"),
-        width: z.number().int().positive(),
-        height: z.number().int().positive(),
-        background: z.string().startsWith("/").optional(),
-        alt_fil: z.string().min(1),
-        alt_en: optionalText,
-      }),
-    )
-    .default([]),
+const picture = z.object({
+  image: z.string().startsWith("/"),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  focus: z.enum(["top", "center", "bottom"]).default("center"),
+  alt_fil: z.string().min(1),
+  alt_en: optionalText,
 });
 
-export async function getSlides() {
+const collageSchema = z.object({
+  background: z.string().startsWith("/").optional(),
+  award: picture,
+  trophy: picture,
+  photos: z.array(picture).default([]),
+});
+
+export type Collage = z.infer<typeof collageSchema>;
+
+export async function getCollage(): Promise<Collage> {
   "use cache";
   cacheLife("max");
-  const raw = await fs.readFile(path.join(CONTENT_DIR, "slides.yaml"), "utf8");
-  return slidesSchema.parse(parseYaml(raw)).slides;
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "collage.yaml"), "utf8");
+  return collageSchema.parse(parseYaml(raw));
 }
 
 /* ---------- Bilingual fields ---------- */

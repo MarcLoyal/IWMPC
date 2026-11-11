@@ -63,6 +63,7 @@ proxy.ts          Locale routing (Next.js 16 name for middleware)
 
 - `content/status.yaml` drives the supply status banner on every page. A scheduled interruption whose `ends_at` has passed shows as "normal" automatically; an outage stays until staff clear it.
 - `content/advisories/<date>-<name>.mdoc` — one file per advisory. The front matter holds the fields, the body is the Filipino text, and `body_en` is the optional English text. Any `*_en` field left empty falls back to Filipino.
+- `content/collage.yaml` lists the home page photo collage: the award photo, the trophy, the grid photos (each with its own description in both languages) and the background. Photos live in `public/images/`.
 - `content/rates.yaml` holds the water rates. While any rate is still `0` the Rates page shows "rates coming soon" instead of the bill calculator; the build fails if tiers have gaps or overlaps.
 - `content/loans.yaml` holds loan products (empty until confirmed) and the application steps.
 - The current advisories and status are **samples** (`sample: true`, titles prefixed `[HALIMBAWA]` / `[SAMPLE]`).

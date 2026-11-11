@@ -547,11 +547,16 @@
     "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",
     "hours": "Oras ng opisina"
   },
-  "slideshow": {
+  "collage": {
     "label": "Mga larawan ng IWMPC",
+    "band": "Kami ang IWMPC",
+    "bandName": "Inicbulan Waterworks Multi-Purpose Cooperative",
+    "bandSince": "Mula {year}",
+    "enlarge": "Palakihin ang larawan",
+    "close": "Isara",
     "previous": "Nakaraang larawan",
     "next": "Susunod na larawan",
-    "goTo": "Pumunta sa larawan {number}",
-    "position": "Larawan {current} ng {total}"
+    "position": "Larawan {current} ng {total}",
+    "hint": "Pindutin ang larawan para palakihin."
   }
 }
