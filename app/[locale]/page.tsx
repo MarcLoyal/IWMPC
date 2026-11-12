@@ -58,19 +58,19 @@ export default async function HomePage() {
       key: "rice",
       href: "/services/rice",
       icon: WheatIcon,
-      image: "/images/services/rice.svg",
+      image: "/images/services/rice.jpg",
     },
     {
       key: "lpg",
       href: "/services/lpg",
       icon: FlameIcon,
-      image: "/images/services/lpg.svg",
+      image: "/images/services/lpg.jpg",
     },
     {
       key: "loans",
       href: "/services/loans",
       icon: HandCoinsIcon,
-      image: "/images/services/loans.svg",
+      image: "/images/services/loans.jpg",
     },
   ] as const;
 
