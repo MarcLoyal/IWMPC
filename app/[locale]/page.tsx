@@ -1,9 +1,6 @@
 import {
   ArrowRightIcon,
   BadgeCheckIcon,
-  ChevronRightIcon,
-  CircleCheckIcon,
-  PhoneIcon,
   DropletIcon,
   DropletsIcon,
   FlameIcon,
@@ -79,70 +76,11 @@ export default async function HomePage() {
       {/* 0. Photo collage, right under the header */}
       <PhotoCollage />
 
-      {/* 1. Hero — a rounded panel inset from the page edges */}
+      {/* 1. Hero — latest news, in a rounded panel inset from the page edges */}
       <section className="px-3 pt-3 md:px-5 md:pt-5">
         <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
-          <Container className="grid items-center gap-10 py-10 md:py-12 lg:grid-cols-[1.05fr_1fr] lg:gap-12">
-            <div>
-              <p className="inline-flex items-center gap-2 rounded-full bg-white px-4 py-1.5 text-sm font-semibold text-foreground shadow-sm">
-                <span
-                  className="size-2.5 rounded-full bg-success"
-                  aria-hidden="true"
-                />
-                {t("badge", { year: site.founded.slice(0, 4) })}
-              </p>
-              <p className="mt-6 text-base font-medium text-white/85">
-                {t("eyebrow")}
-              </p>
-              <h1 className="mt-2 text-4xl leading-[1.1] font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                {t("heroTitle")}
-              </h1>
-              <p className="mt-5 text-lg leading-relaxed text-white/90">
-                {t("heroText")}
-              </p>
-              <ul className="mt-5 grid gap-2.5">
-                {(["cda", "owned", "cub"] as const).map((key) => (
-                  <li key={key} className="flex items-center gap-3 font-medium">
-                    <CircleCheckIcon
-                      className="size-6 shrink-0 text-accent"
-                      aria-hidden="true"
-                    />
-                    {t(`checks.${key}`)}
-                  </li>
-                ))}
-              </ul>
-              <div className="mt-7 flex flex-col gap-3 sm:flex-row sm:items-center">
-                <Button asChild size="lg" variant="accent">
-                  <Link href="/water/advisories">
-                    {t("ctaStatus")}
-                    <ChevronRightIcon aria-hidden="true" />
-                  </Link>
-                </Button>
-                <Button
-                  asChild
-                  size="lg"
-                  variant="ghost"
-                  className="border border-white/70 text-white hover:bg-white/15"
-                >
-                  <Link href="/water/pay">{t("ctaPay")}</Link>
-                </Button>
-              </div>
-              {site.phone && (
-                <p className="mt-6 flex items-center gap-2 text-white/90">
-                  <PhoneIcon
-                    className="size-5 text-accent"
-                    aria-hidden="true"
-                  />
-                  {t("call")}:
-                  <a
-                    href={`tel:${site.phoneTel}`}
-                    className="inline-flex min-h-12 items-center font-bold text-white underline underline-offset-4"
-                  >
-                    {site.phone}
-                  </a>
-                </p>
-              )}
-            </div>
+          <Container className="py-10 md:py-12">
+            <h1 className="sr-only">{t("heroTitle")}</h1>
             <HeroNews />
           </Container>
         </div>
