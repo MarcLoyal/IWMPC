@@ -29,17 +29,17 @@ photos:
     focus: top
     alt_fil: "Ang mga kawani ng IWMPC sa loob ng opisina."
     alt_en: "The IWMPC staff inside the office."
+  - image: /images/collage/09-office-staff.jpg
+    width: 1125
+    height: 1500
+    alt_fil: "Apat na kawani ng IWMPC sa opisina, sa harap ng iluminadong logo ng kooperatiba."
+    alt_en: "Four IWMPC staff in the office, in front of the cooperative's lit-up logo."
   - image: /images/collage/02-technical-crew.jpg
     width: 1400
     height: 1050
     focus: top
     alt_fil: "Mga tauhan ng IWMPC na naka-uniporme sa opisina."
     alt_en: "IWMPC personnel in uniform at the office."
-  - image: /images/collage/03-water-line-work.jpg
-    width: 944
-    height: 1260
-    alt_fil: "Mga tauhang nag-aayos ng linya ng tubig."
-    alt_en: "Crew members working on a water line."
   - image: /images/collage/04-office-front.jpg
     width: 1400
     height: 1054
@@ -68,11 +68,11 @@ photos:
     alt_fil: "Isang pulong sa paligid ng mesa sa opisina."
     alt_en: "A meeting around the table at the office."
   # Community work and celebrations
-  - image: /images/collage/09-office-staff.jpg
-    width: 1125
-    height: 1500
-    alt_fil: "Apat na kawani ng IWMPC sa opisina, sa harap ng iluminadong logo ng kooperatiba."
-    alt_en: "Four IWMPC staff in the office, in front of the cooperative's lit-up logo."
+  - image: /images/collage/03-water-line-work.jpg
+    width: 944
+    height: 1260
+    alt_fil: "Mga tauhang nag-aayos ng linya ng tubig."
+    alt_en: "Crew members working on a water line."
   - image: /images/collage/10-gift-giving.jpg
     width: 1400
     height: 1050
