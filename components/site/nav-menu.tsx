@@ -8,7 +8,9 @@ import { primaryNav } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 /**
- * Desktop navigation. Items with children drop down when the mouse moves over
+ * Desktop navigation (from 1220px wide; narrower screens get the menu button).
+ * Labels never wrap: sizes step up with the screen so the longer Filipino
+ * labels stay on one line. Items with children drop down when the mouse moves over
  * them — no click needed — and also when reached with the keyboard. Escape
  * closes the open menu. Every parent is still a normal link to its own page,
  * so touch screens and browsers without JavaScript lose nothing.
@@ -18,12 +20,15 @@ export function NavMenu() {
   const [open, setOpen] = useState<string | null>(null);
 
   return (
-    <nav aria-label={t("label")} className="mx-auto hidden lg:block">
+    <nav
+      aria-label={t("label")}
+      className="mx-auto hidden pl-4 min-[1220px]:block min-[1366px]:pl-6 2xl:pl-8"
+    >
       <ul className="flex items-center">
         {primaryNav.map((item) => {
           const isOpen = open === item.key;
           const linkClass =
-            "inline-flex min-h-12 items-center gap-1 rounded-full px-2.5 font-semibold text-primary hover:bg-surface xl:px-4";
+            "inline-flex min-h-12 items-center gap-1 rounded-full px-1.5 text-[0.8rem] font-semibold whitespace-nowrap text-primary hover:bg-surface min-[1366px]:px-2 min-[1366px]:text-[0.9rem] 2xl:px-3 2xl:text-[0.95rem]";
 
           if (!item.children) {
             return (

@@ -28,7 +28,7 @@ export function InfoStrip() {
 
   return (
     <div className="no-print hidden border-b bg-surface text-sm text-foreground md:block">
-      <div className="mx-auto flex max-w-7xl items-center gap-x-6 px-4 py-1">
+      <div className="mx-auto flex max-w-7xl items-center gap-x-6 px-4 py-1 2xl:max-w-[100rem]">
         {(site.facebookUrl || site.messengerUrl) && (
           <ul className="flex items-center">
             {site.facebookUrl && (

@@ -13,10 +13,10 @@ export function Header() {
 
   return (
     <header className="no-print sticky top-0 z-40 border-b bg-background/95 text-foreground shadow-sm backdrop-blur">
-      <div className="site-header-inner mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5">
+      <div className="site-header-inner mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 2xl:max-w-[100rem]">
         <Link
           href="/"
-          className="flex min-h-12 items-center gap-2 rounded-lg font-heading font-bold"
+          className="flex min-h-12 shrink-0 items-center gap-2 rounded-lg font-heading font-bold"
         >
           <Image
             src="/logo-v2.png"
@@ -28,7 +28,7 @@ export function Header() {
           />
           <span className="flex flex-col leading-tight">
             <span className="text-2xl text-primary">{site.shortName}</span>
-            <span className="hidden max-w-44 text-[0.65rem] leading-tight font-semibold tracking-wide text-muted-foreground uppercase sm:block lg:hidden 2xl:block">
+            <span className="hidden max-w-44 text-[0.65rem] leading-tight font-semibold tracking-wide text-muted-foreground uppercase min-[1220px]:hidden sm:block">
               {site.legalName}
             </span>
           </span>
@@ -36,7 +36,7 @@ export function Header() {
 
         <NavMenu />
 
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
+        <div className="ml-auto flex items-center gap-2 min-[1220px]:ml-0">
           {/* On tablet and up the language toggle lives in the top strip */}
           <div className="md:hidden">
             <Suspense fallback={null}>
@@ -46,7 +46,7 @@ export function Header() {
           {(site.hotline ?? site.phone) && (
             <a
               href={`tel:${site.hotline ? site.hotlineTel : site.phoneTel}`}
-              className="hidden items-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-primary-foreground shadow-md hover:bg-primary-dark md:flex xl:gap-3 xl:px-4"
+              className="hidden shrink-0 items-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-primary-foreground shadow-md hover:bg-primary-dark md:flex xl:gap-3 xl:px-4"
             >
               <PhoneCallIcon
                 className="size-7 shrink-0 text-accent xl:size-8"

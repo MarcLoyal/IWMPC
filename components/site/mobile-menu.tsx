@@ -25,7 +25,7 @@ export function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-primary hover:bg-surface lg:hidden"
+          className="text-primary hover:bg-surface min-[1220px]:hidden"
         >
           <MenuIcon className="size-7" aria-hidden="true" />
           <span className="sr-only">{t("openMenu")}</span>
