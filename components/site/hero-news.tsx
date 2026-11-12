@@ -40,6 +40,7 @@ export async function HeroNews() {
         {t("title")}
       </p>
       <p className="mt-1 text-white/90">{t("text")}</p>
+      <p className="mt-3 text-white/90">{t("more")}</p>
     </section>
   );
 }
