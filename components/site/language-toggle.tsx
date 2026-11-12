@@ -2,23 +2,32 @@
 
 import { useLocale, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/lib/i18n/navigation";
-import { locales } from "@/lib/i18n/routing";
+import type { Locale } from "@/lib/i18n/routing";
 import { cn } from "@/lib/utils";
 
-export function LanguageToggle({ className }: { className?: string }) {
+export function LanguageToggle({
+  className,
+  compact = false,
+}: {
+  className?: string;
+  /** Smaller buttons for the top strip. */
+  compact?: boolean;
+}) {
   const t = useTranslations("language");
   const active = useLocale();
   const pathname = usePathname();
+  // Shown English first, then Filipino, with each language written out in full.
+  const order: Locale[] = ["en", "fil"];
 
   return (
     <nav
       aria-label={t("label")}
       className={cn(
-        "inline-flex overflow-hidden rounded-lg border border-white/50 text-sm font-semibold",
+        "inline-flex overflow-hidden rounded-full border border-border text-sm font-semibold",
         className,
       )}
     >
-      {locales.map((locale) => (
+      {order.map((locale) => (
         <Link
           key={locale}
           href={pathname}
@@ -26,14 +35,16 @@ export function LanguageToggle({ className }: { className?: string }) {
           lang={locale}
           aria-current={locale === active ? "true" : undefined}
           className={cn(
-            "inline-flex min-h-12 min-w-12 items-center justify-center px-3 uppercase",
+            "inline-flex items-center justify-center",
+            compact
+              ? "min-h-8 px-3 text-xs"
+              : "min-h-12 px-2.5 text-xs sm:px-3 sm:text-sm",
             locale === active
-              ? "bg-white text-primary"
-              : "text-white hover:bg-white/15",
+              ? "bg-primary text-white"
+              : "text-primary hover:bg-surface",
           )}
         >
-          {locale}
-          <span className="sr-only"> — {t(locale)}</span>
+          {t(locale)}
         </Link>
       ))}
     </nav>

@@ -1,6 +1,7 @@
 import { useFormatter, useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { primaryNav, secondaryNav, site } from "@/lib/site";
+import { OfficeHours } from "./office-hours";
 import { Placeholder } from "./placeholder";
 
 // Stamped at build time; every content change triggers a new build.
@@ -27,7 +28,9 @@ export function Footer() {
             <dt className="font-semibold">{t("address")}</dt>
             <dd>{site.address}</dd>
             <dt className="font-semibold">{t("hours")}</dt>
-            <dd>{site.officeHours ?? <Placeholder />}</dd>
+            <dd>
+              <OfficeHours />
+            </dd>
             <dt className="font-semibold">{t("phone")}</dt>
             <dd>
               {site.phone ? (
@@ -38,6 +41,16 @@ export function Footer() {
                 <Placeholder />
               )}
             </dd>
+            {site.hotline && (
+              <>
+                <dt className="font-semibold">{t("hotline")}</dt>
+                <dd>
+                  <a href={`tel:${site.hotlineTel}`} className="underline">
+                    {site.hotline}
+                  </a>
+                </dd>
+              </>
+            )}
             <dt className="font-semibold">{t("email")}</dt>
             <dd>
               {site.email ? (
@@ -57,13 +70,15 @@ export function Footer() {
             {t("linksHeading")}
           </h2>
           <ul className="mt-2">
-            {primaryNav.map((item) => (
-              <li key={item.key}>
-                <Link href={item.href} className={linkClass}>
-                  {tn(item.key)}
-                </Link>
-              </li>
-            ))}
+            {primaryNav
+              .filter((item) => item.key !== "aboutUs")
+              .map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={linkClass}>
+                    {tn(item.key)}
+                  </Link>
+                </li>
+              ))}
           </ul>
         </nav>
 

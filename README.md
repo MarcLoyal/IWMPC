@@ -48,6 +48,10 @@ lib/i18n/         Locale routing, navigation helpers, request config
 lib/site.ts       Site-wide facts, navigation and feature flags (null = not yet confirmed)
 lib/billing.ts    Water bill arithmetic (unit-tested)
 lib/loan.ts       Flat-interest loan estimate (unit-tested)
+lib/forms/        Form definitions and server-side processing (unit-tested)
+lib/submissions.ts  Where submissions go: email, webhook (Phase 2: database)
+emails/           React Email template for the staff inbox
+app/actions/      Server action behind every form
 messages/         UI strings: fil.json, en.json (must have identical keys)
 content/          status.yaml, advisories/*.mdoc, … (managed by Keystatic from P5)
 docs/             Content checklist, staff guide (P5)
@@ -59,10 +63,27 @@ proxy.ts          Locale routing (Next.js 16 name for middleware)
 
 - `content/status.yaml` drives the supply status banner on every page. A scheduled interruption whose `ends_at` has passed shows as "normal" automatically; an outage stays until staff clear it.
 - `content/advisories/<date>-<name>.mdoc` — one file per advisory. The front matter holds the fields, the body is the Filipino text, and `body_en` is the optional English text. Any `*_en` field left empty falls back to Filipino.
+- `content/collage.yaml` lists the home page photo collage: the award photo, the trophy, the grid photos (each with its own description in both languages) and the background. Photos live in `public/images/`.
 - `content/rates.yaml` holds the water rates. While any rate is still `0` the Rates page shows "rates coming soon" instead of the bill calculator; the build fails if tiers have gaps or overlaps.
 - `content/loans.yaml` holds loan products (empty until confirmed) and the application steps.
 - The current advisories and status are **samples** (`sample: true`, titles prefixed `[HALIMBAWA]` / `[SAMPLE]`).
 - While `placeholderContent` is `true` in `lib/site.ts`, every page shows a "preview" strip and search engines are told not to index the site. Switch it off at launch.
+
+## Forms
+
+All five forms (report a problem, new connection, membership, loan inquiry, contact) share one component, `components/forms/form-shell.tsx`, and one definition file, `lib/forms/definitions.ts` (fields + zod schemas, used in the browser and again on the server).
+
+A submission is validated, checked for spam (honeypot, per-IP rate limit, Cloudflare Turnstile), given a reference number such as `RPT-20261110-K7QD`, and then emailed. **Nothing is stored on the server.**
+
+| To turn on                                                              | Set these environment variables                                                                |
+| ----------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| Email to the cooperative (required for the forms to work in production) | `RESEND_API_KEY`, `FORM_TO_EMAIL`, `FORM_FROM_EMAIL` (a sender on a domain verified in Resend) |
+| Turnstile spam check                                                    | `TURNSTILE_SITE_KEY` and `TURNSTILE_SECRET_KEY` (both, or it stays off)                        |
+| JSON copy to GoHighLevel / n8n                                          | `FORM_WEBHOOK_URL`                                                                             |
+
+Without the email variables, a deployed form answers "not ready to receive messages" and shows the phone number. In local development (`npm run dev`) submissions are printed to the terminal instead.
+
+`lib/submissions.ts` is the Phase 2 hook: add a Supabase sink there and no form needs to change.
 
 ## Ground rules
 
@@ -78,7 +99,7 @@ proxy.ts          Locale routing (Next.js 16 name for middleware)
 | P0    | Setup: tooling, tokens, fonts, base layout, CI                         | Done   |
 | P1    | Home, Water hub, Advisories, Status banner, Contact, Privacy, 404      | Done   |
 | P2    | Rates + bill calculator, Loans + loan estimator                        | Done   |
-| P3    | Forms (Resend, Turnstile, webhook)                                     |        |
+| P3    | Forms (Resend, Turnstile, webhook)                                     | Done   |
 | P4    | Remaining content pages, News + RSS                                    |        |
 | P5    | Keystatic CMS + staff guide                                            |        |
 | P6    | SEO, OG images, security headers, print styles, Playwright smoke tests |        |

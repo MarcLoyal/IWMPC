@@ -1,64 +1,65 @@
 import { Suspense } from "react";
 import Image from "next/image";
-import { TriangleAlertIcon } from "lucide-react";
+import { PhoneCallIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
-import { primaryNav, REPORT_HREF, site } from "@/lib/site";
-import { Button } from "@/components/ui/button";
+import { site } from "@/lib/site";
 import { LanguageToggle } from "./language-toggle";
 import { MobileMenu } from "./mobile-menu";
+import { NavMenu } from "./nav-menu";
 
 export function Header() {
   const t = useTranslations("nav");
 
   return (
-    <header className="no-print sticky top-0 z-40 border-b-4 border-accent bg-primary text-primary-foreground shadow-md">
-      <div className="site-header-inner mx-auto flex max-w-6xl items-center gap-3 px-4 py-2.5">
+    <header className="no-print sticky top-0 z-40 border-b bg-background/95 text-foreground shadow-sm backdrop-blur">
+      <div className="site-header-inner mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 2xl:max-w-[100rem]">
         <Link
           href="/"
-          className="flex min-h-12 items-center gap-2 rounded-lg font-heading font-bold"
+          className="flex min-h-12 shrink-0 items-center gap-2 rounded-lg font-heading font-bold"
         >
           <Image
-            src="/logo.png"
+            src="/logo-v2.png"
             alt=""
-            width={48}
-            height={48}
+            width={56}
+            height={56}
             priority
-            className="size-11 rounded-full sm:size-12"
+            className="size-11 rounded-full sm:size-14"
           />
           <span className="flex flex-col leading-tight">
-            <span className="text-xl">{site.shortName}</span>
-            <span className="hidden text-xs font-medium text-white/85 xl:block">
+            <span className="text-2xl text-primary">{site.shortName}</span>
+            <span className="hidden max-w-44 text-[0.65rem] leading-tight font-semibold tracking-wide text-muted-foreground uppercase min-[1220px]:hidden sm:block">
               {site.legalName}
             </span>
           </span>
         </Link>
 
-        <nav aria-label={t("label")} className="ml-auto hidden lg:block">
-          <ul className="flex items-center gap-1">
-            {primaryNav.map((item) => (
-              <li key={item.key}>
-                <Link
-                  href={item.href}
-                  className="inline-flex min-h-12 items-center rounded-lg px-3 font-semibold hover:bg-white/15"
-                >
-                  {t(item.key)}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        <NavMenu />
 
-        <div className="ml-auto flex items-center gap-2 lg:ml-0">
-          <Suspense fallback={null}>
-            <LanguageToggle />
-          </Suspense>
-          <Button asChild variant="accent" className="hidden sm:inline-flex">
-            <Link href={REPORT_HREF}>
-              <TriangleAlertIcon aria-hidden="true" />
-              {t("report")}
-            </Link>
-          </Button>
+        <div className="ml-auto flex items-center gap-2 min-[1220px]:ml-0">
+          {/* On tablet and up the language toggle lives in the top strip */}
+          <div className="md:hidden">
+            <Suspense fallback={null}>
+              <LanguageToggle />
+            </Suspense>
+          </div>
+          {(site.hotline ?? site.phone) && (
+            <a
+              href={`tel:${site.hotline ? site.hotlineTel : site.phoneTel}`}
+              className="hidden shrink-0 items-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-primary-foreground shadow-md hover:bg-primary-dark md:flex xl:gap-3 xl:px-4"
+            >
+              <PhoneCallIcon
+                className="size-7 shrink-0 text-accent xl:size-8"
+                aria-hidden="true"
+              />
+              <span className="flex flex-col leading-tight">
+                <span className="text-sm font-semibold">{t("callUs")}</span>
+                <span className="text-lg font-extrabold whitespace-nowrap xl:text-xl">
+                  {site.hotline ?? site.phone}
+                </span>
+              </span>
+            </a>
+          )}
           <MobileMenu />
         </div>
       </div>

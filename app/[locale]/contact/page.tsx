@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getTranslations } from "next-intl/server";
 import { site } from "@/lib/site";
+import { ContactForm } from "@/components/forms";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
 import { MapEmbed } from "@/components/site/map-embed";
@@ -29,7 +30,7 @@ export default async function ContactPage() {
             {t("officeHeading")}
           </h2>
           <div className="mt-4">
-            <ContactDetails showEmergency />
+            <ContactDetails showHotline />
           </div>
           <dl className="mt-6 grid gap-2 text-lg sm:grid-cols-[auto_1fr] sm:gap-x-4">
             <dt className="font-semibold">{t("facebook")}</dt>
@@ -59,10 +60,9 @@ export default async function ContactPage() {
           </dl>
 
           <h2 className="mt-10 text-2xl">{t("formHeading")}</h2>
-          {/* The contact form is built in P3 */}
-          <p className="mt-3 rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
-            {t("formSoon")}
-          </p>
+          <div className="mt-4">
+            <ContactForm />
+          </div>
         </section>
 
         <section aria-labelledby="map-heading">

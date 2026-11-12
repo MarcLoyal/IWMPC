@@ -1,0 +1,90 @@
+# Photo collage at the top of the home page (right under the header).
+# It is built from separate pictures so it stays readable on phones: each
+# photo can be tapped to see it large, and each has its own description.
+#
+# To change a photo: put the new file in public/images/collage/ and point
+# `image` at it. `focus` (top | center | bottom) says which part to keep when
+# the tile crops the picture.
+background: /images/collage/background-assembly.jpg
+
+award:
+  image: /images/awards/matatag-na-kooperatiba-2026-awarding.jpg
+  width: 1600
+  height: 1122
+  alt_fil: "Tinatanggap ng IWMPC ang Matatag na Kooperatiba Award 2026 sa entablado, hawak ang tropeo at ang tseke."
+  alt_en: "IWMPC receiving the Matatag na Kooperatiba Award 2026 on stage, holding the trophy and the cheque."
+
+trophy:
+  image: /images/awards/matatag-na-kooperatiba-2026-trophy.webp
+  width: 749
+  height: 900
+  alt_fil: "Tropeo ng Matatag na Kooperatiba Award 2026: Inicbulan Waterworks Multipurpose Cooperative, 2nd Place, Outstanding Cooperative (Small Category)."
+  alt_en: "Matatag na Kooperatiba Award 2026 trophy: Inicbulan Waterworks Multipurpose Cooperative, 2nd Place, Outstanding Cooperative (Small Category)."
+
+photos:
+  # The team, the office and the water service
+  - image: /images/collage/01-office-team.jpg
+    width: 1400
+    height: 1050
+    focus: top
+    alt_fil: "Ang mga kawani ng IWMPC sa loob ng opisina."
+    alt_en: "The IWMPC staff inside the office."
+  - image: /images/collage/02-technical-crew.jpg
+    width: 1400
+    height: 1050
+    focus: top
+    alt_fil: "Mga tauhan ng IWMPC na naka-uniporme sa opisina."
+    alt_en: "IWMPC personnel in uniform at the office."
+  - image: /images/collage/03-water-line-work.jpg
+    width: 944
+    height: 1260
+    alt_fil: "Mga tauhang nag-aayos ng linya ng tubig."
+    alt_en: "Crew members working on a water line."
+  - image: /images/collage/04-office-front.jpg
+    width: 1400
+    height: 1054
+    focus: top
+    alt_fil: "Mga kawani at opisyal sa harap ng opisina ng IWMPC."
+    alt_en: "Staff and officers in front of the IWMPC office."
+  # The members
+  - image: /images/collage/05-general-assembly.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Mga miyembrong nakatayo sa isang pagtitipon ng kooperatiba."
+    alt_en: "Members standing at a cooperative gathering."
+  - image: /images/collage/06-pmes-seminar.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Tagapagsalita sa Pre-Membership Education Seminar (PMES) ng IWMPC."
+    alt_en: "A speaker at IWMPC's Pre-Membership Education Seminar (PMES)."
+  - image: /images/collage/07-seminar-certificates.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Mga dumalo sa seminar na hawak ang kanilang mga sertipiko."
+    alt_en: "Seminar participants holding their certificates."
+  - image: /images/collage/08-meeting.jpg
+    width: 1400
+    height: 790
+    alt_fil: "Isang pulong sa paligid ng mesa sa opisina."
+    alt_en: "A meeting around the table at the office."
+  # Community work and celebrations
+  - image: /images/collage/09-community-service.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Mga kawani ng IWMPC sa isang gawaing pangkomunidad."
+    alt_en: "IWMPC staff at a community activity."
+  - image: /images/collage/10-gift-giving.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Pamimigay ng regalo sa komunidad."
+    alt_en: "Gift-giving in the community."
+  - image: /images/collage/11-cooperative-month.jpg
+    width: 1400
+    height: 866
+    alt_fil: "Pangkatang larawan sa pagdiriwang ng Cooperative Month."
+    alt_en: "Group photo at the Cooperative Month celebration."
+  - image: /images/collage/12-group-photo.jpg
+    width: 1400
+    height: 1050
+    alt_fil: "Pangkatang larawan ng mga kawani at opisyal sa Inicbulan Elementary School."
+    alt_en: "Group photo of staff and officers at Inicbulan Elementary School."

@@ -223,6 +223,8 @@ const aboutSchema = z.object({
   vision_en: optionalText,
   mission_fil: z.array(z.string().min(1)).min(1),
   mission_en: z.array(z.string().min(1)).default([]),
+  goals_fil: z.array(z.string().min(1)).default([]),
+  goals_en: z.array(z.string().min(1)).default([]),
   translation_approved: z.boolean().default(false),
 });
 
@@ -233,6 +235,47 @@ export async function getAbout(): Promise<About> {
   cacheLife("max");
   const raw = await fs.readFile(path.join(CONTENT_DIR, "about.yaml"), "utf8");
   return aboutSchema.parse(parseYaml(raw));
+}
+
+/* ---------- Service areas ---------- */
+
+const areasSchema = z.object({
+  placeholder: z.boolean().default(false),
+  areas: z.array(z.string().min(1)).default([]),
+});
+
+export async function getAreas() {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "areas.yaml"), "utf8");
+  return areasSchema.parse(parseYaml(raw));
+}
+
+/* ---------- Home page photo collage ---------- */
+
+const picture = z.object({
+  image: z.string().startsWith("/"),
+  width: z.number().int().positive(),
+  height: z.number().int().positive(),
+  focus: z.enum(["top", "center", "bottom"]).default("center"),
+  alt_fil: z.string().min(1),
+  alt_en: optionalText,
+});
+
+const collageSchema = z.object({
+  background: z.string().startsWith("/").optional(),
+  award: picture,
+  trophy: picture,
+  photos: z.array(picture).default([]),
+});
+
+export type Collage = z.infer<typeof collageSchema>;
+
+export async function getCollage(): Promise<Collage> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(path.join(CONTENT_DIR, "collage.yaml"), "utf8");
+  return collageSchema.parse(parseYaml(raw));
 }
 
 /* ---------- Bilingual fields ---------- */

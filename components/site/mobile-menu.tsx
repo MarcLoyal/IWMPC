@@ -3,7 +3,7 @@
 import { MenuIcon, TriangleAlertIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
-import { primaryNav, secondaryNav, REPORT_HREF } from "@/lib/site";
+import { primaryNav, REPORT_HREF } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -25,7 +25,7 @@ export function MobileMenu() {
         <Button
           variant="ghost"
           size="icon"
-          className="text-white hover:bg-white/15 lg:hidden"
+          className="text-primary hover:bg-surface min-[1220px]:hidden"
         >
           <MenuIcon className="size-7" aria-hidden="true" />
           <span className="sr-only">{t("openMenu")}</span>
@@ -38,13 +38,29 @@ export function MobileMenu() {
         <SheetDescription className="sr-only">{t("label")}</SheetDescription>
         <nav aria-label={t("label")}>
           <ul className="flex flex-col">
-            {[...primaryNav, ...secondaryNav].map((item) => (
+            {primaryNav.map((item) => (
               <li key={item.key}>
                 <SheetClose asChild>
                   <Link href={item.href} className={linkClass}>
                     {t(item.key)}
                   </Link>
                 </SheetClose>
+                {item.children && (
+                  <ul className="mb-2 ml-3 border-l-2 border-accent pl-2">
+                    {item.children.map((child) => (
+                      <li key={child.key}>
+                        <SheetClose asChild>
+                          <Link
+                            href={child.href}
+                            className="flex min-h-12 items-center rounded-lg px-3 font-medium text-foreground hover:bg-surface"
+                          >
+                            {t(`sub.${child.key}`)}
+                          </Link>
+                        </SheetClose>
+                      </li>
+                    ))}
+                  </ul>
+                )}
               </li>
             ))}
           </ul>

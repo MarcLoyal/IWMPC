@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { site } from "@/lib/site";
+import { OfficeHours } from "./office-hours";
 import { Placeholder } from "./placeholder";
 
 function Row({
@@ -34,9 +35,9 @@ function Row({
 
 /** Address, hours and phone numbers. Unconfirmed values show a placeholder. */
 export function ContactDetails({
-  showEmergency = false,
+  showHotline = false,
 }: {
-  showEmergency?: boolean;
+  showHotline?: boolean;
 }) {
   const t = useTranslations();
   const linkClass = "font-semibold text-primary underline underline-offset-4";
@@ -47,7 +48,7 @@ export function ContactDetails({
         {site.address}
       </Row>
       <Row icon={ClockIcon} label={t("footer.hours")}>
-        {site.officeHours ?? <Placeholder />}
+        <OfficeHours />
       </Row>
       <Row icon={PhoneIcon} label={t("footer.phone")}>
         {site.phone ? (
@@ -58,11 +59,11 @@ export function ContactDetails({
           <Placeholder />
         )}
       </Row>
-      {showEmergency && (
+      {showHotline && (
         <Row icon={SirenIcon} label={t("contact.emergency")}>
-          {site.emergencyHotline ? (
-            <a href={`tel:${site.emergencyHotline}`} className={linkClass}>
-              {site.emergencyHotline}
+          {site.hotline ? (
+            <a href={`tel:${site.hotlineTel}`} className={linkClass}>
+              {site.hotline}
             </a>
           ) : (
             <Placeholder />

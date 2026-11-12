@@ -8,6 +8,7 @@ import { site } from "@/lib/site";
 import { Header } from "@/components/site/header";
 import { Footer } from "@/components/site/footer";
 import { MobileActionBar } from "@/components/site/mobile-action-bar";
+import { InfoStrip } from "@/components/site/info-strip";
 import { PreviewStrip } from "@/components/site/preview-strip";
 import { SupplyStatusBanner } from "@/components/site/supply-status-banner";
 import "../globals.css";
@@ -57,6 +58,7 @@ export default async function LocaleLayout({
             {t("skipToContent")}
           </a>
           <PreviewStrip />
+          <InfoStrip />
           <Header />
           <SupplyStatusBanner />
           <main id="main" tabIndex={-1} className="flex-1 outline-none">

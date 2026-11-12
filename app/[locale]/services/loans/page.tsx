@@ -4,6 +4,7 @@ import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getLoans, localized } from "@/lib/content";
 import { flags } from "@/lib/site";
+import { LoanInquiryForm } from "@/components/forms";
 import { LoanEstimator } from "@/components/calculators/loan-estimator";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
@@ -165,10 +166,9 @@ export default async function LoansPage() {
           <h2 id="inquiry-heading" className="text-2xl">
             {t("inquiryHeading")}
           </h2>
-          {/* The loan inquiry form is built in P3 */}
-          <p className="mt-3 rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
-            {t("inquirySoon")}
-          </p>
+          <div className="mt-4 max-w-3xl">
+            <LoanInquiryForm />
+          </div>
         </section>
       </Container>
     </>

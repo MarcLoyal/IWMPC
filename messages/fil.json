@@ -23,7 +23,26 @@
     "report": "I-report ang Problema",
     "openMenu": "Buksan ang menu",
     "closeMenu": "Isara ang menu",
-    "menu": "Menu"
+    "menu": "Menu",
+    "callUs": "Tawag sa Amin",
+    "sub": {
+      "history": "Kasaysayan",
+      "profile": "Profile ng Kooperatiba",
+      "board": "Board of Directors",
+      "officers": "Mga Opisyal",
+      "awards": "Mga Parangal at Pagkilala",
+      "gallery": "Gallery ng mga Kaganapan",
+      "location": "Mapa at Lokasyon",
+      "water": "Koneksyon ng Tubig",
+      "lpg": "LPG",
+      "rice": "Bigas",
+      "loans": "Pautang"
+    },
+    "submenu": "Submenu ng {name}",
+    "aboutUs": "Tungkol sa Amin",
+    "products": "Produkto at Serbisyo",
+    "newsEvents": "Balita at Kaganapan",
+    "contactUs": "Contact"
   },
   "language": {
     "label": "Wika",
@@ -49,11 +68,12 @@
     "cubMember": "Miyembro ng Cooperative Union of Batangas",
     "memberLogin": "Member Login (Malapit na)",
     "rights": "© {year} {name}. Lahat ng karapatan ay nakalaan.",
-    "lastUpdated": "Huling na-update: {date}"
+    "lastUpdated": "Huling na-update: {date}",
+    "hotline": "Hotline"
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
-    "heroText": "Kooperatibang pag-aari ng mga miyembro mula pa noong {year}, naglilingkod sa Brgy. Inicbulan, Bauan, Batangas.",
+    "heroText": "Ang IWMPC ang nagbibigay ng tubig sa Brgy. Inicbulan, Bauan, Batangas. Dito makikita ang status ng tubig, ang inyong bayarin, at kung paano sumali sa kooperatiba.",
     "ctaStatus": "Tingnan ang Status ng Tubig",
     "ctaPay": "Paano Magbayad",
     "quick": {
@@ -100,7 +120,21 @@
     "contact": {
       "heading": "Bisitahin o tawagan kami",
       "cta": "Lahat ng contact details"
-    }
+    },
+    "badge": "Kooperatiba ng mga miyembro mula {year}",
+    "statusCard": {
+      "title": "Status ng Tubig",
+      "now": "Ngayon",
+      "none": "Walang naka-schedule na interruption.",
+      "all": "Lahat ng advisory"
+    },
+    "eyebrow": "Serbisyo ng tubig sa Brgy. Inicbulan",
+    "checks": {
+      "cda": "Rehistrado sa Cooperative Development Authority",
+      "owned": "Pag-aari at pinamamahalaan ng mga miyembro",
+      "cub": "Miyembro ng Cooperative Union of Batangas"
+    },
+    "call": "Tumawag sa opisina"
   },
   "preview": {
     "strip": "Preview: may halimbawang nilalaman pa ang website na ito at hindi pa ito opisyal."
@@ -200,14 +234,13 @@
     "title": "Contact",
     "intro": "Narito kung paano kami makakausap o mapupuntahan.",
     "officeHeading": "Opisina",
-    "emergency": "Emergency hotline",
+    "emergency": "Hotline",
     "facebook": "Facebook page",
     "messenger": "Messenger",
     "mapHeading": "Mapa",
     "mapTitle": "Mapa ng Brgy. Inicbulan, Bauan, Batangas",
     "mapNote": "Tinatayang lokasyon batay sa address. Kukumpirmahin pa ang eksaktong pin ng opisina.",
-    "formHeading": "Magpadala ng mensahe",
-    "formSoon": "Malapit nang idagdag ang contact form dito."
+    "formHeading": "Magpadala ng mensahe"
   },
   "privacy": {
     "title": "Privacy Notice",
@@ -339,8 +372,7 @@
     "stepsHeading": "Paano mag-apply",
     "stepsUnconfirmed": "Pangkalahatang gabay ito. Kukumpirmahin pa ng kooperatiba ang eksaktong proseso.",
     "approval": "Ang pag-apruba ay nakadepende sa Credit Committee.",
-    "inquiryHeading": "Mag-inquire tungkol sa loan",
-    "inquirySoon": "Malapit nang idagdag ang inquiry form dito."
+    "inquiryHeading": "Mag-inquire tungkol sa loan"
   },
   "estimator": {
     "heading": "Loan Estimator",
@@ -380,6 +412,154 @@
     "factsHeading": "Mga pangunahing detalye",
     "founded": "Itinatag at nirehistro",
     "cdaReg": "CDA Registration No.",
-    "address": "Address"
+    "address": "Address",
+    "goals": "Mga Layunin",
+    "goalsSub": "Goals and Objectives"
+  },
+  "forms": {
+    "requiredMark": "kailangan",
+    "optional": "opsyonal",
+    "select": "Pumili…",
+    "submit": "Ipadala",
+    "sending": "Ipinapadala…",
+    "consent": "Pumapayag ako na gamitin ng IWMPC ang impormasyong ito para tumugon sa aking mensahe, ayon sa <privacy>Privacy Notice</privacy>.",
+    "honeypot": "Huwag sagutan ang field na ito",
+    "photoHint": "Isang larawan lamang (JPEG, PNG, o WebP), hanggang 3 MB. Paliliitin ito bago ipadala.",
+    "photoRemove": "Alisin ang larawan",
+    "verification": "Pag-verify na hindi ka robot",
+    "fields": {
+      "issueType": "Uri ng problema",
+      "purok": "Purok",
+      "address": "Address o landmark",
+      "accountNumber": "Account number",
+      "name": "Pangalan",
+      "mobile": "Mobile number",
+      "email": "Email",
+      "description": "Paglalarawan",
+      "photo": "Larawan",
+      "propertyType": "Uri ng property",
+      "contactTime": "Kailan kayo puwedeng tawagan",
+      "message": "Mensahe",
+      "memberId": "Member ID",
+      "loanType": "Uri ng loan",
+      "amount": "Halagang gustong hiramin (₱)",
+      "subject": "Paksa"
+    },
+    "hints": {
+      "mobile": "Hal. 09171234567",
+      "address": "Hal. malapit sa chapel, tapat ng tindahan",
+      "accountNumber": "Makikita sa inyong water bill"
+    },
+    "options": {
+      "issueType": {
+        "no_water": "Walang tubig",
+        "low_pressure": "Mahinang pressure",
+        "line_leak": "Tagas (leak) sa linya",
+        "meter_leak": "Tagas sa metro",
+        "water_quality": "Malabo o may amoy ang tubig",
+        "broken_meter": "Sirang metro",
+        "other": "Iba pa"
+      },
+      "areas": {
+        "other": "Iba pa / hindi sigurado"
+      },
+      "propertyType": {
+        "residential": "Residential (bahay)",
+        "commercial": "Commercial (negosyo)",
+        "other": "Iba pa"
+      },
+      "contactTime": {
+        "any": "Kahit anong oras ng opisina",
+        "morning": "Umaga",
+        "afternoon": "Hapon"
+      },
+      "subject": {
+        "billing": "Bill at bayarin",
+        "interruption": "Interruption ng tubig",
+        "connection": "Bagong koneksyon",
+        "membership": "Membership",
+        "loans": "Pautang",
+        "other": "Iba pa"
+      }
+    },
+    "errors": {
+      "required": "Kailangang sagutan ito.",
+      "mobile": "Ilagay ang mobile number sa format na 09XXXXXXXXX o +639XXXXXXXXX.",
+      "email": "Hindi wasto ang email address.",
+      "consent": "Kailangan ang inyong pagpayag bago maipadala.",
+      "tooLong": "Masyadong mahaba ang sagot.",
+      "amount": "Maglagay ng halagang higit sa 0.",
+      "photoTooLarge": "Masyadong malaki ang larawan (hanggang 3 MB lamang).",
+      "photoType": "JPEG, PNG, o WebP na larawan lamang ang tinatanggap.",
+      "summary": "May kailangang ayusin sa form. Pakitingnan ang mga field na may pulang paalala."
+    },
+    "failure": {
+      "title": "Hindi naipadala",
+      "validation": "May kulang o maling sagot. Pakitingnan ang form at subukang muli.",
+      "rate": "Masyadong maraming pagsubok. Maghintay ng ilang minuto bago subukang muli.",
+      "spam": "Hindi namin na-verify na hindi kayo robot. I-refresh ang pahina at subukang muli.",
+      "config": "Hindi pa handa ang form na ito sa pagtanggap ng mensahe.",
+      "send": "Nagkaproblema sa pagpapadala. Subukang muli maya-maya.",
+      "photoTooLarge": "Masyadong malaki ang larawan (hanggang 3 MB lamang).",
+      "photoType": "JPEG, PNG, o WebP na larawan lamang ang tinatanggap.",
+      "call": "Kung apurahan, tumawag sa <phone></phone>."
+    },
+    "success": {
+      "title": "Natanggap na ang inyong mensahe",
+      "reference": "Reference number",
+      "keep": "Itago ang numerong ito para sa follow-up.",
+      "response": "Inaasahang oras ng tugon sa oras ng opisina:",
+      "urgent": "Kung apurahan, tumawag sa <phone></phone>.",
+      "again": "Magpadala ng isa pa"
+    }
+  },
+  "report": {
+    "title": "I-report ang Problema",
+    "intro": "Tagas, walang tubig, mahinang pressure, o sirang metro? Ipaalam sa amin.",
+    "emergency": "Para sa malaking tagas o emergency, tumawag agad:",
+    "formHeading": "Report form",
+    "or": "o"
+  },
+  "connection": {
+    "title": "Bagong Koneksyon ng Tubig",
+    "intro": "Paano magpakabit ng tubig sa inyong bahay o negosyo.",
+    "stepsHeading": "Mga hakbang",
+    "steps": {
+      "inquire": "Mag-inquire",
+      "requirements": "Ipasa ang mga requirement",
+      "inspection": "Inspeksyon sa lugar",
+      "fees": "Bayaran ang mga fee",
+      "installation": "Pagkakabit",
+      "activation": "Pag-activate ng serbisyo"
+    },
+    "requirementsHeading": "Mga requirement",
+    "requirementsTbd": "Listahan ng mga requirement:",
+    "feesHeading": "Mga bayarin at tagal ng proseso",
+    "fees": "Mga fee sa pagpapakabit",
+    "processing": "Karaniwang tagal ng proseso",
+    "formPdf": "Application form (PDF)",
+    "formHeading": "Mag-inquire tungkol sa bagong koneksyon"
+  },
+  "membership": {
+    "title": "Membership",
+    "intro": "Ang mga miyembro ang may-ari ng IWMPC. Mag-inquire kung paano sumali.",
+    "formHeading": "Mag-inquire tungkol sa membership",
+    "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES."
+  },
+  "infoStrip": {
+    "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",
+    "hours": "Oras ng opisina"
+  },
+  "collage": {
+    "label": "Mga larawan ng IWMPC",
+    "band": "Kami ang IWMPC",
+    "bandName": "Inicbulan Waterworks Multi-Purpose Cooperative",
+    "bandSince": "Mula {year}",
+    "enlarge": "Palakihin ang larawan",
+    "close": "Isara",
+    "previous": "Nakaraang larawan",
+    "next": "Susunod na larawan",
+    "position": "Larawan {current} ng {total}",
+    "hint": "Pindutin ang larawan para palakihin."
   }
 }

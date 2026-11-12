@@ -14,6 +14,10 @@ const nextConfig: NextConfig = {
   partialPrefetching: false,
   // Content files are read with fs; make sure they ship with the server bundle.
   outputFileTracingIncludes: { "/**": ["./content/**/*"] },
+  experimental: {
+    // The report form may carry one compressed photo (≤ 3 MB). Vercel's own cap is 4.5 MB.
+    serverActions: { bodySizeLimit: "4mb" },
+  },
   turbopack: {
     rules: {
       "*.css": {
