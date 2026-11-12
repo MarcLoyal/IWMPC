@@ -24,7 +24,7 @@ import { AdvisoryCard } from "@/components/site/advisory-card";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
 import { PhotoCollage } from "@/components/site/photo-collage";
-import { HeroTiles } from "@/components/site/hero-tiles";
+import { HeroNews } from "@/components/site/hero-news";
 import { Placeholder } from "@/components/site/placeholder";
 
 function StatTile({ label, value }: { label: string; value: string | null }) {
@@ -141,7 +141,7 @@ export default async function HomePage() {
                 </p>
               )}
             </div>
-            <HeroTiles />
+            <HeroNews />
           </Container>
         </div>
       </section>

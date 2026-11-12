@@ -128,6 +128,12 @@
       "none": "Walang naka-schedule na interruption.",
       "all": "Lahat ng advisory"
     },
+    "heroNews": {
+      "heading": "Balita at Kaganapan",
+      "videoLabel": "Video: Ang IWMPC sa Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "Nakamit ng IWMPC ang ika-2 puwesto bilang Outstanding Cooperative (Small Category) sa Governor Vilma Santos-Recto Matatag na Kooperatiba Award."
+    },
     "eyebrow": "Serbisyo ng tubig sa Brgy. Inicbulan",
     "checks": {
       "cda": "Rehistrado sa Cooperative Development Authority",

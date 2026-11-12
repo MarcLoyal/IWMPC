@@ -128,6 +128,12 @@
       "none": "No scheduled interruptions.",
       "all": "All advisories"
     },
+    "heroNews": {
+      "heading": "News & Events",
+      "videoLabel": "Video: IWMPC at the Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "IWMPC placed 2nd for Outstanding Cooperative (Small Category) at the Governor Vilma Santos-Recto Matatag na Kooperatiba Award."
+    },
     "eyebrow": "Water service for Brgy. Inicbulan",
     "checks": {
       "cda": "Registered with the Cooperative Development Authority",
