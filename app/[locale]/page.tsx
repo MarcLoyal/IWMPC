@@ -1,7 +1,6 @@
 import {
   ArrowRightIcon,
   BadgeCheckIcon,
-  CalculatorIcon,
   ChevronRightIcon,
   CircleCheckIcon,
   PhoneIcon,
@@ -11,7 +10,6 @@ import {
   HandCoinsIcon,
   HandshakeIcon,
   TriangleAlertIcon,
-  WalletIcon,
   WheatIcon,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
@@ -45,8 +43,6 @@ export default async function HomePage() {
 
   const quick = [
     { key: "status", href: "/water/advisories", icon: DropletIcon },
-    { key: "bill", href: "/water/rates", icon: CalculatorIcon },
-    { key: "pay", href: "/water/pay", icon: WalletIcon },
     { key: "report", href: REPORT_HREF, icon: TriangleAlertIcon },
   ] as const;
 
@@ -146,34 +142,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 2. Quick actions */}
-      <section aria-labelledby="quick-heading">
-        <Container className="py-10">
-          <h2 id="quick-heading" className="text-2xl">
-            {t("quick.heading")}
-          </h2>
-          <ul className="mt-4 grid grid-cols-2 gap-3 lg:grid-cols-4">
-            {quick.map(({ key, href, icon: Icon }) => (
-              <li key={key}>
-                <Link
-                  href={href}
-                  className="flex h-full min-h-32 flex-col gap-2 rounded-xl border bg-card p-4 shadow-sm hover:border-primary hover:bg-surface"
-                >
-                  <Icon className="size-9 text-primary" aria-hidden="true" />
-                  <span className="font-heading text-lg leading-tight font-bold text-primary">
-                    {t(`quick.${key}`)}
-                  </span>
-                  <span className="text-sm text-muted-foreground">
-                    {t(`quick.${key}Desc`)}
-                  </span>
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </Container>
-      </section>
-
-      {/* 3. Latest advisories */}
+      {/* 2. Latest advisories */}
       <section aria-labelledby="advisories-heading" className="bg-surface">
         <Container className="py-10">
           <div className="flex flex-wrap items-center justify-between gap-2">
@@ -204,7 +173,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 4. Services */}
+      {/* 3. Services */}
       <section aria-labelledby="services-heading">
         <Container className="py-10">
           <h2 id="services-heading" className="text-2xl">
@@ -231,14 +200,44 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 5. Trust strip — figures stay placeholders until the cooperative confirms them */}
+      {/* 4. Quick actions */}
+      <section aria-labelledby="quick-heading">
+        <Container className="py-10">
+          <h2 id="quick-heading" className="text-2xl">
+            {t("quick.heading")}
+          </h2>
+          <ul className="mt-4 grid grid-cols-2 gap-3">
+            {quick.map(({ key, href, icon: Icon }) => (
+              <li key={key}>
+                <Link
+                  href={href}
+                  className="flex h-full min-h-32 flex-col gap-2 rounded-xl border bg-card p-4 shadow-sm hover:border-primary hover:bg-surface"
+                >
+                  <Icon className="size-9 text-primary" aria-hidden="true" />
+                  <span className="font-heading text-lg leading-tight font-bold text-primary">
+                    {t(`quick.${key}`)}
+                  </span>
+                  <span className="text-sm text-muted-foreground">
+                    {t(`quick.${key}Desc`)}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+
+      {/* 5. Trust strip — household count stays a placeholder until the cooperative confirms it */}
       <section aria-labelledby="trust-heading" className="bg-surface">
         <Container className="py-10">
           <h2 id="trust-heading" className="text-2xl">
             {t("trust.heading")}
           </h2>
           <dl className="mt-4 grid gap-4 sm:grid-cols-3">
-            <StatTile label={t("trust.members")} value={null} />
+            <StatTile
+              label={t("trust.members")}
+              value={site.members.toLocaleString("en-PH")}
+            />
             <StatTile
               label={t("trust.years")}
               value={String(yearsOfService(await getNow()))}
