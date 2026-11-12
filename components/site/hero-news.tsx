@@ -12,11 +12,11 @@ export async function HeroNews() {
     <section aria-labelledby="hero-news">
       <h2
         id="hero-news"
-        className="text-base font-bold tracking-[0.18em] text-accent uppercase"
+        className="text-2xl font-extrabold tracking-[0.12em] text-accent uppercase sm:text-3xl lg:text-4xl"
       >
         {t("heading")}
       </h2>
-      <div className="mt-5 grid items-start gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
+      <div className="mt-6 grid items-start gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
         <video
           className="aspect-video w-full rounded-2xl bg-black shadow-2xl ring-4 ring-white/20"
           controls
@@ -38,10 +38,10 @@ export async function HeroNews() {
             />
             {t("title")}
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-white/90">
+          <p className="mt-4 text-lg sm:text-justify leading-relaxed text-white/90">
             {t("text")}
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-white/90">
+          <p className="mt-4 text-lg sm:text-justify leading-relaxed text-white/90">
             {t("more")}
           </p>
         </div>
