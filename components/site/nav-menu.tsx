@@ -23,7 +23,7 @@ export function NavMenu() {
         {primaryNav.map((item) => {
           const isOpen = open === item.key;
           const linkClass =
-            "inline-flex min-h-12 items-center gap-1 rounded-full px-3 font-semibold text-primary hover:bg-surface xl:px-4";
+            "inline-flex min-h-12 items-center gap-1 rounded-full px-2.5 font-semibold text-primary hover:bg-surface xl:px-4";
 
           if (!item.children) {
             return (

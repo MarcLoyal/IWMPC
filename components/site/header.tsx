@@ -43,19 +43,19 @@ export function Header() {
               <LanguageToggle />
             </Suspense>
           </div>
-          {site.phone && (
+          {(site.hotline ?? site.phone) && (
             <a
-              href={`tel:${site.phoneTel}`}
-              className="hidden items-center gap-3 rounded-xl bg-primary px-4 py-2.5 text-primary-foreground shadow-md hover:bg-primary-dark md:flex"
+              href={`tel:${site.hotline ? site.hotlineTel : site.phoneTel}`}
+              className="hidden items-center gap-2 rounded-xl bg-primary px-3 py-2.5 text-primary-foreground shadow-md hover:bg-primary-dark md:flex xl:gap-3 xl:px-4"
             >
               <PhoneCallIcon
-                className="size-8 shrink-0 text-accent"
+                className="size-7 shrink-0 text-accent xl:size-8"
                 aria-hidden="true"
               />
               <span className="flex flex-col leading-tight">
                 <span className="text-sm font-semibold">{t("callUs")}</span>
-                <span className="text-xl font-extrabold whitespace-nowrap">
-                  {site.phone}
+                <span className="text-lg font-extrabold whitespace-nowrap xl:text-xl">
+                  {site.hotline ?? site.phone}
                 </span>
               </span>
             </a>
