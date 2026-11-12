@@ -70,41 +70,32 @@ export type NavItem = { key: string; href: string; children?: NavChild[] };
  */
 export const primaryNav: NavItem[] = [
   {
-    key: "water",
-    href: "/water",
+    key: "aboutUs",
+    href: "/about",
     children: [
-      { key: "advisories", href: "/water/advisories" },
-      { key: "rates", href: "/water/rates" },
-      { key: "pay", href: "/water/pay" },
-      { key: "newConnection", href: "/water/new-connection" },
-      { key: "report", href: REPORT_HREF },
-      { key: "quality", href: "/water/quality" },
-      { key: "serviceArea", href: "/water/service-area" },
-    ],
-  },
-  {
-    key: "services",
-    href: "/services",
-    children: [
-      { key: "rice", href: "/services/rice" },
-      { key: "lpg", href: "/services/lpg" },
-      { key: "loans", href: "/services/loans" },
+      { key: "history", href: "/about/history" },
+      { key: "profile", href: "/about" },
+      { key: "board", href: "/about/board" },
+      { key: "officers", href: "/about/officers" },
+      { key: "awards", href: "/about/awards" },
+      { key: "gallery", href: "/about/gallery" },
+      { key: "location", href: "/about/location" },
     ],
   },
   { key: "membership", href: "/membership" },
-  { key: "news", href: "/news" },
   {
-    key: "aboutShort",
-    href: "/about",
+    key: "products",
+    href: "/services",
     children: [
-      { key: "about", href: "/about" },
-      { key: "officers", href: "/about/officers" },
-      { key: "transparency", href: "/about/transparency" },
-      { key: "faq", href: "/faq" },
-      { key: "privacy", href: "/privacy" },
+      // The water hub leads on to status, rates, payment, new connection and reports.
+      { key: "water", href: "/water" },
+      { key: "lpg", href: "/services/lpg" },
+      { key: "rice", href: "/services/rice" },
+      { key: "loans", href: "/services/loans" },
     ],
   },
-  { key: "contact", href: "/contact" },
+  { key: "newsEvents", href: "/news" },
+  { key: "contactUs", href: "/contact" },
 ];
 
 export const secondaryNav = [

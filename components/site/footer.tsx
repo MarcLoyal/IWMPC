@@ -71,7 +71,7 @@ export function Footer() {
           </h2>
           <ul className="mt-2">
             {primaryNav
-              .filter((item) => item.key !== "aboutShort")
+              .filter((item) => item.key !== "aboutUs")
               .map((item) => (
                 <li key={item.key}>
                   <Link href={item.href} className={linkClass}>
