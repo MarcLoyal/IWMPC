@@ -12,6 +12,7 @@ import {
   TriangleAlertIcon,
   WheatIcon,
 } from "lucide-react";
+import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
@@ -47,24 +48,29 @@ export default async function HomePage() {
   ] as const;
 
   const services = [
-    { key: "water", href: "/water", icon: DropletsIcon, tone: "text-primary" },
+    {
+      key: "water",
+      href: "/water",
+      icon: DropletsIcon,
+      image: "/images/collage/03-water-line-work.jpg",
+    },
     {
       key: "rice",
       href: "/services/rice",
       icon: WheatIcon,
-      tone: "text-harvest-strong",
+      image: "/images/services/rice.svg",
     },
     {
       key: "lpg",
       href: "/services/lpg",
       icon: FlameIcon,
-      tone: "text-harvest-strong",
+      image: "/images/services/lpg.svg",
     },
     {
       key: "loans",
       href: "/services/loans",
       icon: HandCoinsIcon,
-      tone: "text-harvest-strong",
+      image: "/images/services/loans.svg",
     },
   ] as const;
 
@@ -180,19 +186,39 @@ export default async function HomePage() {
             {t("services.heading")}
           </h2>
           <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ key, href, icon: Icon, tone }) => (
+            {services.map(({ key, href, icon: Icon, image }) => (
               <li key={key}>
                 <Link
                   href={href}
-                  className="flex h-full flex-col gap-2 rounded-xl border bg-card p-5 shadow-sm hover:border-primary"
+                  className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
                 >
-                  <Icon className={`size-9 ${tone}`} aria-hidden="true" />
-                  <span className="font-heading text-xl font-bold text-primary">
-                    {t(`services.${key}`)}
-                  </span>
-                  <span className="text-muted-foreground">
-                    {t(`services.${key}Desc`)}
-                  </span>
+                  <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+                    <Image
+                      src={image}
+                      alt=""
+                      fill
+                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                      className="object-cover transition duration-300 group-hover:scale-105"
+                    />
+                    <span className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-white text-primary shadow-md">
+                      <Icon className="size-6" aria-hidden="true" />
+                    </span>
+                  </div>
+                  <div className="flex flex-1 flex-col gap-2 p-5">
+                    <span className="font-heading text-xl font-bold text-primary">
+                      {t(`services.${key}`)}
+                    </span>
+                    <span className="text-muted-foreground">
+                      {t(`services.${key}Desc`)}
+                    </span>
+                    <span className="mt-auto flex min-h-12 items-center justify-between border-t pt-3 font-semibold text-primary">
+                      {t("services.viewDetails")}
+                      <ArrowRightIcon
+                        className="size-5 transition group-hover:translate-x-1"
+                        aria-hidden="true"
+                      />
+                    </span>
+                  </div>
                 </Link>
               </li>
             ))}

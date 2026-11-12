@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 250">
+  <rect width="400" height="250" fill="#e3e9fb"/>
+  <circle cx="335" cy="200" r="80" fill="#cdd8f6"/>
+  <!-- coins stack -->
+  <g stroke="#8a5a14" stroke-width="3">
+    <ellipse cx="290" cy="172" rx="36" ry="11" fill="#e0a526"/>
+    <rect x="254" y="150" width="72" height="22" fill="#f5c542" stroke="none"/>
+    <ellipse cx="290" cy="150" rx="36" ry="11" fill="#e0a526"/>
+    <rect x="254" y="128" width="72" height="22" fill="#f5c542" stroke="none"/>
+    <ellipse cx="290" cy="128" rx="36" ry="11" fill="#e0a526"/>
+    <rect x="254" y="106" width="72" height="22" fill="#f5c542" stroke="none"/>
+    <ellipse cx="290" cy="106" rx="36" ry="11" fill="#ffd60a"/>
+    <line x1="254" y1="106" x2="254" y2="172"/><line x1="326" y1="106" x2="326" y2="172"/>
+  </g>
+  <text x="290" y="112" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="16" fill="#8a5a14">₱</text>
+  <!-- hand holding coin -->
+  <g transform="translate(70 70)">
+    <circle cx="80" cy="30" r="30" fill="#ffd60a" stroke="#8a5a14" stroke-width="4"/>
+    <text x="80" y="41" text-anchor="middle" font-family="Arial, sans-serif" font-weight="700" font-size="30" fill="#8a5a14">₱</text>
+    <path d="M0 120 L36 120 Q60 96 92 96 L140 96 Q154 96 154 108 Q154 120 140 120 L104 120" fill="none" stroke="#1d3aa8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M36 150 L118 150 Q132 150 144 140 L188 104 Q198 94 188 86 Q178 80 168 88 L130 116" fill="none" stroke="#1d3aa8" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="-20" y="110" width="40" height="50" rx="6" fill="#1d3aa8"/>
+  </g>
+</svg>

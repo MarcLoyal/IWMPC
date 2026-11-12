@@ -102,7 +102,8 @@
       "lpgDesc": "LPG cooking gas from the cooperative.",
       "loans": "Loans",
       "loansDesc": "Loans for members.",
-      "more": "Learn more"
+      "more": "Learn more",
+      "viewDetails": "View details"
     },
     "trust": {
       "heading": "Why IWMPC",
