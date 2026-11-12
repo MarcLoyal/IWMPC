@@ -104,7 +104,7 @@ export function CollageGallery({
           <div className="grid grid-cols-2 gap-1 bg-accent md:flex md:h-64 md:gap-0 lg:h-72">
             <div className="flex aspect-[4/3] items-center justify-center bg-gradient-to-br from-primary to-primary-dark p-4 md:aspect-auto md:w-[30%] md:pr-12 md:[clip-path:polygon(0_0,100%_0,calc(100%-3rem)_100%,0_100%)]">
               <Image
-                src="/logo.png"
+                src="/logo-v2.png"
                 alt={`Logo ng ${t("bandName")}`}
                 width={512}
                 height={512}

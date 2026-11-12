@@ -19,7 +19,7 @@ export function Header() {
           className="flex min-h-12 items-center gap-2 rounded-lg font-heading font-bold"
         >
           <Image
-            src="/logo.png"
+            src="/logo-v2.png"
             alt=""
             width={56}
             height={56}

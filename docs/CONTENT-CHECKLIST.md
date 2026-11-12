@@ -2,7 +2,7 @@
 
 Nothing on this list may be guessed. Until an item is confirmed, the site shows a visible "Kukumpirmahin pa / To be confirmed" placeholder or hides the section.
 
-- [x] Logo — JPEG received and in use (`public/logo.png`). A vector (SVG/AI) or higher-quality original would look sharper; ask if one exists
+- [x] Logo — new 2026 version received and in use (`public/logo-v2.png`). Its ring text reads "INCBULAN" (missing an I); ask the cooperative for a corrected file. A vector (SVG/AI) or higher-quality original would look sharper; ask if one exists
 - [x] Brand colors — taken from the logo (royal blue, yellow, red)
 - [x] Photos received so far: award night and trophy (Matatag na Kooperatiba Award 2026), office team photo. Originals kept in `public/images/`
 - [x] 20 more photos from the shared Drive folder (staff, water line work, meetings, PMES, General Assembly, community activities, events), 12 of them used in the home page collage
