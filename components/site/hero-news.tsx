@@ -16,7 +16,7 @@ export async function HeroNews() {
       >
         {t("heading")}
       </h2>
-      <div className="mt-6 grid items-start gap-8 lg:grid-cols-[1.35fr_1fr] lg:gap-10">
+      <div className="mt-6 grid items-center gap-8 xl:grid-cols-[1.2fr_1fr] xl:gap-10">
         <video
           className="aspect-video w-full rounded-2xl bg-black shadow-2xl ring-4 ring-white/20"
           controls
@@ -31,17 +31,17 @@ export async function HeroNews() {
           />
         </video>
         <div>
-          <p className="flex items-start gap-3 text-2xl leading-tight font-bold text-white sm:text-3xl">
+          <p className="flex items-center justify-center gap-2.5 text-center text-xl leading-tight font-bold text-white sm:text-2xl sm:whitespace-nowrap xl:text-[1.75rem]">
             <TrophyIcon
-              className="mt-0.5 size-8 shrink-0 text-accent"
+              className="size-7 shrink-0 text-accent xl:size-8"
               aria-hidden="true"
             />
             {t("title")}
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-white/90 sm:text-justify">
+          <p className="mt-4 text-base leading-relaxed text-white/90 sm:text-justify">
             {t("text")}
           </p>
-          <p className="mt-4 text-lg leading-relaxed text-white/90 sm:text-justify">
+          <p className="mt-4 text-base leading-relaxed text-white/90 sm:text-justify">
             {t("more")}
           </p>
         </div>
