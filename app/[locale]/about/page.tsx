@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { EyeIcon, InfoIcon, TargetIcon } from "lucide-react";
+import { EyeIcon, FlagIcon, InfoIcon, TargetIcon } from "lucide-react";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getAbout, localized } from "@/lib/content";
@@ -23,6 +23,10 @@ export default async function AboutPage() {
   const useEnglish = locale === "en" && about.mission_en.length > 0;
   const vision = localized(about, "vision", locale);
   const mission = useEnglish ? about.mission_en : about.mission_fil;
+  const goals =
+    locale === "en" && about.goals_en.length > 0
+      ? about.goals_en
+      : about.goals_fil;
   const showTranslationNote = locale === "en" && !about.translation_approved;
 
   return (
@@ -111,6 +115,34 @@ export default async function AboutPage() {
             ))}
           </ol>
         </section>
+
+        {goals.length > 0 && (
+          <section aria-labelledby="goals-heading">
+            <h2 id="goals-heading" className="flex items-center gap-3 text-2xl">
+              <FlagIcon className="size-7" aria-hidden="true" />
+              {t("goals")}
+              <span className="text-base font-normal text-muted-foreground">
+                ({t("goalsSub")})
+              </span>
+            </h2>
+            <ol className="mt-4 grid gap-3">
+              {goals.map((item, i) => (
+                <li
+                  key={i}
+                  className="flex gap-4 rounded-xl border bg-card p-5 text-lg"
+                >
+                  <span
+                    aria-hidden="true"
+                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-accent font-bold text-accent-foreground"
+                  >
+                    {i + 1}
+                  </span>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ol>
+          </section>
+        )}
 
         {/* History timeline, core values, awards and affiliations arrive in P4 */}
         <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">

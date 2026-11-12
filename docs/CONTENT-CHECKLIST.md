@@ -9,7 +9,9 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [ ] Photos still wanted: the water source/facility and the office exterior on their own, for the About and Water Quality pages
 - [ ] Consent of the people pictured to appear on the website
 - [x] Address (Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201), phone (0910 491 8512) and founding date (July 1, 2003) — from the cooperative's Facebook page
-- [ ] Office hours, emergency hotline (is it the same number?), email, exact map pin of the office
+- [x] Office hours (Mon–Fri 7:30 AM–4:30 PM, Sat 7:30–11:00 AM) and hotline ((043) 740-0767)
+- [x] Goals and objectives — transcribed from the office sign (`content/about.yaml`); English translation still needs approval
+- [ ] Email, exact map pin of the office
 - [ ] Facebook page and Messenger links
 - [ ] CDA Registration No. — site currently shows `9520-04002341` from the project brief; **verify against the current Certificate of Registration**
 - [x] Mission and vision — transcribed from the office sign (`content/about.yaml`); English translation still needs the cooperative's approval

@@ -17,6 +17,19 @@ mission_fil:
     Makipag-ugnayan sa iba't ibang sangay ng pamahalaan na may kinalaman sa
     maayos na pamamalakad ng kooperatiba.
 
+# Goals and objectives, transcribed from the second sign at the office.
+goals_fil:
+  - >-
+    Pamahalaan ang kooperatiba na may iisang adhikain at prinsipyo para sa
+    kapakanan ng mga miyembro at konsumidores na ang layunin ay tapat at
+    malinis na pamamahala (transparency).
+  - >-
+    Makapaglingkod nang tapat at makatugon sa lahat ng pangangailangan at
+    problema ng mga miyembro at konsumidores.
+  - Makapagbahagi ng mga kaalaman sa lahat ng kabarangay tungkol sa kooperatiba at pagnenegosyo.
+  - Makapangalap ng mga donasyon/grants at kaalaman para sa ikauunlad ng kooperatiba.
+  - Maging kasangkapan o daan para sa mabuting pag-uusap ng mga miyembro at kabarangay.
+
 # English versions are a working translation, NOT approved by the cooperative.
 # Set translation_approved to true once they have reviewed it.
 translation_approved: false
@@ -33,3 +46,12 @@ mission_en:
   - >-
     Coordinate with the different branches of government concerned with the
     proper management of the cooperative.
+goals_en:
+  - >-
+    Manage the cooperative with one shared aim and set of principles, for the
+    welfare of members and consumers, with honest and clean management
+    (transparency) as the goal.
+  - Serve honestly and respond to all the needs and problems of members and consumers.
+  - Share knowledge about cooperatives and doing business with everyone in the barangay.
+  - Gather donations, grants and knowledge for the cooperative's growth.
+  - Be an instrument or channel for good dialogue between members and the barangay community.

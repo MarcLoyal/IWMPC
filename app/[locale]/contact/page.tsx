@@ -30,7 +30,7 @@ export default async function ContactPage() {
             {t("officeHeading")}
           </h2>
           <div className="mt-4">
-            <ContactDetails showEmergency />
+            <ContactDetails showHotline />
           </div>
           <dl className="mt-6 grid gap-2 text-lg sm:grid-cols-[auto_1fr] sm:gap-x-4">
             <dt className="font-semibold">{t("facebook")}</dt>

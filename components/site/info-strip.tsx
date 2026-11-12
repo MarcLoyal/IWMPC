@@ -10,6 +10,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { REPORT_HREF, site } from "@/lib/site";
 import { LanguageToggle } from "./language-toggle";
+import { OfficeHours } from "./office-hours";
 
 /**
  * Utility strip above the header (tablet and up): social links and a welcome
@@ -73,7 +74,7 @@ export function InfoStrip() {
             <li className={item}>
               <ClockIcon className={icon} aria-hidden="true" />
               <span className="sr-only">{t("hours")}: </span>
-              {site.officeHours}
+              <OfficeHours inline />
             </li>
           ) : (
             <li className={`${item} hidden lg:flex`}>

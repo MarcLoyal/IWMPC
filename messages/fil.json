@@ -37,7 +37,7 @@
       "rice": "Bigas",
       "lpg": "LPG",
       "loans": "Pautang",
-      "about": "Pananaw at Tungkulin",
+      "about": "Pananaw, Tungkulin at Layunin",
       "officers": "Mga Opisyal",
       "transparency": "Transparency",
       "faq": "Mga Tanong (FAQ)",
@@ -69,7 +69,8 @@
     "cubMember": "Miyembro ng Cooperative Union of Batangas",
     "memberLogin": "Member Login (Malapit na)",
     "rights": "© {year} {name}. Lahat ng karapatan ay nakalaan.",
-    "lastUpdated": "Huling na-update: {date}"
+    "lastUpdated": "Huling na-update: {date}",
+    "hotline": "Hotline"
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
@@ -234,7 +235,7 @@
     "title": "Contact",
     "intro": "Narito kung paano kami makakausap o mapupuntahan.",
     "officeHeading": "Opisina",
-    "emergency": "Emergency hotline",
+    "emergency": "Hotline",
     "facebook": "Facebook page",
     "messenger": "Messenger",
     "mapHeading": "Mapa",
@@ -412,7 +413,9 @@
     "factsHeading": "Mga pangunahing detalye",
     "founded": "Itinatag at nirehistro",
     "cdaReg": "CDA Registration No.",
-    "address": "Address"
+    "address": "Address",
+    "goals": "Mga Layunin",
+    "goalsSub": "Goals and Objectives"
   },
   "forms": {
     "requiredMark": "kailangan",
@@ -515,7 +518,8 @@
     "title": "I-report ang Problema",
     "intro": "Tagas, walang tubig, mahinang pressure, o sirang metro? Ipaalam sa amin.",
     "emergency": "Para sa malaking tagas o emergency, tumawag agad:",
-    "formHeading": "Report form"
+    "formHeading": "Report form",
+    "or": "o"
   },
   "connection": {
     "title": "Bagong Koneksyon ng Tubig",

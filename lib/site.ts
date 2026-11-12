@@ -19,12 +19,19 @@ export const site = {
   address: "Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201",
   /** Established and registered with the CDA (ISO date). */
   founded: "2003-07-01",
-  officeHours: null as string | null,
+  /** Office hours, one line per schedule, in each language. */
+  officeHours: {
+    fil: ["Lunes–Biyernes: 7:30 AM – 4:30 PM", "Sabado: 7:30 AM – 11:00 AM"],
+    en: ["Monday–Friday: 7:30 AM – 4:30 PM", "Saturday: 7:30 AM – 11:00 AM"],
+  } as Record<"fil" | "en", string[]> | null,
   /** As people write it locally… */
   phone: "0910 491 8512" as string | null,
   /** …and in international form for tel: links. */
   phoneTel: "+639104918512" as string | null,
-  emergencyHotline: null as string | null,
+  /** Office landline (Batangas area code 043), as written locally… */
+  hotline: "(043) 740-0767" as string | null,
+  /** …and in international form for tel: links. */
+  hotlineTel: "+63437400767" as string | null,
   email: null as string | null,
   facebookUrl: null as string | null,
   messengerUrl: null as string | null,

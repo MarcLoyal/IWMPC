@@ -223,6 +223,8 @@ const aboutSchema = z.object({
   vision_en: optionalText,
   mission_fil: z.array(z.string().min(1)).min(1),
   mission_en: z.array(z.string().min(1)).default([]),
+  goals_fil: z.array(z.string().min(1)).default([]),
+  goals_en: z.array(z.string().min(1)).default([]),
   translation_approved: z.boolean().default(false),
 });
 

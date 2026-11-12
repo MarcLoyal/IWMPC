@@ -37,7 +37,7 @@
       "rice": "Rice",
       "lpg": "LPG",
       "loans": "Loans",
-      "about": "Vision & Mission",
+      "about": "Vision, Mission & Goals",
       "officers": "Officers",
       "transparency": "Transparency",
       "faq": "FAQ",
@@ -69,7 +69,8 @@
     "cubMember": "Member of the Cooperative Union of Batangas",
     "memberLogin": "Member Login (Coming soon)",
     "rights": "© {year} {name}. All rights reserved.",
-    "lastUpdated": "Last updated: {date}"
+    "lastUpdated": "Last updated: {date}",
+    "hotline": "Hotline"
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
@@ -234,7 +235,7 @@
     "title": "Contact",
     "intro": "Here is how to reach or visit us.",
     "officeHeading": "Office",
-    "emergency": "Emergency hotline",
+    "emergency": "Hotline",
     "facebook": "Facebook page",
     "messenger": "Messenger",
     "mapHeading": "Map",
@@ -412,7 +413,9 @@
     "factsHeading": "Key details",
     "founded": "Established and registered",
     "cdaReg": "CDA Registration No.",
-    "address": "Address"
+    "address": "Address",
+    "goals": "Goals and Objectives",
+    "goalsSub": "Mga Layunin"
   },
   "forms": {
     "requiredMark": "required",
@@ -515,7 +518,8 @@
     "title": "Report a Problem",
     "intro": "A leak, no water, low pressure, or a broken meter? Let us know.",
     "emergency": "For a major leak or an emergency, call right away:",
-    "formHeading": "Report form"
+    "formHeading": "Report form",
+    "or": "or"
   },
   "connection": {
     "title": "New Water Connection",

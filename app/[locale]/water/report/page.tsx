@@ -5,7 +5,6 @@ import { site } from "@/lib/site";
 import { ReportForm } from "@/components/forms";
 import { Container } from "@/components/site/container";
 import { PageHeader } from "@/components/site/page-header";
-import { Placeholder } from "@/components/site/placeholder";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("report");
@@ -17,10 +16,6 @@ export default async function ReportPage() {
     getTranslations("report"),
     getTranslations("water"),
   ]);
-  // Until a separate emergency hotline is confirmed, the office number is the one to call.
-  const hotline = site.emergencyHotline ?? site.phone;
-  const hotlineTel = site.emergencyHotline ?? site.phoneTel;
-
   return (
     <>
       <PageHeader
@@ -36,16 +31,22 @@ export default async function ReportPage() {
           />
           <span>
             {t("emergency")}{" "}
-            {hotline ? (
-              <a
-                href={`tel:${hotlineTel}`}
-                className="font-bold whitespace-nowrap text-danger-strong underline underline-offset-4"
-              >
-                {hotline}
-              </a>
-            ) : (
-              <Placeholder />
-            )}
+            {[
+              [site.hotline, site.hotlineTel],
+              [site.phone, site.phoneTel],
+            ]
+              .filter(([number]) => number)
+              .map(([number, tel], i) => (
+                <span key={tel}>
+                  {i > 0 && ` ${t("or")} `}
+                  <a
+                    href={`tel:${tel}`}
+                    className="font-bold whitespace-nowrap text-danger-strong underline underline-offset-4"
+                  >
+                    {number}
+                  </a>
+                </span>
+              ))}
           </span>
         </p>
         <section aria-labelledby="form-heading">
