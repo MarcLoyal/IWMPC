@@ -38,10 +38,10 @@ export async function HeroNews() {
             />
             {t("title")}
           </p>
-          <p className="mt-4 text-lg sm:text-justify leading-relaxed text-white/90">
+          <p className="mt-4 text-lg leading-relaxed text-white/90 sm:text-justify">
             {t("text")}
           </p>
-          <p className="mt-4 text-lg sm:text-justify leading-relaxed text-white/90">
+          <p className="mt-4 text-lg leading-relaxed text-white/90 sm:text-justify">
             {t("more")}
           </p>
         </div>
