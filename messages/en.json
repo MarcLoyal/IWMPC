@@ -217,11 +217,13 @@
       "resolved": "Resolved"
     },
     "types": {
+      "service_interruption": "Water service interruption",
       "scheduled_maintenance": "Scheduled maintenance",
       "emergency_repair": "Emergency repair",
       "low_pressure": "Low pressure",
       "water_quality": "Water quality notice",
-      "other": "Other"
+      "office_closure": "No office schedule",
+      "other": "Other important notice"
     },
     "empty": "No advisories yet.",
     "emptyFiltered": "No advisories match your selection.",

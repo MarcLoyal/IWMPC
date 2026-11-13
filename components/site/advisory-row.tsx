@@ -1,7 +1,9 @@
 import {
   ArrowRightIcon,
   CalendarDaysIcon,
+  CalendarXIcon,
   DropletIcon,
+  DropletOffIcon,
   GaugeIcon,
   InfoIcon,
   MapPinIcon,
@@ -11,30 +13,27 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import type { AdvisoryType } from "@/lib/content-types";
 import { cn } from "@/lib/utils";
-import {
-  AdvisoryStatusBadge,
-  type AdvisoryView,
-} from "@/components/site/advisory-card";
+import type { AdvisoryView } from "@/components/site/advisory-card";
 
-// Red for anything that cuts or weakens supply, yellow for planned work,
-// blue for notices.
+// Site colours only: blue for anything that affects the water supply,
+// yellow for dates to note, navy for general notices.
 const TONE = {
-  red: {
-    row: "bg-danger/10",
-    icon: "text-brand-red",
-    pill: "bg-brand-red text-white",
-    button: "bg-brand-red text-white",
+  blue: {
+    row: "bg-primary/8",
+    disc: "bg-primary text-white",
+    pill: "bg-primary text-white",
+    button: "bg-primary text-white",
   },
   yellow: {
     row: "bg-accent/20",
-    icon: "text-harvest-strong",
-    pill: "bg-accent text-accent-foreground",
+    disc: "bg-accent text-primary-dark",
+    pill: "bg-accent text-primary-dark",
     button: "bg-primary-dark text-white",
   },
-  blue: {
-    row: "bg-primary/10",
-    icon: "text-primary",
-    pill: "bg-primary text-white",
+  navy: {
+    row: "bg-surface",
+    disc: "bg-primary-dark text-white",
+    pill: "bg-primary-dark text-white",
     button: "bg-primary-dark text-white",
   },
 } as const;
@@ -43,14 +42,16 @@ const TYPE: Record<
   AdvisoryType,
   { tone: keyof typeof TONE; icon: React.ElementType }
 > = {
-  emergency_repair: { tone: "red", icon: WrenchIcon },
-  low_pressure: { tone: "red", icon: GaugeIcon },
+  service_interruption: { tone: "blue", icon: DropletOffIcon },
+  emergency_repair: { tone: "blue", icon: WrenchIcon },
+  low_pressure: { tone: "blue", icon: GaugeIcon },
   scheduled_maintenance: { tone: "yellow", icon: CalendarDaysIcon },
-  water_quality: { tone: "blue", icon: DropletIcon },
-  other: { tone: "blue", icon: InfoIcon },
+  office_closure: { tone: "yellow", icon: CalendarXIcon },
+  water_quality: { tone: "navy", icon: DropletIcon },
+  other: { tone: "navy", icon: InfoIcon },
 };
 
-/** One advisory as a coloured row: big icon, type pill, summary, "Read details". */
+/** One advisory as a coloured row: icon disc, type label, summary, "Read details". */
 export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
   const t = useTranslations();
   const { tone, icon: Icon } = TYPE[advisory.type];
@@ -58,40 +59,52 @@ export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
 
   return (
     <article className={cn("flex gap-4 p-4 sm:gap-5 sm:p-5", c.row)}>
-      <Icon
-        className={cn("size-12 shrink-0 sm:size-16", c.icon)}
-        aria-hidden="true"
-      />
+      <span
+        className={cn(
+          "flex size-14 shrink-0 items-center justify-center rounded-full shadow-sm sm:size-16",
+          c.disc,
+        )}
+      >
+        <Icon className="size-7 sm:size-8" aria-hidden="true" />
+      </span>
       <div className="min-w-0 flex-1 sm:flex sm:items-end sm:justify-between sm:gap-6">
         <div className="min-w-0">
-          <div className="flex flex-wrap items-center gap-2">
-            <span
-              className={cn(
-                "rounded-md px-2.5 py-1 text-sm font-extrabold tracking-wide uppercase",
-                c.pill,
-              )}
-            >
-              {t(`advisories.types.${advisory.type}`)}
-            </span>
-            <AdvisoryStatusBadge status={advisory.status} />
-          </div>
-          <h3 className="mt-2 text-lg leading-snug font-semibold text-foreground">
-            {advisory.title}
-          </h3>
-          <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
-            <span className="inline-flex items-center gap-1.5">
-              <CalendarDaysIcon className="size-4" aria-hidden="true" />
-              <span className="sr-only">{t("advisories.when")}: </span>
-              {advisory.when}
-            </span>
-            {advisory.affected_areas.length > 0 && (
-              <span className="inline-flex items-center gap-1.5">
-                <MapPinIcon className="size-4" aria-hidden="true" />
-                <span className="sr-only">{t("advisories.areas")}: </span>
-                {advisory.affected_areas.join(", ")}
-              </span>
+          <span
+            className={cn(
+              "inline-block rounded-md px-2.5 py-1 text-sm font-extrabold tracking-wide uppercase",
+              c.pill,
             )}
-          </p>
+          >
+            {t(`advisories.types.${advisory.type}`)}
+          </span>
+          {advisory.summary ? (
+            <>
+              <h3 className="sr-only">{advisory.title}</h3>
+              <p className="mt-2 text-lg leading-snug text-foreground">
+                {advisory.summary}
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className="mt-2 text-lg leading-snug font-semibold text-foreground">
+                {advisory.title}
+              </h3>
+              <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
+                <span className="inline-flex items-center gap-1.5">
+                  <CalendarDaysIcon className="size-4" aria-hidden="true" />
+                  <span className="sr-only">{t("advisories.when")}: </span>
+                  {advisory.when}
+                </span>
+                {advisory.affected_areas.length > 0 && (
+                  <span className="inline-flex items-center gap-1.5">
+                    <MapPinIcon className="size-4" aria-hidden="true" />
+                    <span className="sr-only">{t("advisories.areas")}: </span>
+                    {advisory.affected_areas.join(", ")}
+                  </span>
+                )}
+              </p>
+            </>
+          )}
         </div>
         <div className="mt-3 flex shrink-0 justify-end sm:mt-0">
           <Link

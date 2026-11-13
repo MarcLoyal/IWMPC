@@ -217,11 +217,13 @@
       "resolved": "Tapos na"
     },
     "types": {
+      "service_interruption": "Pansamantalang pagkawala ng tubig",
       "scheduled_maintenance": "Naka-schedule na maintenance",
       "emergency_repair": "Emergency na pagkukumpuni",
       "low_pressure": "Mahinang pressure",
       "water_quality": "Abiso sa kalidad ng tubig",
-      "other": "Iba pa"
+      "office_closure": "Walang pasok sa opisina",
+      "other": "Iba pang mahalagang abiso"
     },
     "empty": "Wala pang advisory.",
     "emptyFiltered": "Walang advisory na tumutugma sa napili.",

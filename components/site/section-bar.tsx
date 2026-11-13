@@ -1,31 +1,23 @@
 import { ArrowRightIcon } from "lucide-react";
 import { Link } from "@/lib/i18n/navigation";
-import { cn } from "@/lib/utils";
 
 /**
- * A coloured title bar for a home-page section: icon and uppercase heading on
+ * A blue title bar for a home-page section: icon and uppercase heading on
  * the left, an optional "see all" link on the right.
  */
 export function SectionBar({
   id,
   title,
   icon: Icon,
-  tone,
   action,
 }: {
   id: string;
   title: string;
   icon: React.ElementType;
-  tone: "red" | "blue";
   action?: { href: string; label: string };
 }) {
   return (
-    <div
-      className={cn(
-        "flex flex-wrap items-center justify-between gap-3 px-4 py-3 text-white sm:px-5",
-        tone === "red" ? "bg-brand-red" : "bg-primary",
-      )}
-    >
+    <div className="flex flex-wrap items-center justify-between gap-3 bg-gradient-to-r from-primary to-primary-dark px-4 py-3 text-white sm:px-5">
       <h2
         id={id}
         className="flex items-center gap-3 text-xl font-extrabold tracking-wide text-white uppercase sm:text-2xl"

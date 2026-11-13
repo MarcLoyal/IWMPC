@@ -65,7 +65,6 @@ export default async function HomePage() {
               id="advisories-heading"
               title={t("advisories.heading")}
               icon={TriangleAlertIcon}
-              tone="red"
               action={{
                 href: "/water/advisories",
                 label: t("advisories.viewAll"),
@@ -74,7 +73,7 @@ export default async function HomePage() {
             {advisories.length === 0 ? (
               <p className="p-6 text-lg">{t("advisories.none")}</p>
             ) : (
-              <ul className="divide-y divide-white">
+              <ul className="divide-y divide-border">
                 {advisories.map((a) => (
                   <li key={a.slug}>
                     <AdvisoryRow advisory={view(a)} />
@@ -94,7 +93,6 @@ export default async function HomePage() {
               id="services-heading"
               title={t("services.heading")}
               icon={LayoutGridIcon}
-              tone="blue"
               action={{ href: "/services", label: t("services.exploreAll") }}
             />
             <div className="p-4 sm:p-5">
