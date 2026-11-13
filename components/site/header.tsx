@@ -13,7 +13,7 @@ export function Header() {
 
   return (
     <header className="no-print sticky top-0 z-40 border-b bg-background/95 text-foreground shadow-sm backdrop-blur">
-      <div className="site-header-inner mx-auto flex max-w-7xl items-center gap-3 px-4 py-2.5 2xl:max-w-[100rem]">
+      <div className="site-header-inner mx-auto flex max-w-7xl items-center gap-2 px-3 py-2.5 sm:gap-3 sm:px-4 2xl:max-w-[100rem]">
         <Link
           href="/"
           className="flex min-h-12 shrink-0 items-center gap-2 rounded-lg font-heading font-bold"
@@ -24,10 +24,12 @@ export function Header() {
             width={56}
             height={56}
             priority
-            className="size-11 rounded-full sm:size-14"
+            className="size-10 rounded-full min-[400px]:size-11 sm:size-14"
           />
-          <span className="flex flex-col leading-tight">
-            <span className="text-2xl text-primary">{site.shortName}</span>
+          <span className="flex flex-col leading-tight max-[359px]:sr-only">
+            <span className="text-xl text-primary min-[400px]:text-2xl">
+              {site.shortName}
+            </span>
             <span className="hidden max-w-44 text-[0.65rem] leading-tight font-semibold tracking-wide text-muted-foreground uppercase min-[1220px]:hidden sm:block">
               {site.legalName}
             </span>
@@ -36,7 +38,7 @@ export function Header() {
 
         <NavMenu />
 
-        <div className="ml-auto flex items-center gap-2 min-[1220px]:ml-0">
+        <div className="ml-auto flex items-center gap-1 min-[1220px]:ml-0 sm:gap-2">
           {/* On tablet and up the language toggle lives in the top strip */}
           <div className="md:hidden">
             <Suspense fallback={null}>
