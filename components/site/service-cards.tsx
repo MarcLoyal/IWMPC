@@ -16,6 +16,7 @@ const SERVICES = [
     icon: DropletIcon,
     badge: "bg-primary",
     image: "/images/collage/03-water-line-work.jpg",
+    fit: "cover",
   },
   {
     key: "rice",
@@ -23,6 +24,7 @@ const SERVICES = [
     icon: WheatIcon,
     badge: "bg-success",
     image: "/images/services/rice.jpg",
+    fit: "cover",
   },
   {
     key: "lpg",
@@ -30,13 +32,16 @@ const SERVICES = [
     icon: FlameIcon,
     badge: "bg-brand-red",
     image: "/images/services/lpg.jpg",
+    fit: "cover",
   },
   {
     key: "loans",
     href: "/services/loans",
     icon: HandshakeIcon,
     badge: "bg-purple-700",
-    image: "/images/services/loans-iwmpc.jpg",
+    image: "/images/services/loans-icon.webp",
+    // An illustration with its own frame: show it whole instead of cropping.
+    fit: "contain",
   },
 ] as const;
 
@@ -50,19 +55,25 @@ export async function ServiceCards({
 
   return (
     <ul className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-      {SERVICES.map(({ key, href, icon: Icon, badge, image }) => (
+      {SERVICES.map(({ key, href, icon: Icon, badge, image, fit }) => (
         <li key={key}>
           <Link
             href={href}
             className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card text-center shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
           >
-            <div className="relative aspect-[16/10] overflow-hidden bg-surface">
+            <div
+              className={`relative aspect-[16/10] overflow-hidden ${fit === "contain" ? "bg-white" : "bg-surface"}`}
+            >
               <Image
                 src={image}
                 alt=""
                 fill
                 sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                className="object-cover transition duration-300 group-hover:scale-105"
+                className={
+                  fit === "contain"
+                    ? "object-contain p-1 pb-8 transition duration-300 group-hover:scale-105"
+                    : "object-cover transition duration-300 group-hover:scale-105"
+                }
               />
             </div>
             <span
