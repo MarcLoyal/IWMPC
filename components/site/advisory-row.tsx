@@ -1,38 +1,30 @@
-import {
-  ArrowRightIcon,
-  CalendarDaysIcon,
-  CalendarXIcon,
-  DropletIcon,
-  DropletOffIcon,
-  GaugeIcon,
-  InfoIcon,
-  MapPinIcon,
-  WrenchIcon,
-} from "lucide-react";
+import { ArrowRightIcon, CalendarDaysIcon, MapPinIcon } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import type { AdvisoryType } from "@/lib/content-types";
 import { cn } from "@/lib/utils";
 import type { AdvisoryView } from "@/components/site/advisory-card";
+import {
+  CalendarIcon,
+  NoWaterIcon,
+  NoticeIcon,
+} from "@/components/site/advisory-icons";
 
 // Site colours only: blue for anything that affects the water supply,
 // yellow for dates to note, navy for general notices.
 const TONE = {
   blue: {
     row: "bg-primary/8",
-    disc: "bg-primary text-white",
     pill: "bg-primary text-white",
     button: "bg-primary text-white",
   },
   yellow: {
     row: "bg-accent/20",
-    disc: "bg-accent text-primary-dark",
     pill: "bg-accent text-primary-dark",
     button: "bg-primary-dark text-white",
   },
   navy: {
     row: "bg-surface",
-    disc: "bg-primary-dark text-white",
     pill: "bg-primary-dark text-white",
     button: "bg-primary-dark text-white",
   },
@@ -40,18 +32,18 @@ const TONE = {
 
 const TYPE: Record<
   AdvisoryType,
-  { tone: keyof typeof TONE; icon: React.ElementType }
+  { tone: keyof typeof TONE; icon: React.ComponentType<{ className?: string }> }
 > = {
-  service_interruption: { tone: "blue", icon: DropletOffIcon },
-  emergency_repair: { tone: "blue", icon: WrenchIcon },
-  low_pressure: { tone: "blue", icon: GaugeIcon },
-  scheduled_maintenance: { tone: "yellow", icon: CalendarDaysIcon },
-  office_closure: { tone: "yellow", icon: CalendarXIcon },
-  water_quality: { tone: "navy", icon: DropletIcon },
-  other: { tone: "navy", icon: InfoIcon },
+  service_interruption: { tone: "blue", icon: NoWaterIcon },
+  emergency_repair: { tone: "blue", icon: NoWaterIcon },
+  low_pressure: { tone: "blue", icon: NoWaterIcon },
+  scheduled_maintenance: { tone: "yellow", icon: CalendarIcon },
+  office_closure: { tone: "yellow", icon: CalendarIcon },
+  water_quality: { tone: "navy", icon: NoticeIcon },
+  other: { tone: "navy", icon: NoticeIcon },
 };
 
-/** One advisory as a coloured row: icon disc, type label, summary, "Read details". */
+/** One advisory as a coloured row: illustrated icon, type label, summary, "Read details". */
 export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
   const t = useTranslations();
   const { tone, icon: Icon } = TYPE[advisory.type];
@@ -59,14 +51,7 @@ export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
 
   return (
     <article className={cn("flex gap-4 p-4 sm:gap-5 sm:p-5", c.row)}>
-      <span
-        className={cn(
-          "flex size-14 shrink-0 items-center justify-center rounded-full shadow-sm sm:size-16",
-          c.disc,
-        )}
-      >
-        <Icon className="size-7 sm:size-8" aria-hidden="true" />
-      </span>
+      <Icon className="size-14 shrink-0 sm:size-16" />
       <div className="min-w-0 flex-1 sm:flex sm:items-end sm:justify-between sm:gap-6">
         <div className="min-w-0">
           <span
