@@ -2,26 +2,24 @@ import {
   ArrowRightIcon,
   BadgeCheckIcon,
   DropletIcon,
-  DropletsIcon,
-  FlameIcon,
-  HandCoinsIcon,
   HandshakeIcon,
+  LayoutGridIcon,
   TriangleAlertIcon,
-  WheatIcon,
 } from "lucide-react";
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
 import { activeAdvisories, getAdvisories, getNow } from "@/lib/content";
 import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
 import { Button } from "@/components/ui/button";
-import { AdvisoryCard } from "@/components/site/advisory-card";
+import { AdvisoryRow } from "@/components/site/advisory-row";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
 import { PhotoCollage } from "@/components/site/photo-collage";
 import { HeroNews } from "@/components/site/hero-news";
 import { Placeholder } from "@/components/site/placeholder";
+import { SectionBar } from "@/components/site/section-bar";
+import { ServiceCards } from "@/components/site/service-cards";
 
 function StatTile({ label, value }: { label: string; value: string | null }) {
   return (
@@ -44,33 +42,6 @@ export default async function HomePage() {
     { key: "report", href: REPORT_HREF, icon: TriangleAlertIcon },
   ] as const;
 
-  const services = [
-    {
-      key: "water",
-      href: "/water",
-      icon: DropletsIcon,
-      image: "/images/collage/03-water-line-work.jpg",
-    },
-    {
-      key: "rice",
-      href: "/services/rice",
-      icon: WheatIcon,
-      image: "/images/services/rice.jpg",
-    },
-    {
-      key: "lpg",
-      href: "/services/lpg",
-      icon: FlameIcon,
-      image: "/images/services/lpg.jpg",
-    },
-    {
-      key: "loans",
-      href: "/services/loans",
-      icon: HandCoinsIcon,
-      image: "/images/services/loans.jpg",
-    },
-  ] as const;
-
   return (
     <>
       {/* 0. Photo collage, right under the header */}
@@ -89,85 +60,54 @@ export default async function HomePage() {
       {/* 2. Latest advisories */}
       <section aria-labelledby="advisories-heading" className="bg-surface">
         <Container className="py-10">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <h2 id="advisories-heading" className="text-2xl">
-              {t("advisories.heading")}
-            </h2>
-            <Link
-              href="/water/advisories"
-              className="inline-flex min-h-12 items-center gap-1 font-semibold text-primary underline underline-offset-4"
-            >
-              {t("advisories.viewAll")}
-              <ArrowRightIcon className="size-4" aria-hidden="true" />
-            </Link>
+          <div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
+            <SectionBar
+              id="advisories-heading"
+              title={t("advisories.heading")}
+              icon={TriangleAlertIcon}
+              tone="red"
+              action={{
+                href: "/water/advisories",
+                label: t("advisories.viewAll"),
+              }}
+            />
+            {advisories.length === 0 ? (
+              <p className="p-6 text-lg">{t("advisories.none")}</p>
+            ) : (
+              <ul className="divide-y divide-white">
+                {advisories.map((a) => (
+                  <li key={a.slug}>
+                    <AdvisoryRow advisory={view(a)} />
+                  </li>
+                ))}
+              </ul>
+            )}
           </div>
-          {advisories.length === 0 ? (
-            <p className="mt-4 rounded-xl border bg-card p-6 text-lg">
-              {t("advisories.none")}
-            </p>
-          ) : (
-            <ul className="mt-4 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-              {advisories.map((a) => (
-                <li key={a.slug}>
-                  <AdvisoryCard advisory={view(a)} />
-                </li>
-              ))}
-            </ul>
-          )}
         </Container>
       </section>
 
-      {/* 3. Services */}
+      {/* 3. Products and services */}
       <section aria-labelledby="services-heading">
         <Container className="py-10">
-          <h2 id="services-heading" className="text-2xl">
-            {t("services.heading")}
-          </h2>
-          <ul className="mt-4 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-            {services.map(({ key, href, icon: Icon, image }) => (
-              <li key={key}>
-                <Link
-                  href={href}
-                  className="group flex h-full flex-col overflow-hidden rounded-2xl border bg-card shadow-sm transition hover:-translate-y-0.5 hover:border-primary hover:shadow-md"
-                >
-                  <div className="relative aspect-[16/10] overflow-hidden bg-surface">
-                    <Image
-                      src={image}
-                      alt=""
-                      fill
-                      sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
-                      className="object-cover transition duration-300 group-hover:scale-105"
-                    />
-                    <span className="absolute top-3 right-3 flex size-11 items-center justify-center rounded-full bg-white text-primary shadow-md">
-                      <Icon className="size-6" aria-hidden="true" />
-                    </span>
-                  </div>
-                  <div className="flex flex-1 flex-col gap-2 p-5">
-                    <span className="font-heading text-xl font-bold text-primary">
-                      {t(`services.${key}`)}
-                    </span>
-                    <span className="text-muted-foreground">
-                      {t(`services.${key}Desc`)}
-                    </span>
-                    <span className="mt-auto flex min-h-12 items-center justify-between border-t pt-3 font-semibold text-primary">
-                      {t("services.viewDetails")}
-                      <ArrowRightIcon
-                        className="size-5 transition group-hover:translate-x-1"
-                        aria-hidden="true"
-                      />
-                    </span>
-                  </div>
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="overflow-hidden rounded-2xl border bg-surface shadow-sm">
+            <SectionBar
+              id="services-heading"
+              title={t("services.heading")}
+              icon={LayoutGridIcon}
+              tone="blue"
+              action={{ href: "/services", label: t("services.exploreAll") }}
+            />
+            <div className="p-4 sm:p-5">
+              <ServiceCards />
+            </div>
+          </div>
         </Container>
       </section>
 
       {/* 4. Quick actions */}
       <section aria-labelledby="quick-heading">
         <Container className="py-10">
-          <h2 id="quick-heading" className="text-2xl">
+          <h2 id="quick-heading" className="text-2xl tracking-wide uppercase">
             {t("quick.heading")}
           </h2>
           <ul className="mt-4 grid grid-cols-2 gap-3">
@@ -194,7 +134,7 @@ export default async function HomePage() {
       {/* 5. Trust strip — household count stays a placeholder until the cooperative confirms it */}
       <section aria-labelledby="trust-heading" className="bg-surface">
         <Container className="py-10">
-          <h2 id="trust-heading" className="text-2xl">
+          <h2 id="trust-heading" className="text-2xl tracking-wide uppercase">
             {t("trust.heading")}
           </h2>
           <dl className="mt-4 grid gap-4 sm:grid-cols-3">

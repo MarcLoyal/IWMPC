@@ -90,7 +90,8 @@
     "advisories": {
       "heading": "Advisories",
       "none": "No scheduled interruptions.",
-      "viewAll": "All advisories"
+      "viewAll": "All advisories",
+      "readDetails": "Read details"
     },
     "services": {
       "heading": "Products and Services",
@@ -103,7 +104,7 @@
       "loans": "Loans",
       "loansDesc": "Loans for members.",
       "more": "Learn more",
-      "viewDetails": "View details"
+      "exploreAll": "Explore all services"
     },
     "trust": {
       "heading": "Why IWMPC",
@@ -569,5 +570,9 @@
     "next": "Next photo",
     "position": "Photo {current} of {total}",
     "hint": "Tap a photo to enlarge it."
+  },
+  "servicesPage": {
+    "title": "Products and Services",
+    "intro": "Water, rice, LPG and loans from the cooperative, for members and the community."
   }
 }

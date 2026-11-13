@@ -90,7 +90,8 @@
     "advisories": {
       "heading": "Mga Advisory",
       "none": "Walang naka-schedule na interruption.",
-      "viewAll": "Lahat ng advisory"
+      "viewAll": "Lahat ng advisory",
+      "readDetails": "Basahin ang detalye"
     },
     "services": {
       "heading": "Mga Produkto at Serbisyo",
@@ -103,7 +104,7 @@
       "loans": "Pautang",
       "loansDesc": "Mga pautang para sa mga miyembro.",
       "more": "Alamin",
-      "viewDetails": "Tingnan ang detalye"
+      "exploreAll": "Tingnan lahat ng serbisyo"
     },
     "trust": {
       "heading": "Bakit IWMPC",
@@ -569,5 +570,9 @@
     "next": "Susunod na larawan",
     "position": "Larawan {current} ng {total}",
     "hint": "Pindutin ang larawan para palakihin."
+  },
+  "servicesPage": {
+    "title": "Mga Produkto at Serbisyo",
+    "intro": "Tubig, bigas, LPG at pautang mula sa kooperatiba, para sa mga miyembro at sa komunidad."
   }
 }
