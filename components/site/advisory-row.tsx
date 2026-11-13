@@ -3,6 +3,7 @@ import { useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import type { AdvisoryType } from "@/lib/content-types";
 import { cn } from "@/lib/utils";
+import { Container } from "@/components/site/container";
 import type { AdvisoryView } from "@/components/site/advisory-card";
 import {
   CalendarIcon,
@@ -50,61 +51,63 @@ export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
   const c = TONE[tone];
 
   return (
-    <article className={cn("flex gap-4 p-4 sm:gap-5 sm:p-5", c.row)}>
-      <Icon className="size-14 shrink-0 sm:size-16" />
-      <div className="min-w-0 flex-1 sm:flex sm:items-end sm:justify-between sm:gap-6">
-        <div className="min-w-0">
-          <span
-            className={cn(
-              "inline-block rounded-md px-2.5 py-1 text-sm font-extrabold tracking-wide uppercase",
-              c.pill,
-            )}
-          >
-            {t(`advisories.types.${advisory.type}`)}
-          </span>
-          {advisory.summary ? (
-            <>
-              <h3 className="sr-only">{advisory.title}</h3>
-              <p className="mt-2 text-lg leading-snug text-foreground">
-                {advisory.summary}
-              </p>
-            </>
-          ) : (
-            <>
-              <h3 className="mt-2 text-lg leading-snug font-semibold text-foreground">
-                {advisory.title}
-              </h3>
-              <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
-                <span className="inline-flex items-center gap-1.5">
-                  <CalendarDaysIcon className="size-4" aria-hidden="true" />
-                  <span className="sr-only">{t("advisories.when")}: </span>
-                  {advisory.when}
-                </span>
-                {advisory.affected_areas.length > 0 && (
+    <article className={c.row}>
+      <Container className="flex gap-4 py-4 sm:gap-5 sm:py-5">
+        <Icon className="size-14 shrink-0 sm:size-16" />
+        <div className="min-w-0 flex-1 sm:flex sm:items-end sm:justify-between sm:gap-6">
+          <div className="min-w-0">
+            <span
+              className={cn(
+                "inline-block rounded-md px-2.5 py-1 text-sm font-extrabold tracking-wide uppercase",
+                c.pill,
+              )}
+            >
+              {t(`advisories.types.${advisory.type}`)}
+            </span>
+            {advisory.summary ? (
+              <>
+                <h3 className="sr-only">{advisory.title}</h3>
+                <p className="mt-2 text-lg leading-snug text-foreground">
+                  {advisory.summary}
+                </p>
+              </>
+            ) : (
+              <>
+                <h3 className="mt-2 text-lg leading-snug font-semibold text-foreground">
+                  {advisory.title}
+                </h3>
+                <p className="mt-1 flex flex-wrap gap-x-4 gap-y-1 text-muted-foreground">
                   <span className="inline-flex items-center gap-1.5">
-                    <MapPinIcon className="size-4" aria-hidden="true" />
-                    <span className="sr-only">{t("advisories.areas")}: </span>
-                    {advisory.affected_areas.join(", ")}
+                    <CalendarDaysIcon className="size-4" aria-hidden="true" />
+                    <span className="sr-only">{t("advisories.when")}: </span>
+                    {advisory.when}
                   </span>
-                )}
-              </p>
-            </>
-          )}
-        </div>
-        <div className="mt-3 flex shrink-0 justify-end sm:mt-0">
-          <Link
-            href={`/water/advisories/${advisory.slug}`}
-            className={cn(
-              "inline-flex min-h-11 items-center gap-1.5 rounded-full px-4 text-sm font-bold shadow-sm hover:brightness-110",
-              c.button,
+                  {advisory.affected_areas.length > 0 && (
+                    <span className="inline-flex items-center gap-1.5">
+                      <MapPinIcon className="size-4" aria-hidden="true" />
+                      <span className="sr-only">{t("advisories.areas")}: </span>
+                      {advisory.affected_areas.join(", ")}
+                    </span>
+                  )}
+                </p>
+              </>
             )}
-          >
-            {t("home.advisories.readDetails")}
-            <span className="sr-only">: {advisory.title}</span>
-            <ArrowRightIcon className="size-4" aria-hidden="true" />
-          </Link>
+          </div>
+          <div className="mt-3 flex shrink-0 justify-end sm:mt-0">
+            <Link
+              href={`/water/advisories/${advisory.slug}`}
+              className={cn(
+                "inline-flex min-h-11 items-center gap-1.5 rounded-full px-4 text-sm font-bold shadow-sm hover:brightness-110",
+                c.button,
+              )}
+            >
+              {t("home.advisories.readDetails")}
+              <span className="sr-only">: {advisory.title}</span>
+              <ArrowRightIcon className="size-4" aria-hidden="true" />
+            </Link>
+          </div>
         </div>
-      </div>
+      </Container>
     </article>
   );
 }

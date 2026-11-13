@@ -59,8 +59,8 @@ export default async function HomePage() {
 
       {/* 2. Latest advisories */}
       <section aria-labelledby="advisories-heading" className="bg-surface">
-        <Container className="py-10">
-          <div className="overflow-hidden rounded-2xl border bg-card shadow-sm">
+        <div className="px-3 py-6 md:px-5 md:py-8">
+          <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl border bg-card shadow-sm">
             <SectionBar
               id="advisories-heading"
               title={t("advisories.heading")}
@@ -71,7 +71,9 @@ export default async function HomePage() {
               }}
             />
             {advisories.length === 0 ? (
-              <p className="p-6 text-lg">{t("advisories.none")}</p>
+              <Container className="py-6 text-lg">
+                {t("advisories.none")}
+              </Container>
             ) : (
               <ul className="divide-y divide-border">
                 {advisories.map((a) => (
@@ -82,24 +84,24 @@ export default async function HomePage() {
               </ul>
             )}
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* 3. Products and services */}
       <section aria-labelledby="services-heading">
-        <Container className="py-10">
-          <div className="overflow-hidden rounded-2xl border bg-surface shadow-sm">
+        <div className="px-3 py-6 md:px-5 md:py-8">
+          <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl border bg-surface shadow-sm">
             <SectionBar
               id="services-heading"
               title={t("services.heading")}
               icon={LayoutGridIcon}
               action={{ href: "/services", label: t("services.exploreAll") }}
             />
-            <div className="p-4 sm:p-5">
+            <Container className="py-5">
               <ServiceCards />
-            </div>
+            </Container>
           </div>
-        </Container>
+        </div>
       </section>
 
       {/* 4. Quick actions */}
