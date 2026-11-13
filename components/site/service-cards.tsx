@@ -36,7 +36,7 @@ const SERVICES = [
     href: "/services/loans",
     icon: HandshakeIcon,
     badge: "bg-purple-700",
-    image: "/images/services/loans.jpg",
+    image: "/images/services/loans-iwmpc.jpg",
   },
 ] as const;
 
