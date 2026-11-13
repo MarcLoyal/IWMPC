@@ -67,7 +67,7 @@ export function AdvisoryRow({ advisory }: { advisory: AdvisoryView }) {
             {advisory.summary ? (
               <>
                 <h3 className="sr-only">{advisory.title}</h3>
-                <p className="mt-2 text-lg leading-snug text-foreground">
+                <p className="mt-2 text-justify text-lg leading-snug hyphens-auto text-foreground">
                   {advisory.summary}
                 </p>
               </>
