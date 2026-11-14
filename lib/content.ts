@@ -61,6 +61,9 @@ const advisorySchema = z.object({
   sample: z.boolean().default(false),
   title_fil: z.string().min(1),
   title_en: optionalText,
+  /** One or two sentences for the home-page advisory list. */
+  summary_fil: optionalText,
+  summary_en: optionalText,
   type: z.enum(ADVISORY_TYPES),
   status: z.enum(ADVISORY_STATUSES),
   affected_areas: z.array(z.string()).default([]),

@@ -90,11 +90,12 @@
     "advisories": {
       "heading": "Advisories",
       "none": "No scheduled interruptions.",
-      "viewAll": "All advisories"
+      "viewAll": "All advisories",
+      "readDetails": "Read details"
     },
     "services": {
-      "heading": "Our Services",
-      "water": "Water",
+      "heading": "Products and Services",
+      "water": "Water Services",
       "waterDesc": "Water supply, billing, new connections, and problem reports.",
       "rice": "Rice",
       "riceDesc": "The cooperative's rice store.",
@@ -102,7 +103,9 @@
       "lpgDesc": "LPG cooking gas from the cooperative.",
       "loans": "Loans",
       "loansDesc": "Loans for members.",
-      "more": "Learn more"
+      "more": "Learn more",
+      "exploreAll": "Explore all services",
+      "intro": "IWMPC provides essential products and services designed to meet the everyday needs of its members and community. From reliable water services, quality rice products, and LPG supply to accessible loan services, we are committed to delivering convenience, affordability, and dependable service."
     },
     "trust": {
       "heading": "Why IWMPC",
@@ -113,9 +116,14 @@
       "cub": "Member of the Cooperative Union of Batangas"
     },
     "join": {
-      "heading": "Become a member of the cooperative",
-      "text": "IWMPC is owned by its members. Learn about the benefits, requirements, and steps to join.",
-      "cta": "How to Join"
+      "eyebrow": "Be part of our community",
+      "heading": "Are you an Inicbulangueno?",
+      "tagline": "Your Community. Your Cooperative. Your Future.",
+      "text": "Be part of IWMPC and experience the power of cooperation! Enjoy accessible products and services, opportunities for growth, and the benefits of belonging to a cooperative committed to the progress and well-being of its members and community.",
+      "subheading": "Become a member today!",
+      "subtext": "Take the first step toward a brighter future. Join our growing cooperative family and be part of a community where we grow and prosper together!",
+      "cta": "Inquire about membership",
+      "ctaSub": "Contact us today"
     },
     "contact": {
       "heading": "Visit or call us",
@@ -127,6 +135,13 @@
       "now": "Right now",
       "none": "No scheduled interruptions.",
       "all": "All advisories"
+    },
+    "heroNews": {
+      "heading": "Latest News and Updates",
+      "videoLabel": "Video: IWMPC at the Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "Inicbulan Waterworks Multipurpose Cooperative (IWMPC) placed second as Outstanding Cooperative (Small Category) at the Governor Vilma Santos-Recto Matatag na Kooperatiba Award.",
+      "more": "This prestigious recognition reflects the cooperative's dedication, sound management, and shared effort in providing honest, quality service to its members and the community. It inspires IWMPC to keep building unity, progress, and even stronger service."
     },
     "eyebrow": "Water service for Brgy. Inicbulan",
     "checks": {
@@ -208,11 +223,13 @@
       "resolved": "Resolved"
     },
     "types": {
+      "service_interruption": "Water service interruption",
       "scheduled_maintenance": "Scheduled maintenance",
       "emergency_repair": "Emergency repair",
       "low_pressure": "Low pressure",
       "water_quality": "Water quality notice",
-      "other": "Other"
+      "office_closure": "No office schedule",
+      "other": "Other important notice"
     },
     "empty": "No advisories yet.",
     "emptyFiltered": "No advisories match your selection.",
@@ -561,5 +578,9 @@
     "next": "Next photo",
     "position": "Photo {current} of {total}",
     "hint": "Tap a photo to enlarge it."
+  },
+  "servicesPage": {
+    "title": "Products and Services",
+    "intro": "Water, rice, LPG and loans from the cooperative, for members and the community."
   }
 }

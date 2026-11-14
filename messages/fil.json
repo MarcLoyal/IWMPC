@@ -90,11 +90,12 @@
     "advisories": {
       "heading": "Mga Advisory",
       "none": "Walang naka-schedule na interruption.",
-      "viewAll": "Lahat ng advisory"
+      "viewAll": "Lahat ng advisory",
+      "readDetails": "Basahin ang detalye"
     },
     "services": {
-      "heading": "Aming mga Serbisyo",
-      "water": "Tubig",
+      "heading": "Mga Produkto at Serbisyo",
+      "water": "Serbisyo sa Tubig",
       "waterDesc": "Supply ng tubig, bayarin, bagong koneksyon, at pag-report ng problema.",
       "rice": "Bigas",
       "riceDesc": "Tindahan ng bigas ng kooperatiba.",
@@ -102,7 +103,9 @@
       "lpgDesc": "LPG (gasul) na panluto mula sa kooperatiba.",
       "loans": "Pautang",
       "loansDesc": "Mga pautang para sa mga miyembro.",
-      "more": "Alamin"
+      "more": "Alamin",
+      "exploreAll": "Tingnan lahat ng serbisyo",
+      "intro": "Nagbibigay ang IWMPC ng mahahalagang produkto at serbisyo para matugunan ang pang-araw-araw na pangangailangan ng mga miyembro at ng komunidad. Mula sa maaasahang serbisyo sa tubig, de-kalidad na bigas, at supply ng LPG hanggang sa abot-kayang pautang, layunin naming maghatid ng kaginhawaan, abot-kayang presyo, at maaasahang serbisyo."
     },
     "trust": {
       "heading": "Bakit IWMPC",
@@ -113,9 +116,14 @@
       "cub": "Miyembro ng Cooperative Union of Batangas"
     },
     "join": {
-      "heading": "Maging miyembro ng kooperatiba",
-      "text": "Ang mga miyembro ang may-ari ng IWMPC. Alamin ang mga benepisyo, requirements, at hakbang sa pagsali.",
-      "cta": "Paano Sumali"
+      "eyebrow": "Maging bahagi ng aming komunidad",
+      "heading": "Ikaw ba ay taga-Inicbulan?",
+      "tagline": "Iyong Komunidad. Iyong Kooperatiba. Iyong Kinabukasan.",
+      "text": "Maging bahagi ng IWMPC at maranasan ang lakas ng pagtutulungan! Tamasahin ang abot-kayang mga produkto at serbisyo, mga pagkakataong umunlad, at ang mga benepisyo ng pagiging kasapi ng isang kooperatibang nakatuon sa pag-unlad at kapakanan ng mga miyembro at ng komunidad.",
+      "subheading": "Maging miyembro ngayon!",
+      "subtext": "Gawin ang unang hakbang tungo sa mas maliwanag na kinabukasan. Sumali sa lumalaking pamilya ng aming kooperatiba at maging bahagi ng isang komunidad na sama-samang umuunlad!",
+      "cta": "Magtanong tungkol sa pagiging miyembro",
+      "ctaSub": "Makipag-ugnayan sa amin ngayon"
     },
     "contact": {
       "heading": "Bisitahin o tawagan kami",
@@ -127,6 +135,13 @@
       "now": "Ngayon",
       "none": "Walang naka-schedule na interruption.",
       "all": "Lahat ng advisory"
+    },
+    "heroNews": {
+      "heading": "Pinakabagong Balita at Update",
+      "videoLabel": "Video: Ang IWMPC sa Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "Nakamit ng Inicbulan Waterworks Multipurpose Cooperative (IWMPC) ang ikalawang puwesto bilang Outstanding Cooperative (Small Category) sa Governor Vilma Santos-Recto Matatag na Kooperatiba Award.",
+      "more": "Ang prestihiyosong pagkilalang ito ay sumasalamin sa dedikasyon, mahusay na pamamahala, at sama-samang pagsisikap ng kooperatiba sa pagbibigay ng tapat at de-kalidad na serbisyo sa mga kasapi at komunidad. Ang tagumpay na ito ay nagsisilbing inspirasyon upang patuloy na isulong ng IWMPC ang pagkakaisa, pag-unlad, at mas matatag na paglilingkod."
     },
     "eyebrow": "Serbisyo ng tubig sa Brgy. Inicbulan",
     "checks": {
@@ -208,11 +223,13 @@
       "resolved": "Tapos na"
     },
     "types": {
+      "service_interruption": "Pansamantalang pagkawala ng tubig",
       "scheduled_maintenance": "Naka-schedule na maintenance",
       "emergency_repair": "Emergency na pagkukumpuni",
       "low_pressure": "Mahinang pressure",
       "water_quality": "Abiso sa kalidad ng tubig",
-      "other": "Iba pa"
+      "office_closure": "Walang pasok sa opisina",
+      "other": "Iba pang mahalagang abiso"
     },
     "empty": "Wala pang advisory.",
     "emptyFiltered": "Walang advisory na tumutugma sa napili.",
@@ -561,5 +578,9 @@
     "next": "Susunod na larawan",
     "position": "Larawan {current} ng {total}",
     "hint": "Pindutin ang larawan para palakihin."
+  },
+  "servicesPage": {
+    "title": "Mga Produkto at Serbisyo",
+    "intro": "Tubig, bigas, LPG at pautang mula sa kooperatiba, para sa mga miyembro at sa komunidad."
   }
 }

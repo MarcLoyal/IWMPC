@@ -18,6 +18,7 @@ export type AdvisoryView = {
   slug: string;
   sample: boolean;
   title: string;
+  summary?: string;
   type: AdvisoryType;
   status: AdvisoryStatus;
   affected_areas: string[];

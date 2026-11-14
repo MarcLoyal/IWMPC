@@ -19,6 +19,8 @@ export const site = {
   address: "Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201",
   /** Established and registered with the CDA (ISO date). */
   founded: "2003-07-01",
+  /** Total members, as confirmed by the cooperative (Nov 2026). */
+  members: 961,
   /** Office hours, one line per schedule, in each language. */
   officeHours: {
     fil: ["Lunes–Biyernes: 7:30 AM – 4:30 PM", "Sabado: 7:30 AM – 11:00 AM"],
