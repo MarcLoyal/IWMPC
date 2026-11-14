@@ -116,9 +116,14 @@
       "cub": "Member of the Cooperative Union of Batangas"
     },
     "join": {
-      "heading": "Become a member of the cooperative",
-      "text": "IWMPC is owned by its members. Learn about the benefits, requirements, and steps to join.",
-      "cta": "How to Join"
+      "eyebrow": "Be part of our community",
+      "heading": "Are you an Inicbulangueno?",
+      "tagline": "Your Community. Your Cooperative. Your Future.",
+      "text": "Be part of IWMPC and experience the power of cooperation! Enjoy accessible products and services, opportunities for growth, and the benefits of belonging to a cooperative committed to the progress and well-being of its members and community.",
+      "subheading": "Become a member today!",
+      "subtext": "Take the first step toward a brighter future. Join our growing cooperative family and be part of a community where we grow and prosper together!",
+      "cta": "Inquire about membership",
+      "ctaSub": "Contact us today"
     },
     "contact": {
       "heading": "Visit or call us",

@@ -107,7 +107,53 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 4. Quick actions */}
+      {/* 4. Become a member */}
+      <section aria-labelledby="join-heading">
+        <div className="px-3 pb-6 md:px-5 md:pb-8">
+          <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white shadow-sm">
+            <Container className="py-8 md:py-10">
+              <p className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-extrabold tracking-wide text-accent-foreground uppercase">
+                {t("join.eyebrow")}
+              </p>
+              <h2
+                id="join-heading"
+                className="mt-4 text-2xl font-extrabold tracking-wide break-words text-white uppercase min-[400px]:text-3xl md:text-4xl"
+              >
+                {t("join.heading")}
+              </h2>
+              <p className="mt-2 text-xl font-bold text-accent md:text-2xl">
+                {t("join.tagline")}
+              </p>
+              <p className="mt-4 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
+                {t("join.text")}
+              </p>
+              <h3 className="mt-6 text-xl font-extrabold tracking-wide text-white uppercase md:text-2xl">
+                {t("join.subheading")}
+              </h3>
+              <p className="mt-2 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
+                {t("join.subtext")}
+              </p>
+              <Link
+                href="/membership#inquire"
+                className="group mt-6 flex flex-col items-center gap-1 rounded-2xl bg-accent px-5 py-5 text-center text-primary-dark shadow-md transition hover:brightness-95"
+              >
+                <span className="text-xl font-extrabold tracking-wide uppercase md:text-2xl">
+                  {t("join.cta")}
+                </span>
+                <span className="inline-flex items-center gap-1.5 text-sm font-bold tracking-wide uppercase">
+                  {t("join.ctaSub")}
+                  <ArrowRightIcon
+                    className="size-4 transition group-hover:translate-x-1"
+                    aria-hidden="true"
+                  />
+                </span>
+              </Link>
+            </Container>
+          </div>
+        </div>
+      </section>
+
+      {/* 5. Quick actions */}
       <section aria-labelledby="quick-heading">
         <Container className="py-10">
           <h2 id="quick-heading" className="text-2xl tracking-wide uppercase">
@@ -134,7 +180,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 5. Trust strip — household count stays a placeholder until the cooperative confirms it */}
+      {/* 6. Trust strip — household count stays a placeholder until the cooperative confirms it */}
       <section aria-labelledby="trust-heading" className="bg-surface">
         <Container className="py-10">
           <h2 id="trust-heading" className="text-2xl tracking-wide uppercase">
@@ -172,21 +218,6 @@ export default async function HomePage() {
               <span className="font-semibold">{t("trust.cub")}</span>
             </li>
           </ul>
-        </Container>
-      </section>
-
-      {/* 6. Become a member */}
-      <section aria-labelledby="join-heading" className="bg-primary text-white">
-        <Container className="flex flex-col gap-5 py-12 md:flex-row md:items-center md:justify-between">
-          <div>
-            <h2 id="join-heading" className="text-2xl text-white">
-              {t("join.heading")}
-            </h2>
-            <p className="mt-2 text-white/90">{t("join.text")}</p>
-          </div>
-          <Button asChild size="lg" variant="accent">
-            <Link href="/membership">{t("join.cta")}</Link>
-          </Button>
         </Container>
       </section>
 

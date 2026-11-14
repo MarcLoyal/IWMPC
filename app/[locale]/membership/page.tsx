@@ -24,7 +24,11 @@ export default async function MembershipPage() {
         <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
           {t("moreSoon")}
         </p>
-        <section aria-labelledby="form-heading">
+        <section
+          id="inquire"
+          aria-labelledby="form-heading"
+          className="scroll-mt-28"
+        >
           <h2 id="form-heading" className="mb-4 text-2xl">
             {t("formHeading")}
           </h2>

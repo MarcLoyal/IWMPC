@@ -116,9 +116,14 @@
       "cub": "Miyembro ng Cooperative Union of Batangas"
     },
     "join": {
-      "heading": "Maging miyembro ng kooperatiba",
-      "text": "Ang mga miyembro ang may-ari ng IWMPC. Alamin ang mga benepisyo, requirements, at hakbang sa pagsali.",
-      "cta": "Paano Sumali"
+      "eyebrow": "Maging bahagi ng aming komunidad",
+      "heading": "Ikaw ba ay taga-Inicbulan?",
+      "tagline": "Iyong Komunidad. Iyong Kooperatiba. Iyong Kinabukasan.",
+      "text": "Maging bahagi ng IWMPC at maranasan ang lakas ng pagtutulungan! Tamasahin ang abot-kayang mga produkto at serbisyo, mga pagkakataong umunlad, at ang mga benepisyo ng pagiging kasapi ng isang kooperatibang nakatuon sa pag-unlad at kapakanan ng mga miyembro at ng komunidad.",
+      "subheading": "Maging miyembro ngayon!",
+      "subtext": "Gawin ang unang hakbang tungo sa mas maliwanag na kinabukasan. Sumali sa lumalaking pamilya ng aming kooperatiba at maging bahagi ng isang komunidad na sama-samang umuunlad!",
+      "cta": "Magtanong tungkol sa pagiging miyembro",
+      "ctaSub": "Makipag-ugnayan sa amin ngayon"
     },
     "contact": {
       "heading": "Bisitahin o tawagan kami",
