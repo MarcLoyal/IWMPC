@@ -98,6 +98,9 @@ export default async function HomePage() {
               action={{ href: "/services", label: t("services.exploreAll") }}
             />
             <Container className="py-5">
+              <p className="mb-5 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-foreground/85">
+                {t("services.intro")}
+              </p>
               <ServiceCards />
             </Container>
           </div>
