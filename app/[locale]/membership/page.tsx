@@ -24,8 +24,15 @@ export default async function MembershipPage() {
 
   return (
     <>
+      {/* Page title, above the hero panel */}
+      <Container className="pt-8 md:pt-10">
+        <h1 className="text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
+          {t("pageTitle")}
+        </h1>
+      </Container>
+
       {/* Hero, matching the home page's membership panel */}
-      <section className="px-3 pt-3 md:px-5 md:pt-5">
+      <section className="px-3 pt-6 md:px-5 md:pt-8">
         <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
           <Container className="py-10 md:py-12">
             <nav
@@ -41,18 +48,18 @@ export default async function MembershipPage() {
             <p className="mt-5 inline-block rounded-full bg-accent px-3 py-1 text-xs font-extrabold tracking-wide text-accent-foreground uppercase">
               {tj("eyebrow")}
             </p>
-            <h1 className="mt-4 text-3xl font-extrabold tracking-wide break-words text-white uppercase md:text-5xl">
+            <h2 className="mt-4 text-3xl font-extrabold tracking-wide break-words text-white uppercase md:text-5xl">
               {tj("heading")}
-            </h1>
+            </h2>
             <p className="mt-2 text-xl font-bold text-accent md:text-2xl">
               {tj("tagline")}
             </p>
             <p className="mt-4 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
               {tj("text")}
             </p>
-            <h2 className="mt-6 text-xl font-extrabold tracking-wide text-white uppercase md:text-2xl">
+            <h3 className="mt-6 text-xl font-extrabold tracking-wide text-white uppercase md:text-2xl">
               {tj("subheading")}
-            </h2>
+            </h3>
             <p className="mt-2 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
               {tj("subtext")}
             </p>
