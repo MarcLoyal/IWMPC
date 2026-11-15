@@ -1,37 +1,21 @@
 import {
   ArrowRightIcon,
-  BadgeCheckIcon,
   DropletIcon,
-  HandshakeIcon,
   LayoutGridIcon,
   TriangleAlertIcon,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { getAdvisoryViewer } from "@/lib/advisory-view";
-import { activeAdvisories, getAdvisories, getNow } from "@/lib/content";
-import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
-import { Button } from "@/components/ui/button";
+import { activeAdvisories, getAdvisories } from "@/lib/content";
+import { REPORT_HREF } from "@/lib/site";
 import { AdvisoryRow } from "@/components/site/advisory-row";
 import { AgencyLogos } from "@/components/site/agency-logos";
-import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
 import { PhotoCollage } from "@/components/site/photo-collage";
 import { HeroNews } from "@/components/site/hero-news";
-import { Placeholder } from "@/components/site/placeholder";
 import { SectionBar } from "@/components/site/section-bar";
 import { ServiceCards } from "@/components/site/service-cards";
-
-function StatTile({ label, value }: { label: string; value: string | null }) {
-  return (
-    <div className="flex flex-col-reverse rounded-xl border bg-card p-5 text-center">
-      <dt className="mt-1 text-muted-foreground">{label}</dt>
-      <dd className="font-heading text-3xl font-bold text-primary">
-        {value ?? <Placeholder />}
-      </dd>
-    </div>
-  );
-}
 
 export default async function HomePage() {
   const t = await getTranslations("home");
@@ -135,7 +119,7 @@ export default async function HomePage() {
                 {t("join.subtext")}
               </p>
               <Link
-                href="/membership#inquire"
+                href="/membership"
                 className="group mt-6 flex flex-col items-center gap-1 rounded-2xl bg-accent px-5 py-5 text-center text-primary-dark shadow-md transition hover:brightness-95"
               >
                 <span className="text-xl font-extrabold tracking-wide uppercase md:text-2xl">
@@ -184,66 +168,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 7. Trust strip — household count stays a placeholder until the cooperative confirms it */}
-      <section aria-labelledby="trust-heading" className="bg-surface">
-        <Container className="py-10">
-          <h2 id="trust-heading" className="text-2xl tracking-wide uppercase">
-            {t("trust.heading")}
-          </h2>
-          <dl className="mt-4 grid gap-4 sm:grid-cols-3">
-            <StatTile
-              label={t("trust.members")}
-              value={site.members.toLocaleString("en-PH")}
-            />
-            <StatTile
-              label={t("trust.years")}
-              value={String(yearsOfService(await getNow()))}
-            />
-            <StatTile label={t("trust.households")} value={null} />
-          </dl>
-          <ul className="mt-4 grid gap-4 sm:grid-cols-2">
-            <li className="flex items-center gap-3 rounded-xl border bg-card p-4">
-              <BadgeCheckIcon
-                className="size-8 shrink-0 text-primary"
-                aria-hidden="true"
-              />
-              <span>
-                <span className="block font-semibold">{t("trust.cda")}</span>
-                <span className="text-sm text-muted-foreground">
-                  Reg. No. {site.cdaRegistrationNo}
-                </span>
-              </span>
-            </li>
-            <li className="flex items-center gap-3 rounded-xl border bg-card p-4">
-              <HandshakeIcon
-                className="size-8 shrink-0 text-primary"
-                aria-hidden="true"
-              />
-              <span className="font-semibold">{t("trust.cub")}</span>
-            </li>
-          </ul>
-        </Container>
-      </section>
-
-      {/* 8. Latest news arrives with the News section in P4 */}
-
-      {/* 9. Contact strip */}
-      <section aria-labelledby="contact-heading">
-        <Container className="py-10">
-          <h2 id="contact-heading" className="text-2xl">
-            {t("contact.heading")}
-          </h2>
-          <div className="mt-4">
-            <ContactDetails />
-          </div>
-          <Button asChild variant="secondary" className="mt-6">
-            <Link href="/contact">
-              {t("contact.cta")}
-              <ArrowRightIcon aria-hidden="true" />
-            </Link>
-          </Button>
-        </Container>
-      </section>
+      {/* 7. Latest news arrives with the News section in P4 */}
     </>
   );
 }

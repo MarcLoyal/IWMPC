@@ -107,14 +107,6 @@
       "exploreAll": "Tingnan lahat ng serbisyo",
       "intro": "Nagbibigay ang IWMPC ng mahahalagang produkto at serbisyo para matugunan ang pang-araw-araw na pangangailangan ng mga miyembro at ng komunidad. Mula sa maaasahang serbisyo sa tubig, de-kalidad na bigas, at supply ng LPG hanggang sa abot-kayang pautang, layunin naming maghatid ng kaginhawaan, abot-kayang presyo, at maaasahang serbisyo."
     },
-    "trust": {
-      "heading": "Bakit IWMPC",
-      "members": "Mga miyembro",
-      "years": "Taon ng paglilingkod",
-      "households": "Mga konektadong kabahayan",
-      "cda": "Rehistrado sa CDA",
-      "cub": "Miyembro ng Cooperative Union of Batangas"
-    },
     "join": {
       "eyebrow": "Maging bahagi ng aming komunidad",
       "heading": "Ikaw ba ay taga-Inicbulan?",
@@ -122,12 +114,8 @@
       "text": "Maging bahagi ng IWMPC at maranasan ang lakas ng pagtutulungan! Tamasahin ang abot-kayang mga produkto at serbisyo, mga pagkakataong umunlad, at ang mga benepisyo ng pagiging kasapi ng isang kooperatibang nakatuon sa pag-unlad at kapakanan ng mga miyembro at ng komunidad.",
       "subheading": "Maging miyembro ngayon!",
       "subtext": "Gawin ang unang hakbang tungo sa mas maliwanag na kinabukasan. Sumali sa lumalaking pamilya ng aming kooperatiba at maging bahagi ng isang komunidad na sama-samang umuunlad!",
-      "cta": "Magtanong tungkol sa pagiging miyembro",
-      "ctaSub": "Makipag-ugnayan sa amin ngayon"
-    },
-    "contact": {
-      "heading": "Bisitahin o tawagan kami",
-      "cta": "Lahat ng contact details"
+      "cta": "Alamin ang pagiging miyembro",
+      "ctaSub": "Pindutin dito"
     },
     "badge": "Kooperatiba ng mga miyembro mula {year}",
     "statusCard": {
