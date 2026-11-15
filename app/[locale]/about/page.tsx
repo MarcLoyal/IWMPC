@@ -1,20 +1,53 @@
 import type { Metadata } from "next";
-import { EyeIcon, FlagIcon, InfoIcon, TargetIcon } from "lucide-react";
+import Image from "next/image";
+import {
+  ArrowLeftIcon,
+  EyeIcon,
+  FlagIcon,
+  ImageIcon,
+  InfoIcon,
+  NetworkIcon,
+  TargetIcon,
+} from "lucide-react";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
+import { Link } from "@/lib/i18n/navigation";
 import type { Locale } from "@/lib/i18n/routing";
 import { getAbout, localized } from "@/lib/content";
 import { site } from "@/lib/site";
 import { Container } from "@/components/site/container";
-import { PageHeader } from "@/components/site/page-header";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("about");
   return { title: t("title"), description: t("intro") };
 }
 
+/** A dashed frame marking where a photo from the cooperative will go. */
+function PhotoSlot({ label, pending }: { label: string; pending: string }) {
+  return (
+    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-primary/30 bg-surface p-6 text-center">
+      <ImageIcon className="size-10 text-primary/50" aria-hidden="true" />
+      <p className="font-semibold text-primary">{label}</p>
+      <p className="text-sm text-muted-foreground italic">{pending}</p>
+    </div>
+  );
+}
+
+/** Uppercase section title, as on the home page. */
+function SectionTitle({ id, children }: { id: string; children: string }) {
+  return (
+    <h2
+      id={id}
+      className="text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl"
+    >
+      {children}
+    </h2>
+  );
+}
+
 export default async function AboutPage() {
-  const [t, format, locale, about] = await Promise.all([
+  const [t, tf, format, locale, about] = await Promise.all([
     getTranslations("about"),
+    getTranslations("footer"),
     getFormatter(),
     getLocale() as Promise<Locale>,
     getAbout(),
@@ -28,126 +61,209 @@ export default async function AboutPage() {
       ? about.goals_en
       : about.goals_fil;
   const showTranslationNote = locale === "en" && !about.translation_approved;
+  const founded = format.dateTime(new Date(`${site.founded}T00:00:00+08:00`), {
+    dateStyle: "long",
+  });
+
+  // History, oldest first. Text for the later rows and all old photos are
+  // still to come from the cooperative.
+  const history = [
+    { photo: t("photoFacility"), text: t("history1") },
+    { photo: t("photoPumps"), text: t("historyPending") },
+    { photo: t("photoPerson"), text: t("historyPending") },
+  ];
+
+  const profile = [
+    { label: t("profileName"), value: site.legalName },
+    { label: t("profileFounded"), value: founded },
+    { label: t("cdaReg"), value: site.cdaRegistrationNo },
+    { label: t("address"), value: site.address },
+    { label: t("profileMembers"), value: site.members.toLocaleString("en-PH") },
+    { label: t("profileServices"), value: t("profileServicesValue") },
+    { label: t("profileAffiliation"), value: tf("cubMember") },
+  ];
+
+  const pillars = [
+    { id: "vision", icon: EyeIcon, title: t("vision"), sub: t("visionSub") },
+    {
+      id: "mission",
+      icon: TargetIcon,
+      title: t("mission"),
+      sub: t("missionSub"),
+    },
+    { id: "goals", icon: FlagIcon, title: t("goals"), sub: t("goalsSub") },
+  ] as const;
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        intro={t("intro")}
-        crumbs={[{ label: t("title") }]}
-      />
-      <Container className="grid gap-10 py-8">
-        <section aria-labelledby="facts-heading">
-          <h2 id="facts-heading" className="sr-only">
-            {t("factsHeading")}
-          </h2>
-          <dl className="grid gap-4 sm:grid-cols-3">
-            <div className="rounded-xl border bg-card p-5">
-              <dt className="text-sm font-semibold text-muted-foreground">
-                {t("founded")}
-              </dt>
-              <dd className="mt-1 text-xl font-bold text-primary">
-                {format.dateTime(new Date(`${site.founded}T00:00:00+08:00`), {
-                  dateStyle: "long",
-                })}
-              </dd>
-            </div>
-            <div className="rounded-xl border bg-card p-5">
-              <dt className="text-sm font-semibold text-muted-foreground">
-                {t("cdaReg")}
-              </dt>
-              <dd className="mt-1 text-xl font-bold text-primary">
-                {site.cdaRegistrationNo}
-              </dd>
-            </div>
-            <div className="rounded-xl border bg-card p-5">
-              <dt className="text-sm font-semibold text-muted-foreground">
-                {t("address")}
-              </dt>
-              <dd className="mt-1 text-lg font-semibold">{site.address}</dd>
-            </div>
-          </dl>
-        </section>
+      {/* 1. Hero: latest photo of the waterworks behind the page title */}
+      <section className="px-3 pt-3 md:px-5 md:pt-5">
+        <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-3xl text-white">
+          <Image
+            src="/images/collage/03-water-line-work.jpg"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_40%]"
+          />
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/85 to-primary/50"
+            aria-hidden="true"
+          />
+          <Container className="relative py-14 md:py-20">
+            <h1 className="text-4xl font-extrabold tracking-wide text-white uppercase md:text-5xl">
+              {t("heroTitle")}
+            </h1>
+            <p className="mt-3 text-xl font-bold text-accent md:text-2xl">
+              {t("tagline")}
+            </p>
+            <p className="mt-3 max-w-2xl text-lg text-white/90">
+              {t("heroText")}
+            </p>
+            <Link
+              href="/"
+              className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm hover:brightness-95"
+            >
+              <ArrowLeftIcon className="size-5" aria-hidden="true" />
+              {t("backHome")}
+            </Link>
+          </Container>
+        </div>
+      </section>
 
-        {showTranslationNote && (
-          <p className="flex items-start gap-2 text-muted-foreground">
-            <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
-            {t("unofficialTranslation")}
-          </p>
-        )}
-
-        <section
-          aria-labelledby="vision-heading"
-          className="rounded-2xl border-l-8 border-accent bg-surface p-6 md:p-8"
-        >
-          <h2 id="vision-heading" className="flex items-center gap-3 text-2xl">
-            <EyeIcon className="size-7" aria-hidden="true" />
-            {t("vision")}
-            <span className="text-base font-normal text-muted-foreground">
-              ({t("visionSub")})
-            </span>
-          </h2>
-          <p className="mt-4 text-xl leading-relaxed">{vision}</p>
-        </section>
-
-        <section aria-labelledby="mission-heading">
-          <h2 id="mission-heading" className="flex items-center gap-3 text-2xl">
-            <TargetIcon className="size-7" aria-hidden="true" />
-            {t("mission")}
-            <span className="text-base font-normal text-muted-foreground">
-              ({t("missionSub")})
-            </span>
-          </h2>
-          <ol className="mt-4 grid gap-4 md:grid-cols-2">
-            {mission.map((item, i) => (
+      <Container className="grid gap-14 py-10 md:py-14">
+        {/* 2. History: photo and text, alternating sides */}
+        <section aria-labelledby="history-heading">
+          <SectionTitle id="history-heading">{t("history")}</SectionTitle>
+          <ol className="mt-6 grid gap-10">
+            {history.map((row, i) => (
               <li
                 key={i}
-                className="flex gap-4 rounded-xl border bg-card p-5 text-lg"
+                className="grid items-center gap-6 md:grid-cols-2 md:gap-10"
               >
-                <span
-                  aria-hidden="true"
-                  className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-primary font-bold text-primary-foreground"
-                >
-                  {i + 1}
-                </span>
-                <span>{item}</span>
+                <div className={i % 2 === 1 ? "md:order-2" : undefined}>
+                  <PhotoSlot label={row.photo} pending={t("photoPending")} />
+                </div>
+                <p className="text-justify text-lg leading-relaxed hyphens-auto">
+                  {row.text}
+                </p>
               </li>
             ))}
           </ol>
         </section>
 
-        {goals.length > 0 && (
-          <section aria-labelledby="goals-heading">
-            <h2 id="goals-heading" className="flex items-center gap-3 text-2xl">
-              <FlagIcon className="size-7" aria-hidden="true" />
-              {t("goals")}
-              <span className="text-base font-normal text-muted-foreground">
-                ({t("goalsSub")})
-              </span>
-            </h2>
-            <ol className="mt-4 grid gap-3">
-              {goals.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex gap-4 rounded-xl border bg-card p-5 text-lg"
-                >
-                  <span
-                    aria-hidden="true"
-                    className="inline-flex size-10 shrink-0 items-center justify-center rounded-full bg-accent font-bold text-accent-foreground"
-                  >
-                    {i + 1}
-                  </span>
-                  <span>{item}</span>
-                </li>
+        {/* 3. Cooperative profile: key facts beside the officers' photo */}
+        <section aria-labelledby="profile-heading">
+          <SectionTitle id="profile-heading">{t("profile")}</SectionTitle>
+          <div className="mt-6 grid items-center gap-8 md:grid-cols-2 md:gap-10">
+            <dl className="grid gap-4">
+              {profile.map(({ label, value }) => (
+                <div key={label} className="border-b pb-3">
+                  <dt className="text-sm font-semibold text-muted-foreground">
+                    {label}
+                  </dt>
+                  <dd className="mt-0.5 text-lg font-semibold">{value}</dd>
+                </div>
               ))}
-            </ol>
-          </section>
-        )}
+            </dl>
+            <Image
+              src="/images/collage/03-team-office-front-v2.jpg"
+              alt={t("profileImageAlt")}
+              width={1228}
+              height={540}
+              sizes="(min-width: 768px) 50vw, 100vw"
+              className="w-full rounded-2xl shadow-md"
+            />
+          </div>
+        </section>
 
-        {/* History timeline, core values, awards and affiliations arrive in P4 */}
-        <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
-          {t("moreSoon")}
-        </p>
+        {/* 4. Vision, mission and goals side by side */}
+        <section aria-labelledby="vmg-heading">
+          <h2 id="vmg-heading" className="sr-only">
+            {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
+          </h2>
+          {showTranslationNote && (
+            <p className="mb-4 flex items-start gap-2 text-muted-foreground">
+              <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
+              {t("unofficialTranslation")}
+            </p>
+          )}
+          <div className="grid gap-5 lg:grid-cols-3">
+            {pillars.map(({ id, icon: Icon, title, sub }) => (
+              <article
+                key={id}
+                aria-labelledby={`${id}-heading`}
+                className="flex flex-col rounded-2xl border bg-card p-6 shadow-sm"
+              >
+                <h3
+                  id={`${id}-heading`}
+                  className="flex items-center gap-3 text-xl font-extrabold tracking-wide text-primary uppercase"
+                >
+                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                    <Icon className="size-6" aria-hidden="true" />
+                  </span>
+                  <span>
+                    {title}
+                    <span className="block text-sm font-medium tracking-normal text-muted-foreground normal-case">
+                      {sub}
+                    </span>
+                  </span>
+                </h3>
+                {id === "vision" ? (
+                  <p className="mt-4 text-justify text-lg leading-relaxed hyphens-auto">
+                    {vision}
+                  </p>
+                ) : (
+                  <ol className="mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary">
+                    {(id === "mission" ? mission : goals).map((item, i) => (
+                      <li key={i} className="leading-relaxed">
+                        {item}
+                      </li>
+                    ))}
+                  </ol>
+                )}
+              </article>
+            ))}
+          </div>
+        </section>
+
+        {/* 5. Leadership: board and leaders, then the organization chart */}
+        <section aria-labelledby="leadership-heading">
+          <h2 id="leadership-heading" className="sr-only">
+            {`${t("board")}, ${t("leaders")}`}
+          </h2>
+          <div className="grid gap-6 text-center sm:grid-cols-2 sm:divide-x-2 sm:divide-primary/30">
+            <p className="px-4">
+              <span className="block font-semibold tracking-wide text-muted-foreground uppercase">
+                {t("meetOur")}
+              </span>
+              <span className="block text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl">
+                {t("board")}
+              </span>
+            </p>
+            <p className="px-4">
+              <span className="block font-semibold tracking-wide text-muted-foreground uppercase">
+                {t("our")}
+              </span>
+              <span className="block text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl">
+                {t("leaders")}
+              </span>
+            </p>
+          </div>
+          <div className="mt-6 flex min-h-80 flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-primary/30 bg-surface p-8 text-center">
+            <NetworkIcon
+              className="size-12 text-primary/50"
+              aria-hidden="true"
+            />
+            <p className="text-xl font-bold text-primary uppercase">
+              {t("orgChart")}
+            </p>
+            <p className="max-w-md text-muted-foreground italic">
+              {t("orgPending")}
+            </p>
+          </div>
+        </section>
       </Container>
     </>
   );
