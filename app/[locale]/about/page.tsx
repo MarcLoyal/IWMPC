@@ -262,51 +262,97 @@ export default async function AboutPage() {
           </section>
         </Container>
       </div>
-      <div className="bg-background">
-        <Container className="py-12 md:py-16">
-          {/* 4. Vision, mission and goals side by side */}
+      <div className="relative overflow-hidden bg-surface">
+        {/* Soft decorative circles behind the cards */}
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -top-24 -left-24 size-72 rounded-full bg-primary/10"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute -right-20 -bottom-28 size-80 rounded-full bg-accent/25"
+        />
+        <Container className="relative py-12 md:py-16">
+          {/* 4. Mission and vision side by side, goals below */}
           <section aria-labelledby="vmg-heading">
             <h2 id="vmg-heading" className="sr-only">
               {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
             </h2>
-            <div className="grid gap-5 md:grid-cols-2">
-              {pillars.map(({ id, icon: Icon, title, sub }) => (
-                <article
-                  key={id}
-                  aria-labelledby={`${id}-heading`}
-                  className={`flex flex-col rounded-2xl border bg-card p-6 shadow-sm ${id === "goals" ? "md:col-span-2" : ""}`}
-                >
-                  <h3
-                    id={`${id}-heading`}
-                    className="flex items-center justify-center gap-3 text-center text-xl font-extrabold tracking-wide text-primary uppercase"
+            <div className="grid gap-6 md:grid-cols-2">
+              {pillars.map(({ id, icon: Icon, title, sub }) => {
+                const head = {
+                  mission:
+                    "bg-gradient-to-r from-primary to-primary-dark text-white",
+                  vision: "bg-accent text-primary-dark",
+                  goals:
+                    "bg-gradient-to-r from-primary-dark via-primary to-primary-dark text-white",
+                }[id];
+                return (
+                  <article
+                    key={id}
+                    aria-labelledby={`${id}-heading`}
+                    className={`relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-lg ring-1 ring-border ${id === "goals" ? "md:col-span-2" : ""}`}
                   >
-                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                      <Icon className="size-6" aria-hidden="true" />
-                    </span>
-                    <span>
-                      {title}
-                      <span className="block text-sm font-medium tracking-normal text-muted-foreground normal-case">
-                        {sub}
-                      </span>
-                    </span>
-                  </h3>
-                  {id === "vision" ? (
-                    <p className="mt-4 text-justify text-lg leading-relaxed hyphens-auto">
-                      {vision}
-                    </p>
-                  ) : (
-                    <ol
-                      className={`mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary`}
-                    >
-                      {(id === "mission" ? mission : goals).map((item, i) => (
-                        <li key={i} className="leading-relaxed">
-                          {item}
-                        </li>
-                      ))}
-                    </ol>
-                  )}
-                </article>
-              ))}
+                    <div className={`px-6 py-5 ${head}`}>
+                      <h3
+                        id={`${id}-heading`}
+                        className={`flex items-center justify-center gap-3 text-center text-xl font-extrabold tracking-wide uppercase md:text-2xl ${id === "vision" ? "text-primary-dark" : "text-white"}`}
+                      >
+                        <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-md">
+                          <Icon className="size-6" aria-hidden="true" />
+                        </span>
+                        <span>
+                          {title}
+                          <span className="block text-sm font-semibold tracking-normal normal-case opacity-80">
+                            {sub}
+                          </span>
+                        </span>
+                      </h3>
+                    </div>
+                    {/* Large faded icon in the corner */}
+                    <Icon
+                      aria-hidden="true"
+                      className="pointer-events-none absolute -right-6 -bottom-6 size-40 text-primary/5"
+                    />
+                    {id === "vision" ? (
+                      <div className="relative flex flex-1 items-center px-6 py-8 md:px-10">
+                        <p className="max-w-none text-center text-xl leading-relaxed font-medium text-primary-dark md:text-2xl">
+                          <span
+                            aria-hidden="true"
+                            className="mr-1 font-serif text-5xl leading-none text-accent"
+                          >
+                            &ldquo;
+                          </span>
+                          {vision}
+                          <span
+                            aria-hidden="true"
+                            className="ml-1 font-serif text-5xl leading-none text-accent"
+                          >
+                            &rdquo;
+                          </span>
+                        </p>
+                      </div>
+                    ) : (
+                      <ol className="relative grid gap-3 px-6 py-6">
+                        {(id === "mission" ? mission : goals).map((item, i) => (
+                          <li
+                            key={i}
+                            className="flex gap-4 rounded-xl border-l-4 border-accent bg-surface/70 p-3 leading-relaxed"
+                          >
+                            <span
+                              aria-hidden="true"
+                              className="flex size-8 shrink-0 items-center justify-center rounded-full bg-primary text-sm font-bold text-white"
+                            >
+                              {i + 1}
+                            </span>
+                            <span className="pt-0.5">{item}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    )}
+                  </article>
+                );
+              })}
             </div>
           </section>
         </Container>
