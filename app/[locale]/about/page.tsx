@@ -122,10 +122,9 @@ export default async function AboutPage() {
       id: "mission",
       icon: TargetIcon,
       title: t("mission"),
-      sub: t("missionSub"),
     },
-    { id: "vision", icon: EyeIcon, title: t("vision"), sub: t("visionSub") },
-    { id: "goals", icon: FlagIcon, title: t("goals"), sub: t("goalsSub") },
+    { id: "vision", icon: EyeIcon, title: t("vision") },
+    { id: "goals", icon: FlagIcon, title: t("goals") },
   ] as const;
 
   return (
@@ -279,7 +278,7 @@ export default async function AboutPage() {
               {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
             </h2>
             <div className="grid gap-6 md:grid-cols-2">
-              {pillars.map(({ id, icon: Icon, title, sub }) => {
+              {pillars.map(({ id, icon: Icon, title }) => {
                 const head = {
                   mission:
                     "bg-gradient-to-r from-primary to-primary-dark text-white",
@@ -301,12 +300,7 @@ export default async function AboutPage() {
                         <span className="flex size-12 shrink-0 items-center justify-center rounded-full bg-white text-primary shadow-md">
                           <Icon className="size-6" aria-hidden="true" />
                         </span>
-                        <span>
-                          {title}
-                          <span className="block text-sm font-semibold tracking-normal normal-case opacity-80">
-                            {sub}
-                          </span>
-                        </span>
+                        <span>{title}</span>
                       </h3>
                     </div>
                     {/* Large faded icon in the corner */}
