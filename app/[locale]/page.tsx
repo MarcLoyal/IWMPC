@@ -138,10 +138,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 5. Accreditation and compliance agencies */}
-      <AgencyLogos />
-
-      {/* 6. Quick actions */}
+      {/* 5. Quick actions */}
       <section aria-labelledby="quick-heading">
         <Container className="py-10">
           <h2 id="quick-heading" className="text-2xl tracking-wide uppercase">
@@ -167,6 +164,9 @@ export default async function HomePage() {
           </ul>
         </Container>
       </section>
+
+      {/* 6. Accreditation and compliance agencies */}
+      <AgencyLogos />
 
       {/* 7. Latest news arrives with the News section in P4 */}
     </>
