@@ -32,12 +32,20 @@ function PhotoSlot({ label, pending }: { label: string; pending: string }) {
   );
 }
 
-/** Uppercase section title, as on the home page. */
-function SectionTitle({ id, children }: { id: string; children: string }) {
+/** Uppercase section title, as on the home page; white on the blue bands. */
+function SectionTitle({
+  id,
+  onBlue = false,
+  children,
+}: {
+  id: string;
+  onBlue?: boolean;
+  children: string;
+}) {
   return (
     <h2
       id={id}
-      className="text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl"
+      className={`text-2xl font-extrabold tracking-wide uppercase md:text-3xl ${onBlue ? "text-white" : "text-primary"}`}
     >
       {children}
     </h2>
@@ -139,153 +147,164 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <Container className="grid gap-14 py-10 md:py-14">
-        {showTranslationNote && (
-          <p className="-mb-6 flex items-start gap-2 text-muted-foreground">
-            <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
-            {t("unofficialTranslation")}
-          </p>
-        )}
-        {/* 2. History: photo and text, alternating sides */}
-        <section aria-labelledby="history-heading">
-          <SectionTitle id="history-heading">{t("history")}</SectionTitle>
-          <ol className="mt-6 grid gap-10">
-            {history.map((row, i) => (
-              <li
-                key={i}
-                className="grid items-stretch gap-6 md:grid-cols-2 md:gap-10"
-              >
-                <div className={i % 2 === 1 ? "md:order-2" : undefined}>
-                  <PhotoSlot label={row.photo} pending={t("photoPending")} />
-                </div>
-                <div className="grid gap-4">
-                  {row.paragraphs.map((text, j) => (
-                    <p
-                      key={j}
-                      className="max-w-none text-justify text-lg leading-relaxed hyphens-auto"
-                    >
-                      {text}
-                    </p>
-                  ))}
-                </div>
-              </li>
-            ))}
-          </ol>
-        </section>
-
-        {/* 3. Cooperative profile: key facts beside the officers' photo */}
-        <section aria-labelledby="profile-heading">
-          <SectionTitle id="profile-heading">{t("profile")}</SectionTitle>
-          <div className="mt-6 grid items-stretch gap-8 md:grid-cols-2 md:gap-10">
-            {profileText && (
-              <p className="max-w-none text-justify text-lg leading-relaxed hyphens-auto">
-                {profileText}
-              </p>
-            )}
-            {/* The photo is as tall as the profile text beside it */}
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-md md:aspect-auto">
-              <Image
-                src="/images/collage/03-team-office-front-v2.jpg"
-                alt={t("profileImageAlt")}
-                fill
-                sizes="(min-width: 768px) 50vw, 100vw"
-                className="object-cover"
-              />
-            </div>
-          </div>
-          <dl className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
-            {profile.map(({ label, value }) => (
-              <div key={label} className="border-t-4 border-accent pt-2">
-                <dt className="text-sm font-semibold text-muted-foreground">
-                  {label}
-                </dt>
-                <dd className="mt-0.5 text-lg font-semibold">{value}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
-        {/* 4. Vision, mission and goals side by side */}
-        <section aria-labelledby="vmg-heading">
-          <h2 id="vmg-heading" className="sr-only">
-            {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
-          </h2>
-          <div className="grid gap-5 lg:grid-cols-3">
-            {pillars.map(({ id, icon: Icon, title, sub }) => (
-              <article
-                key={id}
-                aria-labelledby={`${id}-heading`}
-                className="flex flex-col rounded-2xl border bg-card p-6 shadow-sm"
-              >
-                <h3
-                  id={`${id}-heading`}
-                  className="flex items-center gap-3 text-xl font-extrabold tracking-wide text-primary uppercase"
+      <div className="bg-background">
+        <Container className="py-12 md:py-16">
+          {showTranslationNote && (
+            <p className="mb-8 flex items-start gap-2 text-muted-foreground">
+              <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
+              {t("unofficialTranslation")}
+            </p>
+          )}
+          {/* 2. History: photo and text, alternating sides */}
+          <section aria-labelledby="history-heading">
+            <SectionTitle id="history-heading">{t("history")}</SectionTitle>
+            <ol className="mt-6 grid gap-10">
+              {history.map((row, i) => (
+                <li
+                  key={i}
+                  className="grid items-stretch gap-6 md:grid-cols-2 md:gap-10"
                 >
-                  <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-white">
-                    <Icon className="size-6" aria-hidden="true" />
-                  </span>
-                  <span>
-                    {title}
-                    <span className="block text-sm font-medium tracking-normal text-muted-foreground normal-case">
-                      {sub}
-                    </span>
-                  </span>
-                </h3>
-                {id === "vision" ? (
-                  <p className="mt-4 text-justify text-lg leading-relaxed hyphens-auto">
-                    {vision}
-                  </p>
-                ) : (
-                  <ol className="mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary">
-                    {(id === "mission" ? mission : goals).map((item, i) => (
-                      <li key={i} className="leading-relaxed">
-                        {item}
-                      </li>
+                  <div className={i % 2 === 1 ? "md:order-2" : undefined}>
+                    <PhotoSlot label={row.photo} pending={t("photoPending")} />
+                  </div>
+                  <div className="grid gap-4">
+                    {row.paragraphs.map((text, j) => (
+                      <p
+                        key={j}
+                        className="max-w-none text-justify text-lg leading-relaxed hyphens-auto"
+                      >
+                        {text}
+                      </p>
                     ))}
-                  </ol>
-                )}
-              </article>
-            ))}
-          </div>
-        </section>
-
-        {/* 5. Leadership: board and leaders, then the organization chart */}
-        <section aria-labelledby="leadership-heading">
-          <h2 id="leadership-heading" className="sr-only">
-            {`${t("board")}, ${t("leaders")}`}
-          </h2>
-          <div className="grid gap-6 text-center sm:grid-cols-2 sm:divide-x-2 sm:divide-primary/30">
-            <p className="px-4">
-              <span className="block font-semibold tracking-wide text-muted-foreground uppercase">
-                {t("meetOur")}
-              </span>
-              <span className="block text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl">
-                {t("board")}
-              </span>
-            </p>
-            <p className="px-4">
-              <span className="block font-semibold tracking-wide text-muted-foreground uppercase">
-                {t("our")}
-              </span>
-              <span className="block text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl">
-                {t("leaders")}
-              </span>
-            </p>
-          </div>
-          <div className="mt-6 flex min-h-80 flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-primary/30 bg-surface p-8 text-center">
-            <NetworkIcon
-              className="size-12 text-primary/50"
-              aria-hidden="true"
-            />
-            <p className="text-xl font-bold text-primary uppercase">
-              {t("orgChart")}
-            </p>
-            <p className="max-w-md text-muted-foreground italic">
-              {t("orgPending")}
-            </p>
-          </div>
-        </section>
-      </Container>
+                  </div>
+                </li>
+              ))}
+            </ol>
+          </section>
+        </Container>
+      </div>
+      <div className="bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
+        <Container className="py-12 md:py-16">
+          {/* 3. Cooperative profile: key facts beside the officers' photo */}
+          <section aria-labelledby="profile-heading">
+            <SectionTitle id="profile-heading" onBlue>
+              {t("profile")}
+            </SectionTitle>
+            <div className="mt-6 grid items-stretch gap-8 md:grid-cols-2 md:gap-10">
+              {profileText && (
+                <p className="max-w-none text-justify text-lg leading-relaxed hyphens-auto">
+                  {profileText}
+                </p>
+              )}
+              {/* The photo is as tall as the profile text beside it */}
+              <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-lg ring-4 ring-white/20 md:aspect-auto">
+                <Image
+                  src="/images/collage/03-team-office-front-v2.jpg"
+                  alt={t("profileImageAlt")}
+                  fill
+                  sizes="(min-width: 768px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
+            </div>
+            <dl className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+              {profile.map(({ label, value }) => (
+                <div key={label} className="border-t-4 border-accent pt-2">
+                  <dt className="text-sm font-semibold text-white/75">
+                    {label}
+                  </dt>
+                  <dd className="mt-0.5 text-lg font-semibold">{value}</dd>
+                </div>
+              ))}
+            </dl>
+          </section>
+        </Container>
+      </div>
+      <div className="bg-background">
+        <Container className="py-12 md:py-16">
+          {/* 4. Vision, mission and goals side by side */}
+          <section aria-labelledby="vmg-heading">
+            <h2 id="vmg-heading" className="sr-only">
+              {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
+            </h2>
+            <div className="grid gap-5 lg:grid-cols-3">
+              {pillars.map(({ id, icon: Icon, title, sub }) => (
+                <article
+                  key={id}
+                  aria-labelledby={`${id}-heading`}
+                  className="flex flex-col rounded-2xl border bg-card p-6 shadow-sm"
+                >
+                  <h3
+                    id={`${id}-heading`}
+                    className="flex items-center gap-3 text-xl font-extrabold tracking-wide text-primary uppercase"
+                  >
+                    <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-white">
+                      <Icon className="size-6" aria-hidden="true" />
+                    </span>
+                    <span>
+                      {title}
+                      <span className="block text-sm font-medium tracking-normal text-muted-foreground normal-case">
+                        {sub}
+                      </span>
+                    </span>
+                  </h3>
+                  {id === "vision" ? (
+                    <p className="mt-4 text-justify text-lg leading-relaxed hyphens-auto">
+                      {vision}
+                    </p>
+                  ) : (
+                    <ol className="mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary">
+                      {(id === "mission" ? mission : goals).map((item, i) => (
+                        <li key={i} className="leading-relaxed">
+                          {item}
+                        </li>
+                      ))}
+                    </ol>
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+        </Container>
+      </div>
+      <div className="bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
+        <Container className="py-12 md:py-16">
+          {/* 5. Leadership: board and leaders, then the organization chart */}
+          <section aria-labelledby="leadership-heading">
+            <h2 id="leadership-heading" className="sr-only">
+              {`${t("board")}, ${t("leaders")}`}
+            </h2>
+            <div className="grid gap-6 text-center sm:grid-cols-2 sm:divide-x-2 sm:divide-white/30">
+              <p className="px-4">
+                <span className="block font-semibold tracking-wide text-accent uppercase">
+                  {t("meetOur")}
+                </span>
+                <span className="block text-2xl font-extrabold tracking-wide text-white uppercase md:text-3xl">
+                  {t("board")}
+                </span>
+              </p>
+              <p className="px-4">
+                <span className="block font-semibold tracking-wide text-accent uppercase">
+                  {t("our")}
+                </span>
+                <span className="block text-2xl font-extrabold tracking-wide text-white uppercase md:text-3xl">
+                  {t("leaders")}
+                </span>
+              </p>
+            </div>
+            <div className="mt-6 flex min-h-80 flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-white/40 bg-white/10 p-8 text-center">
+              <NetworkIcon
+                className="size-12 text-white/70"
+                aria-hidden="true"
+              />
+              <p className="text-xl font-bold text-white uppercase">
+                {t("orgChart")}
+              </p>
+              <p className="max-w-md text-white/85 italic">{t("orgPending")}</p>
+            </div>
+          </section>
+        </Container>
+      </div>
     </>
   );
 }
