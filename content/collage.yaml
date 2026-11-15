@@ -40,10 +40,9 @@ photos:
     focus: top
     alt_fil: "Mga tauhan ng IWMPC na naka-uniporme sa opisina."
     alt_en: "IWMPC personnel in uniform at the office."
-  - image: /images/collage/04-office-front.jpg
-    width: 1400
-    height: 1054
-    focus: top
+  - image: /images/collage/04-office-front-v3.jpg
+    width: 1160
+    height: 696
     alt_fil: "Mga kawani at opisyal sa harap ng opisina ng IWMPC."
     alt_en: "Staff and officers in front of the IWMPC office."
   # The members
