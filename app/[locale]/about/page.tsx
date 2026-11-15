@@ -132,14 +132,14 @@ export default async function AboutPage() {
     <>
       {/* 1. Hero: latest photo of the waterworks behind the page title */}
       <section className="px-3 pt-3 md:px-5 md:pt-5">
-        <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-3xl text-white">
+        <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-primary-dark text-white">
           <Image
             src="/images/collage/03-water-line-work.jpg"
             alt=""
             fill
             priority
             sizes="100vw"
-            className="hero-zoom object-cover object-[center_40%]"
+            className="hero-blink object-cover object-[center_40%]"
           />
           <div
             className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/85 to-primary/50"
