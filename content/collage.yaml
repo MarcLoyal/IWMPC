@@ -68,14 +68,14 @@ photos:
     alt_fil: "Isang pulong sa paligid ng mesa sa opisina."
     alt_en: "A meeting around the table at the office."
   # Community work and celebrations
-  - image: /images/collage/03-water-line-work.jpg
-    width: 944
-    height: 1260
-    alt_fil: "Mga tauhang nag-aayos ng linya ng tubig."
-    alt_en: "Crew members working on a water line."
-  - image: /images/collage/10-gift-giving.jpg
-    width: 1400
-    height: 1050
+  - image: /images/collage/03-team-office-front.jpg
+    width: 1150
+    height: 546
+    alt_fil: "Pangkatang larawan ng mga opisyal at kawani ng IWMPC sa harap ng opisina ng kooperatiba."
+    alt_en: "Group photo of IWMPC officers and staff in front of the cooperative's office."
+  - image: /images/collage/10-gift-giving-close.jpg
+    width: 1150
+    height: 690
     alt_fil: "Pamimigay ng regalo sa komunidad."
     alt_en: "Gift-giving in the community."
   - image: /images/collage/11-cooperative-month.jpg
@@ -83,8 +83,8 @@ photos:
     height: 866
     alt_fil: "Pangkatang larawan sa pagdiriwang ng Cooperative Month."
     alt_en: "Group photo at the Cooperative Month celebration."
-  - image: /images/collage/12-group-photo.jpg
-    width: 1400
-    height: 1050
+  - image: /images/collage/12-group-photo-close.jpg
+    width: 1180
+    height: 708
     alt_fil: "Pangkatang larawan ng mga kawani at opisyal sa Inicbulan Elementary School."
     alt_en: "Group photo of staff and officers at Inicbulan Elementary School."
