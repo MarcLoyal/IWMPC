@@ -278,7 +278,7 @@ export default async function AboutPage() {
                 >
                   <h3
                     id={`${id}-heading`}
-                    className="flex items-center gap-3 text-xl font-extrabold tracking-wide text-primary uppercase"
+                    className="flex items-center justify-center gap-3 text-center text-xl font-extrabold tracking-wide text-primary uppercase"
                   >
                     <span className="flex size-11 shrink-0 items-center justify-center rounded-full bg-primary text-white">
                       <Icon className="size-6" aria-hidden="true" />
@@ -296,7 +296,7 @@ export default async function AboutPage() {
                     </p>
                   ) : (
                     <ol
-                      className={`mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary ${id === "goals" ? "md:grid-cols-2 md:gap-x-10" : ""}`}
+                      className={`mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary`}
                     >
                       {(id === "mission" ? mission : goals).map((item, i) => (
                         <li key={i} className="leading-relaxed">
