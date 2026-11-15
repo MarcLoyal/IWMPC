@@ -17,26 +17,27 @@ export function Footer() {
 
   return (
     <footer className="border-t-4 border-accent bg-primary pb-20 text-primary-foreground md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
-        <section aria-labelledby="footer-contact">
-          <div className="flex items-center gap-4">
-            <Image
-              src="/logo-v3.png"
-              alt=""
-              width={80}
-              height={80}
-              className="size-16 shrink-0 rounded-full bg-white ring-2 ring-white md:size-20"
-            />
-            <div>
-              <h2 id="footer-contact" className="text-lg text-white">
-                {site.legalName}
-              </h2>
-              <p className="mt-1 text-sm text-white/85">
-                {t("cdaReg")} {site.cdaRegistrationNo}
-              </p>
-            </div>
+      <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-6 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
+        {/* Name and logo span the full width so Address, Links and More start on one line */}
+        <div className="flex items-center gap-4 md:col-span-3">
+          <Image
+            src="/logo-v3.png"
+            alt=""
+            width={80}
+            height={80}
+            className="size-16 shrink-0 rounded-full bg-white ring-2 ring-white md:size-20"
+          />
+          <div>
+            <h2 id="footer-contact" className="text-lg text-white">
+              {site.legalName}
+            </h2>
+            <p className="mt-1 text-sm text-white/85">
+              {t("cdaReg")} {site.cdaRegistrationNo}
+            </p>
           </div>
-          <dl className="mt-4 grid gap-x-4 gap-y-2 text-base sm:grid-cols-[auto_1fr]">
+        </div>
+        <section aria-labelledby="footer-contact">
+          <dl className="grid gap-x-4 gap-y-2 text-base sm:grid-cols-[auto_1fr]">
             <dt className="font-semibold">{t("address")}</dt>
             <dd>{site.address}</dd>
             <dt className="font-semibold">{t("hours")}</dt>
