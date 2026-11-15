@@ -175,6 +175,11 @@
   animation: logo-marquee 22s linear infinite;
 }
 
+.logo-marquee-wrap:hover .logo-marquee,
+.logo-marquee-wrap:focus-within .logo-marquee {
+  animation-play-state: paused;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .logo-marquee {
     animation: none;
