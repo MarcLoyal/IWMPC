@@ -3,71 +3,66 @@ import { getTranslations } from "next-intl/server";
 import { Container } from "@/components/site/container";
 
 const AGENCIES = [
-  {
-    key: "doh",
-    src: "/images/agencies/doh.png",
-    width: 360,
-    height: 360,
-    size: "h-20 md:h-24",
-  },
-  // DENR and NWRB have no outer ring, so they are drawn a little smaller to
-  // look the same size as the seals.
-  {
-    key: "denr",
-    src: "/images/agencies/denr.png",
-    width: 283,
-    height: 282,
-    size: "h-16 md:h-20",
-  },
+  { key: "doh", src: "/images/agencies/doh.png", w: 360, h: 360 },
+  { key: "denr", src: "/images/agencies/denr.png", w: 360, h: 360 },
+  // NWRB's mark has no outer ring, so it is drawn smaller to look balanced.
   {
     key: "nwrb",
     src: "/images/agencies/nwrb.png",
-    width: 480,
-    height: 333,
-    size: "h-12 md:h-14",
+    w: 480,
+    h: 333,
+    small: true,
   },
-  {
-    key: "cda",
-    src: "/images/agencies/cda.png",
-    width: 360,
-    height: 360,
-    size: "h-20 md:h-24",
-  },
-  {
-    key: "bauan",
-    src: "/images/agencies/bauan.png",
-    width: 360,
-    height: 359,
-    size: "h-20 md:h-24",
-  },
+  { key: "cda", src: "/images/agencies/cda.png", w: 360, h: 360 },
+  { key: "bir", src: "/images/agencies/bir.png", w: 360, h: 360 },
+  { key: "doe", src: "/images/agencies/doe.png", w: 360, h: 360, square: true },
 ] as const;
 
+// Each half of the moving strip holds the list this many times, so a half is
+// always wider than the panel and the loop never shows a gap.
+const REPEAT = 2;
+
 /**
- * A strip of accreditation and compliance agency logos that scrolls slowly
- * from right to left. The list is drawn twice so the loop has no gap; the
- * second copy is hidden from screen readers. With reduced motion it stays
- * still and wraps instead.
+ * A strip of government agency and regulator logos that scrolls continuously
+ * from right to left. The strip is two identical halves; it slides by one
+ * half and starts again, so the loop is seamless. Only the first set of logos
+ * is read by screen readers. With reduced motion it stays still and wraps.
  */
 export async function AgencyLogos() {
   const t = await getTranslations("home.agencies");
 
-  const list = (copy: number) => (
+  const half = (copy: number) => (
     <ul
       className="flex shrink-0 items-center gap-12 pr-12 motion-reduce:shrink motion-reduce:flex-wrap motion-reduce:justify-center motion-reduce:gap-8 motion-reduce:px-4 md:gap-16 md:pr-16"
       aria-hidden={copy > 0 ? true : undefined}
     >
-      {AGENCIES.map(({ key, src, width, height, size }) => (
-        <li key={key} className="flex h-20 shrink-0 items-center md:h-24">
-          <Image
-            src={src}
-            alt={copy > 0 ? "" : t(key)}
-            title={t(key)}
-            width={width}
-            height={height}
-            className={`${size} w-auto`}
-          />
-        </li>
-      ))}
+      {Array.from({ length: REPEAT }, (_, r) =>
+        AGENCIES.map((a) => {
+          const hidden = copy > 0 || r > 0;
+          return (
+            <li
+              key={`${r}-${a.key}`}
+              aria-hidden={!copy && r > 0 ? true : undefined}
+              className={`flex h-20 shrink-0 items-center md:h-24 ${r > 0 ? "motion-reduce:hidden" : ""}`}
+            >
+              <Image
+                src={a.src}
+                alt={hidden ? "" : t(a.key)}
+                title={t(a.key)}
+                width={a.w}
+                height={a.h}
+                className={`w-auto ${
+                  "small" in a
+                    ? "h-12 md:h-14"
+                    : "square" in a
+                      ? "h-[4.5rem] rounded-xl md:h-[5.5rem]"
+                      : "h-20 md:h-24"
+                }`}
+              />
+            </li>
+          );
+        }),
+      )}
     </ul>
   );
 
@@ -75,19 +70,18 @@ export async function AgencyLogos() {
     <section aria-labelledby="agencies-heading">
       <div className="px-3 pb-6 md:px-5 md:pb-8">
         <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl border bg-card shadow-sm">
-          <Container className="pt-6 text-center">
+          <Container className="pt-7 text-center">
             <h2
               id="agencies-heading"
-              className="text-xl font-extrabold tracking-wide text-primary uppercase md:text-2xl"
+              className="text-2xl font-extrabold tracking-wide text-primary uppercase md:text-3xl lg:text-4xl"
             >
               {t("heading")}
             </h2>
-            <p className="mx-auto mt-1 text-muted-foreground">{t("text")}</p>
           </Container>
-          <div className="logo-marquee-wrap relative [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)] py-6">
+          <div className="relative [mask-image:linear-gradient(to_right,transparent,black_6%,black_94%,transparent)] py-7">
             <div className="logo-marquee flex w-max motion-reduce:w-full motion-reduce:flex-wrap motion-reduce:justify-center">
-              {list(0)}
-              <div className="contents motion-reduce:hidden">{list(1)}</div>
+              {half(0)}
+              <div className="contents motion-reduce:hidden">{half(1)}</div>
             </div>
           </div>
         </div>

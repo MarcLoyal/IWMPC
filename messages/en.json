@@ -151,13 +151,13 @@
     },
     "call": "Call the office",
     "agencies": {
-      "heading": "Accreditation and compliance",
-      "text": "Government agencies that accredit and regulate IWMPC.",
+      "heading": "Our government agencies and regulatory partners",
       "doh": "Department of Health",
       "denr": "Department of Environment and Natural Resources",
       "nwrb": "National Water Resources Board",
       "cda": "Cooperative Development Authority",
-      "bauan": "Municipality of Bauan, Batangas"
+      "bir": "Bureau of Internal Revenue",
+      "doe": "Department of Energy"
     }
   },
   "preview": {

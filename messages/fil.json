@@ -151,13 +151,13 @@
     },
     "call": "Tumawag sa opisina",
     "agencies": {
-      "heading": "Akreditasyon at pagsunod",
-      "text": "Mga ahensya ng gobyerno na nag-aakredit at nangangasiwa sa IWMPC.",
+      "heading": "Aming mga ahensya ng gobyerno at katuwang sa regulasyon",
       "doh": "Kagawaran ng Kalusugan (DOH)",
       "denr": "Kagawaran ng Kapaligiran at Likas na Yaman (DENR)",
       "nwrb": "National Water Resources Board",
       "cda": "Cooperative Development Authority",
-      "bauan": "Bayan ng Bauan, Batangas"
+      "bir": "Kawanihan ng Rentas Internas (BIR)",
+      "doe": "Kagawaran ng Enerhiya (DOE)"
     }
   },
   "preview": {

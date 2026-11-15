@@ -162,8 +162,9 @@
   text-underline-offset: 4px;
 }
 
-/* Agency logo strip on the home page: one copy of the list slides left by its
-   own width, then repeats seamlessly. Still for people who prefer less motion. */
+/* Agency logo strip on the home page: the strip slides left by one of its two
+   identical halves, then repeats seamlessly and without pausing. Still for
+   people who prefer less motion. */
 @keyframes logo-marquee {
   to {
     transform: translateX(-50%);
@@ -171,12 +172,7 @@
 }
 
 .logo-marquee {
-  animation: logo-marquee 30s linear infinite;
-}
-
-.logo-marquee-wrap:hover .logo-marquee,
-.logo-marquee-wrap:focus-within .logo-marquee {
-  animation-play-state: paused;
+  animation: logo-marquee 22s linear infinite;
 }
 
 @media (prefers-reduced-motion: reduce) {
