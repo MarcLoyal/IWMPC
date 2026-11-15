@@ -139,25 +139,25 @@ export default async function AboutPage() {
             fill
             priority
             sizes="100vw"
-            className="hero-blink object-cover object-[center_40%]"
+            className="hero-photo object-cover object-[center_40%]"
           />
           <div
             className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/85 to-primary/50"
             aria-hidden="true"
           />
           <Container className="relative py-14 md:py-20">
-            <h1 className="hero-rise text-4xl font-extrabold tracking-wide text-white uppercase md:text-5xl">
+            <h1 className="hero-text text-4xl font-extrabold tracking-wide text-white uppercase md:text-5xl">
               {t("heroTitle")}
             </h1>
-            <p className="hero-rise mt-3 text-xl font-bold text-accent [animation-delay:150ms] md:text-2xl">
+            <p className="hero-text mt-3 text-xl font-bold text-accent [animation-delay:150ms] md:text-2xl">
               {t("tagline")}
             </p>
-            <p className="hero-rise mt-3 max-w-none text-lg text-white/90 [animation-delay:300ms] lg:whitespace-nowrap">
+            <p className="hero-text mt-3 max-w-none text-lg text-white/90 [animation-delay:300ms] lg:whitespace-nowrap">
               {t("heroText")}
             </p>
             <Link
               href="/"
-              className="hero-rise mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm [animation-delay:450ms] hover:brightness-95"
+              className="hero-text mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm [animation-delay:450ms] hover:brightness-95"
             >
               <ArrowLeftIcon className="size-5" aria-hidden="true" />
               {t("backHome")}

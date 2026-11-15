@@ -186,34 +186,49 @@
   }
 }
 
-/* About page hero: the photo blinks, fading out and back in, while the text
-   rises into place once on load. Both are off for people who prefer reduced
-   motion. */
-@keyframes hero-blink {
-  0%,
-  35%,
-  100% {
-    opacity: 1;
-  }
-  50%,
-  65% {
+/* About page hero: a looping slideshow of one slide. The photo and text hold
+   for a few seconds, dissolve out, then fade back in with the text rising
+   into place, over and over. Off for people who prefer reduced motion. */
+@keyframes hero-photo-cycle {
+  0% {
     opacity: 0;
+    transform: scale(1.06);
+  }
+  12%,
+  84% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
   }
 }
 
-@keyframes hero-rise {
-  from {
+@keyframes hero-text-cycle {
+  0%,
+  4% {
     opacity: 0;
     transform: translateY(1rem);
+  }
+  16%,
+  84% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+    transform: none;
   }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .hero-blink {
-    animation: hero-blink 4s ease-in-out infinite;
+  .hero-photo {
+    animation: hero-photo-cycle 7s ease-in-out infinite;
   }
 
-  .hero-rise {
-    animation: hero-rise 0.7s ease-out both;
+  .hero-text {
+    animation: hero-text-cycle 7s ease-out infinite;
   }
 }
