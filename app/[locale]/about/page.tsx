@@ -64,7 +64,7 @@ function SectionTitle({
   return (
     <h2
       id={id}
-      className={`text-2xl font-extrabold tracking-wide uppercase md:text-3xl ${onBlue ? "text-white" : "text-primary"}`}
+      className={`text-3xl font-extrabold tracking-wide uppercase md:text-5xl ${onBlue ? "text-white" : "text-primary"}`}
     >
       {children}
     </h2>

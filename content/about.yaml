@@ -30,9 +30,9 @@ goals_fil:
   - Makapangalap ng mga donasyon/grants at kaalaman para sa ikauunlad ng kooperatiba.
   - Maging kasangkapan o daan para sa mabuting pag-uusap ng mga miyembro at kabarangay.
 
-# English versions are a working translation, NOT approved by the cooperative.
-# Set translation_approved to true once they have reviewed it.
-translation_approved: false
+# English versions approved by the cooperative as official (Nov 2026).
+# Set back to false to show the "unofficial translation" note again.
+translation_approved: true
 vision_en: >-
   A strong and progressive cooperative with united members that values the
   environment, provides clean water, and creates jobs, products and
@@ -58,8 +58,8 @@ goals_en:
 
 # History, from the cooperative's "Kasaysayan ng IWMPC" document. One entry
 # per row on the About page, oldest first; each row shows one photo beside its
-# paragraphs. The Filipino text is the cooperative's own; the English is a
-# working translation covered by translation_approved above.
+# paragraphs. The Filipino text is the cooperative's own; the English is
+# covered by translation_approved above.
 history_fil:
   - - >-
       Nagsimula ang patubig sa Brgy. Inicbulan, Bauan, Batangas noong 1975.
