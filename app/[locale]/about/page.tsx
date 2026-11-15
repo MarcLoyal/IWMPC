@@ -22,12 +22,31 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 /** A dashed frame marking where a photo from the cooperative will go. */
-function PhotoSlot({ label, pending }: { label: string; pending: string }) {
+function PhotoSlot({
+  label,
+  pending,
+  onBlue = false,
+}: {
+  label: string;
+  pending: string;
+  onBlue?: boolean;
+}) {
   return (
-    <div className="flex aspect-[4/3] h-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-primary/30 bg-surface p-6 text-center md:aspect-auto">
-      <ImageIcon className="size-10 text-primary/50" aria-hidden="true" />
-      <p className="font-semibold text-primary">{label}</p>
-      <p className="text-sm text-muted-foreground italic">{pending}</p>
+    <div
+      className={`flex aspect-[4/3] h-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed p-6 text-center md:aspect-auto ${onBlue ? "border-white/40 bg-white/10" : "border-primary/30 bg-surface"}`}
+    >
+      <ImageIcon
+        className={`size-10 ${onBlue ? "text-white/70" : "text-primary/50"}`}
+        aria-hidden="true"
+      />
+      <p className={`font-semibold ${onBlue ? "text-white" : "text-primary"}`}>
+        {label}
+      </p>
+      <p
+        className={`text-sm italic ${onBlue ? "text-white/80" : "text-muted-foreground"}`}
+      >
+        {pending}
+      </p>
     </div>
   );
 }
@@ -99,13 +118,13 @@ export default async function AboutPage() {
   ];
 
   const pillars = [
-    { id: "vision", icon: EyeIcon, title: t("vision"), sub: t("visionSub") },
     {
       id: "mission",
       icon: TargetIcon,
       title: t("mission"),
       sub: t("missionSub"),
     },
+    { id: "vision", icon: EyeIcon, title: t("vision"), sub: t("visionSub") },
     { id: "goals", icon: FlagIcon, title: t("goals"), sub: t("goalsSub") },
   ] as const;
 
@@ -147,42 +166,65 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <div className="bg-background">
-        <Container className="py-12 md:py-16">
-          {showTranslationNote && (
-            <p className="mb-8 flex items-start gap-2 text-muted-foreground">
-              <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
-              {t("unofficialTranslation")}
-            </p>
-          )}
-          {/* 2. History: photo and text, alternating sides */}
-          <section aria-labelledby="history-heading">
-            <SectionTitle id="history-heading">{t("history")}</SectionTitle>
-            <ol className="mt-6 grid gap-10">
-              {history.map((row, i) => (
-                <li
-                  key={i}
-                  className="grid items-stretch gap-6 md:grid-cols-2 md:gap-10"
-                >
-                  <div className={i % 2 === 1 ? "md:order-2" : undefined}>
-                    <PhotoSlot label={row.photo} pending={t("photoPending")} />
+      {/* 2. History: one band per row, white and blue in turn, photo and
+          text swapping sides */}
+      <section aria-labelledby="history-heading">
+        <ol>
+          {history.map((row, i) => {
+            const blue = i % 2 === 1;
+            return (
+              <li
+                key={i}
+                className={
+                  blue
+                    ? "bg-gradient-to-br from-primary via-primary to-primary-dark text-white"
+                    : "bg-background"
+                }
+              >
+                <Container className="py-12 md:py-16">
+                  {i === 0 && (
+                    <>
+                      {showTranslationNote && (
+                        <p className="mb-8 flex items-start gap-2 text-muted-foreground">
+                          <InfoIcon
+                            className="mt-1 size-5 shrink-0"
+                            aria-hidden="true"
+                          />
+                          {t("unofficialTranslation")}
+                        </p>
+                      )}
+                      <SectionTitle id="history-heading">
+                        {t("history")}
+                      </SectionTitle>
+                    </>
+                  )}
+                  <div
+                    className={`grid items-stretch gap-6 md:grid-cols-2 md:gap-10 ${i === 0 ? "mt-6" : ""}`}
+                  >
+                    <div className={blue ? "md:order-2" : undefined}>
+                      <PhotoSlot
+                        label={row.photo}
+                        pending={t("photoPending")}
+                        onBlue={blue}
+                      />
+                    </div>
+                    <div className="grid content-start gap-4">
+                      {row.paragraphs.map((text, j) => (
+                        <p
+                          key={j}
+                          className="max-w-none text-justify text-lg leading-relaxed hyphens-auto"
+                        >
+                          {text}
+                        </p>
+                      ))}
+                    </div>
                   </div>
-                  <div className="grid gap-4">
-                    {row.paragraphs.map((text, j) => (
-                      <p
-                        key={j}
-                        className="max-w-none text-justify text-lg leading-relaxed hyphens-auto"
-                      >
-                        {text}
-                      </p>
-                    ))}
-                  </div>
-                </li>
-              ))}
-            </ol>
-          </section>
-        </Container>
-      </div>
+                </Container>
+              </li>
+            );
+          })}
+        </ol>
+      </section>
       <div className="bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
         <Container className="py-12 md:py-16">
           {/* 3. Cooperative profile: key facts beside the officers' photo */}
@@ -227,12 +269,12 @@ export default async function AboutPage() {
             <h2 id="vmg-heading" className="sr-only">
               {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
             </h2>
-            <div className="grid gap-5 lg:grid-cols-3">
+            <div className="grid gap-5 md:grid-cols-2">
               {pillars.map(({ id, icon: Icon, title, sub }) => (
                 <article
                   key={id}
                   aria-labelledby={`${id}-heading`}
-                  className="flex flex-col rounded-2xl border bg-card p-6 shadow-sm"
+                  className={`flex flex-col rounded-2xl border bg-card p-6 shadow-sm ${id === "goals" ? "md:col-span-2" : ""}`}
                 >
                   <h3
                     id={`${id}-heading`}
@@ -253,7 +295,9 @@ export default async function AboutPage() {
                       {vision}
                     </p>
                   ) : (
-                    <ol className="mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary">
+                    <ol
+                      className={`mt-4 grid list-decimal gap-2.5 pl-5 marker:font-bold marker:text-primary ${id === "goals" ? "md:grid-cols-2 md:gap-x-10" : ""}`}
+                    >
                       {(id === "mission" ? mission : goals).map((item, i) => (
                         <li key={i} className="leading-relaxed">
                           {item}
