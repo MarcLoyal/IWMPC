@@ -149,7 +149,16 @@
       "owned": "Pag-aari at pinamamahalaan ng mga miyembro",
       "cub": "Miyembro ng Cooperative Union of Batangas"
     },
-    "call": "Tumawag sa opisina"
+    "call": "Tumawag sa opisina",
+    "agencies": {
+      "heading": "Akreditasyon at pagsunod",
+      "text": "Mga ahensya ng gobyerno na nag-aakredit at nangangasiwa sa IWMPC.",
+      "doh": "Kagawaran ng Kalusugan (DOH)",
+      "denr": "Kagawaran ng Kapaligiran at Likas na Yaman (DENR)",
+      "nwrb": "National Water Resources Board",
+      "cda": "Cooperative Development Authority",
+      "bauan": "Bayan ng Bauan, Batangas"
+    }
   },
   "preview": {
     "strip": "Preview: may halimbawang nilalaman pa ang website na ito at hindi pa ito opisyal."

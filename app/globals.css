@@ -161,3 +161,26 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* Agency logo strip on the home page: one copy of the list slides left by its
+   own width, then repeats seamlessly. Still for people who prefer less motion. */
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee {
+  animation: logo-marquee 30s linear infinite;
+}
+
+.logo-marquee-wrap:hover .logo-marquee,
+.logo-marquee-wrap:focus-within .logo-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    animation: none;
+  }
+}

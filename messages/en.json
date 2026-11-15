@@ -149,7 +149,16 @@
       "owned": "Owned and run by its members",
       "cub": "Member of the Cooperative Union of Batangas"
     },
-    "call": "Call the office"
+    "call": "Call the office",
+    "agencies": {
+      "heading": "Accreditation and compliance",
+      "text": "Government agencies that accredit and regulate IWMPC.",
+      "doh": "Department of Health",
+      "denr": "Department of Environment and Natural Resources",
+      "nwrb": "National Water Resources Board",
+      "cda": "Cooperative Development Authority",
+      "bauan": "Municipality of Bauan, Batangas"
+    }
   },
   "preview": {
     "strip": "Preview: this website still contains sample content and is not yet official."

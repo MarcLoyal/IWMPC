@@ -13,6 +13,7 @@ import { activeAdvisories, getAdvisories, getNow } from "@/lib/content";
 import { REPORT_HREF, site, yearsOfService } from "@/lib/site";
 import { Button } from "@/components/ui/button";
 import { AdvisoryRow } from "@/components/site/advisory-row";
+import { AgencyLogos } from "@/components/site/agency-logos";
 import { ContactDetails } from "@/components/site/contact-details";
 import { Container } from "@/components/site/container";
 import { PhotoCollage } from "@/components/site/photo-collage";
@@ -153,7 +154,10 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 5. Quick actions */}
+      {/* 5. Accreditation and compliance agencies */}
+      <AgencyLogos />
+
+      {/* 6. Quick actions */}
       <section aria-labelledby="quick-heading">
         <Container className="py-10">
           <h2 id="quick-heading" className="text-2xl tracking-wide uppercase">
@@ -180,7 +184,7 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 6. Trust strip — household count stays a placeholder until the cooperative confirms it */}
+      {/* 7. Trust strip — household count stays a placeholder until the cooperative confirms it */}
       <section aria-labelledby="trust-heading" className="bg-surface">
         <Container className="py-10">
           <h2 id="trust-heading" className="text-2xl tracking-wide uppercase">
@@ -221,9 +225,9 @@ export default async function HomePage() {
         </Container>
       </section>
 
-      {/* 7. Latest news arrives with the News section in P4 */}
+      {/* 8. Latest news arrives with the News section in P4 */}
 
-      {/* 8. Contact strip */}
+      {/* 9. Contact strip */}
       <section aria-labelledby="contact-heading">
         <Container className="py-10">
           <h2 id="contact-heading" className="text-2xl">
