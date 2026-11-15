@@ -68,9 +68,9 @@ photos:
     alt_fil: "Isang pulong sa paligid ng mesa sa opisina."
     alt_en: "A meeting around the table at the office."
   # Community work and celebrations
-  - image: /images/collage/03-team-office-front.jpg
-    width: 1150
-    height: 546
+  - image: /images/collage/03-team-office-front-v2.jpg
+    width: 1228
+    height: 540
     alt_fil: "Pangkatang larawan ng mga opisyal at kawani ng IWMPC sa harap ng opisina ng kooperatiba."
     alt_en: "Group photo of IWMPC officers and staff in front of the cooperative's office."
   - image: /images/collage/10-gift-giving-close.jpg
