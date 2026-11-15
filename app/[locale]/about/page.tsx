@@ -291,7 +291,7 @@ export default async function AboutPage() {
                   <article
                     key={id}
                     aria-labelledby={`${id}-heading`}
-                    className={`relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-lg ring-1 ring-border ${id === "goals" ? "md:col-span-2" : ""}`}
+                    className={`relative flex flex-col overflow-hidden rounded-3xl bg-card shadow-lg ring-1 ring-border transition duration-300 hover:-translate-y-1.5 hover:shadow-2xl hover:ring-primary/30 motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${id === "goals" ? "md:col-span-2" : ""}`}
                   >
                     <div className={`px-6 py-5 ${head}`}>
                       <h3
