@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import { ShieldCheckIcon } from "lucide-react";
+import { DownloadIcon, FileTextIcon, ShieldCheckIcon } from "lucide-react";
+import { Link } from "@/lib/i18n/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getMemberDuties, localized } from "@/lib/content";
 import { MembershipForm } from "@/components/forms";
 import { Container } from "@/components/site/container";
-import { PageHeader } from "@/components/site/page-header";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("membership");
@@ -13,20 +13,103 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MembershipPage() {
-  const [t, locale, duties] = await Promise.all([
+  const [t, tj, tc, tb, locale, duties] = await Promise.all([
     getTranslations("membership"),
+    getTranslations("home.join"),
+    getTranslations("common"),
+    getTranslations(),
     getLocale() as Promise<Locale>,
     getMemberDuties(),
   ]);
 
   return (
     <>
-      <PageHeader
-        title={t("title")}
-        intro={t("intro")}
-        crumbs={[{ label: t("title") }]}
-      />
+      {/* Hero, matching the home page's membership panel */}
+      <section className="px-3 pt-3 md:px-5 md:pt-5">
+        <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
+          <Container className="py-10 md:py-12">
+            <nav
+              aria-label={tb("breadcrumbs.label")}
+              className="text-sm text-white/80"
+            >
+              <Link href="/" className="underline underline-offset-4">
+                {tc("home")}
+              </Link>
+              <span aria-hidden="true"> › </span>
+              <span>{t("title")}</span>
+            </nav>
+            <p className="mt-5 inline-block rounded-full bg-accent px-3 py-1 text-xs font-extrabold tracking-wide text-accent-foreground uppercase">
+              {tj("eyebrow")}
+            </p>
+            <h1 className="mt-4 text-3xl font-extrabold tracking-wide break-words text-white uppercase md:text-5xl">
+              {tj("heading")}
+            </h1>
+            <p className="mt-2 text-xl font-bold text-accent md:text-2xl">
+              {tj("tagline")}
+            </p>
+            <p className="mt-4 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
+              {tj("text")}
+            </p>
+            <h2 className="mt-6 text-xl font-extrabold tracking-wide text-white uppercase md:text-2xl">
+              {tj("subheading")}
+            </h2>
+            <p className="mt-2 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
+              {tj("subtext")}
+            </p>
+          </Container>
+        </div>
+      </section>
       <Container className="grid max-w-3xl gap-8 py-8">
+        <section
+          id="inquire"
+          aria-labelledby="form-heading"
+          className="scroll-mt-28"
+        >
+          <h2 id="form-heading" className="mb-4 text-2xl">
+            {t("formHeading")}
+          </h2>
+          <MembershipForm />
+        </section>
+
+        <section
+          aria-labelledby="print-heading"
+          className="rounded-2xl border-2 border-accent bg-accent/10 p-6 md:p-8"
+        >
+          <div className="flex flex-col gap-6 md:flex-row md:items-center">
+            <FileTextIcon
+              className="size-14 shrink-0 text-primary"
+              aria-hidden="true"
+            />
+            <div className="flex-1">
+              <h2
+                id="print-heading"
+                className="text-2xl font-extrabold tracking-wide uppercase"
+              >
+                {t("printHeading")}
+              </h2>
+              <p className="mt-2 max-w-none text-lg leading-relaxed">
+                {t("printText")}
+              </p>
+              <p className="mt-1 text-sm text-muted-foreground">
+                {t("printNote")}
+              </p>
+            </div>
+          </div>
+          <a
+            href="/forms/iwmpc-membership-application.pdf"
+            download
+            className="mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-bold text-white shadow-sm hover:bg-primary-dark md:inline-flex"
+          >
+            <DownloadIcon className="size-5" aria-hidden="true" />
+            {t("printCta")}
+          </a>
+        </section>
+
+        {/* Benefits, requirements, steps, dividend explainer and PMES schedule arrive in P4 */}
+        <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
+          {t("moreSoon")}
+        </p>
+
         <section aria-labelledby="duties-heading">
           <h2
             id="duties-heading"
@@ -66,21 +149,6 @@ export default async function MembershipPage() {
               </li>
             ))}
           </ol>
-        </section>
-
-        {/* Benefits, requirements, steps, dividend explainer and PMES schedule arrive in P4 */}
-        <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
-          {t("moreSoon")}
-        </p>
-        <section
-          id="inquire"
-          aria-labelledby="form-heading"
-          className="scroll-mt-28"
-        >
-          <h2 id="form-heading" className="mb-4 text-2xl">
-            {t("formHeading")}
-          </h2>
-          <MembershipForm />
         </section>
       </Container>
     </>

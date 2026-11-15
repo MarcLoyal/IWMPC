@@ -579,7 +579,11 @@
     "intro": "Ang mga miyembro ang may-ari ng IWMPC. Mag-inquire kung paano sumali.",
     "formHeading": "Mag-inquire tungkol sa membership",
     "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES.",
-    "dutiesHeading": "Mga tungkulin at responsibilidad ng miyembro"
+    "dutiesHeading": "Mga tungkulin at responsibilidad ng miyembro",
+    "printHeading": "Kung interesado",
+    "printText": "I-download at i-print ang Membership Application Form, sagutan nang buo, at dalhin sa opisina ng IWMPC sa oras ng opisina. Gagabayan kayo ng aming staff sa mga susunod na hakbang, kasama ang Pre-Membership Education Seminar (PMES).",
+    "printNote": "Isang pahina, letter size (8.5 × 11 in). Magdala po ng valid ID.",
+    "printCta": "I-download ang application form (PDF)"
   },
   "infoStrip": {
     "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",

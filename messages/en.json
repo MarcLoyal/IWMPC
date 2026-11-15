@@ -579,7 +579,11 @@
     "intro": "IWMPC is owned by its members. Ask how to join.",
     "formHeading": "Ask about membership",
     "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon.",
-    "dutiesHeading": "Duties and responsibilities of members"
+    "dutiesHeading": "Duties and responsibilities of members",
+    "printHeading": "If interested",
+    "printText": "Download and print the Membership Application Form, fill it out completely, and bring it to the IWMPC office during office hours. Our staff will guide you through the next steps, including the Pre-Membership Education Seminar (PMES).",
+    "printNote": "One page, letter size (8.5 × 11 in). Please bring a valid ID.",
+    "printCta": "Download the application form (PDF)"
   },
   "infoStrip": {
     "welcome": "Welcome to the official IWMPC website!",
