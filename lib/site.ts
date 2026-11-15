@@ -35,8 +35,10 @@ export const site = {
   /** …and in international form for tel: links. */
   hotlineTel: "+63437400767" as string | null,
   email: null as string | null,
-  facebookUrl: null as string | null,
-  messengerUrl: null as string | null,
+  facebookUrl: "https://www.facebook.com/profile.php?id=100068835991463" as
+    string | null,
+  /** Opens a Messenger chat with the Facebook page above. */
+  messengerUrl: "https://m.me/100068835991463" as string | null,
   /** Search text for the embedded map — no hand-picked coordinates. */
   mapQuery: "Purok Yakal, Inicbulan, Bauan, Batangas",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",

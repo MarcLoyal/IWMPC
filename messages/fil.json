@@ -69,7 +69,9 @@
     "memberLogin": "Member Login (Malapit na)",
     "rights": "© {year} {name}. Lahat ng karapatan ay nakalaan.",
     "lastUpdated": "Huling na-update: {date}",
-    "hotline": "Hotline"
+    "hotline": "Hotline",
+    "likeUs": "I-like kami sa",
+    "messengerCta": "Mag-chat sa amin"
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",

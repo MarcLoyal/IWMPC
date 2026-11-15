@@ -69,7 +69,9 @@
     "memberLogin": "Member Login (Coming soon)",
     "rights": "© {year} {name}. All rights reserved.",
     "lastUpdated": "Last updated: {date}",
-    "hotline": "Hotline"
+    "hotline": "Hotline",
+    "likeUs": "Like us on",
+    "messengerCta": "Chat with us"
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
@@ -109,7 +111,7 @@
     },
     "join": {
       "eyebrow": "Be part of our community",
-      "heading": "Are you an Inicbulangueno?",
+      "heading": "Are you an Inicbulangueño?",
       "tagline": "Your Community. Your Cooperative. Your Future.",
       "text": "Be part of IWMPC and experience the power of cooperation! Enjoy accessible products and services, opportunities for growth, and the benefits of belonging to a cooperative committed to the progress and well-being of its members and community.",
       "subheading": "Become a member today!",

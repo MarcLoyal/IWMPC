@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useFormatter, useTranslations } from "next-intl";
+import { MessageCircleIcon } from "lucide-react";
 import { Link } from "@/lib/i18n/navigation";
 import { primaryNav, secondaryNav, site } from "@/lib/site";
 import { OfficeHours } from "./office-hours";
@@ -63,6 +64,22 @@ export function Footer() {
                 </dd>
               </>
             )}
+            {site.messengerUrl && (
+              <>
+                <dt className="font-semibold">Messenger</dt>
+                <dd>
+                  <a
+                    href={site.messengerUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-1.5 underline"
+                  >
+                    <MessageCircleIcon className="size-5" aria-hidden="true" />
+                    {t("messengerCta")}
+                  </a>
+                </dd>
+              </>
+            )}
             <dt className="font-semibold">{t("email")}</dt>
             <dd>
               {site.email ? (
@@ -99,17 +116,34 @@ export function Footer() {
             {t("moreHeading")}
           </h2>
           <ul className="mt-2">
-            {secondaryNav.map((item) => (
-              <li key={item.key}>
-                <Link href={item.href} className={linkClass}>
-                  {tn(item.key)}
-                </Link>
-              </li>
-            ))}
+            {secondaryNav
+              .filter((item) => item.key !== "faq")
+              .map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={linkClass}>
+                    {tn(item.key)}
+                  </Link>
+                </li>
+              ))}
             {site.facebookUrl && (
               <li>
-                <a href={site.facebookUrl} rel="noopener" className={linkClass}>
-                  Facebook
+                <a
+                  href={site.facebookUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className={`${linkClass} gap-2`}
+                >
+                  {t("likeUs")}
+                  <span className="flex size-8 items-center justify-center rounded-full bg-white text-[#1877f2]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="size-5 shrink-0 fill-current"
+                      aria-hidden="true"
+                    >
+                      <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4v3.2h2.8V22h3.3z" />
+                    </svg>
+                  </span>
+                  <span className="sr-only">Facebook</span>
                 </a>
               </li>
             )}
