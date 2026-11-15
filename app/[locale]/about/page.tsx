@@ -65,13 +65,20 @@ export default async function AboutPage() {
     dateStyle: "long",
   });
 
-  // History, oldest first. Text for the later rows and all old photos are
+  // History rows, oldest first, each beside one photo. The old photos are
   // still to come from the cooperative.
-  const history = [
-    { photo: t("photoFacility"), text: t("history1") },
-    { photo: t("photoPumps"), text: t("historyPending") },
-    { photo: t("photoPerson"), text: t("historyPending") },
-  ];
+  const historyText =
+    locale === "en" && about.history_en.length > 0
+      ? about.history_en
+      : about.history_fil;
+  const photos = [t("photoFacility"), t("photoPumps"), t("photoPerson")];
+  const history = historyText.map((paragraphs, i) => ({
+    photo: photos[i] ?? t("photoPending"),
+    paragraphs,
+  }));
+  const profileText = about.profile_fil
+    ? localized(about, "profile", locale)
+    : about.profile_en;
 
   const profile = [
     { label: t("profileName"), value: site.legalName },
@@ -133,6 +140,12 @@ export default async function AboutPage() {
       </section>
 
       <Container className="grid gap-14 py-10 md:py-14">
+        {showTranslationNote && (
+          <p className="-mb-6 flex items-start gap-2 text-muted-foreground">
+            <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
+            {t("unofficialTranslation")}
+          </p>
+        )}
         {/* 2. History: photo and text, alternating sides */}
         <section aria-labelledby="history-heading">
           <SectionTitle id="history-heading">{t("history")}</SectionTitle>
@@ -145,9 +158,16 @@ export default async function AboutPage() {
                 <div className={i % 2 === 1 ? "md:order-2" : undefined}>
                   <PhotoSlot label={row.photo} pending={t("photoPending")} />
                 </div>
-                <p className="text-justify text-lg leading-relaxed hyphens-auto">
-                  {row.text}
-                </p>
+                <div className="grid gap-4">
+                  {row.paragraphs.map((text, j) => (
+                    <p
+                      key={j}
+                      className="max-w-none text-justify text-lg leading-relaxed hyphens-auto"
+                    >
+                      {text}
+                    </p>
+                  ))}
+                </div>
               </li>
             ))}
           </ol>
@@ -157,16 +177,11 @@ export default async function AboutPage() {
         <section aria-labelledby="profile-heading">
           <SectionTitle id="profile-heading">{t("profile")}</SectionTitle>
           <div className="mt-6 grid items-center gap-8 md:grid-cols-2 md:gap-10">
-            <dl className="grid gap-4">
-              {profile.map(({ label, value }) => (
-                <div key={label} className="border-b pb-3">
-                  <dt className="text-sm font-semibold text-muted-foreground">
-                    {label}
-                  </dt>
-                  <dd className="mt-0.5 text-lg font-semibold">{value}</dd>
-                </div>
-              ))}
-            </dl>
+            {profileText && (
+              <p className="max-w-none text-justify text-lg leading-relaxed hyphens-auto">
+                {profileText}
+              </p>
+            )}
             <Image
               src="/images/collage/03-team-office-front-v2.jpg"
               alt={t("profileImageAlt")}
@@ -176,6 +191,16 @@ export default async function AboutPage() {
               className="w-full rounded-2xl shadow-md"
             />
           </div>
+          <dl className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
+            {profile.map(({ label, value }) => (
+              <div key={label} className="border-t-4 border-accent pt-2">
+                <dt className="text-sm font-semibold text-muted-foreground">
+                  {label}
+                </dt>
+                <dd className="mt-0.5 text-lg font-semibold">{value}</dd>
+              </div>
+            ))}
+          </dl>
         </section>
 
         {/* 4. Vision, mission and goals side by side */}
@@ -183,12 +208,6 @@ export default async function AboutPage() {
           <h2 id="vmg-heading" className="sr-only">
             {`${t("vision")}, ${t("mission")}, ${t("goals")}`}
           </h2>
-          {showTranslationNote && (
-            <p className="mb-4 flex items-start gap-2 text-muted-foreground">
-              <InfoIcon className="mt-1 size-5 shrink-0" aria-hidden="true" />
-              {t("unofficialTranslation")}
-            </p>
-          )}
           <div className="grid gap-5 lg:grid-cols-3">
             {pillars.map(({ id, icon: Icon, title, sub }) => (
               <article

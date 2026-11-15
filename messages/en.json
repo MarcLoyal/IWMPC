@@ -431,8 +431,6 @@
     "heroText": "Learn about our history, leadership, achievements and commitment to our members.",
     "backHome": "Back to Home",
     "history": "History",
-    "history1": "The Inicbulan Waterworks Multi-Purpose Cooperative was established by residents of Brgy. Inicbulan, Bauan, Batangas, and registered with the Cooperative Development Authority (CDA) on July 1, 2003.",
-    "historyPending": "More of the cooperative's story will be added here once the cooperative provides it.",
     "photoFacility": "Old photo of the IWMPC facility",
     "photoPumps": "Old photos of the pumps at Inicbulan Elementary School",
     "photoPerson": "Photo of Mr. Reynaldo Marasigan",
@@ -582,7 +580,8 @@
     "title": "Membership",
     "intro": "IWMPC is owned by its members. Ask how to join.",
     "formHeading": "Ask about membership",
-    "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon."
+    "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon.",
+    "dutiesHeading": "Duties and responsibilities of members"
   },
   "infoStrip": {
     "welcome": "Welcome to the official IWMPC website!",

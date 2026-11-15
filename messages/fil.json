@@ -431,8 +431,6 @@
     "heroText": "Alamin ang aming kasaysayan, pamunuan, mga nakamit, at paglilingkod sa aming mga miyembro.",
     "backHome": "Bumalik sa Home",
     "history": "Kasaysayan",
-    "history1": "Itinatag ng mga residente ng Brgy. Inicbulan, Bauan, Batangas ang Inicbulan Waterworks Multi-Purpose Cooperative, at nirehistro ito sa Cooperative Development Authority (CDA) noong Hulyo 1, 2003.",
-    "historyPending": "Idaragdag dito ang iba pang bahagi ng kasaysayan ng kooperatiba kapag naibigay na nila.",
     "photoFacility": "Lumang larawan ng pasilidad ng IWMPC",
     "photoPumps": "Mga lumang larawan ng mga bomba sa Inicbulan Elementary School",
     "photoPerson": "Larawan ni G. Reynaldo Marasigan",
@@ -582,7 +580,8 @@
     "title": "Membership",
     "intro": "Ang mga miyembro ang may-ari ng IWMPC. Mag-inquire kung paano sumali.",
     "formHeading": "Mag-inquire tungkol sa membership",
-    "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES."
+    "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES.",
+    "dutiesHeading": "Mga tungkulin at responsibilidad ng miyembro"
   },
   "infoStrip": {
     "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",

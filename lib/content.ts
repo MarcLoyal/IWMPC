@@ -229,6 +229,11 @@ const aboutSchema = z.object({
   goals_fil: z.array(z.string().min(1)).default([]),
   goals_en: z.array(z.string().min(1)).default([]),
   translation_approved: z.boolean().default(false),
+  /** History rows, oldest first; each row is a list of paragraphs. */
+  history_fil: z.array(z.array(z.string().min(1)).min(1)).default([]),
+  history_en: z.array(z.array(z.string().min(1)).min(1)).default([]),
+  profile_fil: optionalText,
+  profile_en: optionalText,
 });
 
 export type About = z.infer<typeof aboutSchema>;
@@ -238,6 +243,41 @@ export async function getAbout(): Promise<About> {
   cacheLife("max");
   const raw = await fs.readFile(path.join(CONTENT_DIR, "about.yaml"), "utf8");
   return aboutSchema.parse(parseYaml(raw));
+}
+
+/* ---------- Members' duties ---------- */
+
+const dutySchema = z.object({
+  title_fil: z.string().min(1),
+  title_en: optionalText,
+  text_fil: z.string().min(1),
+  text_en: optionalText,
+});
+
+const memberDutiesSchema = z.object({
+  intro_fil: z.string().min(1),
+  intro_en: optionalText,
+  groups: z
+    .array(
+      z.object({
+        title_fil: z.string().min(1),
+        title_en: optionalText,
+        items: z.array(dutySchema).min(1),
+      }),
+    )
+    .min(1),
+});
+
+export type MemberDuties = z.infer<typeof memberDutiesSchema>;
+
+export async function getMemberDuties(): Promise<MemberDuties> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(
+    path.join(CONTENT_DIR, "member-duties.yaml"),
+    "utf8",
+  );
+  return memberDutiesSchema.parse(parseYaml(raw));
 }
 
 /* ---------- Service areas ---------- */
