@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { useFormatter, useTranslations } from "next-intl";
+import { useTranslations } from "next-intl";
 import { MessageCircleIcon } from "lucide-react";
 import { Link } from "@/lib/i18n/navigation";
 import { primaryNav, secondaryNav, site } from "@/lib/site";
@@ -12,7 +12,6 @@ const BUILT_AT = new Date(process.env.NEXT_PUBLIC_BUILD_TIME!);
 export function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
-  const format = useFormatter();
   const linkClass =
     "inline-flex min-h-12 items-center underline-offset-4 hover:underline";
 
@@ -147,10 +146,6 @@ export function Footer() {
                 </a>
               </li>
             )}
-            {/* /portal is reserved for the Phase 2 member portal */}
-            <li className="flex min-h-12 items-center text-white/75">
-              {t("memberLogin")}
-            </li>
           </ul>
         </nav>
       </div>
@@ -161,11 +156,6 @@ export function Footer() {
             {t("rights", {
               year: String(BUILT_AT.getFullYear()),
               name: site.shortName,
-            })}
-          </p>
-          <p>
-            {t("lastUpdated", {
-              date: format.dateTime(BUILT_AT, { dateStyle: "long" }),
             })}
           </p>
         </div>
