@@ -15,7 +15,7 @@ const SERVICES = [
     href: "/water",
     icon: DropletIcon,
     badge: "bg-primary",
-    image: "/images/services/water.jpg",
+    image: "/images/collage/03-water-line-work.jpg",
   },
   {
     key: "rice",
