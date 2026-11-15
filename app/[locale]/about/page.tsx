@@ -6,7 +6,6 @@ import {
   FlagIcon,
   ImageIcon,
   InfoIcon,
-  NetworkIcon,
   TargetIcon,
 } from "lucide-react";
 import { getFormatter, getLocale, getTranslations } from "next-intl/server";
@@ -15,6 +14,7 @@ import type { Locale } from "@/lib/i18n/routing";
 import { getAbout, localized } from "@/lib/content";
 import { site } from "@/lib/site";
 import { Container } from "@/components/site/container";
+import { OrgChart } from "@/components/site/org-chart";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("about");
@@ -376,15 +376,8 @@ export default async function AboutPage() {
                 </span>
               </p>
             </div>
-            <div className="mt-6 flex min-h-80 flex-col items-center justify-center gap-3 rounded-3xl border-2 border-dashed border-white/40 bg-white/10 p-8 text-center">
-              <NetworkIcon
-                className="size-12 text-white/70"
-                aria-hidden="true"
-              />
-              <p className="text-xl font-bold text-white uppercase">
-                {t("orgChart")}
-              </p>
-              <p className="max-w-md text-white/85 italic">{t("orgPending")}</p>
+            <div className="mt-10">
+              <OrgChart />
             </div>
           </section>
         </Container>

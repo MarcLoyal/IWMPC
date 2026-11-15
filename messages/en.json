@@ -444,10 +444,12 @@
     "board": "Board of Directors 2026",
     "our": "Our",
     "leaders": "Cooperative Leaders 2026",
-    "orgChart": "Organization chart",
-    "orgPending": "The organization chart will be added once the cooperative provides it.",
     "cdaReg": "CDA Registration No.",
-    "address": "Address"
+    "address": "Address",
+    "orgVacant": "Vacant",
+    "orgDuties": "Duties and functions",
+    "orgElected": "Elected",
+    "orgAppointed": "Appointed"
   },
   "forms": {
     "requiredMark": "required",

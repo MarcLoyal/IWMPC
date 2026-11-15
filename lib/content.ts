@@ -280,6 +280,44 @@ export async function getMemberDuties(): Promise<MemberDuties> {
   return memberDutiesSchema.parse(parseYaml(raw));
 }
 
+/* ---------- Organization chart ---------- */
+
+const orgBodySchema = z.object({
+  id: z.string().min(1),
+  kind: z.enum(["elected", "appointed"]),
+  title_en: z.string().min(1),
+  title_fil: z.string().min(1),
+  duties_en: optionalText,
+  members: z
+    .array(z.object({ name: optionalText, role: z.string().min(1) }))
+    .default([]),
+});
+
+const orgChartSchema = z.object({
+  general_assembly: z.object({
+    title_en: z.string().min(1),
+    title_fil: z.string().min(1),
+  }),
+  top: z.array(orgBodySchema),
+  officers: z.array(orgBodySchema),
+  committees: z.array(orgBodySchema),
+  manager: orgBodySchema,
+  staff: orgBodySchema,
+});
+
+export type OrgBody = z.infer<typeof orgBodySchema>;
+export type OrgChart = z.infer<typeof orgChartSchema>;
+
+export async function getOrgChart(): Promise<OrgChart> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(
+    path.join(CONTENT_DIR, "org-chart.yaml"),
+    "utf8",
+  );
+  return orgChartSchema.parse(parseYaml(raw));
+}
+
 /* ---------- Service areas ---------- */
 
 const areasSchema = z.object({

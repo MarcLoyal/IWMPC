@@ -444,10 +444,12 @@
     "board": "Board of Directors 2026",
     "our": "Ang aming",
     "leaders": "Mga Pinuno ng Kooperatiba 2026",
-    "orgChart": "Organization chart",
-    "orgPending": "Idaragdag ang organization chart kapag naibigay na ng kooperatiba.",
     "cdaReg": "CDA Registration No.",
-    "address": "Address"
+    "address": "Address",
+    "orgVacant": "Bakante",
+    "orgDuties": "Mga tungkulin",
+    "orgElected": "Inihalal",
+    "orgAppointed": "Itinalaga"
   },
   "forms": {
     "requiredMark": "kailangan",
