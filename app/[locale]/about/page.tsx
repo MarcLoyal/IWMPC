@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
 /** A dashed frame marking where a photo from the cooperative will go. */
 function PhotoSlot({ label, pending }: { label: string; pending: string }) {
   return (
-    <div className="flex aspect-[4/3] flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-primary/30 bg-surface p-6 text-center">
+    <div className="flex aspect-[4/3] h-full flex-col items-center justify-center gap-2 rounded-2xl border-2 border-dashed border-primary/30 bg-surface p-6 text-center md:aspect-auto">
       <ImageIcon className="size-10 text-primary/50" aria-hidden="true" />
       <p className="font-semibold text-primary">{label}</p>
       <p className="text-sm text-muted-foreground italic">{pending}</p>
@@ -112,25 +112,25 @@ export default async function AboutPage() {
             fill
             priority
             sizes="100vw"
-            className="object-cover object-[center_40%]"
+            className="hero-zoom object-cover object-[center_40%]"
           />
           <div
             className="absolute inset-0 bg-gradient-to-r from-primary-dark/95 via-primary/85 to-primary/50"
             aria-hidden="true"
           />
           <Container className="relative py-14 md:py-20">
-            <h1 className="text-4xl font-extrabold tracking-wide text-white uppercase md:text-5xl">
+            <h1 className="hero-rise text-4xl font-extrabold tracking-wide text-white uppercase md:text-5xl">
               {t("heroTitle")}
             </h1>
-            <p className="mt-3 text-xl font-bold text-accent md:text-2xl">
+            <p className="hero-rise mt-3 text-xl font-bold text-accent [animation-delay:150ms] md:text-2xl">
               {t("tagline")}
             </p>
-            <p className="mt-3 max-w-2xl text-lg text-white/90">
+            <p className="hero-rise mt-3 max-w-none text-lg text-white/90 [animation-delay:300ms] lg:whitespace-nowrap">
               {t("heroText")}
             </p>
             <Link
               href="/"
-              className="mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm hover:brightness-95"
+              className="hero-rise mt-6 inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm [animation-delay:450ms] hover:brightness-95"
             >
               <ArrowLeftIcon className="size-5" aria-hidden="true" />
               {t("backHome")}
@@ -153,7 +153,7 @@ export default async function AboutPage() {
             {history.map((row, i) => (
               <li
                 key={i}
-                className="grid items-center gap-6 md:grid-cols-2 md:gap-10"
+                className="grid items-stretch gap-6 md:grid-cols-2 md:gap-10"
               >
                 <div className={i % 2 === 1 ? "md:order-2" : undefined}>
                   <PhotoSlot label={row.photo} pending={t("photoPending")} />
@@ -176,20 +176,22 @@ export default async function AboutPage() {
         {/* 3. Cooperative profile: key facts beside the officers' photo */}
         <section aria-labelledby="profile-heading">
           <SectionTitle id="profile-heading">{t("profile")}</SectionTitle>
-          <div className="mt-6 grid items-center gap-8 md:grid-cols-2 md:gap-10">
+          <div className="mt-6 grid items-stretch gap-8 md:grid-cols-2 md:gap-10">
             {profileText && (
               <p className="max-w-none text-justify text-lg leading-relaxed hyphens-auto">
                 {profileText}
               </p>
             )}
-            <Image
-              src="/images/collage/03-team-office-front-v2.jpg"
-              alt={t("profileImageAlt")}
-              width={1228}
-              height={540}
-              sizes="(min-width: 768px) 50vw, 100vw"
-              className="w-full rounded-2xl shadow-md"
-            />
+            {/* The photo is as tall as the profile text beside it */}
+            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl shadow-md md:aspect-auto">
+              <Image
+                src="/images/collage/03-team-office-front-v2.jpg"
+                alt={t("profileImageAlt")}
+                fill
+                sizes="(min-width: 768px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
           </div>
           <dl className="mt-8 grid gap-x-6 gap-y-4 sm:grid-cols-2 lg:grid-cols-4">
             {profile.map(({ label, value }) => (

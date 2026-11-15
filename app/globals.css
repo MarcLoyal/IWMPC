@@ -185,3 +185,31 @@
     animation: none;
   }
 }
+
+/* About page hero: the photo slowly zooms in and the text rises into place
+   once on load. Both are off for people who prefer reduced motion. */
+@keyframes hero-zoom {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.12);
+  }
+}
+
+@keyframes hero-rise {
+  from {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-zoom {
+    animation: hero-zoom 18s ease-out both alternate infinite;
+  }
+
+  .hero-rise {
+    animation: hero-rise 0.7s ease-out both;
+  }
+}
