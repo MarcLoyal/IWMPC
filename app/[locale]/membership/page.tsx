@@ -4,7 +4,6 @@ import { Link } from "@/lib/i18n/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getMemberDuties, localized } from "@/lib/content";
-import { MembershipForm } from "@/components/forms";
 import { Container } from "@/components/site/container";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -25,8 +24,18 @@ export default async function MembershipPage() {
   return (
     <>
       {/* Page title, above the hero panel */}
-      <Container className="pt-8 md:pt-10">
-        <h1 className="text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
+      <Container className="pt-6 md:pt-8">
+        <nav
+          aria-label={tb("breadcrumbs.label")}
+          className="text-sm text-muted-foreground"
+        >
+          <Link href="/" className="text-primary underline underline-offset-4">
+            {tc("home")}
+          </Link>
+          <span aria-hidden="true"> › </span>
+          <span>{t("title")}</span>
+        </nav>
+        <h1 className="mt-4 text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
           {t("pageTitle")}
         </h1>
       </Container>
@@ -35,17 +44,7 @@ export default async function MembershipPage() {
       <section className="px-3 pt-6 md:px-5 md:pt-8">
         <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
           <Container className="py-10 md:py-12">
-            <nav
-              aria-label={tb("breadcrumbs.label")}
-              className="text-sm text-white/80"
-            >
-              <Link href="/" className="underline underline-offset-4">
-                {tc("home")}
-              </Link>
-              <span aria-hidden="true"> › </span>
-              <span>{t("title")}</span>
-            </nav>
-            <p className="mt-5 inline-block rounded-full bg-accent px-3 py-1 text-xs font-extrabold tracking-wide text-accent-foreground uppercase">
+            <p className="inline-block rounded-full bg-accent px-3 py-1 text-xs font-extrabold tracking-wide text-accent-foreground uppercase">
               {tj("eyebrow")}
             </p>
             <h2 className="mt-4 text-3xl font-extrabold tracking-wide break-words text-white uppercase md:text-5xl">
@@ -67,17 +66,6 @@ export default async function MembershipPage() {
         </div>
       </section>
       <Container className="grid max-w-3xl gap-8 py-8">
-        <section
-          id="inquire"
-          aria-labelledby="form-heading"
-          className="scroll-mt-28"
-        >
-          <h2 id="form-heading" className="mb-4 text-2xl">
-            {t("formHeading")}
-          </h2>
-          <MembershipForm />
-        </section>
-
         <section
           aria-labelledby="print-heading"
           className="rounded-2xl border-2 border-accent bg-accent/10 p-6 md:p-8"
