@@ -77,7 +77,7 @@
     "ctaStatus": "Tingnan ang Status ng Tubig",
     "ctaPay": "Paano Magbayad",
     "quick": {
-      "heading": "Ano ang kailangan mo?",
+      "heading": "Ipaalam sa amin ang inyong concern",
       "status": "Status ng Tubig",
       "statusDesc": "May interruption ba ngayon?",
       "bill": "Bill Calculator",
@@ -139,7 +139,7 @@
     },
     "call": "Tumawag sa opisina",
     "agencies": {
-      "heading": "Sumusunod sa",
+      "heading": "Sumusunod sa:",
       "doh": "Kagawaran ng Kalusugan (DOH)",
       "denr": "Kagawaran ng Kapaligiran at Likas na Yaman (DENR)",
       "nwrb": "National Water Resources Board",

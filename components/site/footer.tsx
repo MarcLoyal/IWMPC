@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { useFormatter, useTranslations } from "next-intl";
 import { Link } from "@/lib/i18n/navigation";
 import { primaryNav, secondaryNav, site } from "@/lib/site";
@@ -18,12 +19,23 @@ export function Footer() {
     <footer className="border-t-4 border-accent bg-primary pb-20 text-primary-foreground md:pb-0">
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
         <section aria-labelledby="footer-contact">
-          <h2 id="footer-contact" className="text-lg text-white">
-            {site.legalName}
-          </h2>
-          <p className="mt-1 text-sm text-white/85">
-            {t("cdaReg")} {site.cdaRegistrationNo}
-          </p>
+          <div className="flex items-center gap-4">
+            <Image
+              src="/logo-v3.png"
+              alt=""
+              width={80}
+              height={80}
+              className="size-16 shrink-0 rounded-full bg-white ring-2 ring-white md:size-20"
+            />
+            <div>
+              <h2 id="footer-contact" className="text-lg text-white">
+                {site.legalName}
+              </h2>
+              <p className="mt-1 text-sm text-white/85">
+                {t("cdaReg")} {site.cdaRegistrationNo}
+              </p>
+            </div>
+          </div>
           <dl className="mt-4 grid gap-x-4 gap-y-2 text-base sm:grid-cols-[auto_1fr]">
             <dt className="font-semibold">{t("address")}</dt>
             <dd>{site.address}</dd>
