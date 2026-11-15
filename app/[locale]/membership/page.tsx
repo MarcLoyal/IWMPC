@@ -1,5 +1,10 @@
 import type { Metadata } from "next";
-import { DownloadIcon, FileTextIcon, ShieldCheckIcon } from "lucide-react";
+import {
+  ArrowLeftIcon,
+  DownloadIcon,
+  FileTextIcon,
+  ShieldCheckIcon,
+} from "lucide-react";
 import { Link } from "@/lib/i18n/navigation";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
@@ -12,11 +17,10 @@ export async function generateMetadata(): Promise<Metadata> {
 }
 
 export default async function MembershipPage() {
-  const [t, tj, tc, tb, locale, duties] = await Promise.all([
+  const [t, tj, ta, locale, duties] = await Promise.all([
     getTranslations("membership"),
     getTranslations("home.join"),
-    getTranslations("common"),
-    getTranslations(),
+    getTranslations("about"),
     getLocale() as Promise<Locale>,
     getMemberDuties(),
   ]);
@@ -25,16 +29,13 @@ export default async function MembershipPage() {
     <>
       {/* Page title, above the hero panel */}
       <Container className="pt-6 md:pt-8">
-        <nav
-          aria-label={tb("breadcrumbs.label")}
-          className="text-sm text-muted-foreground"
+        <Link
+          href="/"
+          className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm hover:brightness-95"
         >
-          <Link href="/" className="text-primary underline underline-offset-4">
-            {tc("home")}
-          </Link>
-          <span aria-hidden="true"> › </span>
-          <span>{t("title")}</span>
-        </nav>
+          <ArrowLeftIcon className="size-5" aria-hidden="true" />
+          {ta("backHome")}
+        </Link>
         <h1 className="mt-4 text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
           {t("pageTitle")}
         </h1>
