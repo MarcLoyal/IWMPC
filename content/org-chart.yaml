@@ -1,7 +1,6 @@
 # Organizational/functional structure, transcribed from the chart at the
 # cooperative's office (2026). kind: elected (solid line on the chart) or
-# appointed (dotted line). A member with no name is a vacant seat.
-# Names were read from a photo of the chart; please check spelling.
+# appointed (dotted line). Only positions are listed, not names.
 general_assembly:
   title_en: General Assembly
   title_fil: General Assembly
@@ -19,9 +18,9 @@ top:
       manner and procedure of election and other election-related activities
       and acts on the changes thereto.
     members:
-      - { name: Cynthia E. Castillo, role: Chairperson }
-      - { name: Myra D. Escalona, role: Vice-Chairperson }
-      - { name: Korie Ann V. Santos, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
   - id: board
     kind: elected
     title_en: Board of Directors
@@ -35,12 +34,12 @@ top:
       evaluates the capability and qualification of, and recommends to the
       General Assembly, the engagement of the services of the External Auditor.
     members:
-      - { name: Marlito M. Gamier, role: Chairperson }
-      - { name: Cely I. Ilagan, role: Vice-Chairperson }
-      - { name: Irene D. Panopio, role: Director }
-      - { name: Juliet S. Abante, role: Director }
-      - { name: Janice E. Ronquillo, role: Director }
-      - { name: Maricel B. Ilagan, role: Director }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Director }
+      - { role: Director }
+      - { role: Director }
+      - { role: Director }
       - { role: Director }
   - id: audit
     kind: elected
@@ -54,8 +53,8 @@ top:
       accordance with cooperative principles and generally accepted accounting
       procedures.
     members:
-      - { name: Phebe I. Redaniel, role: Chairperson }
-      - { name: Jennifer S. Castillo, role: Vice-Chairperson }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
       - { role: Secretary }
 officers:
   - id: treasurer
@@ -68,7 +67,7 @@ officers:
       securities, and documentation relating to all assets, liabilities, income
       and expenditures.
     members:
-      - { name: Elona I. Ilagan, role: Treasurer }
+      - { role: Treasurer }
   - id: secretary
     kind: appointed
     title_en: Secretary
@@ -93,9 +92,9 @@ committees:
       related to any of them within the third civil degree of consanguinity and
       affinity.
     members:
-      - { name: Anita G. Tap, role: Chairperson }
-      - { name: Renerio C. Macanas, role: Vice-Chairperson }
-      - { name: Rosa Maria M. Brandes, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
   - id: education
     kind: appointed
     title_en: Education & Training Committee
@@ -107,9 +106,9 @@ committees:
       members, officers and staff; develops promotional and training materials
       for the cooperative; and conducts and coordinates training activities.
     members:
-      - { name: Cely I. Ilagan, role: Chairperson }
-      - { name: Estelita C. Abante, role: Vice-Chairperson }
-      - { name: Andrea G. Manalo, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
   - id: ethics
     kind: appointed
     title_en: Ethics Committee
@@ -121,9 +120,9 @@ committees:
       Assembly; disseminates, promotes and implements the approved Code of
       Governance and Ethical Standards.
     members:
-      - { name: Eden P. Pureza, role: Chairperson }
-      - { name: Ma. Leonora G. Ilagan, role: Vice-Chairperson }
-      - { name: Victoria M. Manalo, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
   - id: mediation
     kind: appointed
     title_en: Mediation & Conciliation Committee
@@ -134,9 +133,9 @@ committees:
       program and processes; submits semi-annual reports of cooperative cases
       to the Authority within 15 days after the end of every semester.
     members:
-      - { name: Rico I. Ramos, role: Chairperson }
-      - { name: Liza I. Abante, role: Vice-Chairperson }
-      - { name: Marites Y. Dawang, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
   - id: gad
     kind: appointed
     title_en: Gender & Development Committee
@@ -148,9 +147,9 @@ committees:
       implementation of GAD programs, activities and projects towards
       achieving Gender Equality.
     members:
-      - { name: Raul I. Marasigan, role: Chairperson }
-      - { name: Lynn I. Tumambing, role: Vice-Chairperson }
-      - { name: Myra B. Baculi, role: Secretary }
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
 manager:
   id: manager
   kind: appointed
@@ -161,7 +160,7 @@ manager:
     cooperative, subject to the policies and guidelines set by the Board of
     Directors and the General Assembly.
   members:
-    - { name: Marino R. Abanador, role: General Manager }
+    - { role: General Manager }
 staff:
   id: staff
   kind: appointed
@@ -171,9 +170,9 @@ staff:
     Manage the workflow by ensuring that all daily tasks are met and work is
     completed.
   members:
-    - { name: Jertrude C. Castillo, role: Bookkeeper }
-    - { name: Alffa M. Mahiya, role: Credit/Loan Officer }
-    - { name: Emard B. Ramos, role: Cashier }
-    - { name: Venus C. Abante, role: Operator/Maintenance }
-    - { name: Edward B. Ramos, role: Meter Reader/Maintenance }
-    - { name: Cresenciano M. Ilagan, role: Meter Reader/Operator }
+    - { role: Bookkeeper }
+    - { role: Credit/Loan Officer }
+    - { role: Cashier }
+    - { role: Operator/Maintenance }
+    - { role: Meter Reader/Maintenance }
+    - { role: Meter Reader/Operator }

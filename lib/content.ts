@@ -288,9 +288,7 @@ const orgBodySchema = z.object({
   title_en: z.string().min(1),
   title_fil: z.string().min(1),
   duties_en: optionalText,
-  members: z
-    .array(z.object({ name: optionalText, role: z.string().min(1) }))
-    .default([]),
+  members: z.array(z.object({ role: z.string().min(1) })).default([]),
 });
 
 const orgChartSchema = z.object({

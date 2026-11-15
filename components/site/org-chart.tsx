@@ -1,16 +1,8 @@
-import { ChevronDownIcon, UsersIcon } from "lucide-react";
+import { ChevronDownIcon, UserIcon, UsersIcon } from "lucide-react";
 import { getLocale, getTranslations } from "next-intl/server";
 import type { Locale } from "@/lib/i18n/routing";
 import { getOrgChart, localized, type OrgBody } from "@/lib/content";
 import { cn } from "@/lib/utils";
-
-/** First letters of the given name and surname, e.g. "Marlito M. Gamier" → "MG". */
-function initials(name: string) {
-  const parts = name.replace(/\./g, "").split(/\s+/).filter(Boolean);
-  const first = parts[0]?.[0] ?? "";
-  const last = parts.length > 1 ? parts[parts.length - 1][0] : "";
-  return (first + last).toUpperCase();
-}
 
 /** A short vertical line joining one tier of the chart to the next. */
 function Connector({ dashed = false }: { dashed?: boolean }) {
@@ -61,28 +53,11 @@ async function Body({
           <li key={i} className="flex items-center gap-3">
             <span
               aria-hidden="true"
-              className={cn(
-                "flex size-11 shrink-0 items-center justify-center rounded-full text-sm font-bold",
-                m.name
-                  ? "bg-primary text-white"
-                  : "border-2 border-dashed border-border text-muted-foreground",
-              )}
+              className="flex size-10 shrink-0 items-center justify-center rounded-full bg-primary text-white"
             >
-              {m.name ? initials(m.name) : "–"}
+              <UserIcon className="size-5" />
             </span>
-            <span className="min-w-0 leading-tight">
-              <span
-                className={cn(
-                  "block font-semibold",
-                  !m.name && "text-muted-foreground italic",
-                )}
-              >
-                {m.name ?? t("orgVacant")}
-              </span>
-              <span className="block text-sm text-muted-foreground">
-                {m.role}
-              </span>
-            </span>
+            <span className="font-semibold">{m.role}</span>
           </li>
         ))}
       </ul>
@@ -107,8 +82,7 @@ async function Body({
 /**
  * The cooperative's organizational/functional structure, tier by tier:
  * General Assembly, the elected bodies, appointed officers and committees,
- * the General Manager and the management staff. People are shown by their
- * initials until formal photos are provided.
+ * the General Manager and the management staff. Positions only, no names.
  */
 export async function OrgChart() {
   const [t, locale, chart] = await Promise.all([
