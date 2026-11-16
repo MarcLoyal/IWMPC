@@ -5,21 +5,16 @@ import {
   ArrowRightIcon,
   BadgeCheckIcon,
   CircleCheckIcon,
-  ClockIcon,
   DropletIcon,
   FlameIcon,
   HandCoinsIcon,
   HandshakeIcon,
   HeartHandshakeIcon,
-  MessageCircleIcon,
-  PhoneIcon,
   WheatIcon,
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
-import { site } from "@/lib/site";
 import { Container } from "@/components/site/container";
-import { OfficeHours } from "@/components/site/office-hours";
 
 export async function generateMetadata(): Promise<Metadata> {
   const t = await getTranslations("servicesPage");
@@ -120,7 +115,9 @@ export default async function ServicesPage() {
       <div className="mt-6 md:mt-8">
         {SERVICES.map(({ key, icon: Icon, image, href }, i) => {
           const blue = i % 2 === 1;
-          const points = [1, 2, 3].map((n) => t(`${key}.point${n}`));
+          const points = [1, 2, 3]
+            .filter((n) => t.has(`${key}.point${n}`))
+            .map((n) => t(`${key}.point${n}`));
           return (
             <section
               key={key}
@@ -260,58 +257,6 @@ export default async function ServicesPage() {
             {t("availNote")}
           </p>
         </Container>
-      </section>
-
-      {/* 6. Contact strip */}
-      <section
-        aria-labelledby="reach-heading"
-        className="px-3 pb-6 md:px-5 md:pb-8"
-      >
-        <div className="mx-auto max-w-[88rem] rounded-3xl bg-gradient-to-br from-primary via-primary to-primary-dark text-white">
-          <Container className="grid gap-6 py-10 md:grid-cols-[1fr_1.4fr_auto_auto] md:items-center md:gap-10">
-            <h2
-              id="reach-heading"
-              className="text-2xl font-extrabold tracking-wide text-white uppercase md:text-3xl"
-            >
-              {t("reachHeading")}
-            </h2>
-            <div className="flex gap-3">
-              <ClockIcon
-                className="mt-1 size-6 shrink-0 text-accent"
-                aria-hidden="true"
-              />
-              <div className="text-white/90">
-                <OfficeHours />
-              </div>
-            </div>
-            {site.hotline && (
-              <a
-                href={`tel:${site.hotlineTel}`}
-                className="flex items-center gap-3 font-bold underline-offset-4 hover:underline"
-              >
-                <PhoneIcon
-                  className="size-6 shrink-0 text-accent"
-                  aria-hidden="true"
-                />
-                {site.hotline}
-              </a>
-            )}
-            {site.messengerUrl && (
-              <a
-                href={site.messengerUrl}
-                target="_blank"
-                rel="noopener"
-                className="flex items-center gap-3 font-bold underline-offset-4 hover:underline"
-              >
-                <MessageCircleIcon
-                  className="size-6 shrink-0 text-accent"
-                  aria-hidden="true"
-                />
-                {t("messenger")}
-              </a>
-            )}
-          </Container>
-        </div>
       </section>
     </>
   );

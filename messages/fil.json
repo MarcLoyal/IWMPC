@@ -630,7 +630,6 @@
       "summary": "Mga programa sa pautang para mas maabot ng mga miyembro ang mahahalagang serbisyong pinansyal.",
       "point1": "Pautang para sa mga miyembro ng kooperatiba",
       "point2": "Tantyahin ang buwanang hulog online",
-      "point3": "Nakalista sa pahina ng pautang ang mga kailangan",
       "cta": "Tingnan ang mga pautang"
     },
     "whyHeading": "Bakit sa inyong kooperatiba",
@@ -663,8 +662,6 @@
         "text": "Magbayad at tanggapin ang produkto o serbisyo."
       }
     },
-    "availNote": "Pangkalahatang gabay lamang; kukumpirmahin ng kooperatiba ang eksaktong hakbang para sa bawat serbisyo.",
-    "reachHeading": "Bisitahin o kontakin kami",
-    "messenger": "Mag-chat sa Messenger"
+    "availNote": "Pangkalahatang gabay lamang; kukumpirmahin ng kooperatiba ang eksaktong hakbang para sa bawat serbisyo."
   }
 }

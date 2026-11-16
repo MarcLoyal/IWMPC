@@ -630,7 +630,6 @@
       "summary": "Loan programs that make essential financial services more accessible to members.",
       "point1": "Loans for members of the cooperative",
       "point2": "Estimate your monthly payment online",
-      "point3": "Requirements and steps listed on the loans page",
       "cta": "View loan programs"
     },
     "whyHeading": "Why buy from your cooperative",
@@ -663,8 +662,6 @@
         "text": "Settle payment and receive your product or service."
       }
     },
-    "availNote": "General guide only; the cooperative will confirm the exact steps for each service.",
-    "reachHeading": "Visit or reach us",
-    "messenger": "Chat on Messenger"
+    "availNote": "General guide only; the cooperative will confirm the exact steps for each service."
   }
 }
