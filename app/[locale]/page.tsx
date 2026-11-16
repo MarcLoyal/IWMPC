@@ -6,10 +6,8 @@ import {
 } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
-import { getAdvisoryViewer } from "@/lib/advisory-view";
-import { activeAdvisories, getAdvisories } from "@/lib/content";
 import { REPORT_HREF } from "@/lib/site";
-import { AdvisoryRow } from "@/components/site/advisory-row";
+import { AdvisoriesPanel } from "@/components/site/advisories-panel";
 import { AgencyLogos } from "@/components/site/agency-logos";
 import { Container } from "@/components/site/container";
 import { PhotoCollage } from "@/components/site/photo-collage";
@@ -19,8 +17,6 @@ import { ServiceCards } from "@/components/site/service-cards";
 
 export default async function HomePage() {
   const t = await getTranslations("home");
-  const view = await getAdvisoryViewer();
-  const advisories = activeAdvisories(await getAdvisories()).slice(0, 3);
 
   const quick = [
     { key: "status", href: "/water/advisories", icon: DropletIcon },
@@ -43,34 +39,9 @@ export default async function HomePage() {
       </section>
 
       {/* 2. Latest advisories */}
-      <section aria-labelledby="advisories-heading" className="bg-surface">
-        <div className="px-3 py-6 md:px-5 md:py-8">
-          <div className="mx-auto max-w-[88rem] overflow-hidden rounded-3xl border bg-card shadow-sm">
-            <SectionBar
-              id="advisories-heading"
-              title={t("advisories.heading")}
-              icon={TriangleAlertIcon}
-              action={{
-                href: "/water/advisories",
-                label: t("advisories.viewAll"),
-              }}
-            />
-            {advisories.length === 0 ? (
-              <Container className="py-6 text-lg">
-                {t("advisories.none")}
-              </Container>
-            ) : (
-              <ul className="divide-y divide-border">
-                {advisories.map((a) => (
-                  <li key={a.slug}>
-                    <AdvisoryRow advisory={view(a)} />
-                  </li>
-                ))}
-              </ul>
-            )}
-          </div>
-        </div>
-      </section>
+      <div className="bg-surface">
+        <AdvisoriesPanel />
+      </div>
 
       {/* 3. Products and services */}
       <section aria-labelledby="services-heading">

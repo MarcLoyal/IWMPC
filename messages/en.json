@@ -658,5 +658,9 @@
       }
     },
     "availNote": "General guide only; the cooperative will confirm the exact steps for each service."
+  },
+  "newsPage": {
+    "title": "News and Events",
+    "intro": "The latest news, events and advisories from IWMPC."
   }
 }
