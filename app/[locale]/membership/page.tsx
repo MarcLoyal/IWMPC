@@ -66,41 +66,46 @@ export default async function MembershipPage() {
           </Container>
         </div>
       </section>
-      <Container className="grid max-w-3xl gap-8 py-8">
+      {/* If interested: same width as the panel above */}
+      <div className="px-3 pt-6 md:px-5 md:pt-8">
         <section
           aria-labelledby="print-heading"
-          className="rounded-2xl border-2 border-accent bg-accent/10 p-6 md:p-8"
+          className="mx-auto max-w-[88rem] rounded-3xl border-2 border-accent bg-accent/10"
         >
-          <div className="flex flex-col gap-6 md:flex-row md:items-center">
-            <FileTextIcon
-              className="size-14 shrink-0 text-primary"
-              aria-hidden="true"
-            />
-            <div className="flex-1">
-              <h2
-                id="print-heading"
-                className="text-2xl font-extrabold tracking-wide uppercase"
-              >
-                {t("printHeading")}
-              </h2>
-              <p className="mt-2 max-w-none text-lg leading-relaxed">
-                {t("printText")}
-              </p>
-              <p className="mt-1 text-sm text-muted-foreground">
-                {t("printNote")}
-              </p>
+          <Container className="py-8 md:py-10">
+            <div className="flex flex-col gap-6 md:flex-row md:items-center">
+              <FileTextIcon
+                className="size-14 shrink-0 text-primary"
+                aria-hidden="true"
+              />
+              <div className="flex-1">
+                <h2
+                  id="print-heading"
+                  className="text-2xl font-extrabold tracking-wide uppercase"
+                >
+                  {t("printHeading")}
+                </h2>
+                <p className="mt-2 max-w-none text-justify text-lg leading-relaxed hyphens-auto">
+                  {t("printText")}
+                </p>
+                <p className="mt-1 text-sm text-muted-foreground">
+                  {t("printNote")}
+                </p>
+              </div>
             </div>
-          </div>
-          <a
-            href="/forms/iwmpc-membership-application.pdf"
-            download
-            className="mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-bold text-white shadow-sm hover:bg-primary-dark md:inline-flex"
-          >
-            <DownloadIcon className="size-5" aria-hidden="true" />
-            {t("printCta")}
-          </a>
+            <a
+              href="/forms/iwmpc-membership-application.pdf"
+              download
+              className="mt-6 flex min-h-12 items-center justify-center gap-2 rounded-full bg-primary px-6 font-bold text-white shadow-sm hover:bg-primary-dark md:inline-flex"
+            >
+              <DownloadIcon className="size-5" aria-hidden="true" />
+              {t("printCta")}
+            </a>
+          </Container>
         </section>
+      </div>
 
+      <Container className="grid max-w-3xl gap-8 py-8">
         {/* Benefits, requirements, steps, dividend explainer and PMES schedule arrive in P4 */}
         <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
           {t("moreSoon")}
