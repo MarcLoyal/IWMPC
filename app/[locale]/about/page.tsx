@@ -5,6 +5,7 @@ import {
   EyeIcon,
   FlagIcon,
   ImageIcon,
+  MapPinIcon,
   InfoIcon,
   TargetIcon,
 } from "lucide-react";
@@ -14,6 +15,7 @@ import type { Locale } from "@/lib/i18n/routing";
 import { getAbout, localized } from "@/lib/content";
 import { site } from "@/lib/site";
 import { Container } from "@/components/site/container";
+import { MapEmbed } from "@/components/site/map-embed";
 import { OrgChart } from "@/components/site/org-chart";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -72,9 +74,11 @@ function SectionTitle({
 }
 
 export default async function AboutPage() {
-  const [t, tf, format, locale, about] = await Promise.all([
+  const [t, tf, tn, tc, format, locale, about] = await Promise.all([
     getTranslations("about"),
     getTranslations("footer"),
+    getTranslations("nav"),
+    getTranslations("contact"),
     getFormatter(),
     getLocale() as Promise<Locale>,
     getAbout(),
@@ -382,6 +386,29 @@ export default async function AboutPage() {
           </section>
         </Container>
       </div>
+      {/* 6. Maps and location (white band) */}
+      <section
+        id="location"
+        aria-labelledby="location-heading"
+        className="scroll-mt-28 bg-background"
+      >
+        <Container className="py-12 md:py-16">
+          <SectionTitle id="location-heading">
+            {tn("sub.location")}
+          </SectionTitle>
+          <p className="mt-3 flex items-center gap-2 text-lg font-semibold">
+            <MapPinIcon
+              className="size-6 shrink-0 text-primary"
+              aria-hidden="true"
+            />
+            {site.address}
+          </p>
+          <div className="mt-6">
+            <MapEmbed title={tc("mapTitle")} />
+          </div>
+          <p className="mt-2 text-sm text-muted-foreground">{tc("mapNote")}</p>
+        </Container>
+      </section>
     </>
   );
 }

@@ -20,7 +20,6 @@ import { REPORT_HREF, site } from "@/lib/site";
 import { ContactForm } from "@/components/forms";
 import { AgencyLogos } from "@/components/site/agency-logos";
 import { Container } from "@/components/site/container";
-import { MapEmbed } from "@/components/site/map-embed";
 import { OfficeHours } from "@/components/site/office-hours";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -262,10 +261,10 @@ export default async function ContactPage() {
         </section>
       </Container>
 
-      {/* Message form and map */}
-      <div className="bg-surface">
+      {/* Message form, shown only after "Make an Inquiry" */}
+      <div className="hidden bg-surface has-[#message:target]:block">
         {/* The message form stays hidden until "Make an Inquiry" links to #message */}
-        <Container className="grid gap-10 py-12 lg:has-[#message:target]:grid-cols-2">
+        <Container className="max-w-3xl py-12">
           <section
             id="message"
             aria-labelledby="form-heading"
@@ -280,18 +279,6 @@ export default async function ContactPage() {
             <div className="mt-4">
               <ContactForm />
             </div>
-          </section>
-          <section aria-labelledby="map-heading">
-            <h2
-              id="map-heading"
-              className="text-2xl font-extrabold tracking-wide text-primary uppercase"
-            >
-              {t("mapHeading")}
-            </h2>
-            <div className="mt-4">
-              <MapEmbed title={t("mapTitle")} />
-            </div>
-            <p className="mt-2 text-sm text-muted-foreground">{t("mapNote")}</p>
           </section>
         </Container>
       </div>

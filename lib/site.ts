@@ -83,7 +83,7 @@ export const primaryNav: NavItem[] = [
       { key: "officers", href: "/about/officers" },
       { key: "awards", href: "/about/awards" },
       { key: "gallery", href: "/about/gallery" },
-      { key: "location", href: "/about/location" },
+      { key: "location", href: "/about#location" },
     ],
   },
   { key: "membership", href: "/membership" },
