@@ -50,33 +50,43 @@ export default async function ContactPage() {
       href: "#message",
       icon: MessagesSquareIcon,
       external: false,
+      tone: "blue",
     },
     {
       key: "apply",
       href: "/water/new-connection",
       icon: FileSignatureIcon,
       external: false,
+      tone: "yellow",
     },
     {
       key: "complaint",
       href: REPORT_HREF,
       icon: TriangleAlertIcon,
       external: false,
+      tone: "red",
     },
     {
       key: "other",
       href: site.messengerUrl ?? "#message",
       icon: ClipboardListIcon,
       external: Boolean(site.messengerUrl),
+      tone: "blue",
     },
   ] as const;
 
-  const tileClass =
-    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+  // Logo colours, checkerboard-style, with red kept for complaints.
+  const TONES = {
+    blue: "bg-gradient-to-br from-primary to-primary-dark text-white",
+    yellow: "bg-accent text-primary-dark",
+    red: "bg-gradient-to-br from-brand-red to-[#a50e13] text-white",
+  } as const;
+  const tileClass = (tone: keyof typeof TONES) =>
+    `group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl p-6 text-center shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0 ${TONES[tone]}`;
 
   const row = "flex items-center gap-4 border-b border-border py-4";
   const iconWrap =
-    "flex size-12 shrink-0 items-center justify-center rounded-full bg-primary text-white";
+    "flex size-12 shrink-0 items-center justify-center rounded-full bg-accent text-primary-dark";
   const link =
     "font-semibold text-primary underline-offset-4 hover:underline break-all";
 
@@ -96,13 +106,13 @@ export default async function ContactPage() {
         {/* Left: four ways to reach us */}
         <nav aria-label={t("tilesLabel")}>
           <ul className="grid grid-cols-2 gap-4 md:gap-5">
-            {tiles.map(({ key, href, icon: Icon, external }) => (
+            {tiles.map(({ key, href, icon: Icon, external, tone }) => (
               <li key={key}>
                 {external || href.startsWith("#") ? (
                   <a
                     href={href}
                     {...(external ? { target: "_blank", rel: "noopener" } : {})}
-                    className={tileClass}
+                    className={tileClass(tone)}
                   >
                     <Icon
                       className="size-14 transition group-hover:scale-110 md:size-16"
@@ -113,7 +123,7 @@ export default async function ContactPage() {
                     </span>
                   </a>
                 ) : (
-                  <Link href={href} className={tileClass}>
+                  <Link href={href} className={tileClass(tone)}>
                     <Icon
                       className="size-14 transition group-hover:scale-110 md:size-16"
                       aria-hidden="true"
@@ -130,9 +140,9 @@ export default async function ContactPage() {
 
         {/* Right: contact details */}
         <section aria-labelledby="contact-heading">
-          <div className="flex items-center gap-4 border-b-2 border-primary pb-4">
+          <div className="flex items-center gap-4 border-b-4 border-accent pb-4">
             <HeadsetIcon
-              className="size-14 shrink-0 text-primary"
+              className="size-14 shrink-0 text-brand-red"
               aria-hidden="true"
             />
             <h1
@@ -185,7 +195,7 @@ export default async function ContactPage() {
             )}
             {site.facebookUrl && (
               <li className={row}>
-                <span className={`${iconWrap} bg-[#1877f2]`}>
+                <span className={`${iconWrap} !bg-[#1877f2] !text-white`}>
                   <FacebookIcon className="size-6" />
                 </span>
                 <span>
