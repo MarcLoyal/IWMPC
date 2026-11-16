@@ -74,7 +74,7 @@ export default async function ContactPage() {
 
   // Frosted white tiles over the photo band; one calm look for all four.
   const tileClass =
-    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-primary-dark/45 p-6 text-center text-white shadow-lg ring-1 ring-white/30 backdrop-blur-md transition hover:-translate-y-1 hover:bg-primary-dark/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
   const row = "flex items-center gap-4 border-b border-white/20 py-4";
   const iconWrap =
@@ -94,181 +94,172 @@ export default async function ContactPage() {
         </Link>
       </Container>
 
-      {/* Tiles and details over the office staff photo, under a blue wash */}
-      <div className="px-3 pt-6 pb-6 md:px-5 md:pt-8 md:pb-8">
-        <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-3xl text-white">
+      {/* Tiles on white; contact details on the staff photo */}
+      <Container className="grid items-stretch gap-8 py-8 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
+        {/* Left: four ways to reach us */}
+        <nav aria-label={t("tilesLabel")} className="self-center">
+          <ul className="grid grid-cols-2 gap-4 md:gap-5">
+            {tiles.map(({ key, href, icon: Icon, external }) => (
+              <li key={key}>
+                {external || href.startsWith("#") ? (
+                  <a
+                    href={href}
+                    {...(external ? { target: "_blank", rel: "noopener" } : {})}
+                    className={tileClass}
+                  >
+                    <Icon
+                      className="size-14 text-accent transition group-hover:scale-110 md:size-16"
+                      aria-hidden="true"
+                    />
+                    <span className="text-lg font-bold md:text-xl">
+                      {t(`tiles.${key}`)}
+                    </span>
+                  </a>
+                ) : (
+                  <Link href={href} className={tileClass}>
+                    <Icon
+                      className="size-14 text-accent transition group-hover:scale-110 md:size-16"
+                      aria-hidden="true"
+                    />
+                    <span className="text-lg font-bold md:text-xl">
+                      {t(`tiles.${key}`)}
+                    </span>
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        {/* Right: contact details */}
+        <section
+          aria-labelledby="contact-heading"
+          className="relative overflow-hidden rounded-3xl text-white shadow-lg [text-shadow:0_1px_4px_rgb(0_0_0/0.55)]"
+        >
           <Image
             src="/images/contact-staff.jpg"
             alt=""
             fill
             priority
-            sizes="100vw"
-            className="object-cover object-[center_45%]"
+            sizes="(min-width: 1024px) 50vw, 100vw"
+            className="object-cover object-[70%_40%]"
           />
           <div
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/60 to-primary-dark/80"
           />
-          <Container className="relative grid gap-10 py-10 md:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
-            {/* Left: four ways to reach us */}
-            <nav aria-label={t("tilesLabel")}>
-              <ul className="grid grid-cols-2 gap-4 md:gap-5">
-                {tiles.map(({ key, href, icon: Icon, external }) => (
-                  <li key={key}>
-                    {external || href.startsWith("#") ? (
-                      <a
-                        href={href}
-                        {...(external
-                          ? { target: "_blank", rel: "noopener" }
-                          : {})}
-                        className={tileClass}
-                      >
-                        <Icon
-                          className="size-14 text-accent transition group-hover:scale-110 md:size-16"
-                          aria-hidden="true"
-                        />
-                        <span className="text-lg font-bold md:text-xl">
-                          {t(`tiles.${key}`)}
-                        </span>
-                      </a>
-                    ) : (
-                      <Link href={href} className={tileClass}>
-                        <Icon
-                          className="size-14 text-accent transition group-hover:scale-110 md:size-16"
-                          aria-hidden="true"
-                        />
-                        <span className="text-lg font-bold md:text-xl">
-                          {t(`tiles.${key}`)}
-                        </span>
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-            </nav>
-
-            {/* Right: contact details */}
-            <section
-              aria-labelledby="contact-heading"
-              className="[text-shadow:0_1px_4px_rgb(0_0_0/0.55)]"
-            >
-              <div className="flex items-center gap-4 border-b-2 border-accent pb-4">
-                <HeadsetIcon
-                  className="size-14 shrink-0 text-accent"
-                  aria-hidden="true"
-                />
-                <h1
-                  id="contact-heading"
-                  className="text-3xl font-extrabold tracking-wide text-white uppercase md:text-5xl"
-                >
-                  {t("heading")}
-                </h1>
-              </div>
-              <ul>
-                {site.hotline && (
-                  <li className={row}>
-                    <span className={iconWrap}>
-                      <PhoneIcon className="size-6" aria-hidden="true" />
-                    </span>
-                    <span>
-                      <span className="block text-sm text-white/70">
-                        {t("hotline")}
-                      </span>
-                      <a href={`tel:${site.hotlineTel}`} className={link}>
-                        {site.hotline}
-                      </a>
-                    </span>
-                  </li>
-                )}
-                {site.phone && (
-                  <li className={row}>
-                    <span className={iconWrap}>
-                      <SmartphoneIcon className="size-6" aria-hidden="true" />
-                    </span>
-                    <span>
-                      <span className="block text-sm text-white/70">
-                        {t("mobile")}
-                      </span>
-                      <a href={`tel:${site.phoneTel}`} className={link}>
-                        {site.phone}
-                      </a>
-                    </span>
-                  </li>
-                )}
-                {site.email && (
-                  <li className={row}>
-                    <span className={iconWrap}>
-                      <MailIcon className="size-6" aria-hidden="true" />
-                    </span>
-                    <a href={`mailto:${site.email}`} className={link}>
-                      {site.email}
-                    </a>
-                  </li>
-                )}
-                {site.facebookUrl && (
-                  <li className={row}>
-                    <span className={iconWrap}>
-                      <FacebookIcon className="size-6" />
-                    </span>
-                    <span>
-                      <span className="block text-sm text-white/70">
-                        Facebook
-                      </span>
-                      <a
-                        href={site.facebookUrl}
-                        target="_blank"
-                        rel="noopener"
-                        className={link}
-                      >
-                        {t("facebookPage")}
-                      </a>
-                    </span>
-                  </li>
-                )}
-                {site.messengerUrl && (
-                  <li className={row}>
-                    <span className={iconWrap}>
-                      <MessageCircleIcon
-                        className="size-6"
-                        aria-hidden="true"
-                      />
-                    </span>
-                    <span>
-                      <span className="block text-sm text-white/70">
-                        Messenger
-                      </span>
-                      <a
-                        href={site.messengerUrl}
-                        target="_blank"
-                        rel="noopener"
-                        className={link}
-                      >
-                        {t("messengerCta")}
-                      </a>
-                    </span>
-                  </li>
-                )}
+          <div className="relative p-6 md:p-8">
+            <div className="flex items-center gap-4 border-b-2 border-accent pb-4">
+              <HeadsetIcon
+                className="size-14 shrink-0 text-accent"
+                aria-hidden="true"
+              />
+              <h1
+                id="contact-heading"
+                className="text-3xl font-extrabold tracking-wide text-white uppercase md:text-5xl"
+              >
+                {t("heading")}
+              </h1>
+            </div>
+            <ul>
+              {site.hotline && (
                 <li className={row}>
                   <span className={iconWrap}>
-                    <MapPinIcon className="size-6" aria-hidden="true" />
+                    <PhoneIcon className="size-6" aria-hidden="true" />
                   </span>
-                  <span className="font-semibold text-white">
-                    {site.address}
+                  <span>
+                    <span className="block text-sm text-white/70">
+                      {t("hotline")}
+                    </span>
+                    <a href={`tel:${site.hotlineTel}`} className={link}>
+                      {site.hotline}
+                    </a>
                   </span>
                 </li>
-                <li className={`${row} items-start border-b-0`}>
+              )}
+              {site.phone && (
+                <li className={row}>
                   <span className={iconWrap}>
-                    <ClockIcon className="size-6" aria-hidden="true" />
+                    <SmartphoneIcon className="size-6" aria-hidden="true" />
                   </span>
-                  <span className="pt-2.5 font-semibold text-white">
-                    <OfficeHours />
+                  <span>
+                    <span className="block text-sm text-white/70">
+                      {t("mobile")}
+                    </span>
+                    <a href={`tel:${site.phoneTel}`} className={link}>
+                      {site.phone}
+                    </a>
                   </span>
                 </li>
-              </ul>
-            </section>
-          </Container>
-        </div>
-      </div>
+              )}
+              {site.email && (
+                <li className={row}>
+                  <span className={iconWrap}>
+                    <MailIcon className="size-6" aria-hidden="true" />
+                  </span>
+                  <a href={`mailto:${site.email}`} className={link}>
+                    {site.email}
+                  </a>
+                </li>
+              )}
+              {site.facebookUrl && (
+                <li className={row}>
+                  <span className={iconWrap}>
+                    <FacebookIcon className="size-6" />
+                  </span>
+                  <span>
+                    <span className="block text-sm text-white/70">
+                      Facebook
+                    </span>
+                    <a
+                      href={site.facebookUrl}
+                      target="_blank"
+                      rel="noopener"
+                      className={link}
+                    >
+                      {t("facebookPage")}
+                    </a>
+                  </span>
+                </li>
+              )}
+              {site.messengerUrl && (
+                <li className={row}>
+                  <span className={iconWrap}>
+                    <MessageCircleIcon className="size-6" aria-hidden="true" />
+                  </span>
+                  <span>
+                    <span className="block text-sm text-white/70">
+                      Messenger
+                    </span>
+                    <a
+                      href={site.messengerUrl}
+                      target="_blank"
+                      rel="noopener"
+                      className={link}
+                    >
+                      {t("messengerCta")}
+                    </a>
+                  </span>
+                </li>
+              )}
+              <li className={row}>
+                <span className={iconWrap}>
+                  <MapPinIcon className="size-6" aria-hidden="true" />
+                </span>
+                <span className="font-semibold text-white">{site.address}</span>
+              </li>
+              <li className={`${row} items-start border-b-0`}>
+                <span className={iconWrap}>
+                  <ClockIcon className="size-6" aria-hidden="true" />
+                </span>
+                <span className="pt-2.5 font-semibold text-white">
+                  <OfficeHours />
+                </span>
+              </li>
+            </ul>
+          </div>
+        </section>
+      </Container>
 
       {/* Message form and map */}
       <div className="bg-surface">
