@@ -18,6 +18,7 @@ import { getTranslations } from "next-intl/server";
 import { Link } from "@/lib/i18n/navigation";
 import { REPORT_HREF, site } from "@/lib/site";
 import { ContactForm } from "@/components/forms";
+import { AgencyLogos } from "@/components/site/agency-logos";
 import { Container } from "@/components/site/container";
 import { MapEmbed } from "@/components/site/map-embed";
 import { OfficeHours } from "@/components/site/office-hours";
@@ -293,6 +294,11 @@ export default async function ContactPage() {
             <p className="mt-2 text-sm text-muted-foreground">{t("mapNote")}</p>
           </section>
         </Container>
+      </div>
+
+      {/* Same agency logo strip as the home page */}
+      <div className="pt-6 md:pt-8">
+        <AgencyLogos />
       </div>
     </>
   );
