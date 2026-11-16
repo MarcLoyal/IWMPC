@@ -257,7 +257,19 @@
     "mapHeading": "Map",
     "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
     "mapNote": "Approximate location based on the address. The exact office pin is still to be confirmed.",
-    "formHeading": "Send a message"
+    "formHeading": "Send a message",
+    "tilesLabel": "Ways to reach us",
+    "tiles": {
+      "inquiry": "Make an Inquiry",
+      "apply": "Apply for a Service",
+      "complaint": "Send a Complaint",
+      "other": "Other Concerns"
+    },
+    "hotline": "Hotline",
+    "mobile": "Mobile",
+    "facebookPage": "IWMPC on Facebook",
+    "messengerCta": "Chat with us",
+    "heading": "Contact Us!"
   },
   "privacy": {
     "title": "Privacy Notice",
