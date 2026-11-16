@@ -74,7 +74,7 @@ export default async function ContactPage() {
 
   // Frosted white tiles over the photo band; one calm look for all four.
   const tileClass =
-    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+    "group flex h-full min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
   const row = "flex items-center gap-4 border-b border-white/20 py-4";
   const iconWrap =
@@ -97,8 +97,8 @@ export default async function ContactPage() {
       {/* Tiles on white; contact details on the staff photo */}
       <Container className="grid items-stretch gap-8 py-8 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
         {/* Left: four ways to reach us */}
-        <nav aria-label={t("tilesLabel")} className="self-center">
-          <ul className="grid grid-cols-2 gap-4 md:gap-5">
+        <nav aria-label={t("tilesLabel")} className="h-full">
+          <ul className="grid h-full grid-cols-2 gap-4 md:gap-5 lg:grid-rows-2">
             {tiles.map(({ key, href, icon: Icon, external }) => (
               <li key={key}>
                 {external || href.startsWith("#") ? (
@@ -108,7 +108,7 @@ export default async function ContactPage() {
                     className={tileClass}
                   >
                     <Icon
-                      className="size-14 text-accent transition group-hover:scale-110 md:size-16"
+                      className="size-16 text-accent transition group-hover:scale-110 md:size-20"
                       aria-hidden="true"
                     />
                     <span className="text-lg font-bold md:text-xl">
@@ -118,7 +118,7 @@ export default async function ContactPage() {
                 ) : (
                   <Link href={href} className={tileClass}>
                     <Icon
-                      className="size-14 text-accent transition group-hover:scale-110 md:size-16"
+                      className="size-16 text-accent transition group-hover:scale-110 md:size-20"
                       aria-hidden="true"
                     />
                     <span className="text-lg font-bold md:text-xl">
