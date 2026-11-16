@@ -93,8 +93,8 @@ export const primaryNav: NavItem[] = [
     children: [
       // The water hub leads on to status, rates, payment, new connection and reports.
       { key: "water", href: "/water" },
-      { key: "lpg", href: "/services/lpg" },
-      { key: "rice", href: "/services/rice" },
+      { key: "lpg", href: "/services#lpg" },
+      { key: "rice", href: "/services#rice" },
       { key: "loans", href: "/services/loans" },
     ],
   },

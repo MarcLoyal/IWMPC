@@ -19,14 +19,14 @@ const SERVICES = [
   },
   {
     key: "rice",
-    href: "/services/rice",
+    href: "/services#rice",
     icon: WheatIcon,
     badge: "bg-success",
     image: "/images/services/rice.jpg",
   },
   {
     key: "lpg",
-    href: "/services/lpg",
+    href: "/services#lpg",
     icon: FlameIcon,
     badge: "bg-brand-red",
     image: "/images/services/lpg.jpg",

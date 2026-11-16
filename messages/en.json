@@ -602,6 +602,69 @@
   },
   "servicesPage": {
     "title": "Products and Services",
-    "intro": "Water, rice, LPG and loans from the cooperative, for members and the community."
+    "intro": "Water, rice, LPG and loans from the cooperative, for members and the community.",
+    "tagline": "Everyday needs, served by your cooperative.",
+    "jumpLabel": "Jump to a service",
+    "water": {
+      "summary": "Clean, reliable water for households in Brgy. Inicbulan, from the cooperative that has run the barangay water system for decades.",
+      "point1": "Water supply for homes in the service area",
+      "point2": "Monthly billing and payment at the office",
+      "point3": "New connections and problem reports",
+      "cta": "View water services"
+    },
+    "rice": {
+      "summary": "Reasonably priced rice from the cooperative store, so members and the community can buy a daily staple close to home.",
+      "point1": "Rice sold at the cooperative (details to be confirmed)",
+      "point2": "Available kinds and prices to be posted",
+      "point3": "Store hours follow office hours (details to be confirmed)",
+      "cta": "Ask about rice"
+    },
+    "lpg": {
+      "summary": "LPG for cooking, available from the cooperative at reasonable prices.",
+      "point1": "LPG tanks sold at the cooperative (details to be confirmed)",
+      "point2": "Available sizes and prices to be posted",
+      "point3": "Refill and delivery options to be confirmed",
+      "cta": "Ask about LPG"
+    },
+    "loans": {
+      "summary": "Loan programs that make essential financial services more accessible to members.",
+      "point1": "Loans for members of the cooperative",
+      "point2": "Estimate your monthly payment online",
+      "point3": "Requirements and steps listed on the loans page",
+      "cta": "View loan programs"
+    },
+    "whyHeading": "Why buy from your cooperative",
+    "why": {
+      "affordable": {
+        "title": "Fair prices",
+        "text": "Products and services priced with members and the community in mind."
+      },
+      "community": {
+        "title": "Close to home",
+        "text": "Everyday needs available right in Brgy. Inicbulan."
+      },
+      "members": {
+        "title": "Owned by members",
+        "text": "Your patronage helps the cooperative grow and serve the community better."
+      }
+    },
+    "availHeading": "How to avail",
+    "avail": {
+      "step1": {
+        "title": "Visit the office",
+        "text": "Come to the IWMPC office during office hours."
+      },
+      "step2": {
+        "title": "Tell us what you need",
+        "text": "Our staff will help you with water, rice, LPG or loan concerns."
+      },
+      "step3": {
+        "title": "Pay or claim",
+        "text": "Settle payment and receive your product or service."
+      }
+    },
+    "availNote": "General guide only; the cooperative will confirm the exact steps for each service.",
+    "reachHeading": "Visit or reach us",
+    "messenger": "Chat on Messenger"
   }
 }

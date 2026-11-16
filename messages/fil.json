@@ -602,6 +602,69 @@
   },
   "servicesPage": {
     "title": "Mga Produkto at Serbisyo",
-    "intro": "Tubig, bigas, LPG at pautang mula sa kooperatiba, para sa mga miyembro at sa komunidad."
+    "intro": "Tubig, bigas, LPG at pautang mula sa kooperatiba, para sa mga miyembro at sa komunidad.",
+    "tagline": "Pang-araw-araw na pangangailangan, mula sa inyong kooperatiba.",
+    "jumpLabel": "Pumunta sa serbisyo",
+    "water": {
+      "summary": "Malinis at maaasahang tubig para sa mga tahanan sa Brgy. Inicbulan, mula sa kooperatibang matagal nang nangangasiwa sa patubig ng barangay.",
+      "point1": "Supply ng tubig para sa mga tahanan sa sakop na lugar",
+      "point2": "Buwanang billing at pagbabayad sa opisina",
+      "point3": "Bagong koneksyon at pag-report ng problema",
+      "cta": "Tingnan ang serbisyo sa tubig"
+    },
+    "rice": {
+      "summary": "Abot-kayang bigas mula sa tindahan ng kooperatiba, para makabili ang mga miyembro at komunidad nang malapit sa tahanan.",
+      "point1": "Bigas na mabibili sa kooperatiba (kukumpirmahin pa)",
+      "point2": "Ipo-post ang mga uri at presyo",
+      "point3": "Kapareho ng oras ng opisina (kukumpirmahin pa)",
+      "cta": "Magtanong tungkol sa bigas"
+    },
+    "lpg": {
+      "summary": "LPG na panluto, mabibili sa kooperatiba sa abot-kayang presyo.",
+      "point1": "LPG na mabibili sa kooperatiba (kukumpirmahin pa)",
+      "point2": "Ipo-post ang mga laki at presyo",
+      "point3": "Kukumpirmahin ang refill at delivery",
+      "cta": "Magtanong tungkol sa LPG"
+    },
+    "loans": {
+      "summary": "Mga programa sa pautang para mas maabot ng mga miyembro ang mahahalagang serbisyong pinansyal.",
+      "point1": "Pautang para sa mga miyembro ng kooperatiba",
+      "point2": "Tantyahin ang buwanang hulog online",
+      "point3": "Nakalista sa pahina ng pautang ang mga kailangan",
+      "cta": "Tingnan ang mga pautang"
+    },
+    "whyHeading": "Bakit sa inyong kooperatiba",
+    "why": {
+      "affordable": {
+        "title": "Patas na presyo",
+        "text": "Mga produkto at serbisyong may presyong isinaalang-alang ang mga miyembro at komunidad."
+      },
+      "community": {
+        "title": "Malapit sa tahanan",
+        "text": "Pang-araw-araw na pangangailangan, narito mismo sa Brgy. Inicbulan."
+      },
+      "members": {
+        "title": "Pag-aari ng mga miyembro",
+        "text": "Ang inyong pagtangkilik ay tumutulong sa paglago ng kooperatiba at sa mas mahusay na paglilingkod."
+      }
+    },
+    "availHeading": "Paano mag-avail",
+    "avail": {
+      "step1": {
+        "title": "Pumunta sa opisina",
+        "text": "Bumisita sa opisina ng IWMPC sa oras ng opisina."
+      },
+      "step2": {
+        "title": "Sabihin ang kailangan",
+        "text": "Tutulungan kayo ng aming staff sa tubig, bigas, LPG o pautang."
+      },
+      "step3": {
+        "title": "Magbayad o kunin",
+        "text": "Magbayad at tanggapin ang produkto o serbisyo."
+      }
+    },
+    "availNote": "Pangkalahatang gabay lamang; kukumpirmahin ng kooperatiba ang eksaktong hakbang para sa bawat serbisyo.",
+    "reachHeading": "Bisitahin o kontakin kami",
+    "messenger": "Mag-chat sa Messenger"
   }
 }
