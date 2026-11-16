@@ -1,4 +1,4 @@
-import { TrophyIcon } from "lucide-react";
+import { CalendarDaysIcon, TrophyIcon } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 
 /**
@@ -37,6 +37,10 @@ export async function HeroNews() {
               aria-hidden="true"
             />
             {t("title")}
+          </p>
+          <p className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-accent uppercase">
+            <CalendarDaysIcon className="size-4" aria-hidden="true" />
+            <time dateTime="2026-11">{t("date")}</time>
           </p>
           <p className="mt-4 text-justify text-base leading-relaxed hyphens-auto text-white/90">
             {t("text")}
