@@ -74,7 +74,7 @@ export default async function ContactPage() {
 
   // Frosted white tiles over the photo band; one calm look for all four.
   const tileClass =
-    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-white/10 p-6 text-center text-white shadow-lg ring-1 ring-white/25 backdrop-blur-sm transition hover:-translate-y-1 hover:bg-white/20 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+    "group flex min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-primary-dark/45 p-6 text-center text-white shadow-lg ring-1 ring-white/30 backdrop-blur-md transition hover:-translate-y-1 hover:bg-primary-dark/60 motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
   const row = "flex items-center gap-4 border-b border-white/20 py-4";
   const iconWrap =
@@ -107,7 +107,7 @@ export default async function ContactPage() {
           />
           <div
             aria-hidden="true"
-            className="absolute inset-0 bg-gradient-to-br from-primary-dark/95 via-primary/90 to-primary-dark/95"
+            className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/60 to-primary-dark/80"
           />
           <Container className="relative grid gap-10 py-10 md:py-14 lg:grid-cols-[1.1fr_1fr] lg:gap-14">
             {/* Left: four ways to reach us */}
@@ -148,7 +148,10 @@ export default async function ContactPage() {
             </nav>
 
             {/* Right: contact details */}
-            <section aria-labelledby="contact-heading">
+            <section
+              aria-labelledby="contact-heading"
+              className="[text-shadow:0_1px_4px_rgb(0_0_0/0.55)]"
+            >
               <div className="flex items-center gap-4 border-b-2 border-accent pb-4">
                 <HeadsetIcon
                   className="size-14 shrink-0 text-accent"
