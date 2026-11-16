@@ -609,28 +609,24 @@
       "summary": "Malinis at maaasahang tubig para sa mga tahanan sa Brgy. Inicbulan, mula sa kooperatibang matagal nang nangangasiwa sa patubig ng barangay.",
       "point1": "Supply ng tubig para sa mga tahanan sa sakop na lugar",
       "point2": "Buwanang billing at pagbabayad sa opisina",
-      "point3": "Bagong koneksyon at pag-report ng problema",
-      "cta": "Tingnan ang serbisyo sa tubig"
+      "point3": "Bagong koneksyon at pag-report ng problema"
     },
     "rice": {
       "summary": "Abot-kayang bigas mula sa tindahan ng kooperatiba, para makabili ang mga miyembro at komunidad nang malapit sa tahanan.",
       "point1": "Bigas na mabibili sa kooperatiba (kukumpirmahin pa)",
       "point2": "Ipo-post ang mga uri at presyo",
-      "point3": "Kapareho ng oras ng opisina (kukumpirmahin pa)",
-      "cta": "Magtanong tungkol sa bigas"
+      "point3": "Kapareho ng oras ng opisina (kukumpirmahin pa)"
     },
     "lpg": {
       "summary": "LPG na panluto, mabibili sa kooperatiba sa abot-kayang presyo.",
       "point1": "LPG na mabibili sa kooperatiba (kukumpirmahin pa)",
       "point2": "Ipo-post ang mga laki at presyo",
-      "point3": "Kukumpirmahin ang refill at delivery",
-      "cta": "Magtanong tungkol sa LPG"
+      "point3": "Kukumpirmahin ang refill at delivery"
     },
     "loans": {
       "summary": "Mga programa sa pautang para mas maabot ng mga miyembro ang mahahalagang serbisyong pinansyal.",
       "point1": "Pautang para sa mga miyembro ng kooperatiba",
-      "point2": "Tantyahin ang buwanang hulog online",
-      "cta": "Tingnan ang mga pautang"
+      "point2": "Tantyahin ang buwanang hulog online"
     },
     "whyHeading": "Bakit sa inyong kooperatiba",
     "why": {

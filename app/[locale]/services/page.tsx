@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import {
   ArrowLeftIcon,
-  ArrowRightIcon,
   BadgeCheckIcon,
   CircleCheckIcon,
   DropletIcon,
@@ -28,25 +27,21 @@ const SERVICES = [
     key: "water",
     icon: DropletIcon,
     image: "/images/services/water-meter.jpg",
-    href: "/water",
   },
   {
     key: "rice",
     icon: WheatIcon,
     image: "/images/services/rice.jpg",
-    href: "/contact",
   },
   {
     key: "lpg",
     icon: FlameIcon,
     image: "/images/services/lpg.jpg",
-    href: "/contact",
   },
   {
     key: "loans",
     icon: HandCoinsIcon,
     image: "/images/services/loans-photo.jpg",
-    href: "/services/loans",
   },
 ] as const;
 
@@ -113,7 +108,7 @@ export default async function ServicesPage() {
 
       {/* 3. One band per service, alternating white and blue */}
       <div className="mt-6 md:mt-8">
-        {SERVICES.map(({ key, icon: Icon, image, href }, i) => {
+        {SERVICES.map(({ key, icon: Icon, image }, i) => {
           const blue = i % 2 === 1;
           const points = [1, 2, 3]
             .filter((n) => t.has(`${key}.point${n}`))
@@ -179,13 +174,6 @@ export default async function ServicesPage() {
                       </li>
                     ))}
                   </ul>
-                  <Link
-                    href={href}
-                    className="mt-7 inline-flex min-h-12 w-fit items-center gap-2 rounded-full bg-accent px-6 font-bold text-accent-foreground shadow-sm hover:brightness-95"
-                  >
-                    {t(`${key}.cta`)}
-                    <ArrowRightIcon className="size-5" aria-hidden="true" />
-                  </Link>
                 </div>
               </Container>
             </section>

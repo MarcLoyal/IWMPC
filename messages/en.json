@@ -609,28 +609,24 @@
       "summary": "Clean, reliable water for households in Brgy. Inicbulan, from the cooperative that has run the barangay water system for decades.",
       "point1": "Water supply for homes in the service area",
       "point2": "Monthly billing and payment at the office",
-      "point3": "New connections and problem reports",
-      "cta": "View water services"
+      "point3": "New connections and problem reports"
     },
     "rice": {
       "summary": "Reasonably priced rice from the cooperative store, so members and the community can buy a daily staple close to home.",
       "point1": "Rice sold at the cooperative (details to be confirmed)",
       "point2": "Available kinds and prices to be posted",
-      "point3": "Store hours follow office hours (details to be confirmed)",
-      "cta": "Ask about rice"
+      "point3": "Store hours follow office hours (details to be confirmed)"
     },
     "lpg": {
       "summary": "LPG for cooking, available from the cooperative at reasonable prices.",
       "point1": "LPG tanks sold at the cooperative (details to be confirmed)",
       "point2": "Available sizes and prices to be posted",
-      "point3": "Refill and delivery options to be confirmed",
-      "cta": "Ask about LPG"
+      "point3": "Refill and delivery options to be confirmed"
     },
     "loans": {
       "summary": "Loan programs that make essential financial services more accessible to members.",
       "point1": "Loans for members of the cooperative",
-      "point2": "Estimate your monthly payment online",
-      "cta": "View loan programs"
+      "point2": "Estimate your monthly payment online"
     },
     "whyHeading": "Why buy from your cooperative",
     "why": {
