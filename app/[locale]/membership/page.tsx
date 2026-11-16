@@ -151,7 +151,7 @@ export default async function MembershipPage() {
                             className="mt-1 size-5 shrink-0 text-primary"
                             aria-hidden="true"
                           />
-                          <p className="max-w-none">
+                          <p className="max-w-none text-justify hyphens-auto">
                             <strong>{localized(item, "title", locale)}:</strong>{" "}
                             {localized(item, "text", locale)}
                           </p>
