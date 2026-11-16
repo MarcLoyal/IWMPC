@@ -74,11 +74,11 @@ export default async function ContactPage() {
 
   // Frosted white tiles over the photo band; one calm look for all four.
   const tileClass =
-    "group flex h-full min-h-48 flex-col items-center justify-center gap-4 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
+    "group flex h-full min-h-40 flex-col items-center justify-center gap-3 rounded-2xl bg-gradient-to-br from-primary to-primary-dark p-6 text-center text-white shadow-lg transition hover:-translate-y-1 hover:shadow-xl motion-reduce:transition-none motion-reduce:hover:translate-y-0";
 
-  const row = "flex items-center gap-4 border-b border-white/20 py-4";
+  const row = "flex items-center gap-4 border-b border-white/20 py-2.5";
   const iconWrap =
-    "flex size-12 shrink-0 items-center justify-center rounded-full bg-white/15 text-accent ring-1 ring-white/25";
+    "flex size-10 shrink-0 items-center justify-center rounded-full bg-white/15 text-accent ring-1 ring-white/25";
   const link =
     "font-semibold text-white underline-offset-4 hover:underline break-all";
 
@@ -95,10 +95,10 @@ export default async function ContactPage() {
       </Container>
 
       {/* Tiles on white; contact details on the staff photo */}
-      <Container className="grid items-stretch gap-8 py-8 lg:grid-cols-[1fr_1.1fr] lg:gap-10">
+      <Container className="grid items-stretch gap-8 py-8 lg:grid-cols-[0.8fr_1fr] lg:gap-8">
         {/* Left: four ways to reach us */}
         <nav aria-label={t("tilesLabel")} className="h-full">
-          <ul className="grid h-full grid-cols-2 gap-4 md:gap-5 lg:grid-rows-2">
+          <ul className="grid h-full grid-cols-2 gap-4 lg:grid-rows-2">
             {tiles.map(({ key, href, icon: Icon, external }) => (
               <li key={key}>
                 {external || href.startsWith("#") ? (
@@ -108,20 +108,20 @@ export default async function ContactPage() {
                     className={tileClass}
                   >
                     <Icon
-                      className="size-16 text-accent transition group-hover:scale-110 md:size-20"
+                      className="size-16 text-accent transition group-hover:scale-110 md:size-16"
                       aria-hidden="true"
                     />
-                    <span className="text-lg font-bold md:text-xl">
+                    <span className="text-base font-bold md:text-lg">
                       {t(`tiles.${key}`)}
                     </span>
                   </a>
                 ) : (
                   <Link href={href} className={tileClass}>
                     <Icon
-                      className="size-16 text-accent transition group-hover:scale-110 md:size-20"
+                      className="size-16 text-accent transition group-hover:scale-110 md:size-16"
                       aria-hidden="true"
                     />
-                    <span className="text-lg font-bold md:text-xl">
+                    <span className="text-base font-bold md:text-lg">
                       {t(`tiles.${key}`)}
                     </span>
                   </Link>
@@ -148,15 +148,15 @@ export default async function ContactPage() {
             aria-hidden="true"
             className="absolute inset-0 bg-gradient-to-br from-primary-dark/80 via-primary/60 to-primary-dark/80"
           />
-          <div className="relative p-6 md:p-8">
+          <div className="relative p-5 md:p-6">
             <div className="flex items-center gap-4 border-b-2 border-accent pb-4">
               <HeadsetIcon
-                className="size-14 shrink-0 text-accent"
+                className="size-11 shrink-0 text-accent"
                 aria-hidden="true"
               />
               <h1
                 id="contact-heading"
-                className="text-3xl font-extrabold tracking-wide text-white uppercase md:text-5xl"
+                className="text-3xl font-extrabold tracking-wide text-white uppercase md:text-4xl"
               >
                 {t("heading")}
               </h1>
@@ -252,7 +252,7 @@ export default async function ContactPage() {
                 <span className={iconWrap}>
                   <ClockIcon className="size-6" aria-hidden="true" />
                 </span>
-                <span className="pt-2.5 font-semibold text-white">
+                <span className="pt-1.5 font-semibold text-white">
                   <OfficeHours />
                 </span>
               </li>
