@@ -26,7 +26,7 @@ const SERVICES = [
   {
     key: "water",
     icon: DropletIcon,
-    image: "/images/services/water-meter.jpg",
+    image: "/images/services/water-meter-v2.jpg",
   },
   {
     key: "rice",
