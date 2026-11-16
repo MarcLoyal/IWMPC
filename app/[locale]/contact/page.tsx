@@ -263,11 +263,12 @@ export default async function ContactPage() {
 
       {/* Message form and map */}
       <div className="bg-surface">
-        <Container className="grid gap-10 py-12 lg:grid-cols-2">
+        {/* The message form stays hidden until "Make an Inquiry" links to #message */}
+        <Container className="grid gap-10 py-12 lg:has-[#message:target]:grid-cols-2">
           <section
             id="message"
             aria-labelledby="form-heading"
-            className="scroll-mt-28"
+            className="hidden scroll-mt-28 target:block"
           >
             <h2
               id="form-heading"
