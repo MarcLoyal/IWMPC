@@ -38,7 +38,7 @@ export async function HeroNews() {
             />
             {t("title")}
           </p>
-          <p className="mt-2 flex items-center justify-center gap-2 text-sm font-semibold tracking-wide text-accent uppercase">
+          <p className="mt-3 flex items-center gap-2 text-sm font-semibold tracking-wide text-accent uppercase">
             <CalendarDaysIcon className="size-4" aria-hidden="true" />
             <time dateTime="2026-11">{t("date")}</time>
           </p>
