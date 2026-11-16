@@ -11,7 +11,7 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [x] Address (Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201), phone (0910 491 8512) and founding date (July 1, 2003) — from the cooperative's Facebook page
 - [x] Office hours (Mon–Fri 7:30 AM–4:30 PM, Sat 7:30–11:00 AM) and hotline ((043) 740-0767)
 - [x] Goals and objectives — transcribed from the office sign (`content/about.yaml`); English translation still needs approval
-- [ ] Email, exact map pin of the office
+- [ ] Email (office map pin confirmed: Plus Code RXCM+946, Bauan, Batangas)
 - [ ] Facebook page and Messenger links
 - [ ] CDA Registration No. — site currently shows `9520-04002341` from the project brief; **verify against the current Certificate of Registration**
 - [x] Mission and vision — transcribed from the office sign (`content/about.yaml`); English translation still needs the cooperative's approval

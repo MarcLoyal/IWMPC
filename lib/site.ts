@@ -39,8 +39,8 @@ export const site = {
     string | null,
   /** Opens a Messenger chat with the Facebook page above. */
   messengerUrl: "https://m.me/100068835991463" as string | null,
-  /** Search text for the embedded map — no hand-picked coordinates. */
-  mapQuery: "Purok Yakal, Inicbulan, Bauan, Batangas",
+  /** The office's Google Plus Code, used to pin the embedded map. */
+  mapQuery: "RXCM+946, Bauan, Batangas, Philippines",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const;
 
