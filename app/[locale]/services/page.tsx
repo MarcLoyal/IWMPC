@@ -32,7 +32,7 @@ const SERVICES = [
   {
     key: "water",
     icon: DropletIcon,
-    image: "/images/collage/03-water-line-work.jpg",
+    image: "/images/services/water-meter.jpg",
     href: "/water",
   },
   {
