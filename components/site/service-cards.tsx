@@ -12,7 +12,7 @@ import { Link } from "@/lib/i18n/navigation";
 const SERVICES = [
   {
     key: "water",
-    href: "/water",
+    href: "/services#water",
     icon: DropletIcon,
     badge: "bg-primary",
     image: "/images/services/water-meter.jpg",
@@ -33,7 +33,7 @@ const SERVICES = [
   },
   {
     key: "loans",
-    href: "/services/loans",
+    href: "/services#loans",
     icon: HandshakeIcon,
     badge: "bg-purple-700",
     image: "/images/services/loans-photo.jpg",
