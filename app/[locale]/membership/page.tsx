@@ -105,12 +105,8 @@ export default async function MembershipPage() {
         </section>
       </div>
 
-      <Container className="grid max-w-3xl gap-8 py-8">
-        {/* Benefits, requirements, steps, dividend explainer and PMES schedule arrive in P4 */}
-        <p className="rounded-xl border border-dashed bg-surface p-5 text-muted-foreground">
-          {t("moreSoon")}
-        </p>
-
+      {/* Duties: same width and inner column as the panels above */}
+      <Container className="grid gap-8 py-10 md:py-12">
         <section aria-labelledby="duties-heading">
           <h2
             id="duties-heading"
