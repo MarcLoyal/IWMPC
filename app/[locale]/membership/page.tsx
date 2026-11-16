@@ -28,15 +28,15 @@ export default async function MembershipPage() {
   return (
     <>
       {/* Page title, above the hero panel */}
-      <Container className="pt-6 md:pt-8">
+      <Container className="grid items-center gap-4 pt-6 md:grid-cols-[1fr_auto_1fr] md:pt-8">
         <Link
           href="/"
-          className="inline-flex min-h-12 items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm hover:brightness-95"
+          className="inline-flex min-h-12 w-fit items-center gap-2 rounded-full bg-accent px-5 font-bold text-accent-foreground shadow-sm hover:brightness-95"
         >
           <ArrowLeftIcon className="size-5" aria-hidden="true" />
           {ta("backHome")}
         </Link>
-        <h1 className="mt-4 text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
+        <h1 className="text-center text-3xl font-extrabold tracking-wide text-primary uppercase md:text-5xl">
           {t("pageTitle")}
         </h1>
       </Container>
