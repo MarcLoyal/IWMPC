@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import {
   ArrowLeftIcon,
   DownloadIcon,
@@ -105,49 +106,65 @@ export default async function MembershipPage() {
         </section>
       </div>
 
-      {/* Duties: same width and inner column as the panels above */}
-      <Container className="grid gap-8 py-10 md:py-12">
-        <section aria-labelledby="duties-heading">
-          <h2
-            id="duties-heading"
-            className="text-2xl font-extrabold tracking-wide uppercase"
-          >
-            {t("dutiesHeading")}
-          </h2>
-          <p className="mt-3 max-w-none text-justify text-lg leading-relaxed hyphens-auto">
-            {localized(duties, "intro", locale)}
-          </p>
-          <ol className="mt-6 grid gap-5">
-            {duties.groups.map((group, i) => (
-              <li key={i} className="rounded-2xl border bg-card p-5 shadow-sm">
-                <h3 className="flex items-center gap-3 text-xl font-bold text-primary">
-                  <span
-                    aria-hidden="true"
-                    className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-white"
-                  >
-                    {i + 1}
-                  </span>
-                  {localized(group, "title", locale)}
-                </h3>
-                <ul className="mt-4 grid gap-3">
-                  {group.items.map((item, j) => (
-                    <li key={j} className="flex gap-3">
-                      <ShieldCheckIcon
-                        className="mt-1 size-5 shrink-0 text-primary"
+      {/* Duties: a band over the members' oath-taking photo, with the
+          content on the same column as the panels above */}
+      <div className="px-3 pt-6 pb-6 md:px-5 md:pt-8 md:pb-8">
+        <div className="relative mx-auto max-w-[88rem] overflow-hidden rounded-3xl">
+          <Image
+            src="/images/membership-oath.jpg"
+            alt=""
+            fill
+            sizes="100vw"
+            className="object-cover"
+          />
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-gradient-to-b from-primary-dark/90 via-primary/85 to-primary-dark/95"
+          />
+          <Container className="relative py-10 md:py-14">
+            <section aria-labelledby="duties-heading">
+              <h2
+                id="duties-heading"
+                className="text-2xl font-extrabold tracking-wide text-white uppercase md:text-3xl"
+              >
+                {t("dutiesHeading")}
+              </h2>
+              <p className="mt-3 max-w-none text-justify text-lg leading-relaxed hyphens-auto text-white/90">
+                {localized(duties, "intro", locale)}
+              </p>
+              <ol className="mt-6 grid gap-5">
+                {duties.groups.map((group, i) => (
+                  <li key={i} className="rounded-2xl bg-card p-5 shadow-lg">
+                    <h3 className="flex items-center gap-3 text-xl font-bold text-primary">
+                      <span
                         aria-hidden="true"
-                      />
-                      <p className="max-w-none">
-                        <strong>{localized(item, "title", locale)}:</strong>{" "}
-                        {localized(item, "text", locale)}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </li>
-            ))}
-          </ol>
-        </section>
-      </Container>
+                        className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-white"
+                      >
+                        {i + 1}
+                      </span>
+                      {localized(group, "title", locale)}
+                    </h3>
+                    <ul className="mt-4 grid gap-3">
+                      {group.items.map((item, j) => (
+                        <li key={j} className="flex gap-3">
+                          <ShieldCheckIcon
+                            className="mt-1 size-5 shrink-0 text-primary"
+                            aria-hidden="true"
+                          />
+                          <p className="max-w-none">
+                            <strong>{localized(item, "title", locale)}:</strong>{" "}
+                            {localized(item, "text", locale)}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  </li>
+                ))}
+              </ol>
+            </section>
+          </Container>
+        </div>
+      </div>
     </>
   );
 }
