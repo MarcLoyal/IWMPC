@@ -1,4 +1,6 @@
-import { useFormatter, useTranslations } from "next-intl";
+import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { MessageCircleIcon } from "lucide-react";
 import { Link } from "@/lib/i18n/navigation";
 import { primaryNav, secondaryNav, site } from "@/lib/site";
 import { OfficeHours } from "./office-hours";
@@ -10,21 +12,32 @@ const BUILT_AT = new Date(process.env.NEXT_PUBLIC_BUILD_TIME!);
 export function Footer() {
   const t = useTranslations("footer");
   const tn = useTranslations("nav");
-  const format = useFormatter();
   const linkClass =
     "inline-flex min-h-12 items-center underline-offset-4 hover:underline";
 
   return (
     <footer className="border-t-4 border-accent bg-primary pb-20 text-primary-foreground md:pb-0">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
+      <div className="mx-auto grid max-w-6xl gap-x-8 gap-y-6 px-4 py-10 md:grid-cols-[2fr_1fr_1fr]">
+        {/* Name and logo span the full width so Address, Links and More start on one line */}
+        <div className="flex items-center gap-4 md:col-span-3">
+          <Image
+            src="/logo-v3.png"
+            alt=""
+            width={80}
+            height={80}
+            className="size-16 shrink-0 rounded-full bg-white ring-2 ring-white md:size-20"
+          />
+          <div>
+            <h2 id="footer-contact" className="text-lg text-white">
+              {site.legalName}
+            </h2>
+            <p className="mt-1 text-sm text-white/85">
+              {t("cdaReg")} {site.cdaRegistrationNo}
+            </p>
+          </div>
+        </div>
         <section aria-labelledby="footer-contact">
-          <h2 id="footer-contact" className="text-lg text-white">
-            {site.legalName}
-          </h2>
-          <p className="mt-1 text-sm text-white/85">
-            {t("cdaReg")} {site.cdaRegistrationNo}
-          </p>
-          <dl className="mt-4 grid gap-x-4 gap-y-2 text-base sm:grid-cols-[auto_1fr]">
+          <dl className="grid gap-x-4 gap-y-2 text-base sm:grid-cols-[auto_1fr]">
             <dt className="font-semibold">{t("address")}</dt>
             <dd>{site.address}</dd>
             <dt className="font-semibold">{t("hours")}</dt>
@@ -47,6 +60,22 @@ export function Footer() {
                 <dd>
                   <a href={`tel:${site.hotlineTel}`} className="underline">
                     {site.hotline}
+                  </a>
+                </dd>
+              </>
+            )}
+            {site.messengerUrl && (
+              <>
+                <dt className="font-semibold">Messenger</dt>
+                <dd>
+                  <a
+                    href={site.messengerUrl}
+                    target="_blank"
+                    rel="noopener"
+                    className="inline-flex items-center gap-1.5 underline"
+                  >
+                    <MessageCircleIcon className="size-5" aria-hidden="true" />
+                    {t("messengerCta")}
                   </a>
                 </dd>
               </>
@@ -87,24 +116,37 @@ export function Footer() {
             {t("moreHeading")}
           </h2>
           <ul className="mt-2">
-            {secondaryNav.map((item) => (
-              <li key={item.key}>
-                <Link href={item.href} className={linkClass}>
-                  {tn(item.key)}
-                </Link>
-              </li>
-            ))}
+            {secondaryNav
+              .filter((item) => item.key !== "faq")
+              .map((item) => (
+                <li key={item.key}>
+                  <Link href={item.href} className={linkClass}>
+                    {tn(item.key)}
+                  </Link>
+                </li>
+              ))}
             {site.facebookUrl && (
               <li>
-                <a href={site.facebookUrl} rel="noopener" className={linkClass}>
-                  Facebook
+                <a
+                  href={site.facebookUrl}
+                  target="_blank"
+                  rel="noopener"
+                  className={`${linkClass} gap-2`}
+                >
+                  {t("likeUs")}
+                  <span className="flex size-8 items-center justify-center rounded-full bg-white text-[#1877f2]">
+                    <svg
+                      viewBox="0 0 24 24"
+                      className="size-5 shrink-0 fill-current"
+                      aria-hidden="true"
+                    >
+                      <path d="M13.5 22v-8.2h2.8l.4-3.2h-3.2V8.5c0-.9.3-1.6 1.6-1.6h1.7V4.1c-.3 0-1.3-.1-2.5-.1-2.5 0-4.1 1.5-4.1 4.2v2.4H7.4v3.2h2.8V22h3.3z" />
+                    </svg>
+                  </span>
+                  <span className="sr-only">Facebook</span>
                 </a>
               </li>
             )}
-            {/* /portal is reserved for the Phase 2 member portal */}
-            <li className="flex min-h-12 items-center text-white/75">
-              {t("memberLogin")}
-            </li>
           </ul>
         </nav>
       </div>
@@ -115,11 +157,6 @@ export function Footer() {
             {t("rights", {
               year: String(BUILT_AT.getFullYear()),
               name: site.shortName,
-            })}
-          </p>
-          <p>
-            {t("lastUpdated", {
-              date: format.dateTime(BUILT_AT, { dateStyle: "long" }),
             })}
           </p>
         </div>

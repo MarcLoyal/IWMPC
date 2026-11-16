@@ -2,7 +2,7 @@
 
 Nothing on this list may be guessed. Until an item is confirmed, the site shows a visible "Kukumpirmahin pa / To be confirmed" placeholder or hides the section.
 
-- [x] Logo — new 2026 version received and in use (`public/logo-v2.png`). Its ring text reads "INCBULAN" (missing an I); ask the cooperative for a corrected file. A vector (SVG/AI) or higher-quality original would look sharper; ask if one exists
+- [x] Logo — corrected version with "INICBULAN" received and in use (`public/logo-v3.png`, also used for `app/icon.png` and `app/apple-icon.png`). A vector (SVG/AI) original would look sharper still; ask if one exists
 - [x] Brand colors — taken from the logo (royal blue, yellow, red)
 - [x] Photos received so far: award night and trophy (Matatag na Kooperatiba Award 2026), office team photo. Originals kept in `public/images/`
 - [x] 20 more photos from the shared Drive folder (staff, water line work, meetings, PMES, General Assembly, community activities, events), 12 of them used in the home page collage
@@ -11,7 +11,7 @@ Nothing on this list may be guessed. Until an item is confirmed, the site shows 
 - [x] Address (Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201), phone (0910 491 8512) and founding date (July 1, 2003) — from the cooperative's Facebook page
 - [x] Office hours (Mon–Fri 7:30 AM–4:30 PM, Sat 7:30–11:00 AM) and hotline ((043) 740-0767)
 - [x] Goals and objectives — transcribed from the office sign (`content/about.yaml`); English translation still needs approval
-- [ ] Email, exact map pin of the office
+- [ ] Email (office map pin confirmed: Plus Code RXCM+946, Bauan, Batangas)
 - [ ] Facebook page and Messenger links
 - [ ] CDA Registration No. — site currently shows `9520-04002341` from the project brief; **verify against the current Certificate of Registration**
 - [x] Mission and vision — transcribed from the office sign (`content/about.yaml`); English translation still needs the cooperative's approval

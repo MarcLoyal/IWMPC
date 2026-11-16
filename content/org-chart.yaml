@@ -1,0 +1,178 @@
+# Organizational/functional structure, transcribed from the chart at the
+# cooperative's office (2026). kind: elected (solid line on the chart) or
+# appointed (dotted line). Only positions are listed, not names.
+general_assembly:
+  title_en: General Assembly
+  title_fil: General Assembly
+top:
+  - id: election
+    kind: elected
+    title_en: Election Committee
+    title_fil: Election Committee
+    duties_en: >-
+      Formulates election rules and guidelines and recommends them to the
+      General Assembly for approval; implements election rules and guidelines
+      duly approved by the General Assembly; recommends necessary amendments
+      to the election rules and guidelines, in consultation with the Board of
+      Directors, for approval of the General Assembly; supervises the conduct,
+      manner and procedure of election and other election-related activities
+      and acts on the changes thereto.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+  - id: board
+    kind: elected
+    title_en: Board of Directors
+    title_fil: Board of Directors
+    duties_en: >-
+      Provides general policy direction; formulates the strategic development
+      plan; determines and prescribes the organizational and operational
+      structure; reviews the Annual Plan and Budget and recommends it for the
+      approval of the General Assembly; establishes policies and procedures for
+      the effective operation and ensures their proper implementation;
+      evaluates the capability and qualification of, and recommends to the
+      General Assembly, the engagement of the services of the External Auditor.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Director }
+      - { role: Director }
+      - { role: Director }
+      - { role: Director }
+      - { role: Director }
+  - id: audit
+    kind: elected
+    title_en: Audit Committee
+    title_fil: Audit Committee
+    duties_en: >-
+      Monitors the adequacy and effectiveness of the cooperative's management
+      and control system; audits the performance of the cooperative and its
+      various responsibility centers; reviews continuously and periodically the
+      books of account and other financial records to ensure that these are in
+      accordance with cooperative principles and generally accepted accounting
+      procedures.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+officers:
+  - id: treasurer
+    kind: appointed
+    title_en: Treasurer
+    title_fil: Treasurer
+    duties_en: >-
+      Ensures that all cash collections are deposited in accordance with the
+      policies set by the Board of Directors; has custody of all funds,
+      securities, and documentation relating to all assets, liabilities, income
+      and expenditures.
+    members:
+      - { role: Treasurer }
+  - id: secretary
+    kind: appointed
+    title_en: Secretary
+    title_fil: Secretary
+    duties_en: >-
+      Keeps an updated and complete registry of all members; records, prepares
+      and maintains records of all minutes of all meetings of the Board of
+      Directors and the General Assembly.
+    members:
+      - { role: Secretary }
+committees:
+  - id: credit
+    kind: appointed
+    title_en: Credit Committee
+    title_fil: Credit Committee
+    duties_en: >-
+      Assists the Board of Directors in the formulation of sound lending
+      policies, systems and procedures, and is responsible for the credit
+      management of the cooperative. In the performance of its functions, it
+      processes, evaluates and acts upon loan applications and withdrawal of
+      deposits, except when the applicant is a member of the committee or
+      related to any of them within the third civil degree of consanguinity and
+      affinity.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+  - id: education
+    kind: appointed
+    title_en: Education & Training Committee
+    title_fil: Education & Training Committee
+    duties_en: >-
+      Keeps members, officers and staff well-informed regarding the
+      cooperative's goals and objectives, policies and procedures, services,
+      etc.; plans and implements an educational program for cooperative
+      members, officers and staff; develops promotional and training materials
+      for the cooperative; and conducts and coordinates training activities.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+  - id: ethics
+    kind: appointed
+    title_en: Ethics Committee
+    title_fil: Ethics Committee
+    duties_en: >-
+      Develops a Code of Governance and Ethical Standards to be observed by the
+      members, officers and employees of the cooperative, subject to the
+      approval of the Board of Directors and ratification of the General
+      Assembly; disseminates, promotes and implements the approved Code of
+      Governance and Ethical Standards.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+  - id: mediation
+    kind: appointed
+    title_en: Mediation & Conciliation Committee
+    title_fil: Mediation & Conciliation Committee
+    duties_en: >-
+      Formulates and develops the Conciliation-Mediation Program and ensures
+      that it is properly implemented; monitors the conciliation-mediation
+      program and processes; submits semi-annual reports of cooperative cases
+      to the Authority within 15 days after the end of every semester.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+  - id: gad
+    kind: appointed
+    title_en: Gender & Development Committee
+    title_fil: Gender & Development Committee
+    duties_en: >-
+      Conducts gender analysis; develops and recommends Gender and Development
+      (GAD) and Gender Equality (GE) policies and programs, activities and
+      projects to the Board; monitors and assesses progress in the
+      implementation of GAD programs, activities and projects towards
+      achieving Gender Equality.
+    members:
+      - { role: Chairperson }
+      - { role: Vice-Chairperson }
+      - { role: Secretary }
+manager:
+  id: manager
+  kind: appointed
+  title_en: General Manager
+  title_fil: General Manager
+  duties_en: >-
+    Overall in charge of all phases of the business operations of the
+    cooperative, subject to the policies and guidelines set by the Board of
+    Directors and the General Assembly.
+  members:
+    - { role: General Manager }
+staff:
+  id: staff
+  kind: appointed
+  title_en: Management Staff
+  title_fil: Management Staff
+  duties_en: >-
+    Manage the workflow by ensuring that all daily tasks are met and work is
+    completed.
+  members:
+    - { role: Bookkeeper }
+    - { role: Credit/Loan Officer }
+    - { role: Cashier }
+    - { role: Operator/Maintenance }
+    - { role: Meter Reader/Maintenance }
+    - { role: Meter Reader/Operator }

@@ -61,6 +61,9 @@ const advisorySchema = z.object({
   sample: z.boolean().default(false),
   title_fil: z.string().min(1),
   title_en: optionalText,
+  /** One or two sentences for the home-page advisory list. */
+  summary_fil: optionalText,
+  summary_en: optionalText,
   type: z.enum(ADVISORY_TYPES),
   status: z.enum(ADVISORY_STATUSES),
   affected_areas: z.array(z.string()).default([]),
@@ -226,6 +229,11 @@ const aboutSchema = z.object({
   goals_fil: z.array(z.string().min(1)).default([]),
   goals_en: z.array(z.string().min(1)).default([]),
   translation_approved: z.boolean().default(false),
+  /** History rows, oldest first; each row is a list of paragraphs. */
+  history_fil: z.array(z.array(z.string().min(1)).min(1)).default([]),
+  history_en: z.array(z.array(z.string().min(1)).min(1)).default([]),
+  profile_fil: optionalText,
+  profile_en: optionalText,
 });
 
 export type About = z.infer<typeof aboutSchema>;
@@ -235,6 +243,77 @@ export async function getAbout(): Promise<About> {
   cacheLife("max");
   const raw = await fs.readFile(path.join(CONTENT_DIR, "about.yaml"), "utf8");
   return aboutSchema.parse(parseYaml(raw));
+}
+
+/* ---------- Members' duties ---------- */
+
+const dutySchema = z.object({
+  title_fil: z.string().min(1),
+  title_en: optionalText,
+  text_fil: z.string().min(1),
+  text_en: optionalText,
+});
+
+const memberDutiesSchema = z.object({
+  intro_fil: z.string().min(1),
+  intro_en: optionalText,
+  groups: z
+    .array(
+      z.object({
+        title_fil: z.string().min(1),
+        title_en: optionalText,
+        items: z.array(dutySchema).min(1),
+      }),
+    )
+    .min(1),
+});
+
+export type MemberDuties = z.infer<typeof memberDutiesSchema>;
+
+export async function getMemberDuties(): Promise<MemberDuties> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(
+    path.join(CONTENT_DIR, "member-duties.yaml"),
+    "utf8",
+  );
+  return memberDutiesSchema.parse(parseYaml(raw));
+}
+
+/* ---------- Organization chart ---------- */
+
+const orgBodySchema = z.object({
+  id: z.string().min(1),
+  kind: z.enum(["elected", "appointed"]),
+  title_en: z.string().min(1),
+  title_fil: z.string().min(1),
+  duties_en: optionalText,
+  members: z.array(z.object({ role: z.string().min(1) })).default([]),
+});
+
+const orgChartSchema = z.object({
+  general_assembly: z.object({
+    title_en: z.string().min(1),
+    title_fil: z.string().min(1),
+  }),
+  top: z.array(orgBodySchema),
+  officers: z.array(orgBodySchema),
+  committees: z.array(orgBodySchema),
+  manager: orgBodySchema,
+  staff: orgBodySchema,
+});
+
+export type OrgBody = z.infer<typeof orgBodySchema>;
+export type OrgChart = z.infer<typeof orgChartSchema>;
+
+export async function getOrgChart(): Promise<OrgChart> {
+  "use cache";
+  cacheLife("max");
+  const raw = await fs.readFile(
+    path.join(CONTENT_DIR, "org-chart.yaml"),
+    "utf8",
+  );
+  return orgChartSchema.parse(parseYaml(raw));
 }
 
 /* ---------- Service areas ---------- */

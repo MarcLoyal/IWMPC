@@ -66,10 +66,10 @@
     "linksHeading": "Mga link",
     "moreHeading": "Iba pa",
     "cubMember": "Miyembro ng Cooperative Union of Batangas",
-    "memberLogin": "Member Login (Malapit na)",
     "rights": "© {year} {name}. Lahat ng karapatan ay nakalaan.",
-    "lastUpdated": "Huling na-update: {date}",
-    "hotline": "Hotline"
+    "hotline": "Hotline",
+    "likeUs": "I-like kami sa",
+    "messengerCta": "Mag-chat sa amin"
   },
   "home": {
     "heroTitle": "Malinis at maaasahang tubig para sa Inicbulan",
@@ -77,7 +77,7 @@
     "ctaStatus": "Tingnan ang Status ng Tubig",
     "ctaPay": "Paano Magbayad",
     "quick": {
-      "heading": "Ano ang kailangan mo?",
+      "heading": "Ipaalam sa amin ang inyong concern",
       "status": "Status ng Tubig",
       "statusDesc": "May interruption ba ngayon?",
       "bill": "Bill Calculator",
@@ -90,11 +90,12 @@
     "advisories": {
       "heading": "Mga Advisory",
       "none": "Walang naka-schedule na interruption.",
-      "viewAll": "Lahat ng advisory"
+      "viewAll": "Lahat ng advisory",
+      "readDetails": "Basahin ang detalye"
     },
     "services": {
-      "heading": "Aming mga Serbisyo",
-      "water": "Tubig",
+      "heading": "Mga Produkto at Serbisyo",
+      "water": "Serbisyo sa Tubig",
       "waterDesc": "Supply ng tubig, bayarin, bagong koneksyon, at pag-report ng problema.",
       "rice": "Bigas",
       "riceDesc": "Tindahan ng bigas ng kooperatiba.",
@@ -102,24 +103,19 @@
       "lpgDesc": "LPG (gasul) na panluto mula sa kooperatiba.",
       "loans": "Pautang",
       "loansDesc": "Mga pautang para sa mga miyembro.",
-      "more": "Alamin"
-    },
-    "trust": {
-      "heading": "Bakit IWMPC",
-      "members": "Mga miyembro",
-      "years": "Taon ng paglilingkod",
-      "households": "Mga konektadong kabahayan",
-      "cda": "Rehistrado sa CDA",
-      "cub": "Miyembro ng Cooperative Union of Batangas"
+      "more": "Alamin",
+      "exploreAll": "Tingnan lahat ng serbisyo",
+      "intro": "Nagbibigay ang IWMPC ng mahahalagang produkto at serbisyo para matugunan ang pang-araw-araw na pangangailangan ng mga miyembro at ng komunidad. Mula sa maaasahang serbisyo sa tubig, de-kalidad na bigas, at supply ng LPG hanggang sa abot-kayang pautang, layunin naming maghatid ng kaginhawaan, abot-kayang presyo, at maaasahang serbisyo."
     },
     "join": {
-      "heading": "Maging miyembro ng kooperatiba",
-      "text": "Ang mga miyembro ang may-ari ng IWMPC. Alamin ang mga benepisyo, requirements, at hakbang sa pagsali.",
-      "cta": "Paano Sumali"
-    },
-    "contact": {
-      "heading": "Bisitahin o tawagan kami",
-      "cta": "Lahat ng contact details"
+      "eyebrow": "Maging bahagi ng aming komunidad",
+      "heading": "Ikaw ba ay taga-Inicbulan?",
+      "tagline": "Iyong Komunidad. Iyong Kooperatiba. Iyong Kinabukasan.",
+      "text": "Maging bahagi ng IWMPC at maranasan ang lakas ng pagtutulungan! Tamasahin ang abot-kayang mga produkto at serbisyo, mga pagkakataong umunlad, at ang mga benepisyo ng pagiging kasapi ng isang kooperatibang nakatuon sa pag-unlad at kapakanan ng mga miyembro at ng komunidad.",
+      "subheading": "Maging miyembro ngayon!",
+      "subtext": "Gawin ang unang hakbang tungo sa mas maliwanag na kinabukasan. Sumali sa lumalaking pamilya ng aming kooperatiba at maging bahagi ng isang komunidad na sama-samang umuunlad!",
+      "cta": "Alamin ang pagiging miyembro",
+      "ctaSub": "Pindutin dito"
     },
     "badge": "Kooperatiba ng mga miyembro mula {year}",
     "statusCard": {
@@ -128,13 +124,32 @@
       "none": "Walang naka-schedule na interruption.",
       "all": "Lahat ng advisory"
     },
+    "heroNews": {
+      "heading": "Pinakabagong Balita at Update",
+      "videoLabel": "Video: Ang IWMPC sa Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "Nakamit ng Inicbulan Waterworks Multipurpose Cooperative (IWMPC) ang ikalawang puwesto bilang Outstanding Cooperative (Small Category) sa Governor Vilma Santos-Recto Matatag na Kooperatiba Award.",
+      "more": "Ang prestihiyosong pagkilalang ito ay sumasalamin sa dedikasyon, mahusay na pamamahala, at sama-samang pagsisikap ng kooperatiba sa pagbibigay ng tapat at de-kalidad na serbisyo sa mga kasapi at komunidad. Ang tagumpay na ito ay nagsisilbing inspirasyon upang patuloy na isulong ng IWMPC ang pagkakaisa, pag-unlad, at mas matatag na paglilingkod.",
+      "date": "Nobyembre 2026"
+    },
     "eyebrow": "Serbisyo ng tubig sa Brgy. Inicbulan",
     "checks": {
       "cda": "Rehistrado sa Cooperative Development Authority",
       "owned": "Pag-aari at pinamamahalaan ng mga miyembro",
       "cub": "Miyembro ng Cooperative Union of Batangas"
     },
-    "call": "Tumawag sa opisina"
+    "call": "Tumawag sa opisina",
+    "agencies": {
+      "heading": "Sumusunod sa:",
+      "doh": "Kagawaran ng Kalusugan (DOH)",
+      "denr": "Kagawaran ng Kapaligiran at Likas na Yaman (DENR)",
+      "nwrb": "National Water Resources Board",
+      "cda": "Cooperative Development Authority",
+      "bir": "Kawanihan ng Rentas Internas (BIR)",
+      "doe": "Kagawaran ng Enerhiya (DOE)",
+      "denrMark": "Kagawaran ng Kapaligiran at Likas na Yaman (DENR)",
+      "bauan": "Bayan ng Bauan, Batangas"
+    }
   },
   "preview": {
     "strip": "Preview: may halimbawang nilalaman pa ang website na ito at hindi pa ito opisyal."
@@ -208,11 +223,13 @@
       "resolved": "Tapos na"
     },
     "types": {
+      "service_interruption": "Pansamantalang pagkawala ng tubig",
       "scheduled_maintenance": "Naka-schedule na maintenance",
       "emergency_repair": "Emergency na pagkukumpuni",
       "low_pressure": "Mahinang pressure",
       "water_quality": "Abiso sa kalidad ng tubig",
-      "other": "Iba pa"
+      "office_closure": "Walang pasok sa opisina",
+      "other": "Iba pang mahalagang abiso"
     },
     "empty": "Wala pang advisory.",
     "emptyFiltered": "Walang advisory na tumutugma sa napili.",
@@ -239,8 +256,20 @@
     "messenger": "Messenger",
     "mapHeading": "Mapa",
     "mapTitle": "Mapa ng Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Tinatayang lokasyon batay sa address. Kukumpirmahin pa ang eksaktong pin ng opisina.",
-    "formHeading": "Magpadala ng mensahe"
+    "mapNote": "Ang pin ang nagtuturo sa opisina ng IWMPC (Plus Code RXCM+946, Bauan, Batangas).",
+    "formHeading": "Magpadala ng mensahe",
+    "tilesLabel": "Mga paraan para makipag-ugnayan",
+    "tiles": {
+      "inquiry": "Magtanong",
+      "apply": "Mag-apply ng Serbisyo",
+      "complaint": "Magreklamo",
+      "other": "Iba Pang Concern"
+    },
+    "hotline": "Hotline",
+    "mobile": "Mobile",
+    "facebookPage": "IWMPC sa Facebook",
+    "messengerCta": "Mag-chat sa amin",
+    "heading": "Makipag-ugnayan sa Amin!"
   },
   "privacy": {
     "title": "Privacy Notice",
@@ -404,17 +433,35 @@
     "title": "Tungkol sa IWMPC",
     "intro": "Ang Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) ay kooperatibang pag-aari ng mga miyembro sa Brgy. Inicbulan, Bauan, Batangas. Itinatag ito at nirehistro sa Cooperative Development Authority (CDA) noong Hulyo 1, 2003.",
     "vision": "Pananaw",
-    "visionSub": "Vision",
     "mission": "Tungkulin",
-    "missionSub": "Mission",
     "unofficialTranslation": "Hindi opisyal na salin sa Ingles. Ang opisyal na bersyon ay nasa Filipino.",
-    "moreSoon": "Malapit nang idagdag dito ang kasaysayan, mga parangal, at iba pang impormasyon tungkol sa kooperatiba.",
-    "factsHeading": "Mga pangunahing detalye",
-    "founded": "Itinatag at nirehistro",
+    "goals": "Mga Layunin",
+    "heroTitle": "Tungkol sa Amin",
+    "tagline": "Iyong Komunidad. Iyong Kooperatiba. Iyong Kinabukasan.",
+    "heroText": "Alamin ang aming kasaysayan, pamunuan, mga nakamit, at paglilingkod sa aming mga miyembro.",
+    "backHome": "Bumalik sa Home",
+    "history": "Ang Aming Kasaysayan",
+    "photoFacility": "Lumang larawan ng pasilidad ng IWMPC",
+    "photoPumps": "Mga lumang larawan ng mga bomba sa Inicbulan Elementary School",
+    "photoPerson": "Larawan ni G. Reynaldo Marasigan",
+    "photoPending": "Ibibigay pa ang larawan",
+    "profile": "Profile ng Kooperatiba",
+    "profileName": "Pangalan",
+    "profileFounded": "Itinatag at nirehistro",
+    "profileMembers": "Mga miyembro",
+    "profileServices": "Mga produkto at serbisyo",
+    "profileServicesValue": "Serbisyo sa tubig, bigas, LPG at pautang",
+    "profileAffiliation": "Kaanib sa",
+    "profileImageAlt": "Mga opisyal at kawani ng IWMPC sa harap ng opisina ng kooperatiba sa Brgy. Inicbulan.",
+    "meetOur": "Kilalanin ang aming",
+    "board": "Board of Directors 2026",
+    "our": "Ang aming",
+    "leaders": "Mga Pinuno ng Kooperatiba 2026",
     "cdaReg": "CDA Registration No.",
     "address": "Address",
-    "goals": "Mga Layunin",
-    "goalsSub": "Goals and Objectives"
+    "orgDuties": "Mga tungkulin",
+    "orgElected": "Inihalal",
+    "orgAppointed": "Itinalaga"
   },
   "forms": {
     "requiredMark": "kailangan",
@@ -543,8 +590,12 @@
   "membership": {
     "title": "Membership",
     "intro": "Ang mga miyembro ang may-ari ng IWMPC. Mag-inquire kung paano sumali.",
-    "formHeading": "Mag-inquire tungkol sa membership",
-    "moreSoon": "Malapit nang idagdag dito ang mga benepisyo, requirement, hakbang sa pagsali, at iskedyul ng PMES."
+    "dutiesHeading": "Mga tungkulin at responsibilidad ng miyembro",
+    "printHeading": "Kung interesado",
+    "printText": "I-download at i-print ang Membership Application Form, sagutan nang buo, at dalhin sa opisina ng IWMPC sa oras ng opisina. Gagabayan kayo ng aming staff sa mga susunod na hakbang, kasama ang Pre-Membership Education Seminar (PMES).",
+    "printNote": "Isang pahina, letter size (8.5 × 11 in). Magdala po ng valid ID.",
+    "printCta": "I-download ang application form (PDF)",
+    "pageTitle": "Alamin ang Pagiging Miyembro"
   },
   "infoStrip": {
     "welcome": "Maligayang pagdating sa opisyal na website ng IWMPC!",
@@ -561,5 +612,68 @@
     "next": "Susunod na larawan",
     "position": "Larawan {current} ng {total}",
     "hint": "Pindutin ang larawan para palakihin."
+  },
+  "servicesPage": {
+    "title": "Mga Produkto at Serbisyo",
+    "intro": "Tubig, bigas, LPG at pautang mula sa kooperatiba, para sa mga miyembro at sa komunidad.",
+    "tagline": "Pang-araw-araw na pangangailangan, mula sa inyong kooperatiba.",
+    "jumpLabel": "Pumunta sa serbisyo",
+    "water": {
+      "summary": "Malinis at maaasahang tubig para sa mga tahanan sa Brgy. Inicbulan, mula sa kooperatibang matagal nang nangangasiwa sa patubig ng barangay.",
+      "point1": "Supply ng tubig para sa mga tahanan sa sakop na lugar",
+      "point2": "Buwanang billing at pagbabayad sa opisina",
+      "point3": "Bagong koneksyon at pag-report ng problema"
+    },
+    "rice": {
+      "summary": "Abot-kayang bigas mula sa tindahan ng kooperatiba, para makabili ang mga miyembro at komunidad nang malapit sa tahanan.",
+      "point1": "25 kg na sako ng bigas na mabibili sa kooperatiba",
+      "point2": "Mga uri: Sinandomeng at Dinorado"
+    },
+    "lpg": {
+      "summary": "LPG na panluto, mabibili sa kooperatiba sa abot-kayang presyo.",
+      "point1": "11 kg na LPG na mabibili sa kooperatiba",
+      "point2": "Brand: Island Gas",
+      "point3": "Maaaring kunin sa kooperatiba o ipa-deliver"
+    },
+    "loans": {
+      "summary": "Mga programa sa pautang para mas maabot ng mga miyembro ang mahahalagang serbisyong pinansyal.",
+      "point1": "Pautang para sa mga miyembro ng kooperatiba",
+      "point2": "Tantyahin ang buwanang hulog online"
+    },
+    "whyHeading": "Bakit sa inyong kooperatiba",
+    "why": {
+      "affordable": {
+        "title": "Patas na presyo",
+        "text": "Mga produkto at serbisyong may presyong isinaalang-alang ang mga miyembro at komunidad."
+      },
+      "community": {
+        "title": "Malapit sa tahanan",
+        "text": "Pang-araw-araw na pangangailangan, narito mismo sa Brgy. Inicbulan."
+      },
+      "members": {
+        "title": "Pag-aari ng mga miyembro",
+        "text": "Ang inyong pagtangkilik ay tumutulong sa paglago ng kooperatiba at sa mas mahusay na paglilingkod."
+      }
+    },
+    "availHeading": "Paano mag-avail",
+    "avail": {
+      "step1": {
+        "title": "Pumunta sa opisina",
+        "text": "Bumisita sa opisina ng IWMPC sa oras ng opisina."
+      },
+      "step2": {
+        "title": "Sabihin ang kailangan",
+        "text": "Tutulungan kayo ng aming staff sa tubig, bigas, LPG o pautang."
+      },
+      "step3": {
+        "title": "Magbayad o kunin",
+        "text": "Magbayad at tanggapin ang produkto o serbisyo."
+      }
+    },
+    "availNote": "Pangkalahatang gabay lamang; kukumpirmahin ng kooperatiba ang eksaktong hakbang para sa bawat serbisyo."
+  },
+  "newsPage": {
+    "title": "Balita at Kaganapan",
+    "intro": "Ang pinakabagong balita, kaganapan at abiso mula sa IWMPC."
   }
 }

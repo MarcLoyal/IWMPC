@@ -29,21 +29,20 @@ photos:
     focus: top
     alt_fil: "Ang mga kawani ng IWMPC sa loob ng opisina."
     alt_en: "The IWMPC staff inside the office."
+  - image: /images/collage/09-office-staff.jpg
+    width: 1125
+    height: 1500
+    alt_fil: "Apat na kawani ng IWMPC sa opisina, sa harap ng iluminadong logo ng kooperatiba."
+    alt_en: "Four IWMPC staff in the office, in front of the cooperative's lit-up logo."
   - image: /images/collage/02-technical-crew.jpg
     width: 1400
     height: 1050
     focus: top
     alt_fil: "Mga tauhan ng IWMPC na naka-uniporme sa opisina."
     alt_en: "IWMPC personnel in uniform at the office."
-  - image: /images/collage/03-water-line-work.jpg
-    width: 944
-    height: 1260
-    alt_fil: "Mga tauhang nag-aayos ng linya ng tubig."
-    alt_en: "Crew members working on a water line."
-  - image: /images/collage/04-office-front.jpg
-    width: 1400
-    height: 1054
-    focus: top
+  - image: /images/collage/04-office-front-v3.jpg
+    width: 1160
+    height: 696
     alt_fil: "Mga kawani at opisyal sa harap ng opisina ng IWMPC."
     alt_en: "Staff and officers in front of the IWMPC office."
   # The members
@@ -52,11 +51,12 @@ photos:
     height: 1050
     alt_fil: "Mga miyembrong nakatayo sa isang pagtitipon ng kooperatiba."
     alt_en: "Members standing at a cooperative gathering."
-  - image: /images/collage/06-pmes-seminar.jpg
-    width: 1400
-    height: 1050
-    alt_fil: "Tagapagsalita sa Pre-Membership Education Seminar (PMES) ng IWMPC."
-    alt_en: "A speaker at IWMPC's Pre-Membership Education Seminar (PMES)."
+  - image: /images/collage/06-oath-taking-v2.jpg
+    width: 1153
+    height: 894
+    focus: top
+    alt_fil: "Panunumpa ng isang opisyal ng IWMPC sa harap ng selyo ng Bayan ng Bauan, Batangas."
+    alt_en: "An IWMPC officer taking an oath in front of the seal of the Municipality of Bauan, Batangas."
   - image: /images/collage/07-seminar-certificates.jpg
     width: 1400
     height: 1050
@@ -68,23 +68,23 @@ photos:
     alt_fil: "Isang pulong sa paligid ng mesa sa opisina."
     alt_en: "A meeting around the table at the office."
   # Community work and celebrations
-  - image: /images/collage/09-community-service.jpg
-    width: 1400
-    height: 1050
-    alt_fil: "Mga kawani ng IWMPC sa isang gawaing pangkomunidad."
-    alt_en: "IWMPC staff at a community activity."
-  - image: /images/collage/10-gift-giving.jpg
-    width: 1400
-    height: 1050
+  - image: /images/collage/03-team-office-front-v2.jpg
+    width: 1228
+    height: 540
+    alt_fil: "Pangkatang larawan ng mga opisyal at kawani ng IWMPC sa harap ng opisina ng kooperatiba."
+    alt_en: "Group photo of IWMPC officers and staff in front of the cooperative's office."
+  - image: /images/collage/10-gift-giving-v3.jpg
+    width: 1150
+    height: 635
     alt_fil: "Pamimigay ng regalo sa komunidad."
     alt_en: "Gift-giving in the community."
-  - image: /images/collage/11-cooperative-month.jpg
+  - image: /images/collage/11-cooperative-month-v3.jpg
     width: 1400
-    height: 866
+    height: 806
     alt_fil: "Pangkatang larawan sa pagdiriwang ng Cooperative Month."
     alt_en: "Group photo at the Cooperative Month celebration."
-  - image: /images/collage/12-group-photo.jpg
-    width: 1400
-    height: 1050
+  - image: /images/collage/12-group-photo-close.jpg
+    width: 1180
+    height: 708
     alt_fil: "Pangkatang larawan ng mga kawani at opisyal sa Inicbulan Elementary School."
     alt_en: "Group photo of staff and officers at Inicbulan Elementary School."

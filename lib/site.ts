@@ -19,6 +19,8 @@ export const site = {
   address: "Purok Yakal, Brgy. Inicbulan, Bauan, Batangas 4201",
   /** Established and registered with the CDA (ISO date). */
   founded: "2003-07-01",
+  /** Total members, as confirmed by the cooperative (Nov 2026). */
+  members: 961,
   /** Office hours, one line per schedule, in each language. */
   officeHours: {
     fil: ["Lunes–Biyernes: 7:30 AM – 4:30 PM", "Sabado: 7:30 AM – 11:00 AM"],
@@ -33,10 +35,12 @@ export const site = {
   /** …and in international form for tel: links. */
   hotlineTel: "+63437400767" as string | null,
   email: null as string | null,
-  facebookUrl: null as string | null,
-  messengerUrl: null as string | null,
-  /** Search text for the embedded map — no hand-picked coordinates. */
-  mapQuery: "Purok Yakal, Inicbulan, Bauan, Batangas",
+  facebookUrl: "https://www.facebook.com/profile.php?id=100068835991463" as
+    string | null,
+  /** Opens a Messenger chat with the Facebook page above. */
+  messengerUrl: "https://m.me/100068835991463" as string | null,
+  /** The office's Google Plus Code, used to pin the embedded map. */
+  mapQuery: "RXCM+946, Bauan, Batangas, Philippines",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
 } as const;
 
@@ -79,7 +83,7 @@ export const primaryNav: NavItem[] = [
       { key: "officers", href: "/about/officers" },
       { key: "awards", href: "/about/awards" },
       { key: "gallery", href: "/about/gallery" },
-      { key: "location", href: "/about/location" },
+      { key: "location", href: "/about#location" },
     ],
   },
   { key: "membership", href: "/membership" },
@@ -89,8 +93,8 @@ export const primaryNav: NavItem[] = [
     children: [
       // The water hub leads on to status, rates, payment, new connection and reports.
       { key: "water", href: "/water" },
-      { key: "lpg", href: "/services/lpg" },
-      { key: "rice", href: "/services/rice" },
+      { key: "lpg", href: "/services#lpg" },
+      { key: "rice", href: "/services#rice" },
       { key: "loans", href: "/services/loans" },
     ],
   },

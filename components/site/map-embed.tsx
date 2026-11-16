@@ -1,8 +1,8 @@
 import { site } from "@/lib/site";
 
-/** Lazy-loaded map, located by place name rather than hand-picked coordinates. */
+/** Lazy-loaded map pinned to the office by its Plus Code. */
 export function MapEmbed({ title }: { title: string }) {
-  const src = `https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&z=15&output=embed`;
+  const src = `https://www.google.com/maps?q=${encodeURIComponent(site.mapQuery)}&z=17&output=embed`;
   return (
     <iframe
       title={title}

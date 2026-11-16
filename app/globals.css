@@ -161,3 +161,74 @@
   text-decoration: underline;
   text-underline-offset: 4px;
 }
+
+/* Agency logo strip on the home page: the strip slides left by one of its two
+   identical halves, then repeats seamlessly and without pausing. Still for
+   people who prefer less motion. */
+@keyframes logo-marquee {
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.logo-marquee {
+  animation: logo-marquee 22s linear infinite;
+}
+
+.logo-marquee-wrap:hover .logo-marquee,
+.logo-marquee-wrap:focus-within .logo-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee {
+    animation: none;
+  }
+}
+
+/* About page hero: a looping slideshow of one slide. The photo and text hold
+   for a few seconds, dissolve out, then fade back in with the text rising
+   into place, over and over. Off for people who prefer reduced motion. */
+@keyframes hero-photo-cycle {
+  0% {
+    opacity: 0;
+    transform: scale(1.06);
+  }
+  12%,
+  84% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+@keyframes hero-text-cycle {
+  0%,
+  4% {
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  16%,
+  84% {
+    opacity: 1;
+    transform: none;
+  }
+  96%,
+  100% {
+    opacity: 0;
+    transform: none;
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-photo {
+    animation: hero-photo-cycle 7s ease-in-out infinite;
+  }
+
+  .hero-text {
+    animation: hero-text-cycle 7s ease-out infinite;
+  }
+}

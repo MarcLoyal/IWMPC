@@ -8,7 +8,7 @@ It answers three questions fast, on a phone: _Is there water today? How much do 
 
 - Next.js 16 (App Router, TypeScript, Cache Components) on Vercel
 - Tailwind CSS 4 + shadcn/ui-style components (`components/ui`), lucide-react icons
-- next-intl — Filipino (default, no URL prefix) and English (`/en/...`)
+- next-intl — English (default, no URL prefix) and Filipino (`/fil/...`)
 - Vitest for unit tests; GitHub Actions runs format, lint, typecheck, tests and build on every PR
 
 Forms (Resend + Turnstile), the Keystatic CMS and the calculators arrive in later phases — see the build phases below.

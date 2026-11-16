@@ -21,6 +21,7 @@ export async function getAdvisoryViewer(
     slug: a.slug,
     sample: a.sample,
     title: localized(a, "title", locale),
+    summary: a.summary_fil ? localized(a, "summary", locale) : undefined,
     type: a.type,
     status: a.status,
     affected_areas: a.affected_areas,

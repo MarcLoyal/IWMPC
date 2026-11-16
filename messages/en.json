@@ -66,10 +66,10 @@
     "linksHeading": "Links",
     "moreHeading": "More",
     "cubMember": "Member of the Cooperative Union of Batangas",
-    "memberLogin": "Member Login (Coming soon)",
     "rights": "© {year} {name}. All rights reserved.",
-    "lastUpdated": "Last updated: {date}",
-    "hotline": "Hotline"
+    "hotline": "Hotline",
+    "likeUs": "Like us on",
+    "messengerCta": "Chat with us"
   },
   "home": {
     "heroTitle": "Clean, reliable water for Inicbulan",
@@ -77,7 +77,7 @@
     "ctaStatus": "Check Water Status",
     "ctaPay": "How to Pay",
     "quick": {
-      "heading": "What do you need?",
+      "heading": "Let us know your concern",
       "status": "Water Status",
       "statusDesc": "Is there an interruption today?",
       "bill": "Bill Calculator",
@@ -90,11 +90,12 @@
     "advisories": {
       "heading": "Advisories",
       "none": "No scheduled interruptions.",
-      "viewAll": "All advisories"
+      "viewAll": "All advisories",
+      "readDetails": "Read details"
     },
     "services": {
-      "heading": "Our Services",
-      "water": "Water",
+      "heading": "Products and Services",
+      "water": "Water Services",
       "waterDesc": "Water supply, billing, new connections, and problem reports.",
       "rice": "Rice",
       "riceDesc": "The cooperative's rice store.",
@@ -102,24 +103,19 @@
       "lpgDesc": "LPG cooking gas from the cooperative.",
       "loans": "Loans",
       "loansDesc": "Loans for members.",
-      "more": "Learn more"
-    },
-    "trust": {
-      "heading": "Why IWMPC",
-      "members": "Members",
-      "years": "Years of service",
-      "households": "Households connected",
-      "cda": "CDA-registered",
-      "cub": "Member of the Cooperative Union of Batangas"
+      "more": "Learn more",
+      "exploreAll": "Explore all services",
+      "intro": "IWMPC provides essential products and services designed to meet the everyday needs of its members and community. From reliable water services, quality rice products, and LPG supply to accessible loan services, we are committed to delivering convenience, affordability, and dependable service."
     },
     "join": {
-      "heading": "Become a member of the cooperative",
-      "text": "IWMPC is owned by its members. Learn about the benefits, requirements, and steps to join.",
-      "cta": "How to Join"
-    },
-    "contact": {
-      "heading": "Visit or call us",
-      "cta": "All contact details"
+      "eyebrow": "Be part of our community",
+      "heading": "Are you an Inicbulangueño?",
+      "tagline": "Your Community. Your Cooperative. Your Future.",
+      "text": "Be part of IWMPC and experience the power of cooperation! Enjoy accessible products and services, opportunities for growth, and the benefits of belonging to a cooperative committed to the progress and well-being of its members and community.",
+      "subheading": "Become a member today!",
+      "subtext": "Take the first step toward a brighter future. Join our growing cooperative family and be part of a community where we grow and prosper together!",
+      "cta": "Explore membership",
+      "ctaSub": "Click here"
     },
     "badge": "Member-owned since {year}",
     "statusCard": {
@@ -128,13 +124,32 @@
       "none": "No scheduled interruptions.",
       "all": "All advisories"
     },
+    "heroNews": {
+      "heading": "Latest News and Updates",
+      "videoLabel": "Video: IWMPC at the Matatag na Kooperatiba Award 2026",
+      "title": "Matatag na Kooperatiba Award 2026",
+      "text": "Inicbulan Waterworks Multipurpose Cooperative (IWMPC) placed second as Outstanding Cooperative (Small Category) at the Governor Vilma Santos-Recto Matatag na Kooperatiba Award.",
+      "more": "This prestigious recognition reflects the cooperative's dedication, sound management, and shared effort in providing honest, quality service to its members and the community. It inspires IWMPC to keep building unity, progress, and even stronger service.",
+      "date": "November 2026"
+    },
     "eyebrow": "Water service for Brgy. Inicbulan",
     "checks": {
       "cda": "Registered with the Cooperative Development Authority",
       "owned": "Owned and run by its members",
       "cub": "Member of the Cooperative Union of Batangas"
     },
-    "call": "Call the office"
+    "call": "Call the office",
+    "agencies": {
+      "heading": "In compliance with:",
+      "doh": "Department of Health",
+      "denr": "Department of Environment and Natural Resources",
+      "nwrb": "National Water Resources Board",
+      "cda": "Cooperative Development Authority",
+      "bir": "Bureau of Internal Revenue",
+      "doe": "Department of Energy",
+      "denrMark": "Department of Environment and Natural Resources",
+      "bauan": "Municipality of Bauan, Batangas"
+    }
   },
   "preview": {
     "strip": "Preview: this website still contains sample content and is not yet official."
@@ -208,11 +223,13 @@
       "resolved": "Resolved"
     },
     "types": {
+      "service_interruption": "Water service interruption",
       "scheduled_maintenance": "Scheduled maintenance",
       "emergency_repair": "Emergency repair",
       "low_pressure": "Low pressure",
       "water_quality": "Water quality notice",
-      "other": "Other"
+      "office_closure": "No office schedule",
+      "other": "Other important notice"
     },
     "empty": "No advisories yet.",
     "emptyFiltered": "No advisories match your selection.",
@@ -239,8 +256,20 @@
     "messenger": "Messenger",
     "mapHeading": "Map",
     "mapTitle": "Map of Brgy. Inicbulan, Bauan, Batangas",
-    "mapNote": "Approximate location based on the address. The exact office pin is still to be confirmed.",
-    "formHeading": "Send a message"
+    "mapNote": "The pin marks the IWMPC office (Plus Code RXCM+946, Bauan, Batangas).",
+    "formHeading": "Send a message",
+    "tilesLabel": "Ways to reach us",
+    "tiles": {
+      "inquiry": "Make an Inquiry",
+      "apply": "Apply for a Service",
+      "complaint": "Send a Complaint",
+      "other": "Other Concerns"
+    },
+    "hotline": "Hotline",
+    "mobile": "Mobile",
+    "facebookPage": "IWMPC on Facebook",
+    "messengerCta": "Chat with us",
+    "heading": "Contact Us!"
   },
   "privacy": {
     "title": "Privacy Notice",
@@ -404,17 +433,35 @@
     "title": "About IWMPC",
     "intro": "The Inicbulan Waterworks Multi-Purpose Cooperative (IWMPC) is a member-owned cooperative in Brgy. Inicbulan, Bauan, Batangas. It was established and registered with the Cooperative Development Authority (CDA) on July 1, 2003.",
     "vision": "Vision",
-    "visionSub": "Pananaw",
     "mission": "Mission",
-    "missionSub": "Tungkulin",
     "unofficialTranslation": "Unofficial English translation. The official version is in Filipino.",
-    "moreSoon": "The cooperative's history, awards and more will be added here soon.",
-    "factsHeading": "Key details",
-    "founded": "Established and registered",
+    "goals": "Goals and Objectives",
+    "heroTitle": "About Us",
+    "tagline": "Your Community. Your Cooperative. Your Future.",
+    "heroText": "Learn about our history, leadership, achievements and commitment to our members.",
+    "backHome": "Back to Home",
+    "history": "Our History",
+    "photoFacility": "Old photo of the IWMPC facility",
+    "photoPumps": "Old photos of the pumps at Inicbulan Elementary School",
+    "photoPerson": "Photo of Mr. Reynaldo Marasigan",
+    "photoPending": "Photo to be provided",
+    "profile": "Cooperative Profile",
+    "profileName": "Name",
+    "profileFounded": "Established and registered",
+    "profileMembers": "Members",
+    "profileServices": "Products and services",
+    "profileServicesValue": "Water service, rice, LPG and loans",
+    "profileAffiliation": "Affiliation",
+    "profileImageAlt": "IWMPC officers and staff in front of the cooperative's office in Brgy. Inicbulan.",
+    "meetOur": "Meet our",
+    "board": "Board of Directors 2026",
+    "our": "Our",
+    "leaders": "Cooperative Leaders 2026",
     "cdaReg": "CDA Registration No.",
     "address": "Address",
-    "goals": "Goals and Objectives",
-    "goalsSub": "Mga Layunin"
+    "orgDuties": "Duties and functions",
+    "orgElected": "Elected",
+    "orgAppointed": "Appointed"
   },
   "forms": {
     "requiredMark": "required",
@@ -543,8 +590,12 @@
   "membership": {
     "title": "Membership",
     "intro": "IWMPC is owned by its members. Ask how to join.",
-    "formHeading": "Ask about membership",
-    "moreSoon": "Benefits, requirements, steps to join, and the PMES schedule will be added here soon."
+    "dutiesHeading": "Duties and responsibilities of members",
+    "printHeading": "If interested",
+    "printText": "Download and print the Membership Application Form, fill it out completely, and bring it to the IWMPC office during office hours. Our staff will guide you through the next steps, including the Pre-Membership Education Seminar (PMES).",
+    "printNote": "One page, letter size (8.5 × 11 in). Please bring a valid ID.",
+    "printCta": "Download the application form (PDF)",
+    "pageTitle": "Explore Membership"
   },
   "infoStrip": {
     "welcome": "Welcome to the official IWMPC website!",
@@ -561,5 +612,68 @@
     "next": "Next photo",
     "position": "Photo {current} of {total}",
     "hint": "Tap a photo to enlarge it."
+  },
+  "servicesPage": {
+    "title": "Products and Services",
+    "intro": "Water, rice, LPG and loans from the cooperative, for members and the community.",
+    "tagline": "Everyday needs, served by your cooperative.",
+    "jumpLabel": "Jump to a service",
+    "water": {
+      "summary": "Clean, reliable water for households in Brgy. Inicbulan, from the cooperative that has run the barangay water system for decades.",
+      "point1": "Water supply for homes in the service area",
+      "point2": "Monthly billing and payment at the office",
+      "point3": "New connections and problem reports"
+    },
+    "rice": {
+      "summary": "Reasonably priced rice from the cooperative store, so members and the community can buy a daily staple close to home.",
+      "point1": "25 kg sacks of rice available at the cooperative",
+      "point2": "Available kinds: Sinandomeng and Dinorado"
+    },
+    "lpg": {
+      "summary": "LPG for cooking, available from the cooperative at reasonable prices.",
+      "point1": "11 kg LPG tanks available at the cooperative",
+      "point2": "Brand: Island Gas",
+      "point3": "Available for pick-up and delivery"
+    },
+    "loans": {
+      "summary": "Loan programs that make essential financial services more accessible to members.",
+      "point1": "Loans for members of the cooperative",
+      "point2": "Estimate your monthly payment online"
+    },
+    "whyHeading": "Why buy from your cooperative",
+    "why": {
+      "affordable": {
+        "title": "Fair prices",
+        "text": "Products and services priced with members and the community in mind."
+      },
+      "community": {
+        "title": "Close to home",
+        "text": "Everyday needs available right in Brgy. Inicbulan."
+      },
+      "members": {
+        "title": "Owned by members",
+        "text": "Your patronage helps the cooperative grow and serve the community better."
+      }
+    },
+    "availHeading": "How to avail",
+    "avail": {
+      "step1": {
+        "title": "Visit the office",
+        "text": "Come to the IWMPC office during office hours."
+      },
+      "step2": {
+        "title": "Tell us what you need",
+        "text": "Our staff will help you with water, rice, LPG or loan concerns."
+      },
+      "step3": {
+        "title": "Pay or claim",
+        "text": "Settle payment and receive your product or service."
+      }
+    },
+    "availNote": "General guide only; the cooperative will confirm the exact steps for each service."
+  },
+  "newsPage": {
+    "title": "News and Events",
+    "intro": "The latest news, events and advisories from IWMPC."
   }
 }
